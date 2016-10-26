@@ -17,4 +17,11 @@
 1. Gnome Desktop Envioronment
 2. [Redshift](http://jonls.dk/redshift/)
   * `sudo apt-get install redshift-gtk`
+  * Add some configuration options to `/etc/geoclue/geoclue.conf`
+    ```
+    [redshift]
+    allowed=true
+    system=false
+    users=
+    ```
 3. [Glances](https://pypi.python.org/pypi/Glances)
