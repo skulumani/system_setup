@@ -13,7 +13,13 @@
 8. Chrome
 9. GPG signing keys
 10. SSH keys for Github/Bitbucket
-
+11. [myrepos](https://myrepos.branchable.com)
+  ~~~~
+  sudo apt-get install myrepos
+  git clone https://github.com/joeyh/myrepos.git
+  cd myrepos
+  cp ./mr /usr/bin/local/mr
+  ~~~~
 
 ## Linux
 
