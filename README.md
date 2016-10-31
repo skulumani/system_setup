@@ -19,9 +19,13 @@
   sudo apt-get install myrepos
   git clone https://github.com/joeyh/myrepos.git
   cd myrepos
-  cp ./mr /usr/bin/local/mr
+  cp ./mr /usr/local/bin/mr
   ~~~~
 
+  `brew install mr`
+  
+  `sudo apt-get install myrepos`
+  
 ## Linux
 
 1. Gnome Desktop Envioronment
