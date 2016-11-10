@@ -11,6 +11,9 @@
 7. Anaconda3
     1. Modify LaTeXTools Python path
 8. Chrome
+    1. Remote Desktop setup
+    * [Desktop Enviornment](https://support.google.com/chrome/answer/1649523?hl=en)
+    * [Screen Size](https://productforums.google.com/forum/#!topic/chrome/8PMxG69VJ6o)
 9. GPG signing keys
 10. SSH keys for Github/Bitbucket
 11. [myrepos](https://myrepos.branchable.com)
