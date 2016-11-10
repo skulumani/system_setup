@@ -15,6 +15,28 @@
     * [Desktop Enviornment](https://support.google.com/chrome/answer/1649523?hl=en)
     * [Screen Size](https://productforums.google.com/forum/#!topic/chrome/8PMxG69VJ6o)
 9. GPG signing keys
+    1. Install [Keybase](https://keybase.io/)
+    ~~~
+    curl -O https://prerelease.keybase.io/keybase_amd64.deb
+    sudo dpkg -i keybase_amd64.deb
+    sudo apt-get install -f
+    run_keybase
+    ~~~
+    2. Export Keybase GPG key-pair
+        * `keybase pgp pull` - pull keys from keybase
+        * `keybase pgp list` - list pgp keys
+        * `keybase pgp export -q 01019ee8044 | gpg --import` - import keybase key into GPG
+        *  `keybase pgp export -q 01019ee8044 --secret | gpg --allow-secret-key-import --import` - import private key into GPG
+        * `gpg --list-secret-keys` - list keys on system
+        * `git config --global user.signingkey 666A332D` - set git to use the default GPG key
+        * `subl ~/.gnupg/gpg.conf'` - add `default-key 666A332D` to set key as the default
+        * `git commit -S` or `git tag -s` - now sign commits/tags
+    3. Add email to GPG key
+        * `gpg --list-keys`
+        * `gpg --edit-key 666A332D` - edit the key
+        * `adduid` - Type name, email, and comment then type `O`
+        * `save` - save the key
+        * 
 10. SSH keys for Github/Bitbucket
 11. [myrepos](https://myrepos.branchable.com)
 
