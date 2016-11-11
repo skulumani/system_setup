@@ -39,17 +39,30 @@
         * 
 10. SSH keys for Github/Bitbucket
 11. [myrepos](https://myrepos.branchable.com)
+    ~~~~
+    sudo apt-get install myrepos
+    git clone https://github.com/joeyh/myrepos.git
+    cd myrepos
+    cp ./mr /usr/local/bin/mr
+    ~~~~
 
-  ~~~~
-  sudo apt-get install myrepos
-  git clone https://github.com/joeyh/myrepos.git
-  cd myrepos
-  cp ./mr /usr/local/bin/mr
-  ~~~~
+    `brew install mr`
 
-  `brew install mr`
-  
-  `sudo apt-get install myrepos`
+    `sudo apt-get install myrepos`
+
+12. [Google Drive for Linux](https://github.com/odeke-em/drive)
+    1. Install [go](https://github.com/golang/go/wiki/Ubuntu):
+    ~~~
+    sudo add-apt-repository ppa:ubuntu-lxc/lxd-stable
+    sudo apt-get update
+    sudo apt-get install golang
+    ~~~
+    2. Install [drive](https://github.com/odeke-em/drive/blob/master/platform_packages.md): 
+    ~~~
+    sudo add-apt-repository ppa:twodopeshaggy/drive
+    sudo apt-get update
+    sudo apt-get install drive
+    ~~~
   
 ## Linux
 
