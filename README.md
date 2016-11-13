@@ -57,6 +57,12 @@
     sudo apt-get update
     sudo apt-get install golang
     ~~~
+    1a. Set `$GOPATH` - location where `drive` will install
+    ~~~
+    subl .bashrc
+    export GOPATH=$HOME/go
+    export PATH=$GOPATH:$GOPATH/bin:$PATH 
+    ~~~
     2. Install [drive](https://github.com/odeke-em/drive/blob/master/platform_packages.md): 
     ~~~
     sudo add-apt-repository ppa:twodopeshaggy/drive
