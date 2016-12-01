@@ -1,7 +1,7 @@
 ## New computer setup
 
-1. [Google Chrome](https://www.google.com/chrome/)
-2. [SSH-Keys](https://help.github.com/enterprise/11.10.340/user/articles/generating-ssh-keys/) for Github/Bitbucket
+* [Google Chrome](https://www.google.com/chrome/)
+* [SSH-Keys](https://help.github.com/enterprise/11.10.340/user/articles/generating-ssh-keys/) for Github/Bitbucket
     1. Check for keys
     ~~~
     ls -la ~/.ssh
@@ -19,7 +19,7 @@
     ~~~
     cat ~/.ssh/id_rsa.pub
     ~~~
-1. Download [TexLive](https://www.tug.org/texlive/)
+* Download [TexLive](https://www.tug.org/texlive/)
 	1. Download http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
 	2. Create texlive directories
 	~~~
@@ -35,22 +35,22 @@
 	~~~
 	export PATH=$PATH:/usr/local/texlive/2016/bin/i386-linux
 	~~~
-2. Setup [Texmf](https://github.com/skulumani/texmf) tree
-3. Install [Sublime](https://www.sublimetext.com/)
+* Setup [Texmf](https://github.com/skulumani/texmf) tree
+* Install [Sublime](https://www.sublimetext.com/)
     `git config --global core.editor 'subl -w'`
 	* Start Sublime first before cloning settings
 	* Install [Package Control](https://packagecontrol.io/installation)
 	* Clone [Sublime-Settings](https://github.com/skulumani/sublime_settings) to `~/.config/sublime-text-3/Packages/User/setup_repo.sh`
-4. Install [BOINC](https://boinc.berkeley.edu/)
-5. Install [Gridcoin](http://gridcoin.us/)
-6. Matlab
-7. Anaconda3
+* Install [BOINC](https://boinc.berkeley.edu/)
+* Install [Gridcoin](http://gridcoin.us/)
+* Matlab
+* Anaconda3
     1. Modify LaTeXTools Python path
-8. Chrome
+* Chrome
     1. Remote Desktop setup
     * [Desktop Enviornment](https://support.google.com/chrome/answer/1649523?hl=en)
     * [Screen Size](https://productforums.google.com/forum/#!topic/chrome/8PMxG69VJ6o)
-9. GPG signing keys
+* GPG signing keys
     1. Install [Keybase](https://keybase.io/)
     ~~~
     curl -O https://prerelease.keybase.io/keybase_amd64.deb
@@ -73,8 +73,8 @@
         * `adduid` - Type name, email, and comment then type `O`
         * `save` - save the key
         * 
-10. SSH keys for Github/Bitbucket
-11. [myrepos](https://myrepos.branchable.com)
+* SSH keys for Github/Bitbucket
+* [myrepos](https://myrepos.branchable.com)
     ~~~~
     sudo apt-get install myrepos
     git clone https://github.com/joeyh/myrepos.git
@@ -86,7 +86,7 @@
 
     `sudo apt-get install myrepos`
 
-12. [Google Drive for Linux](https://github.com/odeke-em/drive)
+* [Google Drive for Linux](https://github.com/odeke-em/drive)
     1. Install [go](https://github.com/golang/go/wiki/Ubuntu):
     ~~~
     sudo add-apt-repository ppa:ubuntu-lxc/lxd-stable
@@ -105,10 +105,7 @@
     sudo apt-get update
     sudo apt-get install drive
     ~~~
-13. [NoMachine](https://www.nomachine.com/)
-
-1. Gnome Desktop Envioronment
-2. [Redshift](http://jonls.dk/redshift/)
+* [Redshift](http://jonls.dk/redshift/)
   * `sudo apt-get install redshift-gtk`
   * Add some configuration options to `/etc/geoclue/geoclue.conf`
     ```
@@ -117,4 +114,9 @@
     system=false
     users=
     ```
-3. [Glances](https://pypi.python.org/pypi/Glances)
+## Dot files
+
+* Copy `gitconfig.md` to `~/.gitconfig`
+
+
+
