@@ -40,7 +40,7 @@
 	~~~
     5. Set paper size `tlmgr paper letter`
     6. Update `tlmgr update --list` and `tlmgr update --all`
-* Setup [Texmf](https://github.com/skulumani/texmf) tree
+* Setup [Texmf](https://github.com/skulumani/texmf) tree in `~/texmf`
 * Install [Sublime](https://www.sublimetext.com/)
     `git config --global core.editor 'subl -w'`
 	* Start Sublime first before cloning settings
