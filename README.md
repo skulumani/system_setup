@@ -31,10 +31,15 @@
 	sudo chmod -R u+rw /usr/local/texlive/
 	~~~
 	3. Extract and run `./install-tl`
-	4. Set PATH - add to `~/.bashrc`
+	4. Set PATH - add to `~/.bashrc` and `~\.profile` modify for year
 	~~~
-	export PATH=$PATH:/usr/local/texlive/2016/bin/i386-linux
+	# Add TeXLive to PATH
+    export PATH=/usr/local/texlive/2016/bin/x86_64-linux:$PATH
+    export MANPATH=/usr/local/texlive/2016/texmf-dist/doc/man:$MANPATH
+    export INFOPATH=/usr/local/texlive/2016/texmf-dist/doc/info:$INFOPATH
 	~~~
+    5. Set paper size `tlmgr paper letter`
+    6. Update `tlmgr update --list` and `tlmgr update --all`
 * Setup [Texmf](https://github.com/skulumani/texmf) tree
 * Install [Sublime](https://www.sublimetext.com/)
     `git config --global core.editor 'subl -w'`
