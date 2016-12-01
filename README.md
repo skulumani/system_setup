@@ -88,15 +88,8 @@
 * [Google Drive for Linux](https://github.com/odeke-em/drive)
     1. Install [go](https://github.com/golang/go/wiki/Ubuntu):
     ~~~
-    sudo add-apt-repository ppa:ubuntu-lxc/lxd-stable
     sudo apt-get update
     sudo apt-get install golang
-    ~~~
-    1a. Set `$GOPATH` - location where `drive` will install
-    ~~~
-    subl .bashrc
-    export GOPATH=$HOME/go
-    export PATH=$GOPATH:$GOPATH/bin:$PATH 
     ~~~
     2. Install [drive](https://github.com/odeke-em/drive/blob/master/platform_packages.md): 
     ~~~
@@ -104,6 +97,8 @@
     sudo apt-get update
     sudo apt-get install drive
     ~~~
+    3. `drive init` in a specific folder. 
+    Make sure you're logged into `skulumani@gwmail.gwu.edu`
 * [Redshift](http://jonls.dk/redshift/)
   * `sudo apt-get install redshift-gtk`
   * Add some configuration options to `/etc/geoclue/geoclue.conf`
