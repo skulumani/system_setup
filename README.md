@@ -1,6 +1,25 @@
 ## New computer setup
 
-1. Download [TexLive]()https://www.tug.org/texlive/
+1. [Google Chrome](https://www.google.com/chrome/)
+2. [SSH-Keys](https://help.github.com/enterprise/11.10.340/user/articles/generating-ssh-keys/) for Github/Bitbucket
+    1. Check for keys
+    ~~~
+    ls -la ~/.ssh
+    ~~~
+    2. Generate new keys if empty - don't add a password
+    ~~~
+    ssh-keygen -t rsa -C "your_email@example.com"
+    ~~~
+    3. Add to `ssh-agent`
+    ~~~
+    eval "$(ssh-agent -s)"
+    ssh-add ~/.ssh/id_rsa
+    ~~~
+    4. Copy SSH public key to Github/Bitbucket
+    ~~~
+    cat ~/.ssh/id_rsa.pub
+    ~~~
+1. Download [TexLive](https://www.tug.org/texlive/)
 2. Setup [Texmf](https://github.com/skulumani/texmf) tree
 3. Install [Sublime](https://www.sublimetext.com/)
     `git config --global core.editor 'subl -w'`
@@ -70,8 +89,6 @@
     sudo apt-get install drive
     ~~~
 13. [NoMachine](https://www.nomachine.com/)
-
-## Linux
 
 1. Gnome Desktop Envioronment
 2. [Redshift](http://jonls.dk/redshift/)
