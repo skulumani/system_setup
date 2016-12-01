@@ -1,5 +1,9 @@
 ## New computer setup
 
+* Graphics Drivers
+    ~~~
+    sudo add-apt-repository ppa:graphics-drivers/ppa
+    ~~~
 * [Google Chrome](https://www.google.com/chrome/)
 * [SSH-Keys](https://help.github.com/enterprise/11.10.340/user/articles/generating-ssh-keys/) for Github/Bitbucket
     1. Check for keys
