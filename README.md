@@ -20,10 +20,27 @@
     cat ~/.ssh/id_rsa.pub
     ~~~
 1. Download [TexLive](https://www.tug.org/texlive/)
+	1. Download http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
+	2. Create texlive directories
+	~~~
+	cd /usr/local
+	sudo mkdir texlive
+	cd texlive
+	mkdir 2016
+	sudo chown -R shankar: /usr/local/texlive/
+	sudo chmod -R u+rw /usr/local/texlive/
+	~~~
+	3. Extract and run `./install-tl`
+	4. Set PATH - add to `~/.bashrc`
+	~~~
+	export PATH=$PATH:/usr/local/texlive/2016/bin/i386-linux
+	~~~
 2. Setup [Texmf](https://github.com/skulumani/texmf) tree
 3. Install [Sublime](https://www.sublimetext.com/)
     `git config --global core.editor 'subl -w'`
-    1. Clone [Sublime-Settings](https://github.com/skulumani/sublime_settings)
+	* Start Sublime first before cloning settings
+	* Install [Package Control](https://packagecontrol.io/installation)
+	* Clone [Sublime-Settings](https://github.com/skulumani/sublime_settings) to `~/.config/sublime-text-3/Packages/User/setup_repo.sh`
 4. Install [BOINC](https://boinc.berkeley.edu/)
 5. Install [Gridcoin](http://gridcoin.us/)
 6. Matlab
