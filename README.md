@@ -51,10 +51,6 @@
 * Matlab
 * Anaconda3
     1. Modify LaTeXTools Python path
-* Chrome
-    1. Remote Desktop setup
-    * [Desktop Enviornment](https://support.google.com/chrome/answer/1649523?hl=en)
-    * [Screen Size](https://productforums.google.com/forum/#!topic/chrome/8PMxG69VJ6o)
 * GPG signing keys
     1. Install [Keybase](https://keybase.io/)
     ~~~
@@ -77,8 +73,6 @@
         * `gpg --edit-key 666A332D` - edit the key
         * `adduid` - Type name, email, and comment then type `O`
         * `save` - save the key
-        * 
-* SSH keys for Github/Bitbucket
 * [myrepos](https://myrepos.branchable.com)
     ~~~~
     sudo apt-get install myrepos
