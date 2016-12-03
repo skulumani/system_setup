@@ -29,7 +29,7 @@
 * Matlab
     * Login into the [mathworks](http://www.mathworks.com/index.html?s_tid=gn_logo) using GWU account
     * Download latest release
-* Anaconda3
+* [Anaconda3](https://www.continuum.io/downloads#linux)
     1. Modify LaTeXTools Python path
 * [myrepos](https://myrepos.branchable.com)
     ~~~~
