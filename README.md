@@ -27,6 +27,8 @@
 * Install [BOINC](https://boinc.berkeley.edu/)
 * Install [Gridcoin](http://gridcoin.us/)
 * Matlab
+    * Login into the [mathworks](http://www.mathworks.com/index.html?s_tid=gn_logo) using GWU account
+    * Download latest release
 * Anaconda3
     1. Modify LaTeXTools Python path
 * [myrepos](https://myrepos.branchable.com)
