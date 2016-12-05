@@ -25,7 +25,7 @@
     * Start Sublime first before cloning settings
     * Install [Package Control](https://packagecontrol.io/installation)
     * Clone [Sublime-Settings](https://github.com/skulumani/sublime_settings) to `~/.config/sublime-text-3/Packages/User/setup_repo.sh`
-    
+    * Ensure you download the `python-dbus` package to allow for syncing
 
 ## Jabref setup
 
