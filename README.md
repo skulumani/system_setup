@@ -91,3 +91,7 @@ texmf tree
 Sublime editor
 Google Drive library
 Jabref
+
+## Xfce setup
+
+for the time use this %a %b %e %Y %T
