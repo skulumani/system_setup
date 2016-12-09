@@ -68,7 +68,7 @@
     ```
 ## Dot files
 
-* Copy `gitconfig.md` to `~/.gitconfig`
+* Copy `gitconfig.md` to `~/.gitconfig` also `gitignore_global.md` to `~/.gitignore_global`
 * .profile
 * .bashrc
 * .mrconfig

@@ -6,12 +6,6 @@
 	excludesfile = /Users/shankar/.gitignore_global
 	editor = subl -w
 	filemode = false
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
 [credential]
 	helper = osxkeychain
 [push]
