@@ -49,11 +49,24 @@
     sudo apt-get update
     sudo apt-get install golang
     ~~~
+    2. Set `$GOPATH` by adding the following to `~/.bashrc`
+    
+        First make a new directory - `mkdir ~/.go` then:
+
+        ~~~
+        export GOPATH=$HOME/.go
+        export PATH=$PATH:$GOPATH/bin
+        ~~~
     2. Install [drive](https://github.com/odeke-em/drive/blob/master/platform_packages.md): 
     ~~~
-    sudo add-apt-repository ppa:twodopeshaggy/drive
-    sudo apt-get update
-    sudo apt-get install drive
+    go get -u github.com/odeke-em/drive/cmd/drive
+    go get github.com/odeke-em/drive/drive-gen && drive-gen
+    ~~~
+    4. In case of `panic: invalid page type:` errors follow this [link](https://github.com/odeke-em/drive/wiki/Boltdb-breaks-drive-with-(panic:-invalid-page-type:)-or-(panic:--above-high-water-mark))
+    
+    ~~~
+    $ cd $GOPATH/src/github.com/boltdb/bolt && git reset --hard 852d3024fa8d89dcc9a715bab6f4dcd7d59577dd
+    $ drive-gen
     ~~~
     3. `drive init` in a specific folder. 
     Make sure you're logged into `skulumani@gwmail.gwu.edu`
