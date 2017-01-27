@@ -116,14 +116,12 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# added by Anaconda3 4.2.0 installer
-export PATH="/home/shankar/anaconda3/bin:$PATH"
+# Set EDITOR use by ROS
+export EDITOR='subl -w'
 
 export GOPATH=$HOME/.go
 export PATH=$PATH:$GOPATH/bin
-# Anaconda tab-complete
-# run conda install argcomplete after installation
-eval "$(register-python-argcomplete conda)"
+
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 source /opt/ros/kinetic/setup.bash
 source /opt/ros/kinetic/setup.bash
