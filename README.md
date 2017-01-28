@@ -79,6 +79,12 @@
     system=false
     users=
     ```
+* [Terminator](https://gnometerminator.blogspot.com/p/introduction.html)
+    ~~~
+    sudo add-apt-repository ppa:gnome-terminator
+    sudo apt-get update
+    sudo apt-get install terminator
+    ~~~
 ## Dot files
 
 * Copy `gitconfig.md` to `~/.gitconfig` also `gitignore_global.md` to `~/.gitignore_global`
