@@ -118,15 +118,23 @@ fi
 
 # Set EDITOR use by ROS
 export EDITOR='subl -w'
+source /opt/ros/kinetic/setup.bash
+source /opt/ros/kinetic/setup.bash
 
+# Go path for drive utility
 export GOPATH=$HOME/.go
 export PATH=$PATH:$GOPATH/bin
 
+# path for RVM for jekyll website
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-source /opt/ros/kinetic/setup.bash
-source /opt/ros/kinetic/setup.bash
 
 # Add user directory for pip installs
 export PATH="$PATH:$HOME/.local/bin"
 
+# fancy terminal coloring
 export PS1='\[\033[0;35m\]\u@\h\[\033[0;33m\] \W\[\033[00m\]> '
+
+# Add TeXLive to PATH
+export PATH=/usr/local/texlive/2016/bin/x86_64-linux:$PATH
+export MANPATH=/usr/local/texlive/2016/texmf-dist/doc/man:$MANPATH
+export INFOPATH=/usr/local/texlive/2016/texmf-dist/doc/info:$INFOPATH
