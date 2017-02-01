@@ -138,3 +138,6 @@ export PS1='\[\033[0;35m\]\u@\h\[\033[0;33m\] \W\[\033[00m\]> '
 export PATH=/usr/local/texlive/2016/bin/x86_64-linux:$PATH
 export MANPATH=/usr/local/texlive/2016/texmf-dist/doc/man:$MANPATH
 export INFOPATH=/usr/local/texlive/2016/texmf-dist/doc/info:$INFOPATH
+
+# added by Anaconda3 4.3.0 installer
+export PATH="/home/shankar/anaconda3/bin:$PATH"
