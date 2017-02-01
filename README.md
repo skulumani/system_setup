@@ -31,6 +31,7 @@
     * Download latest release
 * [Anaconda3](https://www.continuum.io/downloads#linux)
     1. Modify LaTeXTools Python path
+    2. You can turn on/off Anaconda by modifying the path in `.bashrc`
 * [myrepos](https://myrepos.branchable.com)
     ~~~~
     sudo apt-get install myrepos
