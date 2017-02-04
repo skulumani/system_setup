@@ -28,3 +28,12 @@ for file in $files; do
     echo "Now source $file"
     source ~/$file
 done
+
+# now copy the ipython configuration files
+echo "Now backin up Ipython profile "
+mv ~/.ipython/profile_default/ipython_config.py ~/.ipython/profile_default/ipython_config.py.bak
+
+echo "Creating symlink to Ipython profile"
+ln -s $dir/ipython_config.py ~/.ipython/profile_default/ipython_config.py
+
+echo "All done"
