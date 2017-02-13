@@ -28,7 +28,9 @@
     * Ensure you download the `python-dbus` package to allow for syncing
 
 ## Jabref setup
-
+* Install [JabRef](http://www.jabref.org/) by downloading the latest version and copying to `/opt/jabref`
+    * [Github Link](https://github.com/JabRef/jabref/releases/latest)
+* Setup an application shortcut by running `setup_jabref_shortcut.sh`
 * Setup Google Drive and download `home/shankar/Drive/docs/technical_papers/bibdesk_papers`
     * Set the main file directory in Jabref Options > Preferences > Main File directory to wherever the Google drive PDFs are located
 * Install `renameplugin` Go to Tools > Manage Plugins > Install Plugin
