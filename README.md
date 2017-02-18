@@ -29,9 +29,13 @@
     ~~~
     6. On remote computer 
     ~~~
-    sudo wget -O /usr/local/bin/rsub https://raw.github.com/aurora/rmate/master/rmate
-    sudo chmod +x /usr/local/bin/rsub
+    wget -O ~/bin/rsub https://raw.github.com/aurora/rmate/master/rmate
+    chmod +x ~/bin/rsub
     rsub ~/my_project/my_file.html
+    ~~~
+    7. Add path to `~/bin` to path in `.bashrc`
+    ~~~
+    export PATH="/home/skulumani/bin:$PATH"
     ~~~
 * Install [BOINC](https://boinc.berkeley.edu/)
 * Install [Gridcoin](http://gridcoin.us/)
