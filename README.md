@@ -23,7 +23,16 @@
     ~~~
     cat ~/.ssh/id_rsa.pub
     ~~~
-
+    5. To use `rsub` for remote sublime
+    ~~~
+    ln -s $(pwd)/config ~/.ssh/config
+    ~~~
+    6. On remote computer 
+    ~~~
+    sudo wget -O /usr/local/bin/rsub https://raw.github.com/aurora/rmate/master/rmate
+    sudo chmod +x /usr/local/bin/rsub
+    rsub ~/my_project/my_file.html
+    ~~~
 * Install [BOINC](https://boinc.berkeley.edu/)
 * Install [Gridcoin](http://gridcoin.us/)
 * Matlab
