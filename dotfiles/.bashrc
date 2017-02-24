@@ -119,7 +119,6 @@ fi
 # # Set EDITOR use by ROS
 # export EDITOR='subl -w'
 # source /opt/ros/kinetic/setup.bash
-# source /opt/ros/kinetic/setup.bash
 
 # Go path for drive utility
 export GOPATH=$HOME/.go
