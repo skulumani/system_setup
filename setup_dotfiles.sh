@@ -4,7 +4,7 @@
 
 dir=$(pwd)/dotfiles                   # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files=".bashrc"        # list of files/folders to symlink in homedir
+files=".bashrc .gitconfig .gitignore_global"      # list of files/folders to symlink in homedir
 
 ##########
 
@@ -25,12 +25,12 @@ for file in $files; do
     echo "Creating symlink to $file in home directory."
     ln -s $dir/$file ~/$file
 
-    echo "Now source $file"
-    source ~/$file
+    # echo "Now source $file"
+    # source ~/$file
 done
 
 # now copy the ipython configuration files
-echo "Now backin up Ipython profile "
+echo "Now backing up Ipython profile "
 mv ~/.ipython/profile_default/ipython_config.py ~/.ipython/profile_default/ipython_config.py.bak
 
 echo "Creating symlink to Ipython profile"

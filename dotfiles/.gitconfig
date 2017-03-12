@@ -1,17 +1,17 @@
 [user]
-	email = shanks.k@gmail.com
-	name = Shankar Kulumani
-	signingkey = 95F19D10666A332D
+    email = shanks.k@gmail.com
+    name = Shankar Kulumani
+    signingkey = 95F19D10666A332D
 [core]
-	excludesfile = /Users/shankar/.gitignore_global
-	editor = subl -w
-	filemode = false
+    excludesfile = /Users/shankar/.gitignore_global
+    editor = subl -w
+    filemode = false
 [credential]
-	helper = osxkeychain
+    helper = osxkeychain
 [push]
-	default = simple
+    default = simple
 [commit]
-	gpgsign = false
+    gpgsign = false
 [alias]
     lg = !"git lg1"
     lg1 = !"git lg1-specific --all"
@@ -21,3 +21,17 @@
     lg1-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'
     lg2-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
     lg3-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset) %C(bold cyan)(committed: %cD)%C(reset) %C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset)%n''          %C(dim white)- %an <%ae> %C(reset) %C(dim white)(committer: %cn <%ce>)%C(reset)'
+    st = status
+    di = diff
+    co = checkout
+    ci = checkin
+    sh = show
+    su = submodule update
+    f  = fetch
+    up = pull
+    rb = rebase
+    br = branch
+    db = branch -D
+    rom = rebase origin/master
+    staged = diff --cached
+    p = add --patch
