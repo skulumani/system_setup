@@ -45,7 +45,7 @@ fi
 
 # Send a message using Signal-cli to a number
 signal-send () {
-    if [ -z "$1"]; then
+    if [ -z "$1" ]; then
         echo "Usage: signal-send +16215551234 "message" "
     else
         signal-cli -u +16305579049 send -m "$2" "$1"
