@@ -4,7 +4,7 @@
 
 dir=$(pwd)/dotfiles                   # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files=".bashrc .gitconfig .gitignore_global"      # list of files/folders to symlink in homedir
+files=".bashrc .gitconfig .gitignore_global .bash_aliases"      # list of files/folders to symlink in homedir
 
 ##########
 
