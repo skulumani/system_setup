@@ -51,3 +51,11 @@ signal-send () {
         signal-cli -u +16305579049 send -m "$2" "$1"
     fi
 }
+
+signal-receive () {
+    if [ -z "$1" ]; then
+        echo "Usage: signal-recieve"
+    else
+        signal-cli -u +16305579049 receive
+    fi
+}
