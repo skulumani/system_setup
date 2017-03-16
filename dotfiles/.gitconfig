@@ -35,3 +35,4 @@
     rom = rebase origin/master
     staged = diff --cached
     p = add --patch
+    update = "!git pull && git submodule update --init --recursive"
