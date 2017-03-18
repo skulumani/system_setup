@@ -26,6 +26,9 @@
     * Install [Package Control](https://packagecontrol.io/installation)
     * Clone [Sublime-Settings](https://github.com/skulumani/sublime_settings) to `~/.config/sublime-text-3/Packages/User/setup_repo.sh`
     * Ensure you download the `python-dbus` package to allow for syncing
+    * [rsub] setup:
+         * curl -Lo ~/bin/rsub https://raw.githubusercontent.com/textmate/rmate/master/bin/rmate
+         * chmod a+x ~/bin/rsub
 
 ## Jabref setup
 * Install [JabRef](http://www.jabref.org/) by downloading the latest version and copying to `/opt/jabref`

@@ -55,3 +55,10 @@ signal-send () {
 signal-receive () {
     signal-cli -u +16305579049 receive
 }
+
+# Allow for Sublime and rsub to work correctly
+if [ -z "$SSH_CLIENT" ]; then
+	export EDITOR="subl"
+else
+	export EDITOR="rsub"
+fi

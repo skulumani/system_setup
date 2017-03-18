@@ -138,5 +138,9 @@ export PATH=/usr/local/texlive/2016/bin/x86_64-linux:$PATH
 export MANPATH=/usr/local/texlive/2016/texmf-dist/doc/man:$MANPATH
 export INFOPATH=/usr/local/texlive/2016/texmf-dist/doc/info:$INFOPATH
 
+# Add rsub path for remote sublime text
+export PATH="$HOME/bin:$PATH"
+
 # added by Anaconda3 4.3.0 installer
 export PATH="/home/shankar/anaconda3/bin:$PATH"
+
