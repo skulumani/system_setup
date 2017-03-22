@@ -3,3 +3,11 @@ jobs = 5
 git_gc = git gc "$@"
 git_pushall = git push --all "$@"
 
+[.config/sublime-text-3/Packages/User]
+checkout = git clone 'git@github.com:skulumani/sublime_settings.git' 'User'
+
+[Documents/system_setup]
+checkout = git clone 'git@github.com:skulumani/system_setup.git' 'system_setup'
+
+[texmf]
+checkout = git clone 'git@github.com:skulumani/texmf.git' 'texmf'
