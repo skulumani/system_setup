@@ -1,0 +1,5 @@
+# setup a tmux window for iPython
+selectp -t 0
+splitw -h -p 50 
+
+selectp -t 0 'ipython' 
