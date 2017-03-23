@@ -17,8 +17,6 @@
     ~/.gitignore_global: .gitignore_global
     ~/.mrconfig: .mrconfig
     ~/.profile: .profile
-    ~/.config/sublime-text-3/Packages/User: ./sublime_settings
-    ~/texmf: ./texmf
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
