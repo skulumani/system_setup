@@ -21,7 +21,7 @@
         * `adduid` - Type name, email, and comment then type `O`
         * `save` - save the key
 
-        Quick'n easy gpg cheatsheet
+## Quick'n easy gpg cheatsheet
 
 If you found this page, hopefully it's what you were looking for. It's just a brief explanation of some of the command line functionality from gnu privacy guard (gpg). Please email me if you find any errors ( scout3801@gmail.com ).
 

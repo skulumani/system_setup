@@ -58,19 +58,14 @@
     `sudo apt-get install myrepos`
 
 * [Google Drive for Linux](https://github.com/odeke-em/drive)
-    1. Install [go](https://github.com/golang/go/wiki/Ubuntu):
+    1. Install [go](https://golang.org/doc/install):
     ~~~
-    sudo apt-get update
-    sudo apt-get install golang
+    tar -C /usr/local -xzf go$VERSION.$OS-$ARCH.tar.gz
     ~~~
-    2. Set `$GOPATH` by adding the following to `~/.bashrc`
-    
-        First make a new directory - `mkdir ~/.go` then:
-
-        ~~~
-        export GOPATH=$HOME/.go
-        export PATH=$PATH:$GOPATH/bin
-        ~~~
+    2. Add `go` to the PATH by adding the following to `.profile`
+    ~~~
+    export PATH=$PATH:/usr/local/go/bin
+    ~~~
     2. Install [drive](https://github.com/odeke-em/drive/blob/master/platform_packages.md): 
     ~~~
     go get -u github.com/odeke-em/drive/cmd/drive
@@ -87,12 +82,12 @@
 * [Redshift](http://jonls.dk/redshift/)
   * `sudo apt-get install redshift-gtk`
   * Add some configuration options to `/etc/geoclue/geoclue.conf`
-    ```
+    ~~~
     [redshift]
     allowed=true
     system=false
     users=
-    ```
+    ~~~
 * [Terminator](https://gnometerminator.blogspot.com/p/introduction.html)
     ~~~
     sudo add-apt-repository ppa:gnome-terminator
@@ -101,13 +96,8 @@
     ~~~
 ## Dot files
 
-* Copy `gitconfig.md` to `~/.gitconfig` also `gitignore_global.md` to `~/.gitignore_global`
-* .profile
-* .bashrc
-* .mrconfig
-* .driverc
-
-Write a bash script to add automatic symbolic links
+There is a handy `setup_dotfiles.sh` script that will symlink all the dotfiles to
+the home directory.
 
 ## [GPG setup](./gpg.md)
 
@@ -127,7 +117,7 @@ Jabref
 
 ## Xfce setup
 
-for the time use this %a %b %e %Y %T
+For the time use this `%a %b %e %Y %T`
 
 ## Jekyll for website development
 
