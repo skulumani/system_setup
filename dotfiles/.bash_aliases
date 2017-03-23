@@ -62,3 +62,17 @@ if [ -z "$SSH_CLIENT" ]; then
 else
 	export EDITOR="rsub"
 fi
+
+epstopdf_dir () {
+    # run epstopdf on files in desired directory
+    if [ -z "$1" ]; then
+        echo "Usage: epstopdf_dir ~/path/to/dir "
+    else
+        echo "Running epstopdf on files in "$1" "    
+        for file in "$1"/*.eps
+        do
+            echo "Converting "$file" "
+            epstopdf $file
+        done
+    fi
+}
