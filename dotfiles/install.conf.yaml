@@ -17,6 +17,7 @@
     ~/.gitignore_global: .gitignore_global
     ~/.mrconfig: .mrconfig
     ~/.profile: .profile
-
+    ~/bin: bin
+    
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

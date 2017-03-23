@@ -141,6 +141,9 @@ export INFOPATH=/usr/local/texlive/2016/texmf-dist/doc/info:$INFOPATH
 # Add rsub path for remote sublime text
 export PATH="$HOME/bin:$PATH"
 
+# Add path for signal-cli
+export PATH="$HOME/bin/signal-cli-0.5.5/bin:$PATH"
+
 # added by Anaconda3 4.3.0 installer
 export PATH="/home/shankar/anaconda3/bin:$PATH"
 
