@@ -1,6 +1,0 @@
-[Desktop Entry]
-Type=Application
-Terminal=false
-Icon=/opt/jabref/jabRef.png
-Exec=java -jar /opt/jabref/JabRef-3.8.2.jar
-Name=JabRef

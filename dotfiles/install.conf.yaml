@@ -18,6 +18,7 @@
     ~/.mrconfig: .mrconfig
     ~/.profile: .profile
     ~/bin: bin
+    ~/.local/share/applications/JabRef.desktop: JabRef.desktop
     
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
