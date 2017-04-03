@@ -20,6 +20,7 @@
     ~/bin: bin
     ~/.local/share/applications/JabRef.desktop: JabRef.desktop
     ~/.vim: .vim
-    
+    ~/.xmodmap: .xmodmap
+
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
