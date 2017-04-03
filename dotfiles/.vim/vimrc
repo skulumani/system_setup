@@ -1,0 +1,14 @@
+set nocompatible
+
+filetype plugin indent on
+syntax on
+
+set autoindent
+set expandtab
+set softtabstop =4
+set shiftwidth =4
+set shiftround
+
+set backspace =indent,eol,start
+set hidden
+set laststatus =2

@@ -19,6 +19,7 @@
     ~/.profile: .profile
     ~/bin: bin
     ~/.local/share/applications/JabRef.desktop: JabRef.desktop
+    ~/.vim: .vim
     
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
