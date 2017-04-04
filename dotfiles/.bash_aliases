@@ -1,4 +1,5 @@
 alias cs='cd;ls'
+alias vim='vim --servername vim'
 
 # create and move to new directory
 mcd () {
