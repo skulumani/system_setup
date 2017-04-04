@@ -90,9 +90,31 @@
     ~~~
 ## Dot files
 
-There is a handy `setup_dotfiles.sh` script that will symlink all the dotfiles to
-the home directory.
+All the dotfiles live in the `dotfiles/` directory.
+You can go into `dotfiles/` and modify the `install.conf.yml` file which defines the symbolic 
+links that should be created. 
+After defining the links desired, you can then run `./install`
 
+### TMUX Plugins
+The plugin manager `tpm` lives inside `.tmux/plugins/tpm`. 
+This manager will automatically clone any other plugins into the appropriate location.
+
+To add a plugin, add the following to the bottom of `.tmux.conf`
+~~~
+# set -g @plugin 'github_username/plugin_name'
+# set -g @plugin 'git@github.com/user/plugin'
+# set -g @plugin 'git@bitbucket.com/user/plugin'
+~~~
+
+From within `tmux` then just run `prefix + r` to reload the configuration file, followed by
+`prefix + I` (`Ctrl-A then Shift I`)
+
+To uninstall a plugin `prefix + alt + u`
+To update plugins `prefix + U`
+
+### Vim plugins
+
+Discuss how to install and load more plugins
 ## [GPG setup](./gpg.md)
 
 * Import GPG key from Lastpass into the system key store
