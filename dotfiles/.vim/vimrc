@@ -1,7 +1,8 @@
+" no vi compatibility
 set nocompatible
 
-filetype plugin indent on
-syntax on
+" filetype func off
+filetype off 
 
 set autoindent
 set expandtab
@@ -12,3 +13,23 @@ set shiftround
 set backspace =indent,eol,start
 set hidden
 set laststatus =2
+
+" initialize vundle
+set rtp+=~/.vim/bundle/Vundle.vim
+
+call vundle#begin()
+" All the plugins are listed here
+Plugin 'VundleVim/Vundle.vim'
+
+" start all the plugins above
+call vundle#end()
+
+" filetype func on
+filetype plugin indent on
+
+" Solarized dark
+" syntax enable
+" set background=dark
+" colorscheme solarized
+
+
