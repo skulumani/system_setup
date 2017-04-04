@@ -20,6 +20,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " All the plugins are listed here
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'altercation/vim-colors-solarized'
 
 " start all the plugins above
 call vundle#end()
@@ -28,8 +29,8 @@ call vundle#end()
 filetype plugin indent on
 
 " Solarized dark
-" syntax enable
-" set background=dark
-" colorscheme solarized
+syntax enable
+set background=dark
+colorscheme solarized
 
 
