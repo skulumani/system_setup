@@ -1,6 +1,7 @@
 alias cs='cd;ls'
 # alias vim='vim --servername vim'
 
+alias jabref='java -jar $HOME/bin/Jabref-*.jar'
 # create and move to new directory
 mcd () {
     mkdir -p $1
