@@ -14,6 +14,8 @@ set backspace =indent,eol,start
 set hidden
 set laststatus =2
 
+" Set linenumbers
+set number
 " initialize vundle
 set rtp+=~/.vim/bundle/Vundle.vim
 
