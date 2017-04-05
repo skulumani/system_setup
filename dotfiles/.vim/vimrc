@@ -18,6 +18,12 @@ set laststatus =2
 set number
 set relativenumber
 
+" Nerdtree hotkey to C-n
+autocmd vimenter * NERDTree
+map <C-n> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd VimEnter * NERDTree
+autocmd VimEnter * wincmd p
 " Use ctags
 command! MakeTags !ctags -R .
 
@@ -45,5 +51,4 @@ filetype plugin indent on
 syntax enable
 set background=dark
 colorscheme solarized
-
 
