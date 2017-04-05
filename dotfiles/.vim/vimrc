@@ -16,6 +16,8 @@ set laststatus =2
 
 " Set linenumbers
 set number
+set relativenumber
+
 " initialize vundle
 set rtp+=~/.vim/bundle/Vundle.vim
 
