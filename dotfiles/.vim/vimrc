@@ -18,6 +18,13 @@ set laststatus =2
 set number
 set relativenumber
 
+" Use ctags
+command! MakeTags !ctags -R .
+
+" finding files in vim
+set path+=**
+set wildmenu
+
 " initialize vundle
 set rtp+=~/.vim/bundle/Vundle.vim
 
@@ -26,6 +33,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'lervag/vimtex'
+Plugin 'scrooloose/nerdtree'
 
 " start all the plugins above
 call vundle#end()
