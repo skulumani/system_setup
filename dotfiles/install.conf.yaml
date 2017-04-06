@@ -22,6 +22,8 @@
     ~/.vim: .vim
     ~/.xmodmap: .xmodmap
     ~/.zshrc: .zshrc
-    ~/.path: .path   
+    ~/.path: .path
+    ~/texmf: texmf
+
 - shell:
   - [git submodule update --init --recursive --remote, Updating submodules]
