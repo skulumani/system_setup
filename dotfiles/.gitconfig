@@ -4,7 +4,7 @@
     signingkey = 95F19D10666A332D
 [core]
     excludesfile = /Users/shankar/.gitignore_global
-    editor = subl -w
+    editor = vim 
     filemode = false
 [credential]
     helper = osxkeychain
