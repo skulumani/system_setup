@@ -21,9 +21,10 @@
     ~/.local/share/applications/JabRef.desktop: JabRef.desktop
     ~/.vim: .vim
     ~/.xmodmap: .xmodmap
+    ~/.xinitrc: .xinitrc 
     ~/.zshrc: .zshrc
     ~/.path: .path
     ~/texmf: texmf
-
+    
 - shell:
   - [git submodule update --init --recursive --remote, Updating submodules]
