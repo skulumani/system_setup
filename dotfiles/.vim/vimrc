@@ -31,6 +31,10 @@ command! MakeTags !ctags -R .
 set path+=**
 set wildmenu
 
+" Options for vimtex
+let g:latex_view_general_viewer = "zathura"
+let g:vimtex_view_method = "zathura"
+
 " initialize vundle
 set rtp+=~/.vim/bundle/Vundle.vim
 
