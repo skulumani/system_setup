@@ -96,6 +96,6 @@ if [ -f ~/.path ]; then
 fi
 
 # swap caps lock and escape
-if [ -f ~/.xmodmap ]; then
-    xmodmap ~/.xmodmap
-fi
+# if [ -f ~/.xmodmap ]; then
+#     xmodmap ~/.xmodmap
+# fi
