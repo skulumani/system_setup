@@ -29,7 +29,10 @@
     * [rsub] setup:
          * curl -Lo ~/bin/rsub https://raw.githubusercontent.com/textmate/rmate/master/bin/rmate
          * chmod a+x ~/bin/rsub
-
+* Latex in Vim [tutorial](https://wikimatze.de/vimtex-the-perfect-tool-for-working-with-tex-and-vim/)
+~~~
+sudo apt-get install zathura zathura-dev xdotool
+~~~
 ## Jabref setup
 * Install [JabRef](http://www.jabref.org/) by downloading the latest version and copying to `/opt/jabref`
     * [Github Link](https://github.com/JabRef/jabref/releases/latest)
