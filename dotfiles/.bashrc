@@ -88,10 +88,6 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
@@ -120,30 +116,7 @@ fi
 # export EDITOR='subl -w'
 # source /opt/ros/kinetic/setup.bash
 
-# Go path for drive utility
-export GOPATH=$HOME/.go
-export PATH=$PATH:$GOPATH/bin
-
-# path for RVM for jekyll website
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
-# Add user directory for pip installs
-export PATH="$PATH:$HOME/.local/bin"
-
-# fancy terminal coloring
-export PS1='\[\033[0;35m\]\u@\h\[\033[0;33m\] \W\[\033[00m\]> '
-
-# Add TeXLive to PATH
-export PATH=/usr/local/texlive/2016/bin/x86_64-linux:$PATH
-export MANPATH=/usr/local/texlive/2016/texmf-dist/doc/man:$MANPATH
-export INFOPATH=/usr/local/texlive/2016/texmf-dist/doc/info:$INFOPATH
-
-# Add rsub path for remote sublime text
-export PATH="$HOME/bin:$PATH"
-
-# Add path for signal-cli
-export PATH="$HOME/bin/signal-cli-0.5.5/bin:$PATH"
-
-# added by Anaconda3 4.3.0 installer
-export PATH="/home/shankar/anaconda3/bin:$PATH"
-
+# source all of the PATH information
+if [ -f ~/.path ]; then
+    source ~/.path
+fi

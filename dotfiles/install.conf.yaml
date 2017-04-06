@@ -22,6 +22,6 @@
     ~/.vim: .vim
     ~/.xmodmap: .xmodmap
     ~/.zshrc: .zshrc
-    
+    ~/.path: .path   
 - shell:
-  - [git submodule update --init --recursive, Installing submodules]
+  - [git submodule update --init --recursive --remote, Updating submodules]

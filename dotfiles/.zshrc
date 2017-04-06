@@ -85,3 +85,8 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # Load my personal bash aliases
 source $HOME/.bash_aliases
+
+# source all the PATH information
+if [ -f ~/.path ]; then
+    source ~/.path
+fi
