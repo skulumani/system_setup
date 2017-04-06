@@ -5,6 +5,7 @@ set nocompatible
 filetype off 
 
 set autoindent
+" use 4 spaces for tabs
 set expandtab
 set softtabstop =4
 set shiftwidth =4
