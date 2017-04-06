@@ -90,3 +90,8 @@ source $HOME/.bash_aliases
 if [ -f ~/.path ]; then
     source ~/.path
 fi
+
+# swap caps lock and escape
+if [ -f ~/.xmodmap ]; then
+    xmodmap ~/.xmodmap
+fi
