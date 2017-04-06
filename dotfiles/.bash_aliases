@@ -1,3 +1,7 @@
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
 alias cs='cd;ls'
 # alias vim='vim --servername vim'
 
