@@ -124,8 +124,23 @@ To uninstall a plugin `prefix + alt + u`
 To update plugins `prefix + U`
 
 ### Vim plugins
+~~~
+sudo apt-get install vim-gtk zathura zathura-dev xdotool
+~~~
 
-Discuss how to install and load more plugins
+### `ctag` help
+
+Run `:MakeTags` inside vim to generate all the tags for the current directory.
+Then use one of the following:
+* `Ctrl-]` to jump to tag under cursor
+* `g-Ctrl-]` for ambiguous tag
+* `Ctrl-t` to jump back up the tag stack
+
+### Plugins
+
+The `vimrc` is already setup to find the plugins. 
+On a new system just run `:PluginInstall` to install new plugins.
+
 ## [GPG setup](./gpg.md)
 
 * Import GPG key from Lastpass into the system key store
