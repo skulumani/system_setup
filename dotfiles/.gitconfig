@@ -3,7 +3,7 @@
     name = Shankar Kulumani
     signingkey = 95F19D10666A332D
 [core]
-    excludesfile = /Users/shankar/.gitignore_global
+    excludesfile = ~/.gitignore_global
     editor = vim 
     filemode = false
 [credential]
