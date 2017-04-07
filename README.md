@@ -141,6 +141,13 @@ Then use one of the following:
 The `vimrc` is already setup to find the plugins. 
 On a new system just run `:PluginInstall` to install new plugins.
 
+### Swapping Caps_Lock to Escape
+
+There's already a `.xmodmap` file that is supposed to swap caps_lock and escape. 
+If the autostart functionality doesn't work, as highlited [here](https://wiki.xfce.org/faq), then try to use the following command to determine the keys and remap them
+~~~
+xev | grep -A2 --line-buffered '^KeyRelease' | sed -n '/keycode /s/^.*keycode \([0-9]*\).* (.*, \(.*\)).*$/\1 \2/p'
+~~~
 ## [GPG setup](./gpg.md)
 
 * Import GPG key from Lastpass into the system key store
