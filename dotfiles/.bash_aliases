@@ -12,6 +12,9 @@ mcd () {
     cd $1
 }
 
+# alias to swap escape and capslock
+alias swap_caps_escape='setxkbmap -option "caps:swapescape"'
+
 # From https://github.com/xvoland/Extract/blob/master/extract.sh
 function extract {
  if [ -z "$1" ]; then
