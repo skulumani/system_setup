@@ -1,6 +1,7 @@
 [submodule "dotfiles/dotbot"]
 	path = dotfiles/dotbot
-	url = https://github.com/anishathalye/dotbot
+        url = https://github.com/anishathalye/dotbot
+        ignore = dirty
 [submodule "dotfiles/sublime_settings"]
 	path = dotfiles/sublime_settings
 	url = https://github.com/skulumani/sublime_settings.git
@@ -12,4 +13,5 @@
 	url = https://github.com/VundleVim/Vundle.vim.git
 [submodule "dotfiles/.tmux/plugins/tpm"]
 	path = dotfiles/.tmux/plugins/tpm
-	url = https://github.com/tmux-plugins/tpm.git
+        url = https://github.com/tmux-plugins/tpm.git
+        ignore = dirty
