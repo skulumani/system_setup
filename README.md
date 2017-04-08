@@ -135,6 +135,13 @@ Then use one of the following:
 * `Ctrl-]` to jump to tag under cursor
 * `g-Ctrl-]` for ambiguous tag
 * `Ctrl-t` to jump back up the tag stack
+### Autocomplete for vim
+
+Just type `Ctrl-n` for autocomplete then `Ctrl-n` or `Ctrl-p` to go forward and backward.
+
+You can autocomplete filenames using `Ctrl-x` then `Ctrl-f`.
+
+Look at `:help ins-completion` for extra help.
 
 ### Plugins
 
