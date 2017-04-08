@@ -57,10 +57,11 @@ call vundle#end()
 filetype plugin indent on
 
 " Solarized dark
+set t_Co=256
 syntax enable
 set background=dark
 colorscheme solarized
-set t_Co=16
+
 
 " vim-airline theme
 let g:airline_theme='solarized'
