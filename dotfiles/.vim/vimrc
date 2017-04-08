@@ -46,6 +46,9 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'lervag/vimtex'
 Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-sensible'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 " start all the plugins above
 call vundle#end()
@@ -58,3 +61,8 @@ syntax enable
 set background=dark
 colorscheme solarized
 set t_Co=16
+
+" vim-airline theme
+let g:airline_theme='solarized'
+let g:airline#extensions#tabline#enabled = 1
+
