@@ -95,7 +95,5 @@ if [ -f ~/.path ]; then
     source ~/.path
 fi
 
-# swap caps lock and escape
-# if [ -f ~/.xmodmap ]; then
-#     xmodmap ~/.xmodmap
-# fi
+# Set 256 colors for the terminal
+export TERM=xterm-256color
