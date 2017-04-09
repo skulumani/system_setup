@@ -23,6 +23,7 @@
     ~/.zshrc: .zshrc
     ~/.path: .path
     ~/texmf: texmf
-    
+    ~/.latexmkrc: .latexmkrc
+
 - shell:
   - [git submodule update --init --recursive --remote, Updating submodules]
