@@ -120,3 +120,9 @@ fi
 if [ -f ~/.path ]; then
     source ~/.path
 fi
+
+# Add powerline status
+if [ -f ~/anaconda3/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh ]; then 
+    source ~/anaconda3/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh
+fi
+
