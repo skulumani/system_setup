@@ -100,6 +100,6 @@ export TERM=xterm-256color
 
 # setup for powerline
 #if [ -f ~/anaconda3/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh ]; then 
-#    source ~/anaconda3/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh
+#    source ~/anaconda4/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh
 #fi
 
