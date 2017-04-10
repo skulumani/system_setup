@@ -19,6 +19,9 @@ set laststatus =2
 set number
 set relativenumber
 
+" column ruler at 100
+set colorcolumn=100
+
 " Nerdtree hotkey to C-n
 autocmd vimenter * NERDTree
 map <C-n> :NERDTreeToggle<CR>
