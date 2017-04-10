@@ -566,3 +566,8 @@ c.InteractiveShellApp.extensions = ['autoreload']
 ## If True, any %store-d variables will be automatically restored when IPython
 #  starts.
 #c.StoreMagics.autorestore = False
+
+from powerline.bindings.ipython.since_5 import PowerlinePrompts
+c = get_config()
+c.TerminalInteractiveShell.simple_prompt = False
+c.TerminalInteractiveShell.prompts_class = PowerlinePrompts
