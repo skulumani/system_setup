@@ -155,6 +155,17 @@ If the autostart functionality doesn't work, as highlited [here](https://wiki.xf
 ~~~
 xev | grep -A2 --line-buffered '^KeyRelease' | sed -n '/keycode /s/^.*keycode \([0-9]*\).* (.*, \(.*\)).*$/\1 \2/p'
 ~~~
+## `powerline` status line installation steps
+
+1. Install using `pip`: hopefully pip was already installed using `conda`
+~~~
+pip install powerline-status
+~~~
+2. Add fonts to the system
+~~~
+fc-cache -vf ~/.fonts
+~~~
+3. The configs are already setup. Just need to reload after installing dotfiles
 ## [GPG setup](./gpg.md)
 
 * Import GPG key from Lastpass into the system key store
