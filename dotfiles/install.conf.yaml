@@ -25,7 +25,7 @@
     ~/texmf: texmf
     ~/.latexmkrc: .latexmkrc
     ~/.fonts: .fonts
-    ~/.config/fontconfig: fontconfig
+    ~/.config/fontconfig: .config/fontconfig
     ~/.ipython/profile_default/ipython_config.py: ipython_config.py
     ~/.config/powerline: .config/powerline
     
