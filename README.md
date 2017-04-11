@@ -159,7 +159,7 @@ xev | grep -A2 --line-buffered '^KeyRelease' | sed -n '/keycode /s/^.*keycode \(
 
 1. Install using `pip`: hopefully pip was already installed using `conda`
 ~~~
-pip install powerline-status
+pip install powerline-status powerline-gitstatus
 ~~~
 2. Add fonts to the system
 ~~~
