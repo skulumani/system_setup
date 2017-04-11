@@ -23,11 +23,11 @@ set relativenumber
 set colorcolumn=100
 
 " Nerdtree hotkey to C-n
-autocmd vimenter * NERDTree
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-autocmd VimEnter * NERDTree
-autocmd VimEnter * wincmd p
+" This two lines will automatically open Nerdtree on startup
+" autocmd VimEnter * NERDTree
+" autocmd VimEnter * wincmd p
 " Use ctags
 command! MakeTags !ctags -R .
 
