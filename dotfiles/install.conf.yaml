@@ -27,6 +27,7 @@
     ~/.fonts: .fonts
     ~/.config/fontconfig: fontconfig
     ~/.ipython/profile_default/ipython_config.py: ipython_config.py
-
+    ~/.config/powerline: .config/powerline
+    
 - shell:
   - [git submodule update --init --recursive --remote, Updating submodules]
