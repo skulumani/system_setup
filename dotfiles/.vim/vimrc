@@ -19,6 +19,18 @@ set laststatus =2
 set number
 set relativenumber
 
+" column ruler at 100
+set colorcolumn=100
+
+" finding files in vim
+set path+=**
+set wildchar=<Tab> wildmenu wildmode=full
+
+" Highlight searching
+set incsearch
+set showmatch
+set hlsearch
+
 " Buffer tab completion
 function! BufSel(pattern)
   let bufcount = bufnr("$")
@@ -48,10 +60,14 @@ function! BufSel(pattern)
   endif
 endfunction
 
+if has("autocmd")
+    augroup vimrc 
+        autocmd! BufWritePost $MYVIMRC source $MYVIMRC | echom "Reloaded " . $MYVIMRC | redraw
+    augroup END
+endif
+
 "Bind the BufSel() function to a user-command
 command! -nargs=1 Bs :call BufSel("<args>")
-" column ruler at 100
-set colorcolumn=100
 
 " Nerdtree hotkey to C-n
 map <C-n> :NERDTreeToggle<CR>
@@ -62,10 +78,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " Use ctags
 command! MakeTags !ctags -R .
 
-" finding files in vim
-set path+=**
-set wildchar=<Tab> wildmenu wildmode=full
-
+" PLUGINS-----------------------------------------------------------------------------
 " initialize vundle
 set rtp+=~/.vim/bundle/Vundle.vim
 
