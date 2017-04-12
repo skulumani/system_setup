@@ -30,6 +30,8 @@ set wildchar=<Tab> wildmenu wildmode=full
 set incsearch
 set showmatch
 set hlsearch
+" Press Space to turn off highlighting and clear any message already displayed.
+nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
 " Buffer tab completion
 function! BufSel(pattern)
