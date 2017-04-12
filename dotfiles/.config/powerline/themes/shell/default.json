@@ -36,15 +36,11 @@
 						"priority": 20
 					},
 					{
-						"function": "powerline.segments.shell.continuation",
-                                                "draw_hard_divider": false
+						"function": "powerline_gitstatus.gitstatus",
+                                                "priority": 40
 					}
 				],
 				"right": [
-					{
-						"function": "powerline_gitstatus.gitstatus",
-						"priority": 40
-					}
 				]
 			},
 			{
