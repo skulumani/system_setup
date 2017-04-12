@@ -26,6 +26,11 @@ set colorcolumn=100
 set path+=**
 set wildchar=<Tab> wildmenu wildmode=full
 
+" Highlight searching
+set incsearch
+set showmatch
+set hlsearch
+
 " Buffer tab completion
 function! BufSel(pattern)
   let bufcount = bufnr("$")
