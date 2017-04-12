@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/shankar/.oh-my-zsh
+export ZSH=/home/shankar/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -99,9 +99,9 @@ fi
 export TERM=xterm-256color
 
 # setup for powerline
-powerline-daemon -q
 
 if [ -f ~/anaconda3/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh ]; then 
+    powerline-daemon -q
     source ~/anaconda3/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh
 fi
 
