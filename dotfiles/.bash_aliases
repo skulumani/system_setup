@@ -3,7 +3,7 @@ alias la='ls -A'
 alias l='ls -CF'
 
 alias cs='cd;ls'
-alias vim='vim --servername vim'
+#alias vim='vim --servername vim'
 
 alias jabref='java -jar $HOME/bin/JabRef/JabRef-*.jar'
 # create and move to new directory
