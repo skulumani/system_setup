@@ -97,7 +97,8 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-syntastic/syntastic'
-
+Plugin 'SirVer/ultisnips'
+.
 " start all the plugins above
 call vundle#end()
 
