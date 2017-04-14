@@ -19,20 +19,7 @@
     ~~~
     5. Set paper size `tlmgr paper letter`
     6. Update `tlmgr update --list` and `tlmgr update --all`
-* Setup [Texmf](https://github.com/skulumani/texmf) tree in `~/texmf`
-* Install [Sublime](https://www.sublimetext.com/)
-    `git config --global core.editor 'subl -w'`
-    * Start Sublime first before cloning settings
-    * Install [Package Control](https://packagecontrol.io/installation)
-    * Clone [Sublime-Settings](https://github.com/skulumani/sublime_settings) to `~/.config/sublime-text-3/Packages/User/setup_repo.sh`
-    * Ensure you download the `python-dbus` package to allow for syncing
-    * [rsub] setup:
-         * curl -Lo ~/bin/rsub https://raw.githubusercontent.com/textmate/rmate/master/bin/rmate
-         * chmod a+x ~/bin/rsub
-* Latex in Vim [tutorial](https://wikimatze.de/vimtex-the-perfect-tool-for-working-with-tex-and-vim/)
-~~~
-sudo apt-get install zathura zathura-dev xdotool
-~~~
+    7. [Debian Install](https://www.tug.org/texlive/debian.html)
 ## Jabref setup
 * Install [JabRef](http://www.jabref.org/) by downloading the latest version and copying to `/opt/jabref`
     * [Github Link](https://github.com/JabRef/jabref/releases/latest)

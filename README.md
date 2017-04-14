@@ -56,18 +56,6 @@ sudo apt-get install exuberant-ctags
 * [Anaconda3](https://www.continuum.io/downloads#linux)
     1. Modify LaTeXTools Python path
     2. You can turn on/off Anaconda by modifying the path in `.bashrc`
-* [myrepos](https://myrepos.branchable.com)
-    ~~~~
-    sudo apt-get install myrepos
-    git clone https://github.com/joeyh/myrepos.git
-    cd myrepos
-    cp ./mr /usr/local/bin/mr
-    ~~~~
-
-    `brew install mr`
-
-    `sudo apt-get install myrepos`
-
 * [Google Drive for Linux](https://github.com/odeke-em/drive)
     1. Install [go](https://golang.org/doc/install):
     ~~~
@@ -148,24 +136,11 @@ Look at `:help ins-completion` for extra help.
 The `vimrc` is already setup to find the plugins. 
 On a new system just run `:PluginInstall` to install new plugins.
 
-### Swapping Caps_Lock to Escape
+## `font` installation
+* [Source Code Pro version](https://github.com/adobe-fonts/source-code-pro/releases/tag/2.030R-ro%2F1.050R-it)
 
-There's already a `.xmodmap` file that is supposed to swap caps_lock and escape. 
-If the autostart functionality doesn't work, as highlited [here](https://wiki.xfce.org/faq), then try to use the following command to determine the keys and remap them
-~~~
-xev | grep -A2 --line-buffered '^KeyRelease' | sed -n '/keycode /s/^.*keycode \([0-9]*\).* (.*, \(.*\)).*$/\1 \2/p'
-~~~
-## `powerline` status line installation steps
+All the fonts are in the `~/.fonts` directory which is installed by `dotbot`
 
-1. Install using `pip`: hopefully pip was already installed using `conda`
-~~~
-pip install powerline-status powerline-gitstatus
-~~~
-2. Add fonts to the system
-~~~
-fc-cache -vf ~/.fonts
-~~~
-3. The configs are already setup. Just need to reload after installing dotfiles
 ## [GPG setup](./gpg.md)
 
 * Import GPG key from Lastpass into the system key store
@@ -173,14 +148,6 @@ fc-cache -vf ~/.fonts
 gpg --import public.key
 gpg --allow-secret-key-import --import private.key
 ~~~
-
-## LaTeX Setup
-
-Texlive
-texmf tree
-Sublime editor
-Google Drive library
-Jabref
 
 ## Xfce setup
 

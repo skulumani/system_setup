@@ -30,4 +30,5 @@
     ~/.config/powerline: .config/powerline
     
 - shell:
-  - [git submodule update --init --recursive --remote, Updating submodules]
+    - [git submodule update --init --recursive --remote, Updating submodules]
+    - [fc-cache -vf ~/.fonts, Installing system fonts]
