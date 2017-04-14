@@ -9,9 +9,6 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 # Add user directory for pip installs
 export PATH="$PATH:$HOME/.local/bin"
 
-# fancy terminal coloring
-#export PS1='\[\033[0;35m\]\u@\h\[\033[0;33m\] \W\[\033[00m\]> '
-
 # Add TeXLive to PATH
 export PATH=/usr/local/texlive/2016/bin/x86_64-linux:$PATH
 export MANPATH=/usr/local/texlive/2016/texmf-dist/doc/man:$MANPATH
