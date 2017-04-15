@@ -87,6 +87,9 @@ sudo apt-get install exuberant-ctags
     system=false
     users=
     ~~~
+* [MyRepos](https://myrepos.branchable.com/)
+    * There's a `mrconfig` file for the home directory.
+
 ## Dot files
 
 All the dotfiles live in the `dotfiles/` directory.
