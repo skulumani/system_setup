@@ -21,6 +21,8 @@ sudo apt-get -y --force-yes upgrade
 echo "Installing applications"
 sudo apt-get -y install google-chrome-stable
 sudo apt-get -y install redshift-gtk
+sudo apt-get -y install myrepos 
+
 # Now install vim and associated tools
 echo "Now setting up vim"
 sudo apt-get -y install vim-gnome zathura zathura-dev xdotool 
