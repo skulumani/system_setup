@@ -1,0 +1,23 @@
+[2016_AAS_presentation]
+checkout = git clone git@github.com:skulumani/2016_AAS_presentation.git 2016_AAS_presentation &&
+            cd 2016_AAS_presentation && git remote set-url origin --push --add git@bitbucket.org:shankarkulumani/2016_aas_presentation.git &&
+            git remote set-url origin --push --add git@github.com:fdcl-gwu/2016_AAS_presentation.git &&
+            git remote set-url origin --push --add git@github.com:skulumani/2016_AAS_presentation.git
+
+[2016_AAS_abstract]
+checkout = git clone git@github.com:skulumani/2016_AAS_abstract.git 2016_AAS_abstract &&
+            cd 2016_AAS_abstract && git remote set-url origin --push --add git@bitbucket.org:shankarkulumani/2016_aas_abstract.git &&
+            git remote set-url origin --push --add git@github.com:fdcl-gwu/2016_AAS_abstract.git &&
+            git remote set-url origin --push --add git@github.com:skulumani/2016_AAS_abstract.git
+
+[2016_AAS_manuscript]
+checkout = git clone git@github.com:skulumani/2016_AAS_manuscript.git 2016_AAS_manuscript &&
+            cd 2016_AAS_manuscript && git remote set-url origin --push --add git@bitbucket.org:shankarkulumani/2016_aas_manuscript.git &&
+            git remote set-url origin --push --add git@github.com:fdcl-gwu/2016_AAS_manuscript.git &&
+            git remote set-url origin --push --add git@github.com:skulumani/2016_AAS_manuscript.git
+
+[2016_AAS_matlab]
+checkout = git clone git@github.com:skulumani/2016_AAS_matlab.git 2016_AAS_matlab &&
+            cd 2016_AAS_matlab && git remote set-url origin --push --add git@bitbucket.org:shankarkulumani/2016_aas_matlab.git &&
+            git remote set-url origin --push --add git@github.com:fdcl-gwu/2016_AAS_matlab.git &&
+            git remote set-url origin --push --add git@github.com:skulumani/2016_AAS_matlab.git

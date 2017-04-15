@@ -1,0 +1,11 @@
+[2015_AAS_presentation]
+checkout = git clone git@github.com:skulumani/2015_AAS_presentation.git 2015_AAS_presentation &&
+            cd 2015_AAS_presentation && ./setup_repo.sh
+
+[2015_AAS_manuscript]
+checkout = git clone git@github.com:skulumani/2015_AAS_manuscript.git 2015_AAS_manuscript &&
+            cd 2015_AAS_manuscript && ./setup_repo.sh
+
+[2015_AAS_abstract]
+checkout = git clone git@github.com:skulumani/2015_AAS_abstract.git 2015_AAS_abstract &&
+            cd 2015_AAS_abstract && ./setup_repo.sh

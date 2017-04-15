@@ -1,0 +1,8 @@
+[manuscript]
+checkout = git clone git@github.com:skulumani/2015_ACTA_manuscript.git manuscript &&
+            cd manuscript && ./setup_repo.sh
+
+[matlab]
+checkout = git clone git@github.com:skulumani/2015_ACTA_matlab.git matlab &&
+            cd matlab && ./setup_repo.sh
+

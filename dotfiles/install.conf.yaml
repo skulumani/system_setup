@@ -15,8 +15,8 @@
     ~/.driverc: .driverc
     ~/.gitconfig: .gitconfig
     ~/.gitignore_global: .gitignore_global
-    ~/.mrconfig: .mrconfig
-    ~/.mrtrust: .mrtrust
+    ~/.mrconfig: myrepos/.mrconfig
+    ~/.mrtrust: myrepos/.mrtrust
     ~/.profile: .profile
     ~/bin: bin
     ~/.local/share/applications/JabRef.desktop: JabRef.desktop
