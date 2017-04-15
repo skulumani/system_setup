@@ -15,3 +15,6 @@
 	path = dotfiles/.tmux/plugins/tpm
         url = https://github.com/tmux-plugins/tpm.git
         ignore = dirty
+[submodule "dotfiles/dircolors-solarized"]
+	path = dotfiles/dircolors-solarized
+	url = https://github.com/seebi/dircolors-solarized.git
