@@ -135,8 +135,15 @@ prompt "Install dotfiles" "(cd $HOME/Documents/system_setup &&  git submodule in
 
 # make sure Anaconda is on the path
 echo "Now make sure you're using the correct version of Anaconda"
+echo "Source all the profile scripts"
+source ~/.profile
 source ~/.bashrc
 python --version
+
+# install drive client
+echo "Installing Google Drive client"
+go get -u github.com/odeke-em/drive/cmd/drive
+go get github.com/odeke-em/drive/drive-gen && drive-gen
 
 echo "Install all the pip packages"
 prompt "Install pip packages" "install_pips"
