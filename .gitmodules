@@ -18,3 +18,6 @@
 [submodule "dotfiles/dircolors-solarized"]
 	path = dotfiles/dircolors-solarized
 	url = https://github.com/seebi/dircolors-solarized.git
+[submodule "dotfiles/.oh-my-zsh"]
+	path = dotfiles/.oh-my-zsh
+	url = git://github.com/robbyrussell/oh-my-zsh.git
