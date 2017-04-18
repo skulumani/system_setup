@@ -1,0 +1,11 @@
+# path for RVM for jekyll website
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+# Add user directory for pip installs
+export PATH="$PATH:$HOME/.local/bin"
+
+# Add path for signal-cli
+export PATH="$HOME/bin/signal-cli-0.5.5/bin:$PATH"
+
+# added by Anaconda3 4.3.0 installer
+export PATH="$HOME/anaconda3/bin:$PATH"
