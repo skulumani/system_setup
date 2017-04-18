@@ -6,7 +6,6 @@ brews=(
     go
     myrepos
     tmux
-    "vim --with-client-server --with-override-system-vi --with-python3"
     zsh
 )
 
@@ -16,9 +15,8 @@ casks=(
     caffeine
     coconutbattery
     google-chrome
-    iterm2
+    mactex
     skim
-    tunnelbear
     vlc
     xquartz
 )
@@ -49,8 +47,7 @@ prompt () {
 }
 
 install_homebrew () {
-    echo "Install ruby"
-    # ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 }
 
 install_brew () {
@@ -58,8 +55,7 @@ install_brew () {
     for pkg in "${brews[@]}";
     do
         exec="$cmd ${pkg}"
-        echo "$exec"
-        # prompt "Execute: $exec" "${exec}"
+        prompt "Execute: $exec" "${exec}"
     done    
 }
 install_casks () {
@@ -68,8 +64,7 @@ install_casks () {
     for pkg in "${casks[@]}";
     do
         exec="$cmd ${pkg}"
-        echo "$exec"
-        # prompt "Execute: $exec" "${exec}"
+        prompt "Execute: $exec" "${exec}"
     done    
 }
 
@@ -79,8 +74,7 @@ install_pips () {
     for pkg in "${python_packages[@]}";
     do
         exec="$cmd ${pkg}"
-        echo "$exec"
-        # prompt "Execute: $exec" "${exec}"
+        prompt "Execute: $exec" "${exec}"
     done    
 }
 ######################################## Functions #############################################
@@ -110,18 +104,18 @@ echo "Now setup SSH keys so we can clone our Git repos"
 if [ "$(ls -A $HOME/.ssh)" ]; then
     echo "~/.ssh exists - using keys that are there"
     eval "$(ssh-agent -s)"
-    ssh-add ~/.ssh/id_rsa
+    prompt "Add ssh keys" "ssh-add ~/.ssh/id_rsa"
     
-    cat ~/.ssh/id_rsa.pub
+    promp "Display ~/.ssh/id_rsa.pub" "cat ~/.ssh/id_rsa.pub"
     echo "Copy the default SSH key and input it into Github/Bitbucket"
 else
     echo "Create new ssh keys"
 
-    ssh-keygen -t rsa -b 4096 -C "shanks.k@gmail.com"
-    eval "$(ssh-agent -s)"
-    ssh-add ~/.ssh/id_rsa
+    prompt "Create new ssh keys" "ssh-keygen -t rsa -b 4096 -C 'shanks.k@gmail.com'"
+    prompt "Start the ssh-agen" "eval '$(ssh-agent -s)'"
+    prompt "Add ssh key" "ssh-add ~/.ssh/id_rsa"
     
-    cat ~/.ssh/id_rsa.pub
+    prompt "Copy the default key to terminal" "cat ~/.ssh/id_rsa.pub"
     echo "Copy the default SSH key and input it into Github/Bitbucket"
 fi
 
@@ -129,9 +123,17 @@ fi
 echo "Now we'll setup git and clone the dotfiles repository"
 prompt "Install git" "brew install git"
 
-prompt "Clone system_setup repo" "git clone git@github.com:skulumani/system_setup.git $HOME/Documents/system_setup"
-echo "Now we'll update the submodules and install all the dotfiles"
-prompt "Install dotfiles" "(cd $HOME/Documents/system_setup &&  git submodule init && git submodule update --recursive --remote && ./dotfiles/install)"
+if [ "$(ls -A $HOME/Documents/system_setup)" ]; then
+    echo "System setup repo already exits"
+    prompt "Update the repo" "(cd $HOME/Documents/system_setup &&  git submodule init && git submodule update --recursive --remote)"
+    prompt "Install the dotfiles" "(cd $HOME/Documents/system_setup/dotfiles && ./install mac)"
+else
+    echo "System setup repo does not exist"
+
+    prompt "Clone system_setup repo" "git clone git@github.com:skulumani/system_setup.git $HOME/Documents/system_setup"
+    echo "Now we'll update the submodules and install all the dotfiles"
+    prompt "Install dotfiles" "(cd $HOME/Documents/system_setup &&  git submodule init && git submodule update --recursive --remote && ./dotfiles/install mac)"
+fi
 
 # make sure Anaconda is on the path
 echo "Now make sure you're using the correct version of Anaconda"
@@ -139,6 +141,9 @@ echo "Source all the profile scripts"
 source ~/.profile
 source ~/.bashrc
 python --version
+
+# install vim with python support
+prompt "Install vim" "brew install vim --with-client-server --with-override-system-vi --with-python3"
 
 # install drive client
 echo "Installing Google Drive client"
