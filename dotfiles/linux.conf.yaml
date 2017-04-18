@@ -1,0 +1,15 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+
+- clean: ['~', '~./config']
+
+- link:
+    ~/bin: bin
+    ~/.local/share/applications/JabRef.desktop: JabRef.desktop
+    ~/texmf: texmf
+    ~/.fonts: .fonts
+    
+- shell:
+    - [fc-cache -vf ~/.fonts, Installing system fonts]
