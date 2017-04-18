@@ -4,21 +4,33 @@ export GOPATH=$HOME/.go
 export PATH=$PATH:$GOPATH/bin
 
 # path for RVM for jekyll website
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+if [ -d $HOME/.rvm/bin ]; then
+    export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+fi
 
 # Add user directory for pip installs
-export PATH="$PATH:$HOME/.local/bin"
+if [ -d $HOME/.local/bin ]; then
+    export PATH="$PATH:$HOME/.local/bin"
+fi
 
 # Add TeXLive to PATH
-export PATH=/usr/local/texlive/2016/bin/x86_64-linux:$PATH
-export MANPATH=/usr/local/texlive/2016/texmf-dist/doc/man:$MANPATH
-export INFOPATH=/usr/local/texlive/2016/texmf-dist/doc/info:$INFOPATH
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+    export PATH=/usr/local/texlive/2016/bin/x86_64-linux:$PATH
+    export MANPATH=/usr/local/texlive/2016/texmf-dist/doc/man:$MANPATH
+    export INFOPATH=/usr/local/texlive/2016/texmf-dist/doc/info:$INFOPATH
+fi
 
 # Add rsub path for remote sublime text
-export PATH="$HOME/bin:$PATH"
+if [ -d $HOME/bin ]; then
+    export PATH="$HOME/bin:$PATH"
 
-# Add path for signal-cli
-export PATH="$HOME/bin/signal-cli-0.5.5/bin:$PATH"
+    # Add path for signal-cli
+    export PATH="$HOME/bin/signal-cli-0.5.5/bin:$PATH"
+fi
 
 # added by Anaconda3 4.3.0 installer
-export PATH="/home/shankar/anaconda3/bin:$PATH"
+if [ -d $HOME/anaconda3 ]; then
+    export PATH=$HOME/anaconda3/bin:"$PATH"
+    # export PATH=~/anaconda3/bin:"$PATH"
+fi
+
