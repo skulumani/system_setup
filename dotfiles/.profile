@@ -20,12 +20,19 @@ fi
 PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 
 # Add TeXLive to PATH
-export PATH=/usr/local/texlive/2016/bin/x86_64-linux:$PATH
-export MANPATH=/usr/local/texlive/2016/texmf-dist/doc/man:$MANPATH
-export INFOPATH=/usr/local/texlive/2016/texmf-dist/doc/info:$INFOPATH
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+    export PATH=/usr/local/texlive/2016/bin/x86_64-linux:$PATH
+    export MANPATH=/usr/local/texlive/2016/texmf-dist/doc/man:$MANPATH
+    export INFOPATH=/usr/local/texlive/2016/texmf-dist/doc/info:$INFOPATH
+fi
+
+if [ -f $HOME/.rvm/bin ]; then
+    export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+fi
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 # Add GOPath
-export PATH=$PATH:/usr/local/go/bin
+if [ -f /usr/local/go ]; then
+    export PATH=$PATH:/usr/local/go/bin
+fi
