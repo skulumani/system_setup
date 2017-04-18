@@ -33,6 +33,6 @@ fi
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 # Add GOPath
-if [ -f /usr/local/go ]; then
+if [ -d /usr/local/go ]; then
     export PATH=$PATH:/usr/local/go/bin
 fi
