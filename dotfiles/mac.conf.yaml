@@ -1,11 +1,2 @@
-- defaults:
-    link:
-      create: true
-      relink: true
-
-- clean: ['~', '~./config']
-
 - link:
     ~/Library/texmf: texmf
-
-- shell:
