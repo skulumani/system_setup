@@ -1,0 +1,8 @@
+# path for RVM for jekyll website
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+# Add user directory for pip installs
+export PATH="$PATH:$HOME/.local/bin"
+
+# added by Anaconda3 4.3.0 installer
+export PATH="$HOME/anaconda3/bin:$PATH"
