@@ -10,7 +10,6 @@ brews=(
 )
 
 casks=(
-    anaconda
     appcleaner
     caffeine
     coconutbattery
@@ -50,7 +49,7 @@ install_homebrew () {
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 }
 
-install_brew () {
+install_brews () {
     cmd="brew install"
     for pkg in "${brews[@]}";
     do
@@ -106,7 +105,7 @@ if [ "$(ls -A $HOME/.ssh)" ]; then
     eval "$(ssh-agent -s)"
     prompt "Add ssh keys" "ssh-add ~/.ssh/id_rsa"
     
-    promp "Display ~/.ssh/id_rsa.pub" "cat ~/.ssh/id_rsa.pub"
+    prompt "Display ~/.ssh/id_rsa.pub" "cat ~/.ssh/id_rsa.pub"
     echo "Copy the default SSH key and input it into Github/Bitbucket"
 else
     echo "Create new ssh keys"
@@ -148,7 +147,6 @@ prompt "Install vim" "brew install vim --with-client-server --with-override-syst
 # install drive client
 echo "Installing Google Drive client"
 go get -u github.com/odeke-em/drive/cmd/drive
-go get github.com/odeke-em/drive/drive-gen && drive-gen
 
 echo "Install all the pip packages"
 prompt "Install pip packages" "install_pips"
@@ -162,6 +160,7 @@ prompt "Install brews" "install_brews"
 echo "Now set zsh as the default shell"
 prompt "Set zsh as default shell" "chsh -s $(which zsh)"
 
+echo "All finished"
 # install brews
 
 # prompt "Update ruby"
