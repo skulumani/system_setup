@@ -122,8 +122,8 @@ if [ -f ~/.path ]; then
 fi
 
 # Add powerline status
-if [ -f ~/anaconda3/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh ]; then 
+if [ -f $HOME/anaconda3/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh ]; then 
     powerline-daemon -q
-    source ~/anaconda3/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh
+    source $HOME/anaconda3/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh
 fi
 
