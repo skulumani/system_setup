@@ -14,27 +14,11 @@ brews=(
     zsh
 )
 
-casks=(
-    appcleaner
-    caffeine
-    coconutbattery
-    google-chrome
-    mactex
-    skim
-    vlc
-    xquartz
-)
-
 python_packages=(
     powerline-status
     powerline-gitstatus
     glances
 )
-
-fonts=(
-  font-source-code-pro
-)
-
 ######################################## End of app list ########################################
 set +e
 options=("Yes" "No" "Quit")
@@ -49,27 +33,8 @@ prompt () {
         esac
     done
 }
-
-install_homebrew () {
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-}
-
-install_brews () {
-    cmd="brew install"
-    for pkg in "${brews[@]}";
-    do
-        exec="$cmd ${pkg}"
-        prompt "Execute: $exec" "${exec}"
-    done    
-}
-install_casks () {
-    cmd="brew cask install"
-    shift
-    for pkg in "${casks[@]}";
-    do
-        exec="$cmd ${pkg}"
-        prompt "Execute: $exec" "${exec}"
-    done    
+command_exists () {
+command -v "$1" >/dev/null 2>&1 ;
 }
 
 install_pips () {
@@ -92,25 +57,22 @@ install_anaconda () {
             exit 1
         else
             echo "Hash match. Installing"
-            prompt "Install Anaconda" "bash $HOME/anaconda.sh"
+            prompt "Install Anaconda" "bash $HOME/anaconda.sh -b -p $HOME/anaconda3"
         fi
 }
-######################################## Functions #############################################
-# test if xcode is already installed
-if test ! $(xcode-select -p); then
-    echo "xcode not installed."
-    prompt "Install Xcode" "xcode-select --install"
-else
-    echo "xcode is already installed"
-fi
+install_chrome () {
+sudo dpkg -i google-chrome*.deb
 
-# test if homebrew is already installed
-if test ! $(which brew); then
-    echo "Homebrew is not installed"
-    prompt "Install Homebrew" install_homebrew
+
+}
+######################################## Functions #############################################
+# check and then install chrome
+if command_exists google-chrome; then
+    echo "Google Chrome already installed"
 else
-    echo "Homebrew is already installed"
-    prompt "Update Homebrew" "brew update; brew update; brew upgrade; brew doctor"
+    echo "Chrome not installed"
+    prompt "Download Google Chrome" "wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O $HOME/google_chrome.deb"
+    prompt "Install Google Chrome" "sudo dpkg -i $HOME/google_chrome.deb"
 fi
 
 # install anaconda
@@ -119,7 +81,7 @@ prompt "Install Anaconda" "brew cask install anaconda"
 
 # setup ssh 
 echo "Now setup SSH keys so we can clone our Git repos"
-if [ "$(ls -A $HOME/.ssh)" ]; then
+if [ -d "$HOME/.ssh" ]; then
     echo "~/.ssh exists - using keys that are there"
     eval "$(ssh-agent -s)"
     prompt "Add ssh keys" "ssh-add ~/.ssh/id_rsa"
@@ -141,7 +103,7 @@ fi
 echo "Now we'll setup git and clone the dotfiles repository"
 prompt "Install git" "brew install git"
 
-if [ "$(ls -A $HOME/Documents/system_setup)" ]; then
+if [ -d "$HOME/Documents/system_setup)" ]; then
     echo "System setup repo already exits"
     prompt "Update the repo" "(cd $HOME/Documents/system_setup &&  git submodule init && git submodule update --recursive --remote)"
     prompt "Install the dotfiles" "(cd $HOME/Documents/system_setup/dotfiles && ./install mac)"
@@ -169,11 +131,6 @@ go get -u github.com/odeke-em/drive/cmd/drive
 
 echo "Install all the pip packages"
 prompt "Install pip packages" "install_pips"
-
-# install brew casks
-prompt "Install brew casks" "install_casks"
-
-prompt "Install brews" "install_brews"
 
 # setup zsh as default
 echo "Now set zsh as the default shell"
