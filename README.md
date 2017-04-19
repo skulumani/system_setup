@@ -1,8 +1,8 @@
 ## New computer setup
 
 * Mac specific setup
-	* install all the source code pro fonts by double clicking on them and the powerline ones too
-	* Install solarized terminal colorscheme
+    * install all the source code pro fonts by double clicking on them and the powerline ones too
+    * Install solarized terminal colorscheme. The Yosemite one works on 10.12 
 
 * Install new shell
 ~~~
