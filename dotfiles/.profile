@@ -36,3 +36,7 @@ fi
 if [ -d /usr/local/go ]; then
     export PATH=$PATH:/usr/local/go/bin
 fi
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    export PATH=$HOME/anaconda3/bin:"$PATH"
+fi
