@@ -6,13 +6,6 @@
 				"priority": 50
 			},
 			{
-				"function": "powerline.segments.common.net.network_load",
-				"priority": 60,
-                                "args": {
-                                        "si_prefix": true
-                                }
-			},
-			{
 				"function": "powerline.segments.common.sys.system_load",
 				"priority": 50
 			},
