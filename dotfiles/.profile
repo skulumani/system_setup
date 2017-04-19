@@ -9,10 +9,10 @@
 #umask 022
 
 # if running bash
-if [ -n "$BASH_VERSION" ]; then
+if [[ -n "$BASH_VERSION" ]]; then
     # include .bashrc if it exists
-    if [ -f "$HOME/.bashrc" ]; then
-	. "$HOME/.bashrc"
+    if [[ -f "$HOME/.bashrc" ]]; then
+	source "$HOME/.bashrc"
     fi
 fi
 
@@ -26,14 +26,14 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
     export INFOPATH=/usr/local/texlive/2016/texmf-dist/doc/info:$INFOPATH
 fi
 
-if [ -f $HOME/.rvm/bin ]; then
+if [[ -f $HOME/.rvm/bin ]]; then
     export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 fi
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 # Add GOPath
-if [ -d /usr/local/go ]; then
+if [[ -d /usr/local/go ]]; then
     export PATH=$PATH:/usr/local/go/bin
 fi
 
