@@ -37,7 +37,7 @@ apt_packages=(
     myrepos
     tmux
     zsh
-    vim-gnome
+    vim-gtk
     zathura
     zathura-dev
     xdotool
