@@ -101,8 +101,8 @@ if command_exists google-chrome; then
     echo "Google Chrome already installed"
 else
     echo "Chrome not installed"
-    prompt "Download Google Chrome" "wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O $HOME/google_chrome.deb"
-    prompt "Install Google Chrome" "sudo dpkg -i $HOME/google_chrome.deb"
+    prompt "Download Google Chrome" "wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O $WORK_DIR/google_chrome.deb"
+    prompt "Install Google Chrome" "sudo dpkg -i $WORK_DIR/google_chrome.deb"
 
     prompt "Fix the Chrome dependencies" "sudo apt-get install -f"
 fi
@@ -110,8 +110,8 @@ fi
 # install anaconda
 if [[ ! -d "$HOME/anaconda3" ]]; then
     echo "Anaconda is not installed"
-
-    prompt "Download Anaconda install script" "wget https://repo.continuum.io/archive/Anaconda3${anconda_version}-Linux-x86_64.sh -O $WORK_DIR/anaconda.sh"
+https://repo.continuum.io/archive/Anaconda3-4.3.1-Linux-x86_64.sh
+    prompt "Download Anaconda install script" "wget https://repo.continuum.io/archive/Anaconda3-${anconda_version}-Linux-x86_64.sh -O $WORK_DIR/anaconda.sh"
 
     if [ ! sha256sum -c <<< "${anaconda_hash} ${WORK_DIR}/anaconda.sh" ]; then
         echo "Hash does not match. Aborting!"
