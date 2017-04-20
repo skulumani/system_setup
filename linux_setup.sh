@@ -191,7 +191,12 @@ prompt "Test Golang" "go --version"
 
 # install drive client
 echo "Installing Google Drive client"
-prompt "Install drive client" "go get -u github.com/odeke-em/drive/cmd/drive"
+if command_exists drive; then 
+    echo "drive client already installed"
+else
+    prompt "Install drive client" "go get -u github.com/odeke-em/drive/cmd/drive"
+fi
+
 prompt "Test drive client" "drive --version"
 
 echo "Install all the pip packages"
