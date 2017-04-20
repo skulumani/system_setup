@@ -111,7 +111,7 @@ fi
 if [[ ! -d "$HOME/anaconda3" ]]; then
     echo "Anaconda is not installed"
 https://repo.continuum.io/archive/Anaconda3-4.3.1-Linux-x86_64.sh
-    prompt "Download Anaconda install script" "wget https://repo.continuum.io/archive/Anaconda3-${anconda_version}-Linux-x86_64.sh -O $WORK_DIR/anaconda.sh"
+    prompt "Download Anaconda install script" "wget https://repo.continuum.io/archive/Anaconda3-${anaconda_version}-Linux-x86_64.sh -O $WORK_DIR/anaconda.sh"
 
     if [ ! sha256sum -c <<< "${anaconda_hash} ${WORK_DIR}/anaconda.sh" ]; then
         echo "Hash does not match. Aborting!"
