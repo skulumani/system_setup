@@ -7,7 +7,7 @@ DIR="$HOME"
 WORK_DIR=$(mktemp -d -p "$DIR")
 
 # make sure tmp dir was actually created
-if [[ ! "$WORK_DIR" || -d "$WORK_DIR" ]]; then
+if [[ -d "$WORK_DIR" ]]; then
     echo "Could not create temp directory"
     exit 1
 fi
