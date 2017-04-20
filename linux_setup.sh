@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # trap functions to delete temporary folder on exit
 # find directory of script
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+DIR="$HOME"
 
 # create a temp directory inside $DIR
 WORK_DIR='mktemp -d -p "$DIR"'
