@@ -63,6 +63,7 @@ prompt () {
         esac
     done
 }
+
 command_exists () {
     command -v "$1" >/dev/null 2>&1 ;
 }
@@ -73,7 +74,8 @@ install_pips () {
     for pkg in "${python_packages[@]}";
     do
         exec="$cmd ${pkg}"
-        prompt "Execute: $exec" "${exec}"
+        eval "${exec}"
+        # prompt "Execute: $exec" "${exec}"
     done    
 }
 
@@ -83,7 +85,8 @@ install_packages () {
     for pkg in "${apt_packages[@]}";
     do
         exec="$cmd ${pkg}"
-        prompt "Execute: $exec" "${exec}"
+        eval "${exec}"
+        # prompt "Execute: $exec" "${exec}"
     done    
 }
 
@@ -104,7 +107,7 @@ else
     prompt "Download Google Chrome" "wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O $WORK_DIR/google_chrome.deb"
     prompt "Install Google Chrome" "sudo dpkg -i $WORK_DIR/google_chrome.deb"
 
-    prompt "Fix the Chrome dependencies" "sudo apt-get install -f"
+    prompt "Fix the Chrome dependencies" "sudo apt-get -y install -f"
 fi
 
 # install anaconda
@@ -177,10 +180,14 @@ fi
 
 # make sure Anaconda is on the path
 echo "Now make sure you're using the correct version of Anaconda"
-echo "Source all the profile scripts"
-source "$HOME/.profile"
-source "$HOME/.bashrc"
-python --version
+echo "Add Anaconda and Golang to the path"
+export GOPATH=$HOME/.go
+export PATH=$PATH:$GOPATH/bin
+export PATH=$HOME/anaconda3/bin:"$PATH"
+export PATH=$PATH:/usr/local/go/bin
+
+prompt "Test Anaconda" "python --version"
+prompt "Test Golang" "go --version"
 
 # install drive client
 echo "Installing Google Drive client"
@@ -194,8 +201,9 @@ prompt "Install pip packages" "install_pips"
 prompt "Set zsh as default shell" "chsh -s $(which zsh)"
 
 prompt "Install oh-my-zsh" "sh -c '$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)'"
+
 echo "All finished"
-exit
+echo "Might need to restart and rerun dotfiles/install mac to make sure eerything is working"
 # install brews
 
 # prompt "Update ruby"

@@ -45,6 +45,10 @@ prompt () {
     done
 }
 
+command_exists () {
+    command -v "$1" >/dev/null 2>&1 ;
+}
+
 install_homebrew () {
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 }
@@ -54,7 +58,8 @@ install_brews () {
     for pkg in "${brews[@]}";
     do
         exec="$cmd ${pkg}"
-        prompt "Execute: $exec" "${exec}"
+        eval "${exec}"
+        # prompt "Execute: $exec" "${exec}"
     done    
 }
 install_casks () {
@@ -63,7 +68,8 @@ install_casks () {
     for pkg in "${casks[@]}";
     do
         exec="$cmd ${pkg}"
-        prompt "Execute: $exec" "${exec}"
+        eval "${exec}"
+        # prompt "Execute: $exec" "${exec}"
     done    
 }
 
@@ -73,7 +79,8 @@ install_pips () {
     for pkg in "${python_packages[@]}";
     do
         exec="$cmd ${pkg}"
-        prompt "Execute: $exec" "${exec}"
+        eval "${exec}"
+        # prompt "Execute: $exec" "${exec}"
     done    
 }
 ######################################## Functions #############################################
@@ -86,7 +93,7 @@ else
 fi
 
 # test if homebrew is already installed
-if test ! $(which brew); then
+if command_exists brew; then
     echo "Homebrew is not installed"
     prompt "Install Homebrew" install_homebrew
 else
@@ -100,7 +107,7 @@ prompt "Install Anaconda" "brew cask install anaconda"
 
 # setup ssh 
 echo "Now setup SSH keys so we can clone our Git repos"
-if [ "$(ls -A $HOME/.ssh)" ]; then
+if [[ -d "$HOME/.ssh" ]]; then
     echo "~/.ssh exists - using keys that are there"
     eval "$(ssh-agent -s)"
     prompt "Add ssh keys" "ssh-add ~/.ssh/id_rsa"
@@ -122,7 +129,7 @@ fi
 echo "Now we'll setup git and clone the dotfiles repository"
 prompt "Install git" "brew install git"
 
-if [ "$(ls -A $HOME/Documents/system_setup)" ]; then
+if [[ -d "$HOME/Documents/system_setup" ]]; then
     echo "System setup repo already exits"
     prompt "Update the repo" "(cd $HOME/Documents/system_setup &&  git submodule init && git submodule update --recursive --remote)"
     prompt "Install the dotfiles" "(cd $HOME/Documents/system_setup/dotfiles && ./install mac)"
@@ -136,17 +143,23 @@ fi
 
 # make sure Anaconda is on the path
 echo "Now make sure you're using the correct version of Anaconda"
-echo "Source all the profile scripts"
-source ~/.profile
-source ~/.bashrc
-python --version
+echo "Add Anaconda and Golang to the path"
+export GOPATH=$HOME/.go
+export PATH=$PATH:$GOPATH/bin
+export PATH=$HOME/anaconda3/bin:"$PATH"
+export PATH=$PATH:/usr/local/go/bin
+
+prompt "Test Anaconda" "python --version"
+prompt "Test Golang" "go --version"
 
 # install vim with python support
 prompt "Install vim" "brew install vim --with-client-server --with-override-system-vi --with-python3"
 
 # install drive client
 echo "Installing Google Drive client"
-go get -u github.com/odeke-em/drive/cmd/drive
+prompt "Install Drive client" "go get -u github.com/odeke-em/drive/cmd/drive"
+
+prompt "Test drive client" "drive --version"
 
 echo "Install all the pip packages"
 prompt "Install pip packages" "install_pips"
@@ -160,7 +173,9 @@ prompt "Install brews" "install_brews"
 echo "Now set zsh as the default shell"
 prompt "Set zsh as default shell" "chsh -s $(which zsh)"
 
+prompt "Install oh-my-zsh" "sh -c '$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)'"
 echo "All finished"
+echo "Might need to restart and rerun dotfiles/install mac to make sure eerything is working"
 # install brews
 
 # prompt "Update ruby"
