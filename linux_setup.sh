@@ -4,7 +4,7 @@
 DIR="$HOME"
 
 # create a temp directory inside $DIR
-WORK_DIR='mktemp -d -p "$DIR"'
+WORK_DIR=$(mktemp -d -p "$DIR")
 
 # make sure tmp dir was actually created
 if [[ ! "$WORK_DIR" || -d "$WORK_DIR" ]]; then
