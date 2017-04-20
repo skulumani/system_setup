@@ -112,7 +112,7 @@ if [[ ! -d "$HOME/anaconda3" ]]; then
     echo "Anaconda is not installed"
     prompt "Download Anaconda install script" "wget https://repo.continuum.io/archive/Anaconda3-${anaconda_version}-Linux-x86_64.sh -O $WORK_DIR/anaconda.sh"
 
-    if [ ! sha256sum -c <<< "${anaconda_hash} ${WORK_DIR/anaconda.sh" ]; then
+    if ! sha256sum -c <<< "$anaconda_hash  $WORK_DIR/anaconda.sh"; then
         echo "Hash does not match. Aborting!"
         exit 1
     else
@@ -129,7 +129,7 @@ if [[ ! -d "/usr/local/go" ]]; then
 
     prompt "Download Golang install binary" "wget https://storage.googleapis.com/golang/go${go_version}.linux-amd64.tar.gz -O $WORK_DIR/go.tar.gz"
 
-    if [ ! sha256sum -c <<< "${go_hash} ${WORK_DIR}/go.tar.gz" ]; then
+    if ! sha256sum -c <<< "${go_hash} ${WORK_DIR}/go.tar.gz"; then
         echo "Hash does not match. Aborting!"
         exit 1
     else
@@ -143,7 +143,7 @@ fi
 # setup ssh 
 echo "Now setup SSH keys so we can clone our Git repos"
 if [[ -d "$HOME/.ssh" ]]; then
-    echo "~/.ssh exists - using keys that are there"
+    echo "$HOME/.ssh exists - using keys that are there"
     eval "$(ssh-agent -s)"
     prompt "Add ssh keys" "ssh-add ~/.ssh/id_rsa"
     
@@ -178,8 +178,8 @@ fi
 # make sure Anaconda is on the path
 echo "Now make sure you're using the correct version of Anaconda"
 echo "Source all the profile scripts"
-source ~/.profile
-source ~/.bashrc
+source "$HOME/.profile"
+source "$HOME/.bashrc"
 python --version
 
 # install drive client
