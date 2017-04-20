@@ -134,7 +134,7 @@ if [[ ! -d "/usr/local/go" ]]; then
         exit 1
     else
         echo "Hash match. Installing Golang"
-        prompt "Install Golang" "tar -C /usr/local -xzf $WORK_DIR/go.tar.gz"
+        prompt "Install Golang" "sudo tar -C /usr/local -xzf $WORK_DIR/go.tar.gz"
     fi
 else
     echo "Golang is already installed"
@@ -163,7 +163,7 @@ fi
 # setup system_setup repo and install dotfiles
 echo "Now we'll setup git and clone the dotfiles repository"
 
-if [[ -d "$HOME/Documents/system_setup)" ]]; then
+if [[ -d "$HOME/Documents/system_setup" ]]; then
     echo "System setup repo already exits"
     prompt "Update the repo" "(cd $HOME/Documents/system_setup && git submodule init && git submodule update --recursive --remote)"
     prompt "Install the dotfiles" "(cd $HOME/Documents/system_setup/dotfiles && ./install linux)"
