@@ -4,78 +4,15 @@
     * install all the source code pro fonts by double clicking on them and the powerline ones too
     * Install solarized terminal colorscheme. The Yosemite one works on 10.12 
     * Also you can change the default shell by going to Preferences > Users and Groups > Ctrl-Click username > Advanced Options and input the correct path to `zsh`
-
-* Graphics Drivers
-    ~~~
-    sudo add-apt-repository ppa:graphics-drivers/ppa
-    ~~~
-* [SSH-Keys](https://help.github.com/enterprise/11.10.340/user/articles/generating-ssh-keys/) for Github/Bitbucket
-    1. Check for keys
-    ~~~
-    ls -la ~/.ssh
-    ~~~
-    2. Generate new keys if empty - don't add a password
-    ~~~
-    ssh-keygen -t rsa -C "your_email@example.com"
-    ~~~
-    3. Add to `ssh-agent`
-    ~~~
-    eval "$(ssh-agent -s)"
-    ssh-add ~/.ssh/id_rsa
-    ~~~
-    4. Copy SSH public key to Github/Bitbucket
-    ~~~
-    cat ~/.ssh/id_rsa.pub
-    ~~~
-    5. To use `rsub` for remote sublime
-    ~~~
-    ln -s $(pwd)/config ~/.ssh/config
-    ~~~
-    6. On remote computer 
-    ~~~
-    wget -O ~/bin/rsub https://raw.github.com/aurora/rmate/master/rmate
-    chmod +x ~/bin/rsub
-    rsub ~/my_project/my_file.html
-    ~~~
-    7. Add path to `~/bin` to path in `.bashrc`
-    ~~~
-    export PATH="/home/skulumani/bin:$PATH"
-    ~~~
+* Ubuntu steps
+    * Change the terminal color scheme to solarized and make sure it's using Source Code Pro for the font
 * Install [BOINC](https://boinc.berkeley.edu/)
 * Install [Gridcoin](http://gridcoin.us/)
+    * There's a repo that has the wallet backups and config files
 * [Anaconda3](https://www.continuum.io/downloads#linux)
     2. You can turn on/off Anaconda by modifying the path in `.bashrc`
 * [Google Drive for Linux](https://github.com/odeke-em/drive)
-    1. Install [go](https://golang.org/doc/install):
-    ~~~
-    tar -C /usr/local -xzf go$VERSION.$OS-$ARCH.tar.gz
-    ~~~
-    2. Add `go` to the PATH by adding the following to `.profile`
-    ~~~
-    export PATH=$PATH:/usr/local/go/bin
-    ~~~
-    2. Install [drive](https://github.com/odeke-em/drive/blob/master/platform_packages.md): 
-    ~~~
-    go get -u github.com/odeke-em/drive/cmd/drive
-    go get github.com/odeke-em/drive/drive-gen && drive-gen
-    ~~~
-    4. In case of `panic: invalid page type:` errors follow this [link](https://github.com/odeke-em/drive/wiki/Boltdb-breaks-drive-with-(panic:-invalid-page-type:)-or-(panic:--above-high-water-mark))
-    
-    ~~~
-    $ cd $GOPATH/src/github.com/boltdb/bolt && git reset --hard 852d3024fa8d89dcc9a715bab6f4dcd7d59577dd
-    $ drive-gen
-    ~~~
-    3. `drive init` in a specific folder. 
-    Make sure you're logged into `skulumani@gwmail.gwu.edu`
 * [Redshift](http://jonls.dk/redshift/)
-  * `sudo apt-get install redshift-gtk`
-  * Add some configuration options to `/etc/geoclue/geoclue.conf`
-    ~~~
-    [redshift]
-    allowed=true
-    system=false
-    users=
-    ~~~
 * [MyRepos](https://myrepos.branchable.com/)
     * There's a `mrconfig` file for the home directory.
 
@@ -104,9 +41,7 @@ To uninstall a plugin `prefix + alt + u`
 To update plugins `prefix + U`
 
 ### Vim plugins
-~~~
-sudo apt-get install vim-gtk zathura zathura-dev xdotool
-~~~
+Just run `:PluginInstall` a few times and be happy
 
 ### `ctag` help
 
@@ -123,10 +58,6 @@ You can autocomplete filenames using `Ctrl-x` then `Ctrl-f`.
 
 Look at `:help ins-completion` for extra help.
 
-### Plugins
-
-The `vimrc` is already setup to find the plugins. 
-On a new system just run `:PluginInstall` to install new plugins.
 
 ## `font` installation
 * [Source Code Pro version](https://github.com/adobe-fonts/source-code-pro/releases/tag/2.030R-ro%2F1.050R-it)
