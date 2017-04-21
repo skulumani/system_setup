@@ -83,6 +83,9 @@ install_pips () {
         # prompt "Execute: $exec" "${exec}"
     done    
 }
+install_ohmyzsh () {
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+}
 ######################################## Functions #############################################
 # test if xcode is already installed
 if test ! $(xcode-select -p); then
@@ -142,6 +145,13 @@ else
 
     prompt "Clone system_setup repo" "git clone git@github.com:skulumani/system_setup.git $HOME/Documents/system_setup"
     echo "Now we'll update the submodules and install all the dotfiles"
+    if [[ -f "$HOME/.profile" ]]; then
+        mv $HOME/.profile $HOME/.profile_backup
+    fi
+
+    if [[ -f "$HOME/.bashrc" ]]; then
+        mv $HOME/.bashrc $HOME/.bashrc_backup
+    fi
     prompt "Install dotfiles" "(cd $HOME/Documents/system_setup &&  git submodule init && git submodule update --recursive --remote && ./dotfiles/install mac)"
 fi
 
@@ -181,7 +191,7 @@ prompt "Install brews" "install_brews"
 echo "Now set zsh as the default shell"
 prompt "Set zsh as default shell" "chsh -s $(which zsh)"
 
-prompt "Install oh-my-zsh" "sh -c '$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)'"
+prompt "Install oh-my-zsh" "install_ohmyzsh"
 echo "All finished"
 echo "Might need to restart and rerun dotfiles/install mac to make sure eerything is working"
 # install brews
