@@ -191,7 +191,7 @@ prompt "Install brews" "install_brews"
 echo "Now set zsh as the default shell"
 prompt "Set zsh as default shell" "chsh -s $(which zsh)"
 
-prompt "Install oh-my-zsh" "install_ohmyzsh"
+prompt "Install oh-my-zsh" "git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh"
 echo "All finished"
 echo "Might need to restart and rerun dotfiles/install mac to make sure eerything is working"
 # install brews

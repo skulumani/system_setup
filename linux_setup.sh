@@ -92,9 +92,6 @@ install_packages () {
     done    
 }
 
-install_ohmyzsh () {
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-}
 ######################################## Functions #############################################
 # install graphics drivers
 
@@ -233,10 +230,10 @@ prompt "Install pip packages" "install_pips"
 # setup zsh as default
 prompt "Set zsh as default shell" "chsh -s $(which zsh)"
 
-prompt "Install oh-my-zsh" "install_ohmyzsh"
+prompt "Install oh-my-zsh" "git clone git://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh"
 
 echo "All finished"
-echo "Might need to restart and rerun dotfiles/install mac to make sure eerything is working"
+echo "Might need to restart and rerun dotfiles/install linux to make sure eerything is working"
 # install brews
 
 # prompt "Update ruby"
