@@ -126,6 +126,17 @@ else
     echo "Anaconda is already installed"
 fi
 
+# install texlive
+if [[ ! -d "/usr/local/texlive" ]]; then
+    echo "TeXlive is not installed"
+    prompt "Download texlive installer" "wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz -O $WORK_DIR/install-tl.tar.gz"
+    eval "tar -xzf -C $WORK_DIR $WORK_DIR/install-tl.tar.gz"
+
+    prompt "Install TeXlive" "$WORK_DIR/install-tl"
+else
+    echo "TexLive is already installed"
+fi
+
 # install the go language
 if [[ ! -d "/usr/local/go" ]]; then
     echo "Golang is not installed"
