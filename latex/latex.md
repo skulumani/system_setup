@@ -20,6 +20,8 @@
     5. Set paper size `tlmgr paper letter`
     6. Update `tlmgr update --list` and `tlmgr update --all`
     7. [Debian Install](https://www.tug.org/texlive/debian.html)
+
+* Some useful Texlive [help](https://tex.stackexchange.com/questions/1092/how-to-install-vanilla-texlive-on-debian-or-ubuntu)
 ## Jabref setup
 * Install [JabRef](http://www.jabref.org/) by downloading the latest version and copying to `/opt/jabref`
     * [Github Link](https://github.com/JabRef/jabref/releases/latest)

@@ -31,6 +31,8 @@ anaconda_hash="4447b93d2c779201e5fb50cfc45de0ec96c3804e7ad0fe201ab6b99f73e90302"
 go_version="1.8.1"
 go_hash="a579ab19d5237e263254f1eac5352efcf1d70b9dacadb6d6bb12b0911ede8994"
 
+texlive_year="2016"
+
 apt_packages=(
     exuberant-ctags
     git
@@ -130,9 +132,11 @@ fi
 if [[ ! -d "/usr/local/texlive" ]]; then
     echo "TeXlive is not installed"
     prompt "Download texlive installer" "wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz -O $WORK_DIR/install-tl.tar.gz"
-    eval "tar -C $WORK_DIR -xzf $WORK_DIR/install-tl.tar.gz"
-
-    prompt "Install TeXlive" "$WORK_DIR/install-tl"
+    eval "mkdir $WORK_DIR/texlive"
+    eval "tar -C $WORK_DIR/texlive -xzf $WORK_DIR/install-tl.tar.gz"
+    
+    prompt "Create TeXLive directory and set correct permissions" "sudo mkdir /usr/local/texlive/$texlive_year; sudo chown -R $USER: /usr/local/texlive/; sudo chmod -R u+rw /usr/local/texlive"
+    prompt "Install TeXlive" "$WORK_DIR/texlive/install-tl"
 else
     echo "TexLive is already installed"
 fi
@@ -209,6 +213,9 @@ else
 fi
 
 prompt "Test drive client" "drive --version"
+
+prompt "Set correct TeX paper size" "tlmgr paper letter"
+prompt "Update TeXLive" "tlmgr update --list; tlmgr update --all"
 
 echo "Install all the pip packages"
 prompt "Install pip packages" "install_pips"
