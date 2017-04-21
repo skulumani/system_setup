@@ -46,7 +46,7 @@ prompt () {
 }
 
 command_exists () {
-    command -v "$1" >/dev/null 2>&1 ;
+    type "$1" > /dev/null; 
 }
 
 install_homebrew () {
@@ -93,7 +93,7 @@ else
 fi
 
 # test if homebrew is already installed
-if command_exists brew; then
+if ! command_exists brew; then
     echo "Homebrew is not installed"
     prompt "Install Homebrew" install_homebrew
 else
@@ -102,8 +102,12 @@ else
 fi
 
 # install anaconda
-echo "We're going to install Anaconda using Homebrew"
-prompt "Install Anaconda" "brew cask install anaconda"
+if [[ -d "$HOME/anaconda3" ]]; then
+    echo "Anaconda already installed"
+else
+    echo "We're going to install Anaconda using Homebrew"
+    prompt "Install Anaconda" "brew cask install anaconda"
+fi
 
 # setup ssh 
 echo "Now setup SSH keys so we can clone our Git repos"
