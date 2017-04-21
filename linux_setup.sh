@@ -189,6 +189,13 @@ else
 
     prompt "Clone system_setup repo" "git clone git@github.com:skulumani/system_setup.git $HOME/Documents/system_setup"
     echo "Now we'll update the submodules and install all the dotfiles"
+    if [[ -f "$HOME/.profile" ]]; then
+        mv $HOME/.profile $HOME/.profile_backup
+    fi
+
+    if [[ -f "$HOME/.bashrc" ]]; then
+        mv $HOME/.bashrc $HOME/.bashrc_backup
+    fi
     prompt "Install dotfiles" "(cd $HOME/Documents/system_setup && git submodule init && git submodule update --recursive --remote && ./dotfiles/install linux)"
 fi
 
@@ -199,6 +206,7 @@ export GOPATH=$HOME/.go
 export PATH=$PATH:$GOPATH/bin
 export PATH=$HOME/anaconda3/bin:"$PATH"
 export PATH=$PATH:/usr/local/go/bin
+export PATH=/usr/local/texlive/2016/bin/x86_64-linux:$PATH
 
 prompt "Test Anaconda" "python --version"
 prompt "Test Golang" "go --version"
