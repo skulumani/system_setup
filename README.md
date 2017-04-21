@@ -3,23 +3,12 @@
 * Mac specific setup
     * install all the source code pro fonts by double clicking on them and the powerline ones too
     * Install solarized terminal colorscheme. The Yosemite one works on 10.12 
-
-* Install new shell
-~~~
-sudo apt-get install zsh
-chsh -s $(which zsh)
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-~~~
-* Install `ctags`
-~~~
-sudo apt-get install exuberant-ctags
-~~~
+    * Also you can change the default shell by going to Preferences > Users and Groups > Ctrl-Click username > Advanced Options and input the correct path to `zsh`
 
 * Graphics Drivers
     ~~~
     sudo add-apt-repository ppa:graphics-drivers/ppa
     ~~~
-* [Google Chrome](https://www.google.com/chrome/)
 * [SSH-Keys](https://help.github.com/enterprise/11.10.340/user/articles/generating-ssh-keys/) for Github/Bitbucket
     1. Check for keys
     ~~~
@@ -54,11 +43,7 @@ sudo apt-get install exuberant-ctags
     ~~~
 * Install [BOINC](https://boinc.berkeley.edu/)
 * Install [Gridcoin](http://gridcoin.us/)
-* Matlab
-    * Login into the [mathworks](http://www.mathworks.com/index.html?s_tid=gn_logo) using GWU account
-    * Download latest release
 * [Anaconda3](https://www.continuum.io/downloads#linux)
-    1. Modify LaTeXTools Python path
     2. You can turn on/off Anaconda by modifying the path in `.bashrc`
 * [Google Drive for Linux](https://github.com/odeke-em/drive)
     1. Install [go](https://golang.org/doc/install):
