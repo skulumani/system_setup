@@ -89,7 +89,9 @@ export EDITOR="$VISUAL"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # Load my personal bash aliases
 source $HOME/.bash_aliases
-swap_caps_escape
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+    swap_caps_escape
+fi
 # check for caps lock and swap automatically
 
 # source all the PATH information
