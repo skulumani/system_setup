@@ -134,7 +134,7 @@ if [[ ! -d "/usr/local/texlive" ]]; then
     prompt "Download texlive installer" "wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz -O $WORK_DIR/install-tl.tar.gz"
     eval "tar -C $WORK_DIR -xzf $WORK_DIR/install-tl.tar.gz"
     
-    prompt "Create TeXLive directory and set correct permissions" "sudo mkdir /usr/local/texlive/$texlive_year; sudo chown -R $USER: /usr/local/texlive/; sudo chmod -R u+rw /usr/local/texlive"
+    prompt "Create TeXLive directory and set correct permissions" "sudo mkdir -p /usr/local/texlive/$texlive_year; sudo chown -R $USER: /usr/local/texlive/; sudo chmod -R u+rw /usr/local/texlive"
     prompt "Install TeXlive" "$WORK_DIR/install-tl-*/install-tl"
 else
     echo "TexLive is already installed"
