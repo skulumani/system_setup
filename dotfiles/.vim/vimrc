@@ -31,10 +31,25 @@ set wildchar=<Tab> wildmenu wildmode=full
 set incsearch
 set showmatch
 set hlsearch
+
+" KEYBOARD MAPPINGS
 " Press Space to turn off highlighting and clear any message already displayed.
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+" Use Q for formatting the current paragraph (or selection)
+vmap Q gq
+nmap Q gqap
 
-" Buffer tab completion
+" now we can scroll through a big wrapped line more easily
+nnoremap j gj
+nnoremap k gk
+
+" Easy window navigation
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+" " Buffer tab completion
 function! BufSel(pattern)
   let bufcount = bufnr("$")
   let currbufnr = 1
