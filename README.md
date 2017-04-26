@@ -15,7 +15,8 @@
 * [Redshift](http://jonls.dk/redshift/)
 * [MyRepos](https://myrepos.branchable.com/)
     * There's a `mrconfig` file for the home directory.
-
+* [OpenJDK]
+    * On Ubuntu you can install `sudo apt-get install openjdk8-jre` to run JabRef
 ## Dot files
 
 All the dotfiles live in the `dotfiles/` directory.
