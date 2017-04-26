@@ -44,6 +44,7 @@ apt_packages=(
     zathura-dev
     xdotool
     redshift-gtk
+    openjdk8-jre
 )
 
 python_packages=(
