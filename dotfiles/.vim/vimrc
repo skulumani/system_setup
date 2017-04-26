@@ -23,6 +23,11 @@ set nowrap
 " column ruler at 100
 set colorcolumn=100
 
+" Folding in Vim
+set foldmethod=indent   
+set foldnestmax=10
+set nofoldenable
+set foldlevel=2
 " finding files in vim
 set path+=**
 set wildchar=<Tab> wildmenu wildmode=full
