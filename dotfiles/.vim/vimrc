@@ -115,7 +115,8 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'SirVer/ultisnips'
-.
+Plugin 'vim-syntastic/syntastic'
+
 " start all the plugins above
 call vundle#end()
 
@@ -139,4 +140,12 @@ let g:vimtex_view_method = "zathura"
 let g:tex_flavor = "latex"
 let g:vimtex_quickfix_open_on_warning = 0
 
+" Syntastic settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
