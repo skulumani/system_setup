@@ -31,6 +31,7 @@
 ## lines of code to run at IPython startup.
 c.InteractiveShellApp.exec_lines = [
             "%autoreload 2", 
+            '%matplotlib',
             'import numpy as np',
             'import matplotlib.pyplot as plt']
 
