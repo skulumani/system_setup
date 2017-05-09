@@ -139,7 +139,9 @@ let g:latex_view_general_viewer = "zathura"
 let g:vimtex_view_method = "zathura"
 let g:tex_flavor = "latex"
 let g:vimtex_quickfix_open_on_warning = 0
-
+if has('nvim')
+    let g:vimtex_compiler_progname = 'nvr'
+endif
 " Syntastic settings
 let g:syntastic_mode_map = { 'mode': 'passive' } 
 let g:syntastic_always_populate_loc_list = 1
