@@ -116,6 +116,8 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'vim-syntastic/syntastic'
+Plugin 'ludovicchabant/vim-gutentags'
+Plugin 'tpope/vim-surround'
 
 " start all the plugins above
 call vundle#end()
@@ -150,3 +152,15 @@ let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_signs = 0
 nnoremap <F7> :SyntasticCheck<CR> :lopen<CR>
+
+" vim-surround in LaTeX
+augroup latexSurround
+    autocmd!
+    autocmd FileType tex call s:latexSurround()
+augroup END
+
+function! s:latexSurround()
+    let b:surround_{char2nr("e")}
+    \ = "\\begin{\1environment: \1}\n\t\r\n\\end{\1\1}"
+    let b:surround_{char2nr("c")} = "\\\1command: \1{\r}"
+endfunction
