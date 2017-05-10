@@ -3,6 +3,7 @@
     ~/.local/share/applications/JabRef.desktop: JabRef.desktop
     ~/texmf: texmf
     ~/.fonts: .fonts
-    
+    ~/.ctags: .ctags
+
 - shell:
     - [fc-cache -vf ~/.fonts, Installing system fonts]
