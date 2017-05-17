@@ -118,6 +118,7 @@ Plugin 'SirVer/ultisnips'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-fugitive'
 
 " start all the plugins above
 call vundle#end()
