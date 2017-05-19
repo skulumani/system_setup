@@ -56,7 +56,7 @@
             <entry key="caseSensitiveSearch" value="false"/>
             <entry key="citeCommand" value="\cite"/>
             <entry key="columnNames" value="entrytype;bibtexkey;author;title;year;timestamp"/>
-            <entry key="columnWidths" value="87;129;175;809;147;100"/>
+            <entry key="columnWidths" value="101;139;189;799;96;120"/>
             <entry key="confirmDelete" value="true"/>
             <entry key="consoleCommand" value=""/>
             <entry key="ctrlClick" value="false"/>
@@ -145,7 +145,7 @@
             <entry key="lastFocused" value="/home/shankar/texmf/bibtex/bib/library.bib"/>
             <entry key="lastUsedImport" value="__all"/>
             <entry key="listOfFileColumns" value=""/>
-            <entry key="localAutoSave" value="false"/>
+            <entry key="localAutoSave" value="true"/>
             <entry key="lookAndFeel" value="com.jgoodies.plaf.plastic.Plastic3DLookAndFeel"/>
             <entry key="mainWindowPosX" value="-1"/>
             <entry key="mainWindowPosY" value="269"/>
@@ -169,7 +169,7 @@
             <entry key="namesLastOnly" value="false"/>
             <entry key="namesNatbib" value="true"/>
             <entry key="newline" value="&#10;"/>
-            <entry key="numberColWidth" value="64"/>
+            <entry key="numberColWidth" value="50"/>
             <entry key="openFoldersOfAttachedFiles" value="false"/>
             <entry key="openLastEdited" value="true"/>
             <entry key="overrideDefaultFonts" value="false"/>
