@@ -18,7 +18,7 @@ set laststatus =2
 " Set linenumbers
 set number
 set relativenumber
-set nowrap
+set wrap
 
 " column ruler at 100
 set colorcolumn=100
@@ -108,8 +108,9 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " All the plugins are listed here
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'altercation/vim-colors-solarized'
 Plugin 'lervag/vimtex'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'felixhummel/setcolors.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
