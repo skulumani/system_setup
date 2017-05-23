@@ -148,7 +148,7 @@
             <entry key="localAutoSave" value="true"/>
             <entry key="lookAndFeel" value="com.jgoodies.plaf.plastic.Plastic3DLookAndFeel"/>
             <entry key="mainWindowPosX" value="-1"/>
-            <entry key="mainWindowPosY" value="269"/>
+            <entry key="mainWindowPosY" value="25"/>
             <entry key="mainWindowSizeX" value="1922"/>
             <entry key="mainWindowSizeY" value="1056"/>
             <entry key="markImportedEntries" value="true"/>
@@ -274,7 +274,7 @@
             <entry key="useProxy" value="false"/>
             <entry key="useProxyAuthentication" value="false"/>
             <entry key="useRegExpSearch" value="false"/>
-            <entry key="useRemoteServer" value="false"/>
+            <entry key="useRemoteServer" value="true"/>
             <entry key="useTimeStamp" value="true"/>
             <entry key="useUnitFormatterOnSearch" value="true"/>
             <entry key="useXmpPrivacyFilter" value="false"/>
