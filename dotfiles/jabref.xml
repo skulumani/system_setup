@@ -214,6 +214,8 @@
             <entry key="searchAll" value="false"/>
             <entry key="searchAllBases" value="false"/>
             <entry key="searchDialogHeight" value="500"/>
+            <entry key="searchDialogPosX" value="0"/>
+            <entry key="searchDialogPosY" value="25"/>
             <entry key="searchDialogWidth" value="650"/>
             <entry key="searchGen" value="true"/>
             <entry key="searchOpt" value="true"/>
@@ -233,7 +235,7 @@
             <entry key="showRelevanceColumn" value="false"/>
             <entry key="showSearchInDialog" value="false"/>
             <entry key="showSource" value="true"/>
-            <entry key="sidePaneWidth" value="170"/>
+            <entry key="sidePaneWidth" value="215"/>
             <entry key="sizeX" value="1375"/>
             <entry key="sizeY" value="901"/>
             <entry key="specialFieldsEnabled" value="true"/>
