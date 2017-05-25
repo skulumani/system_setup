@@ -236,6 +236,8 @@
             <entry key="showRelevanceColumn" value="false"/>
             <entry key="showSearchInDialog" value="false"/>
             <entry key="showSource" value="true"/>
+            <entry key="sidePaneComponentNames" value="net.sf.jabref.gui.groups.GroupSelector;net.sf.jabref.gui.importer.fetcher.GeneralFetcher"/>
+            <entry key="sidePaneComponentPreferredPositions" value="0;1"/>
             <entry key="sidePaneWidth" value="296"/>
             <entry key="sizeX" value="1375"/>
             <entry key="sizeY" value="901"/>
