@@ -30,10 +30,6 @@ sudo apt-get install liblua5.1-dev \
 cd ~
 git clone https://github.com/vim/vim.git
 cd vim
-git checkout v8.0.0606
-cd src
-make distclean
-cd ..
 
 ./configure --with-features=huge \
             --enable-multibyte \
@@ -41,8 +37,6 @@ cd ..
             --enable-netbeans \
             --enable-pythoninterp=yes \
             --with-python-config-dir=/usr/lib/python2.7/config-x86_64-linux-gnu \
-            --enable-python3interp \
-            --with-python3-config-dir=/usr/lib/python3.5/config-3.5m-x86_64-linux-gnu \
             --enable-gui=auto \
             --enable-fail-if-missing \
             --enable-cscope \
