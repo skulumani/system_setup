@@ -120,6 +120,7 @@ Plugin 'vim-syntastic/syntastic'
 Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
+Plugin 'davidhalter/jedi-vim'
 
 " start all the plugins above
 call vundle#end()
