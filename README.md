@@ -98,3 +98,14 @@ bundle update
 ~~~
 bundle exec jekyll serve
 ~~~
+
+## Building Vim
+
+Some useful links 
+
+* [YouCompleteMe Instructions](https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source)
+* [Github Gist](https://gist.github.com/Mistobaan/b1384a44e8b5a8b35c6e1c7a4c546e84)
+
+You should be able to simply run `./build_vim.sh`
+
+Also depending on the options, you might need to install an Anaconda environment first.
