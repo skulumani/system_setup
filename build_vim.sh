@@ -28,7 +28,10 @@ sudo apt-get install liblua5.1-dev \
     git
 
 cd ~
-git clone https://github.com/vim/vim.git
+if [[ ! -d ./vim ]]; then
+    git clone https://github.com/vim/vim.git
+fi
+
 cd vim
 
 ./configure --with-features=huge \
