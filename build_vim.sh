@@ -36,7 +36,7 @@ cd vim
             --enable-largefile \
             --enable-netbeans \
             --enable-pythoninterp=yes \
-            --with-python-config-dir=/usr/lib/python2.7/config-x86_64-linux-gnu \
+            --with-python-config-dir=~/anaconda3/envs/opencv/lib/python2.7/config \
             --enable-gui=auto \
             --enable-fail-if-missing \
             --enable-cscope \
