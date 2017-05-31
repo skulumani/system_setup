@@ -4,6 +4,7 @@ alias l='ls -CF'
 
 alias cs='cd;ls'
 alias vim='vim --servername vim'
+alias vim2='PYTHONPATH=~/anaconda3/envs/opencv/lib/python2.7/site_packages vim'
 
 alias jabref='java -jar $HOME/bin/JabRef/JabRef-*.jar'
 # create and move to new directory
