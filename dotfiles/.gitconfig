@@ -6,12 +6,12 @@
     excludesfile = ~/.gitignore_global
     editor = vim 
     filemode = false
-[credential]
-    helper = osxkeychain
 [push]
     default = simple
 [commit]
     gpgsign = false
+[url "git@github.com:"]
+ insteadOf = https://github.com/
 [alias]
     lg = !"git lg1"
     lg1 = !"git lg1-specific --all"
