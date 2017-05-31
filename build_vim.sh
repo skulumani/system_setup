@@ -33,8 +33,6 @@ fi
 
 cd ~/vim
 cd src
-make clean
-
 cd ~/vim
 
 ./configure --with-features=huge \
