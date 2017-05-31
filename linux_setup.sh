@@ -57,6 +57,8 @@ python_packages=(
     powerline-status
     powerline-gitstatus
     glances
+    neovim
+    neovim-remote
 )
 ######################################## End of app list ########################################
 set +e
