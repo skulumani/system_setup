@@ -105,6 +105,7 @@ Some useful links
 
 * [YouCompleteMe Instructions](https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source)
 * [Github Gist](https://gist.github.com/Mistobaan/b1384a44e8b5a8b35c6e1c7a4c546e84)
+* [Building Vim](https://www.xorpd.net/blog/vim_python3_install.html)
 
 You should be able to simply run `./build_vim.sh`
 
