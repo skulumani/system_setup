@@ -45,6 +45,7 @@ apt_packages=(
     xdotool
     redshift-gtk
     openjdk8-jre
+    trash-cli
 )
 
 python_packages=(
