@@ -27,9 +27,13 @@ sudo apt-get install liblua5.1-dev \
     python3-dev \
     git
 
-if [[ ! -d "~/vim" ]]; then
-    git clone https://github.com/vim/vim.git
+if [[ ! -d "$HOME/vim" ]]; then
+    git clone https://github.com/vim/vim.git ~/vim
 fi
+
+cd ~/vim
+cd src
+make clean
 
 cd ~/vim
 
@@ -38,12 +42,13 @@ cd ~/vim
             --enable-largefile \
             --enable-netbeans \
             --enable-pythoninterp=yes \
-            --with-python-config-dir=~/anaconda3/envs/opencv/lib/python2.7/config \
+            --with-python-config-dir=/usr/lib/python2.7/config-x86_64-linux-gnu \
             --enable-gui=auto \
             --enable-fail-if-missing \
             --enable-cscope \
             --prefix=/usr 2>config_err.log >config.log || cat config_err.log
 make VIMRUNTIMEDIR=/usr/share/vim/vim80
+
 sudo apt-get install checkinstall
 cd ~/vim
 sudo checkinstall
