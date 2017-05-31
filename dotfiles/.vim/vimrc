@@ -135,6 +135,9 @@ syntax enable
 set background=dark
 colorscheme solarized
 
+" vim-conda
+let g:conda_startup_msg_suppress = 1
+
 " vim-airline theme
 let g:airline_theme='solarized'
 let g:airline#extensions#tabline#enabled = 1
