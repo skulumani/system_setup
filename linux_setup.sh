@@ -46,6 +46,11 @@ apt_packages=(
     redshift-gtk
     openjdk8-jre
     trash-cli
+    software-properties-common
+    python-dev
+    python3-dev
+    python-pip
+    python3-pip
 )
 
 python_packages=(
@@ -112,6 +117,16 @@ else
     prompt "Install Google Chrome" "sudo dpkg -i $WORK_DIR/google_chrome.deb"
 
     prompt "Fix the Chrome dependencies" "sudo apt-get -y install -f"
+fi
+
+# install neovim
+if command_exists nvim; then
+    echo "NeoVim already installed"
+else
+    echo "Neovim not installed"
+    sudo add-apt-repository -y ppa:neovim-ppa/stable
+    sudo apt-get -y update
+    sudo apt-get -y install neovim
 fi
 
 # install anaconda
