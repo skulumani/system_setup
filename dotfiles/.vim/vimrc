@@ -121,6 +121,7 @@ Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
 Plugin 'davidhalter/jedi-vim'
+Plugin 'cjrh/vim-conda'
 
 " start all the plugins above
 call vundle#end()
