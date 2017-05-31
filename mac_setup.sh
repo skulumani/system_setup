@@ -7,6 +7,7 @@ brews=(
     myrepos
     tmux
     zsh
+    neovim/neovim/neovim
 )
 
 casks=(
@@ -24,6 +25,8 @@ python_packages=(
     powerline-status
     powerline-gitstatus
     glances
+    neovim
+    neovim-remote
 )
 
 fonts=(
