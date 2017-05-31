@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 set -e
 
@@ -27,12 +27,11 @@ sudo apt-get install liblua5.1-dev \
     python3-dev \
     git
 
-cd ~
-if [[ ! -d ./vim ]]; then
+if [[ ! -d "~/vim" ]]; then
     git clone https://github.com/vim/vim.git
 fi
 
-cd vim
+cd ~/vim
 
 ./configure --with-features=huge \
             --enable-multibyte \
