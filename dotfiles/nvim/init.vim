@@ -11,8 +11,8 @@ command! MakeTags !ctags -R .
 " Hiddent characters
 nmap <leader>l :set list!<CR>
 set listchars=tab:▸\ ,eol:¬
-highlight NonText guifg=#4a4a59
-highlight SpecialKey guifg=#4a4a59
+" highlight NonText guifg=#4a4a59
+" highlight SpecialKey guifg=#4a4a59
 
 " Tab spacing
 set autoindent
@@ -107,8 +107,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " install plugins
 call plug#begin('~/.config/nvim/plug.vim')
 " Appearance
-Plug 'flazz/vim-colorschemes'
-Plug 'felixhummel/setcolors.vim'
+Plug 'iCyMind/NeoSolarized'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
@@ -133,10 +132,9 @@ call plug#end()
 " Plugin options
 
 " Solarized
-set t_Co=256
-syntax enable
+set termguicolors
 set background=dark
-colorscheme solarized
+colorscheme NeoSolarized
 
 " Vim Airline
 let g:airline_theme='solarized'
@@ -211,34 +209,7 @@ let g:python3_host_prog = '/home/shankar/anaconda3/envs/neovim3/bin/python'
 " Deoplete settings
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_smart_case = 1
-let g:deoplete#disable_auto_complete = 1
+command! DeopleteToggle call deoplete#toggle()
 autocmd CompleteDone * pclose!
 let g:deoplete#sources#jedi#show_docstring=1
 
-fun! _My_deoplete_tab()
-    if pumvisible()
-        return "\<C-n>"
-    endif
-    let pos = getcurpos()
-    let c = getline(pos[1])[pos[2]-2]
-    echom string(pos) c
-    if c =~ '\k'
-        return deoplete#mappings#manual_complete()
-    endif
-    return "\<Tab>"
-endfun
-inoremap <silent><expr> <Tab> _My_deoplete_tab()
-inoremap <expr> <S-Tab>  pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-" Toggle deoplete.
-fun! _My_toggle_deoplete()
-    let g:deoplete#disable_auto_complete = !g:deoplete#disable_auto_complete
-endfun
-noremap  <F8> :<C-u>call _My_toggle_deoplete()<cr>
-inoremap <F8> <c-o>:call _My_toggle_deoplete()<cr>
-
-" Via g:deoplete#_keyword_patterns
-let g:deoplete#keyword_patterns = {
-            \ '_': '[a-zA-Z_]\w*',
-            \ 'vim': '[a-zA-Z_][\w#:_-]*'
-            \ }
