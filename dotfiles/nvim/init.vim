@@ -3,15 +3,16 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
         \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     autocmd VimEnter * PlugInstall
 endif
-" setruntimepath^=~/.vim runtimepath+=~/.vim/after
-" let &packpath = &runtimepath
-" source ~/.vim/vimrc
-" 
-"
-"
+
 filetype indent plugin on
 " ctags command
 command! MakeTags !ctags -R .
+
+" Hiddent characters
+nmap <leader>l :set list!<CR>
+set listchars=tab:▸\ ,eol:¬
+highlight NonText guifg=#4a4a59
+highlight SpecialKey guifg=#4a4a59
 
 " Tab spacing
 set autoindent
@@ -61,33 +62,33 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-" " Buffer tab completion
+" Buffer tab completion
 function! BufSel(pattern)
-  let bufcount = bufnr("$")
-  let currbufnr = 1
-  let nummatches = 0
-  let firstmatchingbufnr = 0
-  while currbufnr <= bufcount
-    if(bufexists(currbufnr))
-      let currbufname = bufname(currbufnr)
-      if(match(currbufname, a:pattern) > -1)
-        echo currbufnr . ": ". bufname(currbufnr)
-        let nummatches += 1
-        let firstmatchingbufnr = currbufnr
-      endif
+    let bufcount = bufnr("$")
+    let currbufnr = 1
+    let nummatches = 0
+    let firstmatchingbufnr = 0
+    while currbufnr <= bufcount
+        if(bufexists(currbufnr))
+            let currbufname = bufname(currbufnr)
+            if(match(currbufname, a:pattern) > -1)
+                echo currbufnr . ": ". bufname(currbufnr)
+                let nummatches += 1
+                let firstmatchingbufnr = currbufnr
+            endif
+        endif
+        let currbufnr = currbufnr + 1
+    endwhile
+    if(nummatches == 1)
+        execute ":buffer ". firstmatchingbufnr
+    elseif(nummatches > 1)
+        let desiredbufnr = input("Enter buffer number: ")
+        if(strlen(desiredbufnr) != 0)
+            execute ":buffer ". desiredbufnr
+        endif
+    else
+        echo "No matching buffers"
     endif
-    let currbufnr = currbufnr + 1
-  endwhile
-  if(nummatches == 1)
-    execute ":buffer ". firstmatchingbufnr
-  elseif(nummatches > 1)
-    let desiredbufnr = input("Enter buffer number: ")
-    if(strlen(desiredbufnr) != 0)
-      execute ":buffer ". desiredbufnr
-    endif
-  else
-    echo "No matching buffers"
-  endif
 endfunction
 
 if has("autocmd")
@@ -142,9 +143,6 @@ let g:airline_theme='solarized'
 let g:airline#extensions#tabline#enabled=1
 let g:airline_powerline_fonts=1
 
-" Vim-Conda
-let g:conda_startup_msg_suppress=1
-
 " Options for vimtex
 if has('unix')
     if has('mac')
@@ -184,14 +182,9 @@ let g:vimtex_quickfix_open_on_warning=0
 if has('nvim')
     let g:vimtex_compiler_progname='nvr'
 endif
-" Syntastic settings
-let g:syntastic_mode_map = { 'mode': 'passive' } 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_enable_signs = 0
-nnoremap <F7> :SyntasticCheck<CR> :lopen<CR>
+
+" neomake settings
+let g:neomake_python_enable_makers = ['flake8']
 
 " vim-surround in LaTeX
 augroup latexSurround
@@ -214,3 +207,38 @@ let g:UltiSnipsSnippetsDir = '~/.vim/UltiSnips'
 " Python path setting
 let g:python_host_prog = '/home/shankar/anaconda3/envs/neovim2/bin/python'
 let g:python3_host_prog = '/home/shankar/anaconda3/envs/neovim3/bin/python'
+
+" Deoplete settings
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_smart_case = 1
+let g:deoplete#disable_auto_complete = 1
+autocmd CompleteDone * pclose!
+let g:deoplete#sources#jedi#show_docstring=1
+
+fun! _My_deoplete_tab()
+    if pumvisible()
+        return "\<C-n>"
+    endif
+    let pos = getcurpos()
+    let c = getline(pos[1])[pos[2]-2]
+    echom string(pos) c
+    if c =~ '\k'
+        return deoplete#mappings#manual_complete()
+    endif
+    return "\<Tab>"
+endfun
+inoremap <silent><expr> <Tab> _My_deoplete_tab()
+inoremap <expr> <S-Tab>  pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" Toggle deoplete.
+fun! _My_toggle_deoplete()
+    let g:deoplete#disable_auto_complete = !g:deoplete#disable_auto_complete
+endfun
+noremap  <F8> :<C-u>call _My_toggle_deoplete()<cr>
+inoremap <F8> <c-o>:call _My_toggle_deoplete()<cr>
+
+" Via g:deoplete#_keyword_patterns
+let g:deoplete#keyword_patterns = {
+            \ '_': '[a-zA-Z_]\w*',
+            \ 'vim': '[a-zA-Z_][\w#:_-]*'
+            \ }
