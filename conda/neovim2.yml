@@ -14,6 +14,7 @@ dependencies:
 - pip:
   - futures==3.1.1
   - greenlet==0.4.12
+  - jedi==0.10.2
   - msgpack-python==0.4.8
   - neovim==0.1.13
   - six==1.10.0
