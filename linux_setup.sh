@@ -37,9 +37,7 @@ apt_packages=(
     exuberant-ctags
     git
     myrepos
-    tmux
     zsh
-    vim-gtk
     zathura
     zathura-dev
     xdotool
@@ -51,6 +49,7 @@ apt_packages=(
     python3-dev
     python-pip
     python3-pip
+    gnome-terminal
 )
 
 python_packages=(
