@@ -29,7 +29,7 @@ set number
 set relativenumber
 set wrap
 
-set colorcolumn=100
+set colorcolumn=80
 
 " Code folding
 set foldmethod=indent
