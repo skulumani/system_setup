@@ -2,6 +2,8 @@
 
 set -e
 
+VIM_VERSION="v8.0.0606"
+
 sudo apt-get remove --purge vim \
     vim-gtk \
     vim-runtime \
@@ -25,14 +27,18 @@ sudo apt-get install liblua5.1-dev \
     libxpm-dev \
     libxt-dev \
     python3-dev \
-    git
+    git \
+    checkinstall
+
+echo "We're going to clone and checkout Vim from github"
 
 if [[ ! -d "$HOME/vim" ]]; then
     git clone https://github.com/vim/vim.git ~/vim
+else
+    cd ~/vim
+    git checkout $VIM_VERSION
 fi
 
-cd ~/vim
-cd src
 cd ~/vim
 
 ./configure --with-features=huge \
@@ -47,7 +53,6 @@ cd ~/vim
             --prefix=/usr 2>config_err.log >config.log || cat config_err.log
 make VIMRUNTIMEDIR=/usr/share/vim/vim80
 
-sudo apt-get install checkinstall
 cd ~/vim
 sudo checkinstall
 # sudo make install
