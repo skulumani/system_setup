@@ -1,3 +1,5 @@
 bundle/
 plugins/
 resurrect/
+autoload/
+plug.vim/
