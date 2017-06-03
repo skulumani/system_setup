@@ -15,7 +15,7 @@ set relativenumber
 set wrap
 
 " column ruler at 100
-set colorcolumn=100
+set colorcolumn=80
 
 " Folding in Vim
 set foldmethod=indent   
@@ -25,6 +25,10 @@ set foldlevel=2
 " finding files in vim
 set path+=**
 set wildchar=<Tab> wildmenu wildmode=full
+set wildignore+=*.swp,*.pyc,*.zip,*.so,*/tmp/*,*/.git/*
+" Hiddent characters
+nmap <leader>l :set list!<CR>
+set listchars=tab:▸\ ,eol:¬
 
 " Highlight searching
 set incsearch
@@ -36,4 +40,13 @@ if has("autocmd")
     augroup vimrc 
         autocmd! BufWritePost $MYVIMRC source $MYVIMRC | echom "Reloaded " . $MYVIMRC | redraw
     augroup END
+endif
+
+if has("nvim")
+    " neomake settings
+    let g:neomake_python_enable_makers = ['flake8']
+
+    " Python path setting
+    let g:python_host_prog = '/home/shankar/anaconda3/envs/neovim2/bin/python'
+    let g:python3_host_prog = '/home/shankar/anaconda3/envs/neovim3/bin/python'
 endif

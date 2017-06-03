@@ -9,9 +9,9 @@ source $HOME/.vim/config/plugins.vimrc
 
 source $HOME/.vim/config/solarized.vimrc
 source $HOME/.vim/config/vimtex.vimrc
-" vim-conda
-let g:conda_startup_msg_suppress = 1
-
 source $HOME/.vim/config/airline.vimrc
 source $HOME/.vim/config/nerdtree.vimrc
 source $HOME/.vim/config/syntastic.vimrc
+source $HOME/.vim/config/indentline.vimrc
+source $HOME/.vim/config/utltisnips.vimrc
+

@@ -6,9 +6,8 @@ call vundle#begin()
 " All the plugins are listed here
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'lervag/vimtex'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'felixhummel/setcolors.vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'lifepillar/vim-solarized8'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -18,8 +17,7 @@ Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
 Plugin 'davidhalter/jedi-vim'
-Plugin 'cjrh/vim-conda'
-
+Plugin 'Yggdroot/indentLine'
 " start all the plugins above
 call vundle#end()
 filetype plugin indent on
