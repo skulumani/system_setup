@@ -1,6 +1,11 @@
 
 " Solarized dark
-set t_Co=256
+if has("nvim")
+    set termguicolors
+else
+    set t_Co=256
+endif
+
 syntax enable
 set background=dark
-colorscheme solarized
+colorscheme solarized8_dark
