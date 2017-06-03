@@ -38,6 +38,7 @@ set hlsearch
 " Autoreload VIMRC
 if has("autocmd")
     augroup vimrc 
+        au!
         autocmd! BufWritePost $MYVIMRC source $MYVIMRC | echom "Reloaded " . $MYVIMRC | redraw
     augroup END
 endif

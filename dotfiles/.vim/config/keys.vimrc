@@ -20,3 +20,6 @@ command! MakeTags !ctags -R .
 
 " Nerdtree hotkey to C-n
 map <C-n> :NERDTreeToggle<CR>
+
+nnoremap <leader>ev :e $MYVIMRC<CR>
+nnoremap <leader>sv :so $MYVIMRC<CR>
