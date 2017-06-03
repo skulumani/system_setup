@@ -29,4 +29,4 @@
     ~/.config/nvim: .config/nvim
 
 - shell:
-    - [git submodule update --init --recursive --remote, Updating submodules]
+    - [git submodule update --init --recursive --remote -- ./dotbot, Updating dotbot]
