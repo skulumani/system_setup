@@ -109,3 +109,5 @@ if [ -f $HOME/anaconda3/lib/python3.6/site-packages/powerline/bindings/zsh/power
     source $HOME/anaconda3/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh
 fi
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

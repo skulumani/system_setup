@@ -127,3 +127,5 @@ if [ -f $HOME/anaconda3/lib/python3.6/site-packages/powerline/bindings/bash/powe
     powerline-daemon -q
 fi
 
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
