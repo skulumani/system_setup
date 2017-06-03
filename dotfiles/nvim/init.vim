@@ -11,8 +11,6 @@ command! MakeTags !ctags -R .
 " Hiddent characters
 nmap <leader>l :set list!<CR>
 set listchars=tab:▸\ ,eol:¬
-" highlight NonText guifg=#4a4a59
-" highlight SpecialKey guifg=#4a4a59
 
 " Tab spacing
 set autoindent
@@ -21,7 +19,6 @@ set softtabstop=4
 set shiftwidth=4
 set shiftround
 
-set backspace=indent,eol,start
 set hidden
 set laststatus=2
 
@@ -45,6 +42,8 @@ set wildchar=<Tab> wildmenu wildmode=full
 set incsearch 
 set showmatch
 set hlsearch
+set ignorecase
+set smartcase
 
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
@@ -62,43 +61,11 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-" Buffer tab completion
-function! BufSel(pattern)
-    let bufcount = bufnr("$")
-    let currbufnr = 1
-    let nummatches = 0
-    let firstmatchingbufnr = 0
-    while currbufnr <= bufcount
-        if(bufexists(currbufnr))
-            let currbufname = bufname(currbufnr)
-            if(match(currbufname, a:pattern) > -1)
-                echo currbufnr . ": ". bufname(currbufnr)
-                let nummatches += 1
-                let firstmatchingbufnr = currbufnr
-            endif
-        endif
-        let currbufnr = currbufnr + 1
-    endwhile
-    if(nummatches == 1)
-        execute ":buffer ". firstmatchingbufnr
-    elseif(nummatches > 1)
-        let desiredbufnr = input("Enter buffer number: ")
-        if(strlen(desiredbufnr) != 0)
-            execute ":buffer ". desiredbufnr
-        endif
-    else
-        echo "No matching buffers"
-    endif
-endfunction
-
 if has("autocmd")
     augroup vimrc 
         autocmd! BufWritePost $MYVIMRC source $MYVIMRC | echom "Reloaded " . $MYVIMRC | redraw
     augroup END
 endif
-
-"Bind the BufSel() function to a user-command
-command! -nargs=1 Bs :call BufSel("<args>")
 
 " Nerdtree hotkey to C-n
 map <C-n> :NERDTreeToggle<CR>
@@ -107,7 +74,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " install plugins
 call plug#begin('~/.config/nvim/plug.vim')
 " Appearance
-Plug 'iCyMind/NeoSolarized'
+Plug 'lifepillar/vim-solarized8'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
@@ -131,10 +98,13 @@ call plug#end()
 
 " Plugin options
 
+" Neomake
+autocmd! BufWritePost * Neomake
+
 " Solarized
 set termguicolors
 set background=dark
-colorscheme NeoSolarized
+colorscheme solarized8_dark
 
 " Vim Airline
 let g:airline_theme='solarized'
@@ -201,14 +171,17 @@ let g:indentLine_setColors = 1
 
 " UltiSnips Directory
 let g:UltiSnipsSnippetsDir = '~/.vim/UltiSnips'
-
+" Trigger configuration.
+inoremap <silent><expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 " Python path setting
 let g:python_host_prog = '/home/shankar/anaconda3/envs/neovim2/bin/python'
 let g:python3_host_prog = '/home/shankar/anaconda3/envs/neovim3/bin/python'
 
 " Deoplete settings
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_smart_case = 1
 command! DeopleteToggle call deoplete#toggle()
 autocmd CompleteDone * pclose!
 let g:deoplete#sources#jedi#show_docstring=1
