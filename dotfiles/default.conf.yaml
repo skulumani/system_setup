@@ -22,11 +22,11 @@
     ~/.zshrc: .zshrc
     ~/.path: .path
     ~/.latexmkrc: .latexmkrc
-    ~/.config/fontconfig: .config/fontconfig
     ~/.ipython/profile_default/ipython_config.py: ipython_config.py
-    ~/.config/powerline: .config/powerline
     ~/jabref.xml: jabref.xml
-    ~/.config/nvim/init.vim: nvim/init.vim
+    ~/.config/powerline: .config/powerline
+    ~/.config/fontconfig: .config/fontconfig
+    ~/.config/nvim: .config/nvim
 
 - shell:
     - [git submodule update --init --recursive --remote, Updating submodules]
