@@ -47,7 +47,29 @@ if has("nvim")
     " neomake settings
     let g:neomake_python_enable_makers = ['flake8']
 
-    " Python path setting
-    let g:python_host_prog = '/home/shankar/anaconda3/envs/neovim2/bin/python'
-    let g:python3_host_prog = '/home/shankar/anaconda3/envs/neovim3/bin/python'
+    " Set important paths
+    if has('unix')
+        " You have to set these up using pip install.
+        " I have conda environments setup already
+        "
+        " $ conda env create -f neovim2
+        " $ conda env create -f neovim3
+        " ... 
+        "
+        if glob('~/anaconda3/envs/neovim2/bin/python') != ''
+            let g:python_host_prog = expand('~/anaconda3/envs/neovim2/bin/python')
+            let g:python2_host_prog = expand('~/anaconda3/envs/neovim2/bin/python')
+        else
+            echom "Use conda to install neovim2"
+            let g:python_host_prog = 'python'
+            let g:python2_host_prog = 'python2'
+        endif
+
+        if glob('~/anaconda3/envs/neovim3/bin/python') != ''
+            let g:python3_host_prog = expand('~/anaconda3/envs/neovim3/bin/python')
+        else
+            echom "Use conda to install neovim3"
+            let g:python3_host_prog = 'python3'
+        endif
+    endif
 endif
