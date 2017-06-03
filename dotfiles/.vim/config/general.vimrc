@@ -1,3 +1,4 @@
+filetype plugin indent on
 set autoindent
 " use 4 spaces for tabs
 set expandtab
