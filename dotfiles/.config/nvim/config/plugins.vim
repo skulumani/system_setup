@@ -17,7 +17,7 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'Yggdroot/indentLine'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
-Plug 'neomake/neomake'
+" Plug 'neomake/neomake'
 
 " Productivity
 Plug 'scrooloose/nerdtree'
