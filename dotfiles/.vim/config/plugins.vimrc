@@ -14,7 +14,11 @@ else
     endif
 endif
 " All the plugins are listed here
-call plug#begin('~/.vim/plug.vim')
+if has('nvim')
+    call plug#begin('~/.config/nvim/plug.vim')
+else
+    call plug#begin('~/.vim/plug.vim')
+endif
 " Appearance
 Plug 'lifepillar/vim-solarized8'
 Plug 'vim-airline/vim-airline'
@@ -23,28 +27,33 @@ Plug 'vim-airline/vim-airline-themes'
 " Programming plugins
 Plug 'lervag/vimtex'
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'Yggdroot/indentLine'
+Plug 'Yggdroot/indentLine',{ 'on': 'IndentLinesEnable' }
 if has("nvim")
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     Plug 'zchee/deoplete-jedi'
 else
+    Plug 'Shougo/neocomplete.vim'
     Plug 'davidhalter/jedi-vim'
 endif
 " Code linting
 if has("nvim")
-    " Plug "neomake/neomake"
+    " Plug 'neomake/neomake'
 else
-    " Plug 'vim-syntastic/syntastic'
+    " Plug 'vim-syntastic/syntastic', { 'on': 'SyntasticCheck' }
 endif
 
 " Productivity
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'SirVer/ultisnips'
 Plug 'ervandew/supertab'
 
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install' }
+Plug 'junegunn/fzf.vim'
+
+Plug 'Shougo/neocomplete'
+Plug 'Shougo/neosnippet.vim'
+Plug 'Shougo/neosnippet-snippets'
 call plug#end()
 " start all the plugins above
 filetype plugin indent on
