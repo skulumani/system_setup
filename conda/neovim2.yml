@@ -2,6 +2,7 @@ name: neovim2
 channels:
 - defaults
 dependencies:
+- jedi=0.10.2=py27_2
 - openssl=1.0.2l=0
 - pip=9.0.1=py27_1
 - python=2.7.13=0
@@ -14,7 +15,6 @@ dependencies:
 - pip:
   - futures==3.1.1
   - greenlet==0.4.12
-  - jedi==0.10.2
   - msgpack-python==0.4.8
   - neovim==0.1.13
   - six==1.10.0
