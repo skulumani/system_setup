@@ -4,7 +4,7 @@
     signingkey = 95F19D10666A332D
 [core]
     excludesfile = ~/.gitignore_global
-    editor = vim 
+    editor = nvim 
     filemode = false
 [push]
     default = simple
