@@ -95,8 +95,8 @@ fi
 # check for caps lock and swap automatically
 
 # source all the PATH information
-if [ -f ~/.path ]; then
-    source ~/.path
+if [ -f $HOME/.path ]; then
+    source $HOME/.path
 fi
 
 # Set 256 colors for the terminal
@@ -109,8 +109,8 @@ if [ -f $HOME/anaconda3/lib/python3.6/site-packages/powerline/bindings/zsh/power
     source $HOME/anaconda3/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh
 fi
 
-if [[ -f ~/.fzf.zsh ]]; then
-    source ~/.fzf.zsh
-    source ~/.fzf_options
+if [[ -f $HOME/.fzf.zsh ]]; then
+    source $HOME/.fzf.zsh
+    source $HOME/.fzf_options
 fi
 
