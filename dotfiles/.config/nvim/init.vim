@@ -2,7 +2,7 @@
 source $HOME/.vim/config/general.vimrc
 source $HOME/.vim/config/keys.vimrc
 
-source $HOME/.config/nvim/config/plugins.vim
+source $HOME/.vim/config/plugins.vimrc
  
 " Plugin options
 
