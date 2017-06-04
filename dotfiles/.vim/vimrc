@@ -6,7 +6,8 @@ source $HOME/.vim/config/keys.vimrc
 
  " PLUGINS
 source $HOME/.vim/config/plugins.vimrc
- 
+
+source $HOME/.vim/config/autocomplete.vimrc
 source $HOME/.vim/config/solarized.vimrc
 source $HOME/.vim/config/airline.vimrc
 source $HOME/.vim/config/vimtex.vimrc
