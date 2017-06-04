@@ -132,4 +132,3 @@ if [[ -f $HOME/.fzf.bash ]]; then
     source $HOME/.fzf.bash 
     source $HOME/.fzf_options
 fi
-
