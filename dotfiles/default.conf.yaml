@@ -14,6 +14,7 @@
     ~/.bashrc: .bashrc
     ~/.driverc: .driverc
     ~/.gitconfig: .gitconfig
+    ~/.agignore: .agignore
     ~/.gitignore_global: .gitignore_global
     ~/.mrconfig: myrepos/.mrconfig
     ~/.mrtrust: myrepos/.mrtrust
@@ -21,6 +22,7 @@
     ~/.vim: .vim
     ~/.zshrc: .zshrc
     ~/.path: .path
+    ~/.fzf_options: .fzf_options
     ~/.latexmkrc: .latexmkrc
     ~/.ipython/profile_default/ipython_config.py: ipython_config.py
     ~/jabref.xml: jabref.xml
