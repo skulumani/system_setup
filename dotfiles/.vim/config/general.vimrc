@@ -18,6 +18,8 @@ set wrap
 " column ruler at 100
 set colorcolumn=80
 
+" Keep x lines below and above the cursor
+set scrolloff=5 
 " Folding in Vim
 set foldmethod=indent   
 set foldnestmax=10
