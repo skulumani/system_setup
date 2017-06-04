@@ -13,6 +13,7 @@ sudo apt-get remove --purge vim \
     vim-gui-common
 
 sudo apt-get install liblua5.1-dev \
+    lua5.1 \
     luajit \
     libluajit-5.1 \
     python-dev \
@@ -27,6 +28,8 @@ sudo apt-get install liblua5.1-dev \
     libxpm-dev \
     libxt-dev \
     python3-dev \
+    ruby-dev \
+    libperl-dev \
     git \
     checkinstall
 
@@ -41,16 +44,22 @@ fi
 
 cd ~/vim
 
-./configure --with-features=huge \
-            --enable-multibyte \
-            --enable-largefile \
-            --enable-netbeans \
-            --enable-pythoninterp=yes \
-            --with-python-config-dir=/usr/lib/python2.7/config-x86_64-linux-gnu \
-            --enable-gui=auto \
-            --enable-fail-if-missing \
-            --enable-cscope \
-            --prefix=/usr 2>config_err.log >config.log || cat config_err.log
+if [[ ! -d "$HOME/anaconda3/envs/neovim2" ]]; then
+    echo "Install neovim2 environment using conda"
+else
+    ./configure --with-features=huge \
+                --enable-multibyte \
+                --enable-largefile \
+                --enable-netbeans \
+                --enable-pythoninterp=yes \
+                --with-python-config-dir=$HOME/anaconda3/envs/neovim2/lib/python2.7/config \
+                --enable-gui=auto \
+                --enable-fail-if-missing \
+                --enable-cscope \
+                --enable-pearlinterp=yes \
+                --enable-luainterp=yes \
+                --prefix=/usr 2>config_err.log >config.log || cat config_err.log
+fi
 make VIMRUNTIMEDIR=/usr/share/vim/vim80
 
 cd ~/vim
