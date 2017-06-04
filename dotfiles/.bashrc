@@ -128,8 +128,8 @@ if [ -f $HOME/anaconda3/lib/python3.6/site-packages/powerline/bindings/bash/powe
 fi
 
 
-if [[ -f ~/.fzf.bash ]]; then
-    source ~/.fzf.bash 
-    source ~/.fzf_options
+if [[ -f $HOME/.fzf.bash ]]; then
+    source $HOME/.fzf.bash 
+    source $HOME/.fzf_options
 fi
 
