@@ -1,23 +1,50 @@
-" initialize vundle
-set rtp+=~/.vim/bundle/Vundle.vim
+" Autoload vim plug if not already there
 
-filetype off 
-call vundle#begin()
+if has("nvim")
+    if empty(glob('~/.config/nvim/autoload/plug.vim'))
+        silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+                    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+        autocmd VimEnter * PlugInstall
+    endif
+else 
+    if empty(glob('~/.vim/autoload/plug.vim'))
+        silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+                    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+        autocmd VimEnter * PlugInstall
+    endif
+endif
 " All the plugins are listed here
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'lervag/vimtex'
-Plugin 'scrooloose/nerdtree'
-Plugin 'lifepillar/vim-solarized8'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'SirVer/ultisnips'
-Plugin 'vim-syntastic/syntastic'
-Plugin 'ludovicchabant/vim-gutentags'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-fugitive'
-Plugin 'davidhalter/jedi-vim'
-Plugin 'Yggdroot/indentLine'
+call plug#begin('~/.vim/plug.vim')
+" Appearance
+Plug 'lifepillar/vim-solarized8'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+" Programming plugins
+Plug 'lervag/vimtex'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'Yggdroot/indentLine'
+if has("nvim")
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    Plug 'zchee/deoplete-jedi'
+else
+    Plug 'davidhalter/jedi-vim'
+endif
+" Code linting
+if has("nvim")
+    " Plug "neomake/neomake"
+else
+    " Plug 'vim-syntastic/syntastic'
+endif
+
+" Productivity
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'SirVer/ultisnips'
+Plug 'ervandew/supertab'
+
+call plug#end()
 " start all the plugins above
-call vundle#end()
 filetype plugin indent on
