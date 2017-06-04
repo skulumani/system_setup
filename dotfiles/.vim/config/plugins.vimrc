@@ -48,6 +48,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'ervandew/supertab'
 
+" set rtp+=~/.fzf
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install' }
 Plug 'junegunn/fzf.vim'
 
