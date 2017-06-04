@@ -15,6 +15,10 @@ if has('nvim')
     let g:deoplete#sources#jedi#show_docstring = 1
     let g:deoplete#sources#jedi#enable_cache = 1
     let g:deoplete#sources#jedi#worker_threads = 2
+    " use tab to forward cycle
+    inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+    " use tab to backward cycle
+    inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 else
     let g:neocomplete#enable_at_startup = 1
     let g:acp_enableAtStartup = 0
