@@ -34,3 +34,7 @@ if [[ -d $HOME/anaconda3 ]]; then
     # export PATH=~/anaconda3/bin:"$PATH"
 fi
 
+# add custom neovim path
+if [[ -d "$HOME/neovim/bin" ]]; then
+    export PATH="$HOME/neovim/bin:$PATH"
+fi
