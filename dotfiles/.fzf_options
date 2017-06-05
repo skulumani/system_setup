@@ -27,7 +27,7 @@ _gen_fzf_default_opts() {
 }
 _gen_fzf_default_opts
 
-export FZF_DEFAULT_COMMAND='ag -g ""'
+export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
 export FZF_TMUX=1
 # FZF commands #######################33
 # fe [FUZZY PATTERN] - Open the selected file with the default editor
