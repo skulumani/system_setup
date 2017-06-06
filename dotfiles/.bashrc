@@ -127,8 +127,9 @@ if [ -f $HOME/anaconda3/lib/python3.6/site-packages/powerline/bindings/bash/powe
     powerline-daemon -q
 fi
 
+# FZF finder
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 if [[ -f $HOME/.fzf.bash ]]; then
-    source $HOME/.fzf.bash 
     source $HOME/.fzf_options
 fi
