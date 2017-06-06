@@ -19,6 +19,13 @@ if has('nvim')
 else
     call plug#begin('~/.vim/plug.vim')
 endif
+
+" Productivity
+" Plug 'ervandew/supertab'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
+
 " Appearance
 Plug 'lifepillar/vim-solarized8'
 Plug 'vim-airline/vim-airline'
@@ -42,11 +49,6 @@ else
     " Plug 'vim-syntastic/syntastic', { 'on': 'SyntasticCheck' }
 endif
 
-" Productivity
-Plug 'scrooloose/nerdtree'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-fugitive'
-Plug 'ervandew/supertab'
 
 " set rtp+=~/.fzf
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install' }
