@@ -30,7 +30,6 @@ set path+=**
 set wildchar=<Tab> wildmenu wildmode=full
 set wildignore+=*.swp,*.pyc,*.zip,*.so,*/tmp/*,*/.git/*
 " Hiddent characters
-nmap <leader>l :set list!<CR>
 set listchars=tab:▸\ ,eol:¬
 
 " Highlight searching
