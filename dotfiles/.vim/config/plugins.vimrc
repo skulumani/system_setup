@@ -34,7 +34,7 @@ Plug 'vim-airline/vim-airline-themes'
 " Programming plugins
 Plug 'lervag/vimtex'
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'Yggdroot/indentLine',{ 'on': 'IndentLinesEnable' }
+Plug 'Yggdroot/indentLine'
 if has("nvim")
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     Plug 'zchee/deoplete-jedi'
