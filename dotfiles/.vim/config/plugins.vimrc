@@ -25,7 +25,7 @@ endif
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
-
+Plug 'tpope/vim-rhubarb'
 " Appearance
 Plug 'lifepillar/vim-solarized8'
 Plug 'vim-airline/vim-airline'
