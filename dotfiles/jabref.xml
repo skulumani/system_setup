@@ -148,7 +148,7 @@
             <entry key="localAutoSave" value="true"/>
             <entry key="lookAndFeel" value="com.jgoodies.plaf.plastic.Plastic3DLookAndFeel"/>
             <entry key="mainWindowPosX" value="-1"/>
-            <entry key="mainWindowPosY" value="25"/>
+            <entry key="mainWindowPosY" value="125"/>
             <entry key="mainWindowSizeX" value="1922"/>
             <entry key="mainWindowSizeY" value="1056"/>
             <entry key="markImportedEntries" value="true"/>
