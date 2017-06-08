@@ -42,7 +42,7 @@ apt_packages=(
     zathura-dev
     xdotool
     redshift-gtk
-    openjdk8-jre
+    openjdk-8-jre
     trash-cli
     software-properties-common
     python-dev
