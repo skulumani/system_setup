@@ -2,3 +2,6 @@
 " This two lines will automatically open Nerdtree on startup
 " autocmd VimEnter * NERDTree
 " autocmd VimEnter * wincmd p
+"
+" Ignore files
+let NERDTreeIgnore = ['\.pyc$', 'tags.lock', 'tags', 'tags.temp']
