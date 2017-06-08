@@ -15,9 +15,9 @@ fi
 
 # Add TeXLive to PATH
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
-    export PATH=/usr/local/texlive/2016/bin/x86_64-linux:$PATH
-    export MANPATH=/usr/local/texlive/2016/texmf-dist/doc/man:$MANPATH
-    export INFOPATH=/usr/local/texlive/2016/texmf-dist/doc/info:$INFOPATH
+    export PATH=/usr/local/texlive/2017/bin/x86_64-linux:$PATH
+    export MANPATH=/usr/local/texlive/2017/texmf-dist/doc/man:$MANPATH
+    export INFOPATH=/usr/local/texlive/2017/texmf-dist/doc/info:$INFOPATH
 fi
 
 # Add rsub path for remote sublime text
