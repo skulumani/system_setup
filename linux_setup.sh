@@ -234,6 +234,9 @@ export PATH=$PATH:/usr/local/go/bin
 export PATH=/usr/local/texlive/2016/bin/x86_64-linux:$PATH
 
 prompt "Test Anaconda" "python --version"
+
+prompt "Install Neovim2 and Neovim3 anaconda env" "conda-env create -f ~/Documents/system_setup/conda/neovim2.yml && conda-env create -f ~/Documents/system_setup/conda/neovim3.yml"
+
 prompt "Test Golang" "go --version"
 
 # install drive client
