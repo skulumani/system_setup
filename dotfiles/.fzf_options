@@ -28,7 +28,7 @@ _gen_fzf_default_opts
 export FZF_DEFAULT_COMMAND='ag --hidden --skip-vcs-ignore -g ""'
 export FZF_TMUX=1
 export FZF_COMPLETION_TRIGGER=''
-if [[ "$0" == "zsh" ]]; then
+if [[ "echo $0" == "zsh" ]]; then
     bindkey '^T' fzf-completion
     bindkey '^I' $fzf_default_completion
 fi
