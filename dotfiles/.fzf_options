@@ -28,8 +28,10 @@ _gen_fzf_default_opts
 export FZF_DEFAULT_COMMAND='ag --hidden --skip-vcs-ignore -g ""'
 export FZF_TMUX=1
 export FZF_COMPLETION_TRIGGER=''
-bindkey '^T' fzf-completion
-bindkey '^I' $fzf_default_completion
+if [[ "$0" == "zsh" ]]; then
+    bindkey '^T' fzf-completion
+    bindkey '^I' $fzf_default_completion
+fi
 # FZF commands #######################33
 # fe [FUZZY PATTERN] - Open the selected file with the default editor
 #   - Bypass fuzzy finder if there's only one match (--select-1)
