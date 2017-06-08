@@ -31,7 +31,7 @@ anaconda_hash="4447b93d2c779201e5fb50cfc45de0ec96c3804e7ad0fe201ab6b99f73e90302"
 go_version="1.8.1"
 go_hash="a579ab19d5237e263254f1eac5352efcf1d70b9dacadb6d6bb12b0911ede8994"
 
-texlive_year="2016"
+texlive_year="2017"
 
 apt_packages=(
     exuberant-ctags
@@ -127,9 +127,9 @@ if command_exists nvim; then
     echo "NeoVim already installed"
 else
     echo "Neovim not installed"
-    sudo add-apt-repository -y ppa:neovim-ppa/stable
+    prompt "Do you want to add Neovim repo" "sudo add-apt-repository -y ppa:neovim-ppa/stable"
     sudo apt-get -y update
-    sudo apt-get -y install neovim
+    prompt "Do you want to install Neovim" "sudo apt-get -y install neovim"
 fi
 
 # install anaconda
@@ -149,7 +149,7 @@ else
 fi
 
 # install texlive
-if [[ ! -d "/usr/local/texlive" ]]; then
+if [[ ! -d "/usr/local/texlive/$texlive_year" ]]; then
     echo "TeXlive is not installed"
     prompt "Download texlive installer" "wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz -O $WORK_DIR/install-tl.tar.gz"
     eval "tar -C $WORK_DIR -xzf $WORK_DIR/install-tl.tar.gz"
@@ -196,6 +196,11 @@ else
     prompt "Copy the default key to terminal" "cat ~/.ssh/id_rsa.pub"
     echo "Copy the default SSH key and input it into Github/Bitbucket"
 fi
+
+# Now we'll setup Boinc
+echo "Now we're going to install Boinc if desired"
+prompt "Install Boinc-client and Manger" "sudo apt-get install boinc-client boinc-manager"
+prompt "Install Boinc-client headless mode" "sudo apt-get install boinc-client && boinccmd --join_acct_mgr bam.boincstats.com 9339_bd290f245f79b42e8672e1a077c14f48 random"
 
 # setup system_setup repo and install dotfiles
 echo "Now we'll setup git and clone the dotfiles repository"
@@ -251,6 +256,9 @@ prompt "Install pip packages" "install_pips"
 prompt "Set zsh as default shell" "chsh -s $(which zsh)"
 
 prompt "Install oh-my-zsh" "git clone git://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh"
+
+# build custom versions of apps
+prompt "Build TMUX" "bash ~/Documents/system_setup/build_tmux.sh"
 
 echo "All finished"
 echo "Might need to restart and rerun dotfiles/install linux to make sure eerything is working"
