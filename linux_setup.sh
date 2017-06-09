@@ -263,6 +263,8 @@ prompt "Install oh-my-zsh" "git clone git://github.com/robbyrussell/oh-my-zsh.gi
 # build custom versions of apps
 prompt "Build TMUX" "bash ~/Documents/system_setup/build_tmux.sh"
 
+prompt "Enable SSH server" "sudo apt-get install openssh-server && sudo service ssh restart"
+
 echo "All finished"
 echo "Might need to restart and rerun dotfiles/install linux to make sure eerything is working"
 # install brews
