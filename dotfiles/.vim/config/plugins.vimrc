@@ -44,7 +44,7 @@ else
 endif
 " Code linting
 if has("nvim")
-    " Plug 'neomake/neomake'
+    Plug 'neomake/neomake'
 else
     " Plug 'vim-syntastic/syntastic', { 'on': 'SyntasticCheck' }
 endif

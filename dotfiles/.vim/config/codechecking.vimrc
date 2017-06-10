@@ -1,7 +1,7 @@
 if has('nvim')
     nnoremap <leader>m :Neomake<CR>
     " Automatically open the error window
-    let g:neomake_open_list = 1
+    let g:neomake_open_list = 0
     let g:neomake_python_enabled_makers = [ 'flake8' ]
     " augroup vimrc_neomake
     "     autocmd!
@@ -10,6 +10,7 @@ if has('nvim')
     " augroup END
     " Python
     let g:neomake_python_flake8_maker = {
+                \ 'exe': '/home/shankar/anaconda3/envs/neovim3/bin/flake8',
                 \ 'args': ['--max-line-length=100', '--ignore=E402']
                 \ }
 else
