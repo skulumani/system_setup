@@ -40,29 +40,29 @@ if has('nvim')
 endif
 
 " vim-surround in LaTeX
-augroup latexSurround
-    autocmd!
-    autocmd FileType tex call s:latexSurround()
-augroup END
-
-function! s:latexSurround()
-    let b:surround_{char2nr("e")}
-    \ = "\\begin{\1environment: \1}\n\t\r\n\\end{\1\1}"
-    let b:surround_{char2nr("c")} = "\\\1command: \1{\r}"
-endfunction
-if !exists('g:deoplete#omni#input_patterns')
-    let g:deoplete#omni#input_patterns = {}
-endif
-let g:deoplete#omni#input_patterns.tex = '\\(?:'
-            \ .  '\w*cite\w*(?:\s*\[[^]]*\]){0,2}\s*{[^}]*'
-            \ . '|\w*ref(?:\s*\{[^}]*|range\s*\{[^,}]*(?:}{)?)'
-            \ . '|hyperref\s*\[[^]]*'
-            \ . '|includegraphics\*?(?:\s*\[[^]]*\]){0,2}\s*\{[^}]*'
-            \ . '|(?:include(?:only)?|input)\s*\{[^}]*'
-            \ . '|\w*(gls|Gls|GLS)(pl)?\w*(\s*\[[^]]*\]){0,2}\s*\{[^}]*'
-            \ . '|includepdf(\s*\[[^]]*\])?\s*\{[^}]*'
-            \ . '|includestandalone(\s*\[[^]]*\])?\s*\{[^}]*'
-            \ . '|usepackage(\s*\[[^]]*\])?\s*\{[^}]*'
-            \ . '|documentclass(\s*\[[^]]*\])?\s*\{[^}]*'
-            \ . '|\w*'
-            \ .')'
+" augroup latexSurround
+"     autocmd!
+"     autocmd FileType tex call s:latexSurround()
+" augroup END
+" 
+" function! s:latexSurround()
+"     let b:surround_{char2nr("e")}
+"     \ = "\\begin{\1environment: \1}\n\t\r\n\\end{\1\1}"
+"     let b:surround_{char2nr("c")} = "\\\1command: \1{\r}"
+" endfunction
+" if !exists('g:deoplete#omni#input_patterns')
+"     let g:deoplete#omni#input_patterns = {}
+" endif
+" let g:deoplete#omni#input_patterns.tex = '\\(?:'
+"             \ .  '\w*cite\w*(?:\s*\[[^]]*\]){0,2}\s*{[^}]*'
+"             \ . '|\w*ref(?:\s*\{[^}]*|range\s*\{[^,}]*(?:}{)?)'
+"             \ . '|hyperref\s*\[[^]]*'
+"             \ . '|includegraphics\*?(?:\s*\[[^]]*\]){0,2}\s*\{[^}]*'
+"             \ . '|(?:include(?:only)?|input)\s*\{[^}]*'
+"             \ . '|\w*(gls|Gls|GLS)(pl)?\w*(\s*\[[^]]*\]){0,2}\s*\{[^}]*'
+"             \ . '|includepdf(\s*\[[^]]*\])?\s*\{[^}]*'
+"             \ . '|includestandalone(\s*\[[^]]*\])?\s*\{[^}]*'
+"             \ . '|usepackage(\s*\[[^]]*\])?\s*\{[^}]*'
+"             \ . '|documentclass(\s*\[[^]]*\])?\s*\{[^}]*'
+"             \ . '|\w*'
+"             \ .')'
