@@ -27,8 +27,8 @@
 						"priority": 10,
 						"args": {
 							"use_path_separator": true,
-                                                        "use_shortened_path": true,
-                                                        "dir_limit_depth": 3
+                                                        "use_shortened_path": false,
+                                                        "dir_limit_depth": 5
 						}
 					},
 					{
@@ -60,7 +60,7 @@
 		"right": [
                     {
                         "function": "powerline_gitstatus.gitstatus",
-                        "priority": 10
+                        "priority": 40
                     }
                 ]
 	}
