@@ -64,7 +64,7 @@ case "`uname`" in
     ;;
 esac
 
-CLASSPATH=$APP_HOME/lib/signal-cli-0.5.5.jar:$APP_HOME/lib/signal-service-java-2.4.7_unofficial_3.jar:$APP_HOME/lib/bcprov-jdk15on-1.55.jar:$APP_HOME/lib/argparse4j-0.7.0.jar:$APP_HOME/lib/dbus-java-2.7.0.jar:$APP_HOME/lib/protobuf-java-2.5.0.jar:$APP_HOME/lib/libphonenumber-8.0.0.jar:$APP_HOME/lib/jackson-databind-2.5.0.jar:$APP_HOME/lib/signal-protocol-java-2.4.0.jar:$APP_HOME/lib/okhttp-3.5.0.jar:$APP_HOME/lib/httpclient-4.4.jar:$APP_HOME/lib/unix-0.5.1.jar:$APP_HOME/lib/jackson-annotations-2.5.0.jar:$APP_HOME/lib/jackson-core-2.5.0.jar:$APP_HOME/lib/curve25519-java-0.3.0.jar:$APP_HOME/lib/okio-1.11.0.jar:$APP_HOME/lib/httpcore-4.4.jar:$APP_HOME/lib/commons-logging-1.2.jar:$APP_HOME/lib/commons-codec-1.9.jar:$APP_HOME/lib/debug-1.1.1.jar:$APP_HOME/lib/hexdump-0.2.1.jar
+CLASSPATH=$APP_HOME/lib/signal-cli-0.5.6.jar:$APP_HOME/lib/signal-service-java-2.5.11_unofficial_1.jar:$APP_HOME/lib/bcprov-jdk15on-1.55.jar:$APP_HOME/lib/argparse4j-0.7.0.jar:$APP_HOME/lib/dbus-java-2.7.0.jar:$APP_HOME/lib/protobuf-java-2.5.0.jar:$APP_HOME/lib/libphonenumber-8.3.0.jar:$APP_HOME/lib/jackson-databind-2.5.0.jar:$APP_HOME/lib/signal-protocol-java-2.5.3.jar:$APP_HOME/lib/okhttp-3.6.0.jar:$APP_HOME/lib/httpclient-4.4.jar:$APP_HOME/lib/unix-0.5.1.jar:$APP_HOME/lib/jackson-annotations-2.5.0.jar:$APP_HOME/lib/jackson-core-2.5.0.jar:$APP_HOME/lib/curve25519-java-0.3.0.jar:$APP_HOME/lib/okio-1.11.0.jar:$APP_HOME/lib/httpcore-4.4.jar:$APP_HOME/lib/commons-logging-1.2.jar:$APP_HOME/lib/commons-codec-1.9.jar:$APP_HOME/lib/debug-1.1.1.jar:$APP_HOME/lib/hexdump-0.2.1.jar
 
 # Determine the Java command to use to start the JVM.
 if [ -n "$JAVA_HOME" ] ; then

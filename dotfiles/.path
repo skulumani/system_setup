@@ -25,7 +25,7 @@ if [[ -d $HOME/bin ]]; then
     export PATH="$HOME/bin:$PATH"
 
     # Add path for signal-cli
-    export PATH="$HOME/bin/signal-cli-0.5.5/bin:$PATH"
+    export PATH="$HOME/bin/signal-cli/bin:$PATH"
 fi
 
 # added by Anaconda3 4.3.0 installer
