@@ -27,4 +27,7 @@ nnoremap <leader>sv :so $MYVIMRC<CR>
 nmap <leader>l :set list!<CR> <bar> :IndentLinesToggle<CR> <bar> :LeadingSpaceToggle<CR>
 
 " delete a buffer without closing split
-command Bd bp\|bd \#
+" command Bd bp\|bd \#
+
+" Delete all trailing whitespace with F5
+" nnoremap <silent> <F5> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
