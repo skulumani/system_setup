@@ -1,6 +1,90 @@
 snippet    future
-abbr       future 
+abbr	   future 
 options    head, indent 
-        from __future__ import absolute_import, division, print_function, unicode_literals
-        ${0}
+	from __future__ import absolute_import, division, print_function, unicode_literals
+	${0}
+
+snippet license
+abbr	license
+options head, indent
+	Copyright (C) {2017}  {Shankar Kulumani}
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.${0}
+
+snippet doc_function
+abbr	docf
+	r"""${1:A one line description of the function}
+
+	${2:Several sentences providing an extended description. Refer to variables using back-ticks.}
+
+	Parameters
+	----------
+	${3:var1} : ${4:array_like and type}
+		${4:Array_like means all those objects -- lists, nested lists, etc. -- that can be converted to an array.  We can also refer to variables like.}
+
+	Returns
+	-------
+	${5:describe} : ${6:type}
+		${7:Explanation of return value named describe}
+
+	Other Parameters
+	----------------
+	${8:only_seldom_used_keywords} : ${9:type}
+		${10:Explanation}
+
+	Raises
+	------
+	${11:BadException}
+		Because you shouldn't have done that.
+
+	See Also
+	--------
+	otherfunc : relationship (optional)
+	newfunc : Relationship (optional), which could be fairly long, in which
+		case the line wraps here.
+	thirdfunc, fourthfunc, fifthfunc
+
+	Notes
+	-----
+	You may include some math:
+
+	.. math:: X(e^{j\omega } ) = x(n)e^{ - j\omega n}
+
+
+	References
+	----------
+	Cite the relevant literature, e.g. [1]_.  You may also cite these
+	references in the notes section above.
+
+	.. [1] O. McNoleg, "The integration of GIS, remote sensing,
+	expert systems and adaptive co-kriging for environmental habitat
+	modelling of the Highland Haggis using object-oriented, fuzzy-logic
+	and neural-network techniques," Computers & Geosciences, vol. 22,
+	pp. 585-588, 1996.
+
+	Examples
+	--------
+	These are written in doctest format, and should illustrate how to
+	use the function.
+
+	>>> a = [1, 2, 3]
+	>>> print [x + 3 for x in a]
+	[4, 5, 6]
+	>>> print "a\n\nb"
+	a
+	b
+
+	""" ${0}
+
 
