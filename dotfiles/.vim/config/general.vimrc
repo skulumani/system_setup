@@ -30,7 +30,8 @@ set path+=**
 set wildchar=<Tab> wildmenu wildmode=full
 set wildignore+=*.swp,*.pyc,*.zip,*.so,*/tmp/*,*/.git/*
 " Hiddent characters
-set listchars=tab:▸\ ,eol:¬
+" set listchars=tab:▸\ ,eol:¬" ,space:␣
+set listchars=tab:▸\ ,eol:¬"
 
 " Highlight searching
 set incsearch
