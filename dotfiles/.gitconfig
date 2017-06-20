@@ -26,7 +26,7 @@
     co = checkout
     ci = checkin
     sh = show
-    su = submodule update
+    su = submodule update --recursive --remote
     f  = fetch
     up = pull
     rb = rebase
