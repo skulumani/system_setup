@@ -47,7 +47,7 @@ endif
 
 if has("nvim")
     " neomake settings
-    let g:neomake_python_enable_makers = ['flake8']
+    let g:neomake_python_enable_makers = ['flake8, pylint']
 
     " Set important paths
     if has('unix')
@@ -75,3 +75,4 @@ if has("nvim")
         endif
     endif
 endif
+

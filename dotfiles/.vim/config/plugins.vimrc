@@ -45,10 +45,11 @@ endif
 " Code linting
 if has("nvim")
     Plug 'neomake/neomake'
+    Plug 'sbdchd/neoformat'
 else
     " Plug 'vim-syntastic/syntastic', { 'on': 'SyntasticCheck' }
 endif
-
+Plug 'Vimjas/vim-python-pep8-indent'
 
 " set rtp+=~/.fzf
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install' }

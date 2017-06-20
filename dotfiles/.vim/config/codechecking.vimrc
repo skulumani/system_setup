@@ -3,16 +3,26 @@ if has('nvim')
     " Automatically open the error window
     let g:neomake_open_list = 0
     let g:neomake_python_enabled_makers = [ 'flake8' ]
-    " augroup vimrc_neomake
-    "     autocmd!
-    "     autocmd BufWritePost * silent Neomake
-    "     autocmd VimLeave * let g:neomake_verbose = 0
-    " augroup END
+    augroup vimrc_neomake
+        autocmd!
+        autocmd BufWritePost * silent Neomake
+        autocmd VimLeave * let g:neomake_verbose = 0
+    augroup END
     " Python
     let g:neomake_python_flake8_maker = {
                 \ 'exe': '/home/shankar/anaconda3/envs/neovim3/bin/flake8',
                 \ 'args': ['--max-line-length=100', '--ignore=E402']
                 \ }
+    let g:neomake_python_pylint_maker = {
+                \ 'exe': '/home/shankar/anaconda3/envs/neovim3/bin/pylint'
+                \ }
+    let g:neoformat_python_autopep8 = {
+            \ 'exe': '/home/shankar/anaconda3/envs/neovim3/bin/autopep8',
+            \ }
+    let g:neoformat_python_yapf = {
+            \ 'exe': '/home/shankar/anaconda3/envs/neovim3/bin/yapf',
+            \ }
+    let g:neoformat_enabled_python = ['autopep8', 'yapf']
 else
     nnoremap <leader>m :SyntasticCheck<CR>
     set statusline+=%#warningmsg#
