@@ -1,6 +1,6 @@
 if executable('fzf')
     " <C-p> or <C-t> to search files
-    nnoremap <silent> <C-t> :Files <cr>
+    nnoremap <silent> <C-t> :Tags <cr>
     nnoremap <silent> <C-p> :Files <cr>
 
     " <M-p> for open buffers
@@ -8,7 +8,20 @@ if executable('fzf')
 
     " <M-S-p> for MRU
     nnoremap <silent> <M-S-p> :History<cr>
-
+    " Customize fzf colors to match your color scheme
+    let g:fzf_colors =
+                \ { 'fg':      ['fg', 'Normal'],
+                \ 'bg':      ['bg', 'Normal'],
+                \ 'hl':      ['fg', 'Comment'],
+                \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+                \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+                \ 'hl+':     ['fg', 'Statement'],
+                \ 'info':    ['fg', 'PreProc'],
+                \ 'prompt':  ['fg', 'Conditional'],
+                \ 'pointer': ['fg', 'Exception'],
+                \ 'marker':  ['fg', 'Keyword'],
+                \ 'spinner': ['fg', 'Label'],
+                \ 'header':  ['fg', 'Comment'] }
     " Use fuzzy completion relative filepaths across directory
     " imap <expr> <c-x><c-f> fzf#vim#complete#path('git ls-files $(git rev-parse --show-toplevel)')
 
