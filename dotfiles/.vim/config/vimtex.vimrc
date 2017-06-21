@@ -39,6 +39,14 @@ if has('nvim')
     let g:vimtex_compiler_progname = 'nvr'
 endif
 
+" One of the neosnippet plugins will conceal symbols in LaTeX which is
+" confusing
+let g:tex_conceal = ""
+
+" Quickfix with Neovim is broken or something
+" https://github.com/lervag/vimtex/issues/773
+let g:vimtex_quickfix_latexlog = {'fix_paths' : 0}
+
 " vim-surround in LaTeX
 " augroup latexSurround
 "     autocmd!
