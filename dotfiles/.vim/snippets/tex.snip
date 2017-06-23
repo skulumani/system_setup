@@ -1,0 +1,8 @@
+snippet subfigure
+abbr    subfigure
+options head, indent
+        \begin{subfigure}[htbp]{${1}\textwidth} 
+                \includegraphics[width=\textwidth]{${2}} 
+                \caption{${3} \label{fig:${4}}} 
+        \end{subfigure} 
+        ${0}
