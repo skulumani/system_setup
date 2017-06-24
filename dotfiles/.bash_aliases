@@ -88,3 +88,9 @@ epstopdf_dir () {
     fi
 }
 
+# combine many pdfs together into on
+# gs -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress -dCompatibilityLevel=1.4 -dPDFSETTINGS=/default -dNOPAUSE -dQUIET -dBATCH -dDetectDuplicateImages -dCompressFonts=true -r150 -sOutputFile=output.pdf input.pdf
+# Instructions are here https://stackoverflow.com/questions/2507766/merge-convert-multiple-pdf-files-into-one-pdf
+pdfmerge () {
+    gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress
+    -sOutputFile=$@ ; }
