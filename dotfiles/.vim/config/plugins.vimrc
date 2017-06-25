@@ -50,6 +50,8 @@ else
     " Plug 'vim-syntastic/syntastic', { 'on': 'SyntasticCheck' }
 endif
 Plug 'Vimjas/vim-python-pep8-indent'
+Plug 'tpope/vim-commentary'
+Plug 'junegunn/vim-easy-align'
 
 " set rtp+=~/.fzf
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install' }
