@@ -15,7 +15,7 @@ mcd () {
 }
 
 # alias to swap escape and capslock
-alias swap_caps_escape='setxkbmap -option "caps:swapescape"'
+alias swap_caps_escape='setxkbmap -option "caps:escape"'
 
 # From https://github.com/xvoland/Extract/blob/master/extract.sh
 function extract {
