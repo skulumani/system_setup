@@ -203,7 +203,7 @@
             <entry key="recentDatabases" value="/home/shankar/texmf/bibtex/bib/library.bib"/>
             <entry key="recentFiles" value="/home/shankar/Desktop/references.bib;/home/shankar/texmf/bibtex/bib/library.bib;/home/shankar/Documents/skulumani.github.io/_bibliography/references.bib"/>
             <entry key="reformatFileOnSaveAndExport" value="false"/>
-            <entry key="regExpSearch" value="true"/>
+            <entry key="regExpSearch" value="false"/>
             <entry key="remoteServerPort" value="6050"/>
             <entry key="renameOnMoveFileToFileDir" value="true"/>
             <entry key="renamefileShow" value="true"/>
