@@ -52,6 +52,7 @@ endif
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'tpope/vim-commentary'
 Plug 'junegunn/vim-easy-align'
+Plug 'tdehaeze/matlab-vim'
 
 " set rtp+=~/.fzf
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install' }
