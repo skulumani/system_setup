@@ -23,6 +23,7 @@ map <C-n> :NERDTreeToggle<CR>
 
 nnoremap <leader>ev :e $MYVIMRC<CR>
 nnoremap <leader>sv :so $MYVIMRC<CR>
+nnoremap <leader>gs :Gst <CR>
 
 nmap <leader>l :set list!<CR> <bar> :IndentLinesToggle<CR> <bar> :LeadingSpaceToggle<CR>
 
