@@ -133,7 +133,7 @@
             <entry key="importFileDirPattern" value=""/>
             <entry key="importFileNamePattern" value="\bibtexkey"/>
             <entry key="importInspectionDialogHeight" value="650"/>
-            <entry key="importInspectionDialogWidth" value="650"/>
+            <entry key="importInspectionDialogWidth" value="1109"/>
             <entry key="importWorkingDirectory" value="/home/shankar/Downloads/papers"/>
             <entry key="includeEmptyFields" value="false"/>
             <entry key="incompleteEntryBackground" value="250:175:175"/>
