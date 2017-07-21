@@ -6,3 +6,9 @@ options head, indent
                 \caption{${3} \label{fig:${4}}} 
         \end{subfigure} 
         ${0}
+
+snippet subcaptionbox
+abbr    subcaptionbox
+options head, indent
+        \subcaptionbox{${1:Caption}\label{fig:${2:label}}}{\includegraphics[width=0.5\textwidth]{${3}}}
+        ${0}
