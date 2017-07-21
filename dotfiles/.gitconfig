@@ -10,6 +10,7 @@
     default = simple
 [commit]
     gpgsign = false
+    verbose = true
 [url "git@github.com:"]
  insteadOf = https://github.com/
 [alias]
