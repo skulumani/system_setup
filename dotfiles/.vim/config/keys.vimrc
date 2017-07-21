@@ -24,9 +24,11 @@ map <C-n> :NERDTreeToggle<CR>
 nnoremap <leader>ev :e $MYVIMRC<CR>
 nnoremap <leader>sv :so $MYVIMRC<CR>
 
-nnoremap <leader>gs :Gst <CR>
+nnoremap <leader>gs :Gst <CR>gg<C-n>
 nnoremap <leader>gp :Gpush <CR>
 nnoremap <leader>gl :Gpull <CR>
+nnoremap <leader>glg :Git lg<CR>
+nnoremap <leader>glg2 :Git lg2<CR>
 
 nmap <leader>l :set list!<CR> <bar> :IndentLinesToggle<CR> <bar> :LeadingSpaceToggle<CR>
 
