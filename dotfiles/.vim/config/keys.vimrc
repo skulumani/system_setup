@@ -27,9 +27,16 @@ nnoremap <leader>sv :so $MYVIMRC<CR>
 nnoremap <leader>gs :Gst <CR>gg <C-n>
 nnoremap <leader>gp :Gpush <CR>
 nnoremap <leader>gl :Gpull <CR>
+nnoremap <leader>gd :Gdiff :0<CR>
+nnoremap <leader>gr :Gread<CR>
+nnoremap <leader>gw :Gwrite<CR>
 nnoremap <leader>glg :Git lg<CR>
 nnoremap <leader>glg2 :Git lg2<CR>
 
+xnoremap dp :diffput<CR>
+xnoremap do :diffget<CR>
+
+xnoremap <leader>du :diffupdate<CR>
 nmap <leader>l :set list!<CR> <bar> :IndentLinesToggle<CR> <bar> :LeadingSpaceToggle<CR>
 
 " delete a buffer without closing split
