@@ -41,7 +41,7 @@ nmap <leader>l :set list!<CR> <bar> :IndentLinesToggle<CR> <bar> :LeadingSpaceTo
 
 " delete a buffer without closing split
 " command Bd bp\|bd \#
-
+nnoremap <leader>bd :bd<CR> 
 " Delete all trailing whitespace with F5
 " nnoremap <silent> <F5> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
 
