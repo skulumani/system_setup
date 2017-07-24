@@ -60,8 +60,8 @@ if has("nvim")
         " ... 
         "
         if glob('~/anaconda3/envs/neovim2/bin/python') != ''
-            let g:python_host_prog = expand('~/anaconda3/envs/neovim2/bin/python')
-            let g:python2_host_prog = expand('~/anaconda3/envs/neovim2/bin/python')
+            let g:python_host_prog = expand('/home/shankar/anaconda3/envs/neovim2/bin/python')
+            let g:python2_host_prog = expand('/home/shankar/anaconda3/envs/neovim2/bin/python')
         else
             echom "Use conda to install neovim2"
             let g:python_host_prog = 'python'
@@ -69,7 +69,7 @@ if has("nvim")
         endif
 
         if glob('~/anaconda3/envs/neovim3/bin/python') != ''
-            let g:python3_host_prog = expand('~/anaconda3/envs/neovim3/bin/python')
+            let g:python3_host_prog = expand('/home/shankar/anaconda3/envs/neovim3/bin/python')
         else
             echom "Use conda to install neovim3"
             let g:python3_host_prog = 'python3'
