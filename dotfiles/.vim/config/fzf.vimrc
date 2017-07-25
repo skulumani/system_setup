@@ -2,11 +2,11 @@ if executable('fzf')
     " <C-p> or <C-t> to search files
     nnoremap <silent> <C-t> :Tags <cr>
     nnoremap <silent> <C-p> :Files <cr>
+    nnoremap <silent> <C-M-p> :Ag <CR>
+    nnoremap <silent> <C-m> :Map <CR>
+
     " search commits
     nnoremap <silent> <C-c> :Commits <CR> 
-
-    " search for somethign inside all files
-    nnoremap <silent> <C-f> :Ag <CR>
 
     " Search for all keyboard mappings
     " nnoremap <silent> <C-m> :Maps <CR>
