@@ -66,7 +66,7 @@ set +e
 options=("Yes" "No" "Quit")
 prompt () {
     echo "Are you sure you want to $1"
-    select yn in "${options[@])}"; do
+    select yn in "${options[@]}"; do
         case $yn in
             Yes ) eval "$2";
                 break;;
