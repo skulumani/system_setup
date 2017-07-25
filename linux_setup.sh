@@ -127,8 +127,7 @@ if command_exists nvim; then
     echo "NeoVim already installed"
 else
     echo "Neovim not installed"
-    prompt "Do you want to add Neovim repo" "sudo add-apt-repository -y ppa:neovim-ppa/stable"
-    sudo apt-get -y update
+    prompt "Do you want to add Neovim Ubuntu repo" "sudo add-apt-repository -y ppa:neovim-ppa/stable && sudo apt-get -y update"
     prompt "Do you want to install Neovim" "sudo apt-get -y install neovim"
 fi
 
