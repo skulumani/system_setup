@@ -1,5 +1,11 @@
 # setup a tmux window for iPython
-selectp -t 0
-splitw -h -p 50 
+selectp -t 0 # select the first pane    
+splitw -h -p 50 # split into two vertical panes
 
-selectp -t 0 'ipython' 
+selectp -t 1 # select new pane (right)
+send-keys 'ipython' Enter # run ipython
+
+selectp -t 0 # select first pane (left)
+send-keys 'nvim' Enter # run nvim
+
+
