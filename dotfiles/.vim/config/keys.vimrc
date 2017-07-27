@@ -24,24 +24,11 @@ map <C-n> :NERDTreeToggle<CR>
 nnoremap <leader>ev :e $MYVIMRC<CR>
 nnoremap <leader>sv :so $MYVIMRC<CR>
 
-nnoremap <leader>gs :Gst <CR>gg <C-n>
-nnoremap <leader>gp :Gpush <CR>
-nnoremap <leader>gl :Gpull <CR>
-nnoremap <leader>gd :Gdiff :0<CR>
-nnoremap <leader>gr :Gread<CR>
-nnoremap <leader>gw :Gwrite<CR>
-nnoremap <leader>glg :Git lg<CR>
-nnoremap <leader>glg2 :Git lg2<CR>
-
-xnoremap dp :diffput<CR>
-xnoremap do :diffget<CR>
-
-xnoremap <leader>du :diffupdate<CR>
 nmap <leader>l :set list!<CR> <bar> :IndentLinesToggle<CR> <bar> :LeadingSpaceToggle<CR>
 
 " delete a buffer without closing split
 " command Bd bp\|bd \#
-nnoremap <leader>bd :bd<CR> 
+nnoremap <leader>bd :bp<CR>:bd #<CR> 
 " Delete all trailing whitespace with F5
 " nnoremap <silent> <F5> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
 
@@ -51,3 +38,28 @@ xmap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+
+" Fugitive stuff
+if has("autocmd")
+    autocmd BufReadPost fugitive://* set bufhidden=delete
+    autocmd User fugitive 
+                \ if fugitive#buffer().type() =~# '^\%(tree\|blob\)$' |
+                \   nnoremap <buffer> .. :edit %:h<CR> |
+                \ endif
+endif
+
+nnoremap <leader>gs :Gst <CR>gg <C-n>
+nnoremap <leader>gp :Gpush <CR>
+nnoremap <leader>gl :Gpull <CR>
+nnoremap <leader>gd :Gdiff :0<CR>
+nnoremap <leader>gr :Gread<CR>
+nnoremap <leader>gw :Gwrite<CR>
+nnoremap <leader>glg :Git lg<CR>
+nnoremap <leader>glg2 :Git lg2<CR>
+nnoremap <leader>ge :Gedit <CR>
+nnoremap <leader>gb :Gbrowse <CR>
+
+xnoremap dp :diffput<CR>
+xnoremap do :diffget<CR>
+
+xnoremap <leader>du :diffupdate<CR>
