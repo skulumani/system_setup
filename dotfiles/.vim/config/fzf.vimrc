@@ -3,7 +3,7 @@ if executable('fzf')
     nnoremap <silent> <C-t> :Tags <cr>
     nnoremap <silent> <C-p> :Files <cr>
     nnoremap <silent> <C-M-p> :Ag <CR>
-    nnoremap <silent> <C-m> :Map <CR>
+    " nnoremap <silent> <C-m> :Map <CR>
 
     " search commits
     nnoremap <silent> <C-c> :Commits <CR> 
