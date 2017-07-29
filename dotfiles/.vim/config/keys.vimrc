@@ -24,6 +24,9 @@ map <C-n> :NERDTreeToggle<CR>
 nnoremap <leader>ev :e $MYVIMRC<CR>
 nnoremap <leader>sv :so $MYVIMRC<CR>
 
+nnoremap <leader>s :set spell!<CR>
+set spelllang=en_us
+
 nmap <leader>l :set list!<CR> <bar> :IndentLinesToggle<CR> <bar> :LeadingSpaceToggle<CR>
 
 " delete a buffer without closing split
@@ -48,7 +51,8 @@ if has("autocmd")
                 \ endif
 endif
 
-nnoremap <leader>gs :Gst <CR>gg <C-n>
+nmap <leader>gst :Gstatus<cr>gg<C-n>
+nnoremap <leader>gco :Gco 
 nnoremap <leader>gp :Gpush <CR>
 nnoremap <leader>gl :Gpull <CR>
 nnoremap <leader>gd :Gdiff :0<CR>
