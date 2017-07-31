@@ -15,4 +15,5 @@ push @generated_exts, "fot";
 push @generated_exts, "synctex.gz(busy)";
 push @generated_exts, "nav";
 push @generated_exts, "bbl";
-
+push @generated_exts, "blg";
+push @generated_exts, "fdb_latexmk";
