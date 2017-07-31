@@ -12,3 +12,9 @@ abbr    subcaptionbox
 options head, indent
         \subcaptionbox{${1:Caption}\label{fig:${2:label}}}{\includegraphics[width=0.5\textwidth]{${3}}}
         ${0}
+
+snippet texroot
+abbr    texroot
+options head, indent
+        % !TEX root = ${1:../root.tex}
+        ${0}
