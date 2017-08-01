@@ -40,8 +40,8 @@ if has("nvim")
     Plug 'zchee/deoplete-jedi'
 else
     Plug 'Shougo/neocomplete.vim'
-    Plug 'davidhalter/jedi-vim'
 endif
+Plug 'davidhalter/jedi-vim'
 " Code linting
 if has("nvim")
     Plug 'neomake/neomake'
