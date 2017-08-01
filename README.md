@@ -110,3 +110,14 @@ Some useful links
 You should be able to simply run `./build_vim.sh`
 
 Also depending on the options, you might need to install an Anaconda environment first.
+
+## FSTAB for GWU shared drives
+
+In order to add the shared drives to Linux
+
+Add the following to `/etc/fstab`
+
+~~~
+//titan.seas.gwu.edu/Homes/skulumani /media/titan_drive/ cifs username=USERNAME_HERE,password=PASSWORD_HERE,domain=seas.gwu.edu,_netdev,iocharset=utf8,sec=ntlmv2,users 0 0
+~~~
+
