@@ -133,7 +133,7 @@ create() {
     borg create --remote-path=borg \
         --compression "${COMPRESSION_ALGO},${COMPRESSION_LEVEL}" \
         --exclude "$EXCLUDE" \
-        "${TARGET}::{now:%Y%m%dT%H%M%S.%f}" $SOURCE_PATHS
+        "${TARGET}::{now:%Y-%m-%dT%H:%M:%S}" $SOURCE_PATHS
 
     logger -p user.info "Finished Borg archive creation: ${TARGET}"
 }
