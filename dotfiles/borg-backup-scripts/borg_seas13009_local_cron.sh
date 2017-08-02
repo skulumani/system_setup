@@ -17,24 +17,32 @@ readonly SOURCE_PATHS="${HOME}/Documents ${HOME}/Downloads /media/shankar/data/D
 readonly EXCLUDE="*.pyc"
 
 # Number of days, weeks, &c. of backups to keep when pruning.
+readonly KEEP_HOURLY=6
 readonly KEEP_DAILY=7
 readonly KEEP_WEEKLY=4
 readonly KEEP_MONTHLY=6
 readonly KEEP_YEARLY=1
 
+set -e  # exit on error
 # create a new archive
-
-borg create --v --stats --progress --compression "${COMPRESSION_ALGO},${COMPRESSION_LEVEL}" \
+{
+borg create --v --stats --compression "${COMPRESSION_ALGO},${COMPRESSION_LEVEL}" \
     --exclude "$EXCLUDE" \
     "${REPO}::{hostname}-{now:%Y-%m-%dT%H:%M:%S}" $SOURCE_PATHS
 
 # prune the archive
-borg prune --keep-daily="${KEEP_DAILY}" \
+borg prune --keep-hourly="${KEEP_HOURLY}" --keep-daily="${KEEP_DAILY}" \
         --keep-weekly="${KEEP_WEEKLY}" \
         --keep-monthly="${KEEP_MONTHLY}" \
         --keep-yearly="${KEEP_YEARLY}" \
-        --prefix '{hostname}-' \
+        --prefix '{hostname}-' --verbose --stats \
         "${REPO}"
 
-# 
+    signal-cli -u +16305579049 send -m "SUCCESS SEAS13009 local borg backup" "+16303366257"
+
+} || {
+
+signal-cli -u +16305579049 send -m "FAILURE SEAS13009 local borg backup" "+16303366257"
+}
+ 
 
