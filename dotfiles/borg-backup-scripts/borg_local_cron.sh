@@ -3,6 +3,8 @@ REPO="/media/shankar/borg/backup/borgbackup/${date +%Y-W%U}_${hostname}"
 
 # export BORG_PASSPHRASE="password"
 
+source /home/shankar/borg-passphrase.sh
+
 # Compression algorithm and level. See Borg docs.
 readonly COMPRESSION_ALGO=zlib
 readonly COMPRESSION_LEVEL=6
@@ -22,6 +24,15 @@ readonly KEEP_WEEKLY=4
 readonly KEEP_MONTHLY=6
 readonly KEEP_YEARLY=1
 
+# check if this weeks repo exists, if not then initialize it
+if [ -d "${REPO}" ]; then
+    borg create --v --stats --progress --compression "${COMPRESSION_ALGO},${COMPRESSION_LEVEL}" \
+        --exclude "$EXCLUDE" \
+        "${REPO}::{hostname}-{now:%Y-%m-%dT%H:%M:%S}" $SOURCE_PATHS
+else
+    # create a new repository
+    borg init --encryption=repokey "${REPO}"
+fi
 # create a new archive
 
 borg create --v --stats --progress --compression "${COMPRESSION_ALGO},${COMPRESSION_LEVEL}" \
