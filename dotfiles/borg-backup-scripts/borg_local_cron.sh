@@ -29,12 +29,12 @@ borg create --v --stats --progress --compression "${COMPRESSION_ALGO},${COMPRESS
     "${REPO}::{hostname}-{now:%Y-%m-%dT%H:%M:%S}" $SOURCE_PATHS
 
 # prune the archive
-borg prune --keep-daily="${KEEP_DAILY}" \
-        --keep-weekly="${KEEP_WEEKLY}" \
-        --keep-monthly="${KEEP_MONTHLY}" \
-        --keep-yearly="${KEEP_YEARLY}" \
-        --prefix '{hostname}-' \
-        "${REPO}"
+# borg prune --keep-daily="${KEEP_DAILY}" \
+#         --keep-weekly="${KEEP_WEEKLY}" \
+#         --keep-monthly="${KEEP_MONTHLY}" \
+#         --keep-yearly="${KEEP_YEARLY}" \
+#         --prefix '{hostname}-' \
+#         "${REPO}"
 
 # 
 
