@@ -94,7 +94,7 @@ like this:
     ~~~
 
     ~~~
-    30 */1 * * * export BORG_PASSPHRASE="password"; bash /home/shankar/borg_local_cron.sh 
+    30 * * * * export BORG_PASSPHRASE="password"; bash /home/shankar/borg_local_cron.sh 
     ~~~
 
 ## Recommendations
