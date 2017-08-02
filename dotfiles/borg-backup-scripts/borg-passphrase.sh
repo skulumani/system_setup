@@ -9,3 +9,5 @@
 #
 # Passphrases can be generated with the pwgen tool.
 # export BORG_PASSPHRASE=password
+
+# GWU VPN password - fill in after moving this to $HOME
