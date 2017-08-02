@@ -52,6 +52,7 @@ apt_packages=(
     gnome-terminal
     silversearcher-ag
     vim-gnome
+    borgbackup
 )
 
 python_packages=(
