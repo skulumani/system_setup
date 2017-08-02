@@ -26,7 +26,7 @@ readonly KEEP_YEARLY=1
 
 borg create --v --stats --progress --compression "${COMPRESSION_ALGO},${COMPRESSION_LEVEL}" \
     --exclude "$EXCLUDE" \
-    "${REPO}::{hostname}-{now:%Y%m%dT%H%M%S.%f}" $SOURCE_PATHS
+    "${REPO}::{hostname}-{now:%Y-%m-%dT%H:%M:%S}" $SOURCE_PATHS
 
 # prune the archive
 borg prune --keep-daily="${KEEP_DAILY}" \

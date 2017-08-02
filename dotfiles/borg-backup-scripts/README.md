@@ -69,7 +69,7 @@ like this:
 
     1   5   remote-backup   /home/username/bin/run-backup.sh
 
-### The user `crontab`
+### The user [`crontab`](https://crontab.guru/)
 
 1. Copy `borg_local_cron.sh` to `$HOME` and edit paths to backup/source of repo
 
@@ -94,9 +94,14 @@ like this:
     ~~~
 
     ~~~
-    30 * * * * export BORG_PASSPHRASE="password"; bash /home/shankar/borg_local_cron.sh 
+    30 * * * * export BORG_PASSPHRASE="password" && bash /home/shankar/borg_local_cron.sh 
     ~~~
 
+4. Can recieve notifications for cron jobs. Just paste the following at the end of each crontab line
+
+~~~
+ && signal-send number "Message" 
+~~~
 ## Recommendations
 
 You'll probably want to  manually run `backup.sh -v` from time to time to check
