@@ -1,5 +1,5 @@
 #!/bin/sh
-REPO="/media/shankar/borg/backup/borgbackup/${hostname}"
+REPO="/media/shankar/borg/backup/borgbackup/$(hostname)"
 TARGET="seas13009_borg:${REPO}"
 # export BORG_PASSPHRASE="password"
 
@@ -13,7 +13,7 @@ readonly COMPRESSION_LEVEL=6
 readonly HOME=/home/shankar
 
 # Whitespace-separated list of paths to back up.
-readonly SOURCE_PATHS="/home/shankar/Documents /home/shankar/Downloads /media/shankar/data/Drive/docs /media/shankar/data/Drive/GWU /home/shankar/shankar/Drive"
+readonly SOURCE_PATHS="/home/shankar/Documents /home/shankar/Downloads /media/shankar/data/Drive/docs /media/shankar/data/Drive/GWU /home/shankar/Drive"
 
 # Whitespace-separated list of paths to exclude from backup.
 readonly EXCLUDE="*.pyc"
@@ -27,15 +27,14 @@ readonly KEEP_YEARLY=1
 # connect using openconnect to vpn
 
 # check if this weeks repo exists, if not then initialize it
-if [ ssh seas13009 test -d "${REPO}" ]; then
-    borg create --v --stats --progress --compression "${COMPRESSION_ALGO},${COMPRESSION_LEVEL}" \
-        --exclude "$EXCLUDE" \
-        "${REPO}::{hostname}-{now:%Y-%m-%dT%H:%M:%S}" $SOURCE_PATHS
-else
+if ssh -q seas13009 [ ! -d "${REPO}" ] ; then
     # create a new repository
     borg init --encryption=repokey "${REPO}"
 fi
 
+    borg create --v --stats --progress --compression "${COMPRESSION_ALGO},${COMPRESSION_LEVEL}" \
+        --exclude "$EXCLUDE" \
+        "${TARGET}::{hostname}-{now:%Y-%m-%dT%H:%M:%S}" $SOURCE_PATHS
 # create a new archive
 
 # prune the archive
