@@ -24,6 +24,7 @@ readonly KEEP_WEEKLY=4
 readonly KEEP_MONTHLY=6
 readonly KEEP_YEARLY=1
 
+newline=$'\n'
 # create a new archive
 {
 if [ ! -d "${REPO}" ]; then
@@ -43,11 +44,11 @@ fi
 #         --prefix '{hostname}-' --verbose --stats \
 #         "${REPO}"
 
-    /home/shankar/bin/signal-cli/bin/signal-cli -u +16305579049 send -m "SUCCESS SEAS13009 local borg backup" "+16303366257"
+echo "SUCCESS $(date +%Y-%m-%dT%H:%M:%S)${newline}SEAS13009 local borg backup" | /home/shankar/bin/signal-cli/bin/signal-cli -u +16305579049 send "+16303366257"
 
 } || {
 
-/home/shankar/bin/signal-cli/bin/signal-cli -u +16305579049 send -m "FAILURE SEAS13009 local borg backup" "+16303366257"
+echo "FAILURE $(date +%Y-%m-%dT%H:%M:%S)${newline}SEAS13009 local borg backup" | /home/shankar/bin/signal-cli/bin/signal-cli -u +16305579049 send "+16303366257"
 }
  
 
