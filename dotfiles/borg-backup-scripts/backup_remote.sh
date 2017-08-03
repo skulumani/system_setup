@@ -17,7 +17,7 @@ set -o pipefail
 # passphrase.
 #
 # shellcheck disable=SC1091
-source ~/borg-passphrase.sh
+source ~/borg_passphrase.sh
 
 # These variables define the path to the Borg repository on the backup machine.
 # They can be modified to support local backups if necessary.
@@ -43,7 +43,7 @@ readonly COMPRESSION_LEVEL=6
 readonly HOME=/home/shankar
 
 # Whitespace-separated list of paths to back up.
-readonly SOURCE_PATHS="${HOME}/Documents ${HOME}/Downloads /media/shankar/data/Drive/docs /media/shankar/data/Drive/GWU ${HOME}/shankar/Drive"
+readonly SOURCE_PATHS="${HOME}/Documents ${HOME}/Downloads /media/shankar/data/Drive/docs /media/shankar/data/Drive/GWU ${HOME}/Drive"
 
 # Whitespace-separated list of paths to exclude from backup.
 readonly EXCLUDE="*.pyc"
