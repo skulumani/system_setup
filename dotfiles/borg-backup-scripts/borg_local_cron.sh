@@ -30,7 +30,7 @@ if [ ! -d "${REPO}" ]; then
     borg init --encryption=repokey "${REPO}"
 fi
 
-borg create --v --stats --progress --compression "${COMPRESSION_ALGO},${COMPRESSION_LEVEL}" \
+borg create --v --stats --compression "${COMPRESSION_ALGO},${COMPRESSION_LEVEL}" \
     --exclude "$EXCLUDE" \
     "${REPO}::{hostname}-{now:%Y-%m-%dT%H:%M:%S}" $SOURCE_PATHS
 # prune the archive
