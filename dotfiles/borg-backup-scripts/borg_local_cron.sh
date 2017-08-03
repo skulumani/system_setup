@@ -1,9 +1,9 @@
 #!/bin/sh
-REPO="/media/shankar/borg/backup/borgbackup/${date +%Y-W%U}_${hostname}"
+REPO="/media/shankar/borg/backup/borgbackup/$(date +%Y-W%U)_${hostname}"
 
 # export BORG_PASSPHRASE="password"
 
-source /home/shankar/borg-passphrase.sh
+source /home/shankar/borg_passphrase.sh
 
 # Compression algorithm and level. See Borg docs.
 readonly COMPRESSION_ALGO=zlib
