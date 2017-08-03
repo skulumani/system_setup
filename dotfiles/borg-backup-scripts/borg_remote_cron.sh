@@ -25,7 +25,7 @@ readonly KEEP_MONTHLY=6
 readonly KEEP_YEARLY=1
 
 # connect using openconnect to vpn
-
+# sudo openconnect -b go.vpn.gwu.edu -u=skulumani 
 # check if this weeks repo exists, if not then initialize it
 if ssh -q seas13009 [ ! -d "${REPO}" ] ; then
     # create a new repository
