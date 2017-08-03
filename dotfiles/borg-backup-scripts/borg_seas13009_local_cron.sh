@@ -26,17 +26,22 @@ readonly KEEP_YEARLY=1
 
 # create a new archive
 {
+if [ ! -d "${REPO}" ]; then
+    # create a new repository
+    /usr/bin/borg init --encryption=repokey "${REPO}"
+fi
+
 /usr/bin/borg create --v --stats --compression "${COMPRESSION_ALGO},${COMPRESSION_LEVEL}" \
     --exclude "$EXCLUDE" \
     "${REPO}::{hostname}-{now:%Y-%m-%dT%H:%M:%S}" $SOURCE_PATHS
 
-# prune the archive
-/usr/bin/borg prune --keep-hourly="${KEEP_HOURLY}" --keep-daily="${KEEP_DAILY}" \
-        --keep-weekly="${KEEP_WEEKLY}" \
-        --keep-monthly="${KEEP_MONTHLY}" \
-        --keep-yearly="${KEEP_YEARLY}" \
-        --prefix '{hostname}-' --verbose --stats \
-        "${REPO}"
+# # prune the archive
+# /usr/bin/borg prune --keep-hourly="${KEEP_HOURLY}" --keep-daily="${KEEP_DAILY}" \
+#         --keep-weekly="${KEEP_WEEKLY}" \
+#         --keep-monthly="${KEEP_MONTHLY}" \
+#         --keep-yearly="${KEEP_YEARLY}" \
+#         --prefix '{hostname}-' --verbose --stats \
+#         "${REPO}"
 
     /home/shankar/bin/signal-cli/bin/signal-cli -u +16305579049 send -m "SUCCESS SEAS13009 local borg backup" "+16303366257"
 
