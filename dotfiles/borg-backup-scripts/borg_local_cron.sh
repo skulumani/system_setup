@@ -1,5 +1,5 @@
 #!/bin/sh
-REPO="/media/shankar/borg/backup/borgbackup/${hostname}"
+REPO="/media/shankar/borg/backup/borgbackup/$(hostname)"
 
 # export BORG_PASSPHRASE="password"
 
