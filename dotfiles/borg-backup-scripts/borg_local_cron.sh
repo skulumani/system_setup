@@ -1,5 +1,5 @@
 #!/bin/sh
-REPO="/media/shankar/borg/backup/borgbackup/$(date +%Y-W%U)_${hostname}"
+REPO="/media/shankar/borg/backup/borgbackup/${hostname}"
 
 # export BORG_PASSPHRASE="password"
 
@@ -13,7 +13,7 @@ readonly COMPRESSION_LEVEL=6
 readonly HOME=/home/shankar
 
 # Whitespace-separated list of paths to back up.
-readonly SOURCE_PATHS="${HOME}/Documents ${HOME}/Downloads /media/shankar/data/Drive/docs /media/shankar/data/Drive/GWU"
+readonly SOURCE_PATHS="/home/shankar/Documents /home/shankar/Downloads /media/shankar/data/Drive/docs /media/shankar/data/Drive/GWU"
 
 # Whitespace-separated list of paths to exclude from backup.
 readonly EXCLUDE="*.pyc"
