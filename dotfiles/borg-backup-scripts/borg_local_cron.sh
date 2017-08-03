@@ -25,20 +25,14 @@ readonly KEEP_MONTHLY=6
 readonly KEEP_YEARLY=1
 
 # check if this weeks repo exists, if not then initialize it
-if [ -d "${REPO}" ]; then
-    borg create --v --stats --progress --compression "${COMPRESSION_ALGO},${COMPRESSION_LEVEL}" \
-        --exclude "$EXCLUDE" \
-        "${REPO}::{hostname}-{now:%Y-%m-%dT%H:%M:%S}" $SOURCE_PATHS
-else
+if [ ! -d "${REPO}" ]; then
     # create a new repository
     borg init --encryption=repokey "${REPO}"
 fi
-# create a new archive
 
 borg create --v --stats --progress --compression "${COMPRESSION_ALGO},${COMPRESSION_LEVEL}" \
     --exclude "$EXCLUDE" \
     "${REPO}::{hostname}-{now:%Y-%m-%dT%H:%M:%S}" $SOURCE_PATHS
-
 # prune the archive
 # borg prune --keep-daily="${KEEP_DAILY}" \
 #         --keep-weekly="${KEEP_WEEKLY}" \
