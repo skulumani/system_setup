@@ -114,6 +114,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# ensure Enter sets newline
+stty icrnl
+
 # # Set EDITOR use by ROS
 # export EDITOR='subl -w'
 # source /opt/ros/kinetic/setup.bash

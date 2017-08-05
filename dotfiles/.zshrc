@@ -95,6 +95,9 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
 fi
 # check for caps lock and swap automatically
 
+# ensure Enter sets newline
+stty icrnl
+
 # source all the PATH information
 if [ -f $HOME/.path ]; then
     source $HOME/.path
