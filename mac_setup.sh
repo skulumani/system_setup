@@ -19,6 +19,8 @@ casks=(
     skim
     vlc
     xquartz
+    tunnelblick
+    jabref
 )
 
 python_packages=(
