@@ -8,6 +8,7 @@ brews=(
     tmux
     zsh
     neovim/neovim/neovim
+    the_silver_searcher
 )
 
 casks=(
