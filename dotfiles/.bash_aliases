@@ -93,3 +93,8 @@ epstopdf_dir () {
 # Instructions are here https://stackoverflow.com/questions/2507766/merge-convert-multiple-pdf-files-into-one-pdf
 pdfmerge () {
     gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress -dCompatibilityLevel=1.4 -sOutputFile="$@" ; }
+
+## Add completions and alias for todo.txt
+source $HOME/bin/todo/todo_completion
+export TODOTXT_DEFAULT_ACTION=ls
+alias t='$HOME/bin/todo/todo.sh -d $HOME/bin/todo/todo.cfg'

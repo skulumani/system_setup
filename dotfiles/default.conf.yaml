@@ -29,6 +29,7 @@
     ~/.config/powerline: .config/powerline
     ~/.config/fontconfig: .config/fontconfig
     ~/.config/nvim: .config/nvim
+    ~/.todo: .todo
 
 - shell:
     - [git submodule update --init --recursive --remote, Updating submodules]
