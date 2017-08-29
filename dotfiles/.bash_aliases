@@ -97,5 +97,5 @@ pdfmerge () {
 ## Add completions and alias for todo.txt
 source $HOME/bin/todo/todo_completion
 export TODOTXT_DEFAULT_ACTION=ls
-alias t='$HOME/bin/todo/todo.sh -d $HOME/bin/todo/todo.cfg'
-alias todo='$HOME/bin/todo/todo.sh -d $HOME/bin/todo/todo.cfg'
+alias t='$HOME/bin/todo/todo.sh -d $HOME/bin/todo/todo.cfg -t'
+alias todo='$HOME/bin/todo/todo.sh -d $HOME/bin/todo/todo.cfg -t'
