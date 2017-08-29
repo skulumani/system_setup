@@ -98,3 +98,4 @@ pdfmerge () {
 source $HOME/bin/todo/todo_completion
 export TODOTXT_DEFAULT_ACTION=ls
 alias t='$HOME/bin/todo/todo.sh -d $HOME/bin/todo/todo.cfg'
+alias todo='$HOME/bin/todo/todo.sh -d $HOME/bin/todo/todo.cfg'
