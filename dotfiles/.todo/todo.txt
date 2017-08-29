@@ -1,1 +1,6 @@
 Upload final AAS paper +phd_research +2017aas @home @school
+Setup Edmund J Flynn wire +home @phone
+Update dissertation template +phd_research @computer
+Update dumbbell coupled derivation +phd_research +dissertation @computer
+Variational integrator derivation for CR3BP +phd_research +disseration @computer
+Periodic orbit computation in the 3BP +phd_research +disseration @computer
