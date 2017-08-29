@@ -5,3 +5,7 @@ Update dumbbell coupled derivation +phd_research +dissertation @computer
 Variational integrator derivation for CR3BP +phd_research +disseration @computer
 Periodic orbit computation in the 3BP +phd_research +disseration @computer
 File papers at home +phd_research @home @computer
+Asteroid fixed blender simulation +phd_research +dumbbell @school
+x 2017-08-29 Update finance spreadsheet @computer
+Implement asteroid frame controller/dynamics +phd_research +dumbbell @school
+x 2017-08-29 Pay RCN bill
