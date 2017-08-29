@@ -1,1 +1,3 @@
 x 2017-08-29 File AAS papers +phd_research @school @computer
+x 2017-08-29 Fix dumbbell tests +phd_research +dumbbell @school
+x 2017-08-29 Install OpenCV contrib to asteroid env +phd_research +dumbbell @school
