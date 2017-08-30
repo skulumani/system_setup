@@ -6,6 +6,7 @@ Variational integrator derivation for CR3BP +phd_research +disseration @computer
 Periodic orbit computation in the 3BP +phd_research +disseration @computer
 File papers at home +phd_research @home @computer
 Asteroid fixed blender simulation +phd_research +dumbbell @school
-x 2017-08-29 Update finance spreadsheet @computer
 Implement asteroid frame controller/dynamics +phd_research +dumbbell @school
-x 2017-08-29 Pay RCN bill
+2017-08-30 Find reading assignments +MAE3145 @school
+Look at traits for PREDICT +programming +MAE3145 @computer
+2017-08-30 Create home inventory while packing @home +home

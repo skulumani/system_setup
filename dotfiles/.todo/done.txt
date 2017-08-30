@@ -1,3 +1,11 @@
 x 2017-08-29 File AAS papers +phd_research @school @computer
 x 2017-08-29 Fix dumbbell tests +phd_research +dumbbell @school
 x 2017-08-29 Install OpenCV contrib to asteroid env +phd_research +dumbbell @school
+x 2017-08-29 Update finance spreadsheet @computer
+x 2017-08-29 Pay RCN bill
+x 2017-08-30 2017-08-30 @school setup symlink todo with dropbox due:2017-08-30
+x 2017-08-30 2017-08-30 Test task
+x 2017-08-30 2017-08-30 Pay GEICO bill +bill @computer
+x 2017-08-30 2017-08-30 Call Jonathon and verify closing date +home @phone @email
+x 2017-08-30 2017-08-30 Call Edmund J Flynn and verify wire amount +home
+x 2017-08-30 2017-08-30 Call USAA and change date of home insurance +home @phone
