@@ -67,3 +67,6 @@ xnoremap dp :diffput<CR>
 xnoremap do :diffget<CR>
 
 xnoremap <leader>du :diffupdate<CR>
+
+" Todo.txt mappings
+nnoremap <leader>td :e ~/.todo/todo.txt<CR>
