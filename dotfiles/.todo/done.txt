@@ -9,3 +9,11 @@ x 2017-08-30 2017-08-30 Pay GEICO bill +bill @computer
 x 2017-08-30 2017-08-30 Call Jonathon and verify closing date +home @phone @email
 x 2017-08-30 2017-08-30 Call Edmund J Flynn and verify wire amount +home
 x 2017-08-30 2017-08-30 Call USAA and change date of home insurance +home @phone
+x 2017-08-31 2017-08-30 Find reading assignments +MAE3145 @school
+x 2017-08-31 Send in summary for conference @school
+x 2017-08-31 Print document for christine @school
+x 2017-08-31 Answer student emails @school +MAE3145
+x 2017-09-01 2017-09-01 Bring home binder @mae3145 @school
+x 2017-09-01 Implement asteroid frame controller/dynamics +phd_research +dumbbell @school
+x 2017-09-01 Send in summary for conference @school
+x 2017-09-01 2017-08-31 Update Christine vanguard @computer @home
