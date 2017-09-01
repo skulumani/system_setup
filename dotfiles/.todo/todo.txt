@@ -8,11 +8,7 @@ File papers at home +phd_research @home @computer
 Asteroid fixed blender simulation +phd_research +dumbbell @school
 Look at traits for PREDICT +programming +MAE3145 @computer
 2017-08-30 Create home inventory while packing @home +home
-2017-09-01 Print example notes @mae3145
-2017-09-01 Bring home binder @mae3145
-2017-09-01 Run a blender sim in asteroid frame +phd_research @school +dumbbell
-2017-09-01 Setup Blender GPU @school +phd_research +dumbbell
 2017-09-01 Document data in asteroid dumbbell directory +phd_research +dumbbell @school
-2017-09-01 Create a asteroid frame plotting function +phd_research +dumbbell @school
 2017-09-01 Work on weekly summary +phd_research
 2017-09-01 Copy all todoist items to this file +home 
+2017-09-01 Email for a grader +mae3145
