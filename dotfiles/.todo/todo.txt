@@ -14,4 +14,5 @@ Look at traits for PREDICT +programming +MAE3145 @computer
 x 2017-09-03 2017-09-01 Email for a grader +mae3145
 2017-09-03 Setup meeting times for astro graders +mae3145 
 2017-09-03 Upload HW1 and constants sheets +mae3145
+2017-09-03 due:2017-09-10 Write out solution for HW1 and HW0 +mae3145
 2017-09-03 Implement traits UI GUI for orbit_gui visualization +mae3145
