@@ -2,8 +2,6 @@
 2017-09-01 Copy all todoist items to this file +home 
 Setup Edmund J Flynn wire +home @phone
 2017-09-03 Fix programming lessons +mae3145
-x 2017-09-04 2017-09-03 Implement traits UI GUI for orbit_gui visualization +mae3145
-x 2017-09-04 2017-09-03 Setup meeting times for astro graders +mae3145 
 2017-09-03 Upload HW1 and constants sheets +mae3145
 2017-09-03 due:2017-09-10 Write out solution for HW1 +mae3145
 2017-09-01 Document data in asteroid dumbbell directory +phd_research +dumbbell @school
