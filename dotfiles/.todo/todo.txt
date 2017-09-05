@@ -16,3 +16,4 @@ Upload final AAS paper +phd_research +2017aas @home @school
 Variational integrator derivation for CR3BP +phd_research +disseration @computer
 Look at traits for PREDICT +programming +mae3145 @computer
 2017-09-05 Look at multiprocessing for python +phd_research +dumbbell
+2017-09-05 Create astro library and documentation +mae3145 +programming
