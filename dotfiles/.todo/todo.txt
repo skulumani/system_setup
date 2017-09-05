@@ -2,8 +2,9 @@
 2017-09-01 Copy all todoist items to this file +home 
 Setup Edmund J Flynn wire +home @phone
 2017-09-03 Fix programming lessons +mae3145
-2017-09-03 Upload HW1 and constants sheets +mae3145
+x 2017-09-05 2017-09-03 Upload HW1 and constants sheets +mae3145
 2017-09-03 due:2017-09-10 Write out solution for HW1 +mae3145
+2017-09-07 Write out vector derivation of conic equation due:2017-09-05 +mae3145 @home
 2017-09-01 Document data in asteroid dumbbell directory +phd_research +dumbbell @school
 2017-09-01 Work on weekly summary +phd_research
 Asteroid fixed blender simulation +phd_research +dumbbell @school
@@ -14,4 +15,4 @@ Update dumbbell coupled derivation +phd_research +dissertation @computer
 Upload final AAS paper +phd_research +2017aas @home @school
 Variational integrator derivation for CR3BP +phd_research +disseration @computer
 Look at traits for PREDICT +programming +mae3145 @computer
-
+2017-09-05 Look at multiprocessing for python +phd_research +dumbbell
