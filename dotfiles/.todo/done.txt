@@ -23,3 +23,5 @@ x 2017-09-01 2017-09-01 Run a blender sim in asteroid frame +phd_research @schoo
 x 2017-09-01 2017-09-01 Setup Blender GPU @school +phd_research +dumbbell
 x 2017-09-01 2017-09-01 Create a asteroid frame plotting function +phd_research +dumbbell @school
 x 2017-09-03 2017-09-01 Email for a grader +mae3145
+x 2017-09-04 2017-09-03 Implement traits UI GUI for orbit_gui visualization +mae3145
+x 2017-09-04 2017-09-03 Setup meeting times for astro graders +mae3145 
