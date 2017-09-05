@@ -41,3 +41,4 @@ echo "SUCCESS $(date +%Y-%m-%dT%H:%M:%S)${newline}SEAS13009 drive push" | /home/
 echo "FAILURE $(date +%Y-%m-%dT%H:%M:%S)${newline}SEAS13009 drive push" | /home/shankar/bin/signal-cli/bin/signal-cli -u +16305579049 send "+16303366257"
 }
 
+/home/shankar/bin/signal-cli/bin/signal-cli -u +16305579049 receive
