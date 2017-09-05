@@ -16,3 +16,4 @@ Update dumbbell coupled derivation +phd_research +dissertation @computer
 Upload final AAS paper +phd_research +2017aas @home @school
 Variational integrator derivation for CR3BP +phd_research +disseration @computer
 Look at traits for PREDICT +programming +mae3145 @computer
+2017-09-05 Run borg cleanup @school
