@@ -1,4 +1,4 @@
-
+2017-09-05 Add personal astro library to FDCL page. Fork my own +mae3145
 2017-08-30 Create home inventory while packing @home +home
 2017-09-01 Copy all todoist items to this file +home 
 Setup Edmund J Flynn wire +home @phone
