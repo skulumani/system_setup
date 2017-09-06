@@ -25,3 +25,4 @@ x 2017-09-01 2017-09-01 Create a asteroid frame plotting function +phd_research 
 x 2017-09-03 2017-09-01 Email for a grader +mae3145
 x 2017-09-04 2017-09-03 Implement traits UI GUI for orbit_gui visualization +mae3145
 x 2017-09-04 2017-09-03 Setup meeting times for astro graders +mae3145 
+x 2017-09-05 2017-09-03 Upload HW1 and constants sheets +mae3145
