@@ -27,7 +27,7 @@
     co = checkout
     ci = checkin
     sh = show
-    su = submodule update --recursive --remote
+    su = "!git submodule foreach git checkout master && git submodule foreach git pull origin master"
     f  = fetch
     up = pull
     rb = rebase
