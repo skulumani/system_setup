@@ -3,11 +3,11 @@
 2017-09-07 Convert VAllado functions +mae3145 +programming
 2017-09-07 Complete HW1 and HW2 +mae3145
 2017-09-07 Print out AAE532 HW2-5 and solutions/graded +mae3145
-2017-09-07 Print Lee HW2 +mae3145
+x 2017-09-08 2017-09-07 Print Lee HW2 +mae3145
 2017-09-07 Fix predict to use multipleprocessing, visible should be a seperate function to use map +mae3145 +programming
 2017-09-07 Implement vallado functions into Python +mae3145
 2017-09-07 Complete project solutions for class +mae3145
-2017-09-07 Plan visit to Goddard and make research summary 
+x 2017-09-08 2017-09-07 Plan visit to Goddard and make research summary 
 2017-09-07 Remove sat class from tle module when giving to students +mae3145
 2017-09-01 Copy all todoist items to this file +home 
 2017-09-01 Document data in asteroid dumbbell directory +phd_research +dumbbell @school
@@ -29,3 +29,11 @@ Upload final AAS paper +phd_research +2017aas @home @school
 Variational integrator derivation for CR3BP +phd_research +disseration @computer
 2017-09-07 Test the rv2rhoazel functino in geodetic from vallado +mae3145
 2017-09-07 Update weekly summary +phd_research due:2017-09-08
+2017-09-08 Prepare slides for Goddard +phd_research due:2017-09-09
+
+2017-09-08 Tell class to bring computers on monday due:2017-09-09 +mae3145
+2017-09-08 Find grading rubric for projects +mae3145 due:2017-09-08
+2017-09-08 Add some funny space comics to slides due:2017-09-09 +mae3145
+2017-09-08 Discuss Julian date on Monday due:2017-09-09 +mae3145
+2017-09-08 Demonstrate a gravity force function for python +mae3145 due:2017-09-09
+2017-09-08 Print copy of notes and homeworks/solutions +mae3145 due:2017-09-08
