@@ -31,3 +31,9 @@ x 2017-09-06 2017-09-05 Complete library for students +mae3145
 x 2017-09-06 2017-09-05 Create astro library and documentation +mae3145 +programming
 x 2017-09-06 2017-09-05 Create solution and test case generator for RV2COE +mae3145
 x 2017-09-06 2017-09-05 Update syllabus with correct order of projects, RV2COE, COMFIX, PROP, PREDICt +mae3145
+x 2017-09-07 2017-09-07 Remove env req/instructions from astro library +mae3145
+x 2017-09-07 2017-09-01 Work on weekly summary +phd_research
+x 2017-09-07 2017-09-03 Fix programming lessons +mae3145
+x 2017-09-07 2017-09-06 Fix predict to use new astro library +mae3145
+x 2017-09-07 2017-09-05 Complete hyperbolic and parabolic cases for orbit_el +mae3145
+x 2017-09-07 2017-09-07 Submit AAS paper due:2017-09-08 +aas2017 +phd_research
