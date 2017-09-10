@@ -25,7 +25,7 @@ export FZF_DEFAULT_OPTS="
 }
 _gen_fzf_default_opts
 
-export FZF_DEFAULT_COMMAND='ag --path-to-agignore "~/.agignore" --skip-vcs-ignores --hidden -g ""'
+export FZF_DEFAULT_COMMAND='ag --path-to-ignore "~/.agignore" --skip-vcs-ignores --hidden -g ""'
 export FZF_TMUX=1
 export FZF_COMPLETION_TRIGGER=''
 bindkey '^T' fzf-completion
