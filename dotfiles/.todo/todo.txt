@@ -26,3 +26,5 @@ Variational integrator derivation for CR3BP +phd_research +disseration @computer
 2017-09-08 Prepare slides for Goddard, very interested in vision/landing +phd_research due:2017-09-09
 2017-09-11 Plan next lesson on conic sections/orbital elements +mae3145 due:2017-09-12
 2017-09-12 Add list of invited talks to CV +phd_research
+2017-09-12 Check on security freezes for both of us from all three agencies +home
+2017-09-12 Put birth certificates and marriage into a safety deposit box
