@@ -56,3 +56,6 @@ x 2017-09-11 2017-09-03 due:2017-09-10 Write out solution for HW1 +mae3145
 x 2017-09-12 Setup Edmund J Flynn wire +home @phone
 x 2017-09-12 2017-09-07 Test the rv2rhoazel functino in geodetic from vallado +mae3145
 x 2017-09-12 2017-09-11 Add Prob4 plots to solution due:2017-09-12 +mae3145
+x 2017-09-13 2017-09-12 Make HW questions be bonus so students get to decide on level of effort and grade +mae3145 
+x 2017-09-12 Upload final AAS paper +phd_research +2017aas @home @school
+x 2017-09-13 2017-09-11 Setup credit freeze for both of us due:2017-09-12 +mae3145
