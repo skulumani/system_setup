@@ -29,3 +29,6 @@ Variational integrator derivation for CR3BP +phd_research +disseration @computer
 2017-09-12 Look at threading in python, so we can use map +phd_research +programming
 2017-09-12 Check on security freezes for both of us from all three agencies +home
 2017-09-12 Put birth certificates and marriage into a safety deposit box
+2017-09-12 Solution manual for HW2 due:2017-09-16 +mae3145
+2017-09-12 Plan next lessons - conic sections due:2017-09-16 +mae3145
+2017-09-12 Work on creating HW3 +mae3145 due:2017-09-16
