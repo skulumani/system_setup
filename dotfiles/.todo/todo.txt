@@ -37,3 +37,4 @@ x 2017-09-15 2017-09-14 Give moving notice to Woodley +moving
 2017-09-12 Plan next lessons - conic sections due:2017-09-16 +mae3145
 2017-09-12 Work on creating HW3 +mae3145 due:2017-09-16
 x 2017-09-15 2017-09-15 Fix velocity in quarter equatorial function +dumbbell +phd_research
+2017-09-15 Check on simulations from MOCA. Should be two big data files from 9/14 adn 9/15
