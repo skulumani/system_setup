@@ -92,5 +92,5 @@ let g:neosnippet#enable_preview = 1
 
 " For conceal markers.
 if has('conceal')
-    set conceallevel=2 concealcursor=niv
+    set conceallevel=0 concealcursor=niv
 endif
