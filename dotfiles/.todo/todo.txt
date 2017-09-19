@@ -19,29 +19,25 @@
 Asteroid fixed blender simulation +phd_research +dumbbell @school
 File papers at home +phd_research @home @computer
 Look at traits for PREDICT +programming +mae3145 @computer
-Periodic orbit computation in the 3BP +phd_research +disseration @computer
 Update dissertation template +phd_research @computer
 Update dumbbell coupled derivation +phd_research +dissertation @computer
 Variational integrator derivation for CR3BP +phd_research +disseration @computer
 2017-09-08 Prepare slides for Goddard, very interested in vision/landing +phd_research due:2017-09-09
 2017-09-11 Plan next lesson on conic sections/orbital elements +mae3145 due:2017-09-12
-2017-09-12 Add list of invited talks to CV +phd_research
+x 2017-09-18 2017-09-12 Add list of invited talks to CV +phd_research
 2017-09-12 Look at threading in python, so we can use map +phd_research +programming
 2017-09-12 Check on security freezes for both of us from all three agencies +home
 2017-09-12 Put birth certificates and marriage into a safety deposit box also the stock certificate thing for the coop +moving
 2017-09-12 Update mailing address with coop board after we finish moving due:2017-10-14 +moving
-x 2017-09-15 2017-09-14 Give moving notice to Woodley +moving
 2017-09-14 Post my IJCAS paper, post a draft version or something +phd_research
 2017-09-12 Figure out how/when to pay coop fee due:2017-09-18 +moving
 2017-09-12 Solution manual for HW2 due:2017-09-16 +mae3145
-2017-09-12 Plan next lessons - conic sections due:2017-09-16 +mae3145
+x 2017-09-18 2017-09-12 Plan next lessons - conic sections due:2017-09-16 +mae3145
 2017-09-12 Work on creating HW3 +mae3145 due:2017-09-16
-x 2017-09-15 2017-09-15 Fix velocity in quarter equatorial function +dumbbell +phd_research
 2017-09-15 Check on simulations from MOCA. Should be two big data files from 9/14 adn 9/15
-x 2017-09-18 Print label for mailbox +home
 Get setup with management company, website and fee payment +home
-Change mail delivery +home
-Check on GWU bill and remove library gift +school +phd_research
+x 2017-09-18 Change mail delivery +home
+Change the address for everything +home
 Fix the gap in the shower between wall and spout +home
 Check with Kevin on things I'm responsible vs. building +home
 Warranties for kitchen appliances +home
@@ -57,6 +53,5 @@ Cancel RCN +home
 Check on USAA home/rental insturance +home
 Lubricate and clean window tracks +home
 Schedule movign days with 2800 and Luzon +home
-Rent a uhaul +home
+x 2017-09-18 Rent a uhaul +home
 Check with 2800 on final rent/walkthrough +home
-xfinity accoutn number 8299700016199265 +home

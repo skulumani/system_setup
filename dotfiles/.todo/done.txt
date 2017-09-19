@@ -59,3 +59,9 @@ x 2017-09-12 2017-09-11 Add Prob4 plots to solution due:2017-09-12 +mae3145
 x 2017-09-13 2017-09-12 Make HW questions be bonus so students get to decide on level of effort and grade +mae3145 
 x 2017-09-12 Upload final AAS paper +phd_research +2017aas @home @school
 x 2017-09-13 2017-09-11 Setup credit freeze for both of us due:2017-09-12 +mae3145
+x 2017-09-15 2017-09-14 Give moving notice to Woodley +moving
+x 2017-09-15 2017-09-15 Fix velocity in quarter equatorial function +dumbbell +phd_research
+x 2017-09-18 Print label for mailbox +home
+x 2017-09-18 xfinity accoutn number 8299700016199265 +home
+x 2017-09-18 Check on GWU bill and remove library gift +school +phd_research
+x 2017-09-18 Periodic orbit computation in the 3BP +phd_research +disseration @computer
