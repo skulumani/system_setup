@@ -48,3 +48,4 @@ Variational integrator derivation for CR3BP +phd_research +disseration @computer
 2017-09-14 Post my IJCAS paper, post a draft version or something +phd_research
 2019-09-05 Setup easy align in vim +programming
 Look at traits for PREDICT +programming +mae3145 @computer
+2017-09-19 Look at fixing scipy +programming +phd_research
