@@ -17,3 +17,6 @@ push @generated_exts, "nav";
 push @generated_exts, "bbl";
 push @generated_exts, "blg";
 push @generated_exts, "fdb_latexmk";
+
+#$pdflatex = 'xelatex -file-line-error -shell-escape -synctex=1';
+#$pdflatex = 'lualatex --interaction=nonstopmode --shell-escape --synctex=1';
