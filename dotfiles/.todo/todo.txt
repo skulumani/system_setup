@@ -48,5 +48,6 @@ Variational integrator derivation for CR3BP +phd_research +disseration @computer
 2019-09-05 Setup easy align in vim +programming
 Look at traits for PREDICT +programming +mae3145 @computer
 2017-09-19 Look at fixing scipy +programming +phd_research
-2017-09-20 Get mayavi working in orbit gui +programming +mae3145
+2017-09-20 Get mayavi working in orbit gui and predict +programming +mae3145
 2017-09-20 Implement texture on sphere +programming
+2017-09-20 Move todo list to a seperate submodule inside dotfiles +programming
