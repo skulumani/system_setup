@@ -15,11 +15,11 @@ Better light switch plates and USB type outlets +home
 Improved light fixture in closet +home
 Ask Kevin about removing door +home
 GFI outlet for kitchen +home
-Cancel RCN +home
+x 2017-09-22 Cancel RCN +home
 Check on USAA home/rental insturance +home
 Lubricate and clean window tracks +home
-Schedule movign days with 2800 and Luzon +home
-Check with 2800 on final rent/walkthrough +home
+x 2017-09-22 Schedule movign days with 2800 and Luzon +home
+x 2017-09-22 Check with 2800 on final rent/walkthrough +home
 2017-09-07 Write unit test for site2ecef +mae3145 +programming
 2017-09-07 Convert VAllado functions +mae3145 +programming
 2017-09-07 Fix predict to use multipleprocessing, visible should be a seperate function to use map +mae3145 +programming
