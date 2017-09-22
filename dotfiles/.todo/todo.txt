@@ -51,3 +51,4 @@ Look at traits for PREDICT +programming +mae3145 @computer
 2017-09-20 Get mayavi working in orbit gui and predict +programming +mae3145
 2017-09-20 Implement texture on sphere +programming
 2017-09-20 Move todo list to a seperate submodule inside dotfiles +programming
+2017-09-22 Goddard people are interested in constrained attitude control and the visual localization, add more detail for these +phd_research
