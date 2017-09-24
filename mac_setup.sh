@@ -9,6 +9,7 @@ brews=(
     zsh
     neovim/neovim/neovim
     the_silver_searcher
+    trash-cli
 )
 
 casks=(
