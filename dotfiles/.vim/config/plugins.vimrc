@@ -58,7 +58,6 @@ Plug 'junegunn/vim-easy-align'
 Plug 'tdehaeze/matlab-vim'
 
 " set rtp+=~/.fzf
-" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
