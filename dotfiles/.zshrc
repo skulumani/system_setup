@@ -120,3 +120,9 @@ if [[ -f $HOME/.fzf.zsh ]]; then
 fi
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/shankar/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
