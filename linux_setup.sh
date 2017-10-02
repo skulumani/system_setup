@@ -261,71 +261,9 @@ prompt "Install oh-my-zsh" "git clone git://github.com/robbyrussell/oh-my-zsh.gi
 
 # build custom versions of apps
 prompt "Build TMUX" "bash ~/Documents/system_setup/build_tmux.sh"
+prompt "Build ag" "bash ~/Documents/system_setup/build_ag.sh"
 
 prompt "Enable SSH server" "sudo apt-get install openssh-server && sudo service ssh restart"
 
 echo "All finished"
 echo "Might need to restart and rerun dotfiles/install linux to make sure eerything is working"
-# install brews
-
-# prompt "Update ruby"
-# ruby -v
-# brew install gpg
-# gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
-# curl -sSL https://get.rvm.io | bash -s stable
-# ruby_version='2.6.0'
-# rvm install ${ruby_version}
-# rvm use ${ruby_version} --default
-# ruby -v
-# sudo gem update --system
-# 
-# prompt "Install Java"
-# brew cask install java
-# 
-# prompt "Install packages"
-# brew info ${brews[@]}
-# install 'brew install' ${brews[@]}
-# 
-# prompt "Install software"
-# brew tap caskroom/versions
-# brew cask info ${casks[@]}
-# install 'brew cask install' ${casks[@]}
-# 
-# prompt "Installing secondary packages"
-# install 'pip install --upgrade' ${pips[@]}
-# install 'gem install' ${gems[@]}
-# install 'npm install --global' ${npms[@]}
-# install 'apm install' ${apms[@]}
-# install 'code --install-extension' ${vscode[@]}
-# brew tap caskroom/fonts
-# install 'brew cask install' ${fonts[@]}
-# 
-# prompt "Upgrade bash"
-# brew install bash
-# sudo bash -c "echo $(brew --prefix)/bin/bash >> /private/etc/shells"
-# mv ~/.bash_profile ~/.bash_profile_backup
-# mv ~/.bashrc ~/.bashrc_backup
-# mv ~/.gitconfig ~/.gitconfig_backup
-# cd; curl -#L https://github.com/barryclark/bashstrap/tarball/master | tar -xzv --strip-components 1 --exclude={README.md,screenshot.png}
-# #source ~/.bash_profile
-# 
-# prompt "Set git defaults"
-# for config in "${git_configs[@]}"
-# do
-#   git config --global ${config}
-# done
-# gpg --keyserver hkp://pgp.mit.edu --recv ${gpg_key}
-# 
-# prompt "Install mac CLI [NOTE: Say NO to bash-completions since we have fzf]!"
-# sh -c "$(curl -fsSL https://raw.githubusercontent.com/guarinogabriel/mac-cli/master/mac-cli/tools/install)"
-# 
-# prompt "Update packages"
-# pip3 install --upgrade pip setuptools wheel
-# mac update
-# 
-# prompt "Cleanup"
-# brew cleanup
-# brew cask cleanup
-# 
-# read -p "Run `mackup restore` after DropBox has done syncing ..."
-# echo "Done!"
