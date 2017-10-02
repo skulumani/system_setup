@@ -104,3 +104,10 @@ Add the following to `/etc/fstab`
 //titan.seas.gwu.edu/Homes/skulumani /media/titan_drive/ cifs username=USERNAME_HERE,password=PASSWORD_HERE,domain=seas.gwu.edu,_netdev,iocharset=utf8,sec=ntlmv2,users 0 0
 ~~~
 
+## Dual monitors on xfce
+
+After setting up the nvidia drivers and connecting both monitors you can move the default panel to the chosen monitor by going to
+
+~~~
+Settings Mangaer > Panel > Output dropdown > Select Monitor
+~~~
