@@ -1,28 +1,10 @@
 ## New computer setup
 
-* Mac specific setup
-    * install all the source code pro fonts by double clicking on them and the powerline ones too
-    * Install solarized terminal colorscheme. The Yosemite one works on 10.12 
-    * Also you can change the default shell by going to Preferences > Users and Groups > Ctrl-Click username > Advanced Options and input the correct path to `zsh`
-* Ubuntu steps
-    * Change the terminal color scheme to solarized and make sure it's using Source Code Pro for the font
-* Install [BOINC](https://boinc.berkeley.edu/)
-* Install [Gridcoin](http://gridcoin.us/)
-    * There's a repo that has the wallet backups and config files
-* [Anaconda3](https://www.continuum.io/downloads#linux)
-    2. You can turn on/off Anaconda by modifying the path in `.bashrc`
-* [Google Drive for Linux](https://github.com/odeke-em/drive)
-* [Redshift](http://jonls.dk/redshift/)
-* [MyRepos](https://myrepos.branchable.com/)
-    * There's a `mrconfig` file for the home directory.
-* [OpenJDK]
-    * On Ubuntu you can install `sudo apt-get install openjdk8-jre` to run JabRef
+* Run `bash linux_setup.sh` or `bash mac_setup.sh`
+
 ## Dot files
 
-All the dotfiles live in the `dotfiles/` directory.
-You can go into `dotfiles/` and modify the `install.conf.yml` file which defines the symbolic 
-links that should be created. 
-After defining the links desired, you can then run `./install`
+After cloning the system setup repo, make sure it's up to date and run `./dotfiles/install linux` or `./dotfiles/install mac`
 
 ### TMUX Plugins
 The plugin manager `tpm` lives inside `.tmux/plugins/tpm`. 
@@ -51,6 +33,7 @@ Then use one of the following:
 * `Ctrl-]` to jump to tag under cursor
 * `g-Ctrl-]` for ambiguous tag
 * `Ctrl-t` to jump back up the tag stack
+
 ### Autocomplete for vim
 
 Just type `Ctrl-n` for autocomplete then `Ctrl-n` or `Ctrl-p` to go forward and backward.
