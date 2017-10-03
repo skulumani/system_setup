@@ -2,7 +2,7 @@ if has('nvim')
     nnoremap <leader>m :Neomake<CR>
     " Automatically open the error window
     let g:neomake_open_list = 0
-    let g:neomake_python_enabled_makers = [ 'flake8' ]
+    let g:neomake_python_enabled_makers = ['pylint', 'flake8' ]
     augroup vimrc_neomake
         autocmd!
         autocmd BufWritePost * silent Neomake
