@@ -1,7 +1,7 @@
 #!/bin/sh
 
 DIR="/media/shankar/borg/backup/borgbackup"
-REPO="seas13009"
+REPO="fdcl"
 DATE="$(date +%Y-%m-%dT%H:%M:%S)"
 NEWNAME="${DATE}_${REPO}"
 
@@ -34,11 +34,11 @@ drive rename -local=false -remote=true ${REPO} ${NEWNAME}
         --prefix '{hostname}-' --verbose --stats \
         "${DIR}/${REPO}"
 
-echo "SUCCESS $(date +%Y-%m-%dT%H:%M:%S)${newline}SEAS13009 drive push" | /home/shankar/bin/signal-cli/bin/signal-cli -u +16305579049 send "+16303366257"
+echo "SUCCESS $(date +%Y-%m-%dT%H:%M:%S)${newline}FDCL drive push" | /home/shankar/bin/signal-cli/bin/signal-cli -u +16305579049 send "+16303366257"
 
 } || {
 
-echo "FAILURE $(date +%Y-%m-%dT%H:%M:%S)${newline}SEAS13009 drive push" | /home/shankar/bin/signal-cli/bin/signal-cli -u +16305579049 send "+16303366257"
+echo "FAILURE $(date +%Y-%m-%dT%H:%M:%S)${newline}FDCL drive push" | /home/shankar/bin/signal-cli/bin/signal-cli -u +16305579049 send "+16303366257"
 }
 
 /home/shankar/bin/signal-cli/bin/signal-cli -u +16305579049 receive
