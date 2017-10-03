@@ -63,11 +63,11 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='nvim'
+else
+  export EDITOR='nvim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -116,18 +116,13 @@ fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 if [[ -f $HOME/.fzf.zsh ]]; then
-    # source $HOME/.fzf_options
+    source $HOME/.fzf_options
 fi
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-# The following lines were added by compinstall
-zstyle :compinstall filename '/home/shankar/.zshrc'
 
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
-# Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
-# End of lines configured by zsh-newuser-install
+# try and fix completions in zsh
+# compaudit | xargs -I '%' chmod g-w '%'
+# compaudit | xargs -I '%' chown $USER:$USER '%'
+# rm ~/.zcompdump*
+# exec zsh
