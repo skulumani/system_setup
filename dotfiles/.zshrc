@@ -116,7 +116,7 @@ fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 if [[ -f $HOME/.fzf.zsh ]]; then
-    source $HOME/.fzf_options
+    # source $HOME/.fzf_options
 fi
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
