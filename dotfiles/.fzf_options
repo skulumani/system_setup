@@ -70,7 +70,7 @@ vf() {
 
         if [[ -n $files ]]
             then
-                vim -- $files
+                nvim -- $files
                 print -l $files[1]
                 fi
 }
