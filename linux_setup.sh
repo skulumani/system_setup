@@ -24,8 +24,8 @@ trap cleanup EXIT
 # list of packages to download for linux
 
 # anaconda version
-anaconda_version="4.3.1"
-anaconda_hash="4447b93d2c779201e5fb50cfc45de0ec96c3804e7ad0fe201ab6b99f73e90302"
+anaconda_version="5.0.0"
+anaconda_hash="67f5c20232a3e493ea3f19a8e273e0618ab678fa14b03b59b1783613062143e9"
 
 # go lang source
 go_version="1.8.1"
