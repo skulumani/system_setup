@@ -1,5 +1,28 @@
 #!/usr/bin/env bash
 
+DIR="$HOME"
+WOKR_DIR=$(mktemp -d -p "$DIR")
+
+# make sure tmp dir was actually created
+if [[ ! -d "$WORK_DIR" ]]; then
+    echo "Could not create temp directory"
+    exit 1
+fi
+
+# delete temp dir
+cleanup () {
+    rm -rf "$WORK_DIR"
+    echo "Deleted temp working directory: $WORK_DIR"
+}
+
+# register cleanup function to be called on exit
+trap cleanup EXIT
+
+###############################################################################
+# anaconda version
+anaconda_version="5.0.0"
+anaconda_hash="23df1e3a38a6b4aaa0ab559d0c1e51be76eca5d75cb595d473d223c8d17e762d"
+
 brews=(
     ctags
     git
@@ -10,6 +33,7 @@ brews=(
     neovim/neovim/neovim
     the_silver_searcher
     trash-cli
+    wget
 )
 
 casks=(
@@ -18,6 +42,7 @@ casks=(
     coconutbattery
     google-chrome
     mactex
+    iterm2
     skim
     vlc
     xquartz
@@ -116,7 +141,15 @@ if [[ -d "$HOME/anaconda3" ]]; then
     echo "Anaconda already installed"
 else
     echo "We're going to install Anaconda using Homebrew"
-    prompt "Install Anaconda" "brew cask install anaconda"
+    prompt "Download Anaconda install script" "wget https://repo.continuum.io/archive/Anaconda3-${anaconda_version}-MacOSX-x86_64.sh -O $WORK_DIR/anaconda.sh"
+    
+    if ! sha256sum -c <<< "$anaconda_hash  $WORK_DIR/anaconda.sh"; then
+        echo "Hash does not match. Aborting!"
+        exit 1
+    else
+        echo "Hash match. Installing Anaconda"
+        prompt "Install Anaconda" "bash ${WORK_DIR}/anaconda.sh -b -p $HOME/anaconda3"
+    fi
 fi
 
 # setup ssh 
