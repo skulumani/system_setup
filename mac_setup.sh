@@ -148,7 +148,7 @@ else
     echo "We're going to install Anaconda using Homebrew"
     prompt "Download Anaconda install script" "wget https://repo.continuum.io/archive/Anaconda3-${anaconda_version}-MacOSX-x86_64.sh -O $WORK_DIR/anaconda.sh"
     
-    if ! sha256sum -c <<< "$anaconda_hash  $WORK_DIR/anaconda.sh"; then
+    if ! shasum -a 256 -c <<< "$anaconda_hash  $WORK_DIR/anaconda.sh"; then
         echo "Hash does not match. Aborting!"
         exit 1
     else
