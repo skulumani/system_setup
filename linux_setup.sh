@@ -220,6 +220,10 @@ else
     if [[ -f "$HOME/.bashrc" ]]; then
         mv $HOME/.bashrc $HOME/.bashrc_backup
     fi
+
+    if [[ -f "$HOME/.bashrc" ]]; then
+        mv $HOME/.zshrc $HOME/.zshrc_backup
+    fi
     prompt "Install dotfiles" "(cd $HOME/Documents/system_setup && git submodule init && git submodule update --recursive --remote && ./dotfiles/install linux)"
 fi
 
