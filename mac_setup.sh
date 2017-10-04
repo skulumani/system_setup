@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 DIR="$HOME"
-WOKR_DIR=$(mktemp -d -t "tempdir")
+WORK_DIR=$(mktemp -d -t "tempdir")
 
 # make sure tmp dir was actually created
 if [[ ! -d "$WORK_DIR" ]]; then
