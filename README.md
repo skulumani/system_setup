@@ -2,6 +2,7 @@
 
 * Run `bash linux_setup.sh` or `bash mac_setup.sh`
 
+    * [Anaconda Hashes](https://docs.anaconda.com/anaconda/install/hashes/)
 ## Dot files
 
 After cloning the system setup repo, make sure it's up to date and run `./dotfiles/install linux` or `./dotfiles/install mac`
