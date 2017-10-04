@@ -136,6 +136,11 @@ else
     prompt "Update Homebrew" "brew update; brew update; brew upgrade; brew doctor"
 fi
 
+# install brew casks
+prompt "Install brew casks" "install_casks"
+
+prompt "Install brews" "install_brews"
+
 # install anaconda
 if [[ -d "$HOME/anaconda3" ]]; then
     echo "Anaconda already installed"
@@ -192,6 +197,10 @@ else
     if [[ -f "$HOME/.bashrc" ]]; then
         mv $HOME/.bashrc $HOME/.bashrc_backup
     fi
+
+    if [[ -f "$HOME/.bashrc" ]]; then
+        mv $HOME/.zshrc $HOME/.zshrc_backup
+    fi
     prompt "Install dotfiles" "(cd $HOME/Documents/system_setup &&  git submodule init && git submodule update --recursive --remote && ./dotfiles/install mac)"
 fi
 
@@ -222,10 +231,6 @@ prompt "Test drive client" "drive --version"
 echo "Install all the pip packages"
 prompt "Install pip packages" "install_pips"
 
-# install brew casks
-prompt "Install brew casks" "install_casks"
-
-prompt "Install brews" "install_brews"
 
 # setup zsh as default
 echo "Now set zsh as the default shell"
