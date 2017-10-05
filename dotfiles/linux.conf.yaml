@@ -1,5 +1,4 @@
 - link:
-    ~/bin: bin
     ~/.local/share/applications/JabRef.desktop: JabRef.desktop
     ~/texmf: texmf
     ~/.fonts: .fonts
