@@ -3,6 +3,14 @@
 * Run `bash linux_setup.sh` or `bash mac_setup.sh`
 
     * [Anaconda Hashes](https://docs.anaconda.com/anaconda/install/hashes/)
+
+### Mac specifics
+
+* Install the fonts located in `dotfiles/.fonts` by just clicking on them
+* change the login shell by going to Settings > Users > Right Click User and go to Advanced > Change shell
+* Install dotfiles a few times to make sure it's all working
+* Swap Caps lock and escape - Settings > Keyboard > Modifier Keys
+
 ## Dot files
 
 After cloning the system setup repo, make sure it's up to date and run `./dotfiles/install linux` or `./dotfiles/install mac`
