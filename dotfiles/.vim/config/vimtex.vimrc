@@ -35,6 +35,7 @@ elseif has('win32')
 endif
 let g:tex_flavor = "latex"
 let g:vimtex_quickfix_open_on_warning = 0
+let g:vimtex_quickfix_mode = 2
 if has('nvim')
     let g:vimtex_compiler_progname = 'nvr'
 endif
@@ -43,10 +44,40 @@ endif
 " confusing
 let g:tex_conceal = ""
 
+
+augroup latexSurround
+    autocmd!
+    autocmd FileType tex call s:latexSurround()
+augroup END
+
+function! s:latexSurround()
+    let b:surround_{char2nr("e")}
+                \ = "\\begin{\1environment: \1}\n\t\r\n\\end{\1\1}"
+    let b:surround_{char2nr("c")} = "\\\1command: \1{\r}"
+endfunction
+
+" Can hide specifc warning messages from the quickfix window
 " Quickfix with Neovim is broken or something
 " https://github.com/lervag/vimtex/issues/773
-let g:vimtex_quickfix_latexlog = {'fix_paths' : 0}
-
+let g:vimtex_quickfix_latexlog = {
+            \ 'default' : 1,
+            \ 'fix_paths' : 0,
+            \ 'general' : 1,
+            \ 'references' : 1,
+            \ 'overfull' : 1,
+            \ 'underfull' : 1,
+            \ 'font' : 1,
+            \ 'packages' : {
+            \   'default' : 1,
+            \   'natbib' : 1,
+            \   'biblatex' : 1,
+            \   'babel' : 1,
+            \   'hyperref' : 1,
+            \   'scrreprt' : 1,
+            \   'fixltx2e' : 1,
+            \   'titlesec' : 1,
+            \ },
+            \}
 " vim-surround in LaTeX
 " augroup latexSurround
 "     autocmd!
