@@ -31,6 +31,7 @@
     ~/.config/nvim: .config/nvim
     ~/.todo: .todo
     ~/bin: bin
+    ~/.ctags: .ctags
 
 - shell:
     - [git submodule update --init --recursive --remote, Updating submodules]
