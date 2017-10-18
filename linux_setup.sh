@@ -43,6 +43,7 @@ apt_packages=(
     xdotool
     redshift-gtk
     openjdk-8-jre
+    openjfx
     trash-cli
     software-properties-common
     python-dev
