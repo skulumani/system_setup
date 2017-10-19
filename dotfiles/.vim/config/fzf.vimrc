@@ -46,3 +46,8 @@ else
     " CtrlP fallback
     echom "No FZF installed. Try again"
 end
+
+" Search option for ack.vim
+if executable('ag')
+    let g:ackprg = 'ag --vimgrep'
+endif
