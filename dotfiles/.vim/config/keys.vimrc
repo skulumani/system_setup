@@ -70,3 +70,6 @@ xnoremap <leader>du :diffupdate<CR>
 
 " Todo.txt mappings
 nnoremap <leader>td :e ~/.todo/todo.txt<CR>
+
+" Search for todo or bug or fixme using AG
+nnoremap <leader>fix :Ag TODO \| FIXME \| BUG<CR>
