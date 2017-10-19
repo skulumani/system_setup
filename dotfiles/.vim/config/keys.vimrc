@@ -72,4 +72,4 @@ xnoremap <leader>du :diffupdate<CR>
 nnoremap <leader>td :e ~/.todo/todo.txt<CR>
 
 " Search for todo or bug or fixme using AG
-nnoremap <leader>fix :Ag TODO \| FIXME \| BUG<CR>
+nnoremap <leader>fix :Ack \(FIXME\)\\|\(TODO\)\\|\(BUG\)<CR>
