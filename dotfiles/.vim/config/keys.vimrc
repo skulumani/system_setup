@@ -24,7 +24,7 @@ map <C-n> :NERDTreeToggle<CR>
 nnoremap <leader>ev :e $MYVIMRC<CR>
 nnoremap <leader>sv :so $MYVIMRC<CR>
 
-nnoremap <leader>s :set spell!<CR>
+" nnoremap <leader>s :set spell!<CR>
 set spelllang=en_us
 
 nmap <leader>l :set list!<CR> <bar> :IndentLinesToggle<CR> <bar> :LeadingSpaceToggle<CR>
