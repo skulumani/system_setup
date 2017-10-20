@@ -28,6 +28,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-unimpaired'
 Plug 'freitass/todo.txt-vim'
+Plug 'tpope/vim-repeat'
 
 " Appearance
 Plug 'lifepillar/vim-solarized8'
@@ -56,6 +57,7 @@ Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'tpope/vim-commentary'
 Plug 'junegunn/vim-easy-align'
 Plug 'tdehaeze/matlab-vim'
+Plug 'airblade/vim-gitgutter'
 
 " set rtp+=~/.fzf
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
