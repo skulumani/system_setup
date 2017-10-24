@@ -2,7 +2,7 @@ if executable('fzf')
     " <C-p> or <C-t> to search files
     nnoremap <silent> <C-t> :Tags <cr>
     nnoremap <silent> <C-p> :Files <cr>
-    nnoremap <silent> <C-M-p> :Ag <CR>
+    nnoremap <silent> <C-M-p> :Rg <CR>
     " nnoremap <silent> <C-m> :Map <CR>
 
     " search commits
@@ -48,6 +48,15 @@ else
 end
 
 " Search option for ack.vim
-if executable('ag')
-    let g:ackprg = 'ag --vimgrep'
+if executable('rg')
+    " let g:ackprg = 'ag --vimgrep'
+    let g:ackprg = 'rg --vimgrep --no-heading'
+
+    command! -bang -nargs=* Rg
+      \ call fzf#vim#grep(
+      \   'rg --column --line-number --no-heading --color=always --ignore-case '.shellescape(<q-args>), 1,
+      \   <bang>0 ? fzf#vim#with_preview('up:60%')
+      \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+      \   <bang>0)
+
 endif
