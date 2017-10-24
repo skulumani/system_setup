@@ -16,7 +16,7 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 
 " Use ctags
-command! MakeTags !ctags -R .
+" command! MakeTags !ctags -R .
 
 " Nerdtree hotkey to C-n
 map <C-n> :NERDTreeToggle<CR>
