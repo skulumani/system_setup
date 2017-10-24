@@ -92,7 +92,12 @@ epstopdf_dir () {
 # gs -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress -dCompatibilityLevel=1.4 -dPDFSETTINGS=/default -dNOPAUSE -dQUIET -dBATCH -dDetectDuplicateImages -dCompressFonts=true -r150 -sOutputFile=output.pdf input.pdf
 # Instructions are here https://stackoverflow.com/questions/2507766/merge-convert-multiple-pdf-files-into-one-pdf
 pdfmerge () {
-    gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress -dCompatibilityLevel=1.4 -sOutputFile="$@" ; }
+    if [ -z "$1" ]; then
+        echo "Usage: pdfmerge output_file.pdf input_1.pdf input_2.pdf and so on"
+    else
+        gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress -dCompatibilityLevel=1.4 -sOutputFile="$@" ;
+    fi
+}
 
 ## Add completions and alias for todo.txt
 source $HOME/bin/todo/todo_completion
