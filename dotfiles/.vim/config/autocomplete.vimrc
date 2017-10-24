@@ -91,6 +91,4 @@ set completeopt+=preview
 let g:neosnippet#enable_preview = 1
 
 " For conceal markers.
-if has('conceal')
-    set conceallevel=0 concealcursor=niv
-endif
+set conceallevel=0 concealcursor=niv
