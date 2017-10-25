@@ -48,15 +48,45 @@ else
 end
 
 " Search option for ack.vim
-if executable('rg')
-    " let g:ackprg = 'ag --vimgrep'
-    let g:ackprg = 'rg --vimgrep --no-heading'
+if has('unix')
+    " check for mac vs. linux
+    let s:uname = system("uname")
 
-    command! -bang -nargs=* Rg
-      \ call fzf#vim#grep(
-      \   'rg --column --line-number --no-heading --color=always --ignore-case '.shellescape(<q-args>), 1,
-      \   <bang>0 ? fzf#vim#with_preview('up:60%')
-      \           : fzf#vim#with_preview('right:50%:hidden', '?'),
-      \   <bang>0)
+    " You have to set these up using pip install.
+    " I have conda environments setup already
+    "
+    " $ conda env create -f neovim2
+    " $ conda env create -f neovim3
+    " ... 
+    "
+    if s:uname == "Darwin\n"
+
+        if executable('rg')
+            " let g:ackprg = 'ag --vimgrep'
+            let g:ackprg = 'rg --vimgrep --no-heading'
+
+            command! -bang -nargs=* Rg
+            \ call fzf#vim#grep(
+            \   'rg --column --line-number --no-heading --color=always --ignore-case '.shellescape(<q-args>), 1,
+            \   <bang>0 ? fzf#vim#with_preview('up:60%')
+            \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+            \   <bang>0)
+
+        endif
+    else " linux
+
+        if executable('rg_linux')
+            " let g:ackprg = 'ag --vimgrep'
+            let g:ackprg = 'rg_linux --vimgrep --no-heading'
+
+            command! -bang -nargs=* Rg
+            \ call fzf#vim#grep(
+            \   'rg_linux --column --line-number --no-heading --color=always --ignore-case '.shellescape(<q-args>), 1,
+            \   <bang>0 ? fzf#vim#with_preview('up:60%')
+            \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+            \   <bang>0)
+
+        endif
+    endif
 
 endif

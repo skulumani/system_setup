@@ -14,7 +14,7 @@
 <entry key="CleanUpISSN" value="false"/>
 <entry key="CleanUpMakePathsRelative" value="false"/>
 <entry key="CleanUpMovePDF" value="false"/>
-<entry key="CleanUpRenamePDF" value="false"/>
+<entry key="CleanUpRenamePDF" value="true"/>
 <entry key="CleanUpRenamePDFonlyRelativePaths" value="false"/>
 <entry key="CleanUpUpgradeExternalLinks" value="false"/>
 <entry key="DroppedFileHandler_CopyFile" value="false"/>
