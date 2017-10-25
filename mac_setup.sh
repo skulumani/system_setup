@@ -34,6 +34,7 @@ brews=(
     the_silver_searcher
     trash-cli
     wget
+    ripgrep
 )
 
 casks=(
