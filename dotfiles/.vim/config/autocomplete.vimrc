@@ -22,7 +22,7 @@ if has('nvim')
     "     return deoplete#mappings#close_popup()
     " endfunction
     " Options for vim-jedi
-    let g:jedi#auto_initialization = 0
+    let g:jedi#auto_initialization = 1
     let g:jedi#completions_enabled = 0
     let g:jedi#goto_command = "<leader>d"
     let g:jedi#goto_assignments_command = "<leader>g"
