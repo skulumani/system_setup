@@ -28,7 +28,7 @@ set -o pipefail
 # https://borgbackup.readthedocs.io/en/stable/faq.html#can-i-backup-from-multiple-servers-into-a-single-repository
 readonly USER=login
 readonly HOST=example.com
-readonly REPO="/media/shankar/borg/backup/borgbackup/$(hostname)" # Path to repository on the host
+readonly REPO="/media/shankar/data/Drive/backup/borgbackup/$(hostname)" # Path to repository on the host
 readonly TARGET="${REPO}"
 
 # Valid options are "none", "keyfile", and "repokey". See Borg docs.
