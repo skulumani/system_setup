@@ -32,9 +32,9 @@ if [ ! -d "${REPO}" ]; then
     /usr/bin/borg init --encryption=repokey "${REPO}"
 fi
 
-/usr/bin/borg create --v --stats --compression "${COMPRESSION_ALGO},${COMPRESSION_LEVEL}" \
+MSG=$((/usr/bin/borg create --v --stats --compression "${COMPRESSION_ALGO},${COMPRESSION_LEVEL}" \
     --exclude "$EXCLUDE" \
-    "${REPO}::{hostname}-{now:%Y-%m-%dT%H:%M:%S}" $SOURCE_PATHS
+    "${REPO}::{hostname}-{now:%Y-%m-%dT%H:%M:%S}" $SOURCE_PATHS) 2>&1)
 
 # # prune the archive
 # /usr/bin/borg prune --keep-hourly="${KEEP_HOURLY}" --keep-daily="${KEEP_DAILY}" \
@@ -44,11 +44,11 @@ fi
 #         --prefix '{hostname}-' --verbose --stats \
 #         "${REPO}"
 
-echo "SUCCESS $(date +%Y-%m-%dT%H:%M:%S)${newline}FDCL local borg backup" | /home/shankar/bin/signal-cli/bin/signal-cli -u +16305579049 send "+16303366257"
+echo "SUCCESS $(date +%Y-%m-%dT%H:%M:%S)${newline}FDCL local borg backup ${newline} ${MSG}" | /home/shankar/bin/signal-cli/bin/signal-cli -u +16305579049 send "+16303366257"
 
 } || {
 
-echo "FAILURE $(date +%Y-%m-%dT%H:%M:%S)${newline}FDCL local borg backup" | /home/shankar/bin/signal-cli/bin/signal-cli -u +16305579049 send "+16303366257"
+echo "FAILURE $(date +%Y-%m-%dT%H:%M:%S)${newline}FDCL local borg backup ${newline} ${MSG}" | /home/shankar/bin/signal-cli/bin/signal-cli -u +16305579049 send "+16303366257"
 }
 
 /home/shankar/bin/signal-cli/bin/signal-cli -u +16305579049 receive
