@@ -27,18 +27,18 @@ drive push --no-prompt ${REPO}
 # rename the remote directory to a new name with current date
 drive rename -local=false -remote=true ${REPO} ${NEWNAME}
 
-/usr/bin/borg prune --keep-hourly="${KEEP_HOURLY}" --keep-daily="${KEEP_DAILY}" \
+MSG=$((/usr/bin/borg prune --keep-hourly="${KEEP_HOURLY}" --keep-daily="${KEEP_DAILY}" \
         --keep-weekly="${KEEP_WEEKLY}" \
         --keep-monthly="${KEEP_MONTHLY}" \
         --keep-yearly="${KEEP_YEARLY}" \
         --prefix '{hostname}-' --verbose --stats \
-        "${DIR}/${REPO}"
+        "${DIR}/${REPO}") 2>&1)
 
-echo "SUCCESS $(date +%Y-%m-%dT%H:%M:%S)${newline}FDCL drive push" | /home/shankar/bin/signal-cli/bin/signal-cli -u +16305579049 send "+16303366257"
+echo "SUCCESS $(date +%Y-%m-%dT%H:%M:%S)${newline}FDCL drive push${newline} ${MSG}" | /home/shankar/bin/signal-cli/bin/signal-cli -u +16305579049 send "+16303366257"
 
 } || {
 
-echo "FAILURE $(date +%Y-%m-%dT%H:%M:%S)${newline}FDCL drive push" | /home/shankar/bin/signal-cli/bin/signal-cli -u +16305579049 send "+16303366257"
+echo "FAILURE $(date +%Y-%m-%dT%H:%M:%S)${newline}FDCL drive push${newline} ${MSG}" | /home/shankar/bin/signal-cli/bin/signal-cli -u +16305579049 send "+16303366257"
 }
 
 /home/shankar/bin/signal-cli/bin/signal-cli -u +16305579049 receive
