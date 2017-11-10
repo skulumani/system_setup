@@ -3,7 +3,7 @@
 1. Modify `borg_passphrase.sh` with the password from lastpass and copy to HOME.
 Modify credentials as indicated in the file
 ~~~
-chmod 600 ~/.borg_passphrase.sh
+chmod 400 ~/.borg_passphrase.sh
 ~~~
 2. Modify `backup_local.sh` to point to correct repo directories
 3. Try to run `backup_local.sh -i` then `backup_local.sh -c` to verify it's working correctly
