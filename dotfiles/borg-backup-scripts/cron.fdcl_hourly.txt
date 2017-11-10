@@ -21,3 +21,4 @@
 # 
 # m h  dom mon dow   command
 30 6-18 * * 1-5 bash /home/shankar/Documents/system_setup/dotfiles/borg-backup-scripts/borg_fdcl_local_cron.sh
+30 0 * * 5 bash /home/shankar/Documents/system_setup/dotfiles/borg-backup-scripts/borg_fdcl_local_drive_cron.sh
