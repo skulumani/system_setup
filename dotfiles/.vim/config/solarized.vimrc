@@ -8,4 +8,4 @@ endif
 
 syntax enable
 set background=dark
-colorscheme solarized8_dark
+colorscheme solarized8

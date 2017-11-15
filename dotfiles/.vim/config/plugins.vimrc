@@ -31,7 +31,7 @@ Plug 'freitass/todo.txt-vim'
 Plug 'tpope/vim-repeat'
 
 " Appearance
-Plug 'lifepillar/vim-solarized8'
+Plug 'rafi/awesome-vim-colorschemes'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
