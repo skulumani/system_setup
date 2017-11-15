@@ -1,7 +1,7 @@
 #!/bin/sh
-
+HOSTNAME=$(hostname)
 DIR="/media/shankar/data/Drive/backup/borgbackup"
-REPO="fdcl"
+REPO="${HOSTNAME}"
 DATE="$(date +%Y-%m-%dT%H:%M:%S)"
 NEWNAME="${DATE}_${REPO}"
 
