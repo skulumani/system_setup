@@ -1,5 +1,5 @@
 #!/bin/bash
-REPO="/media/shankar/borg/backup/borgbackup/fdcl"
+REPO="/media/shankar/data/Drive/backup/borgbackup/fdcl"
 
 # export BORG_PASSPHRASE="passphrase"
 source /home/shankar/borg_passphrase.sh

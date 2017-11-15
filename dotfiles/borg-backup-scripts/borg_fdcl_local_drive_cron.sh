@@ -1,6 +1,6 @@
 #!/bin/sh
 
-DIR="/media/shankar/borg/backup/borgbackup"
+DIR="/media/shankar/data/Drive/backup/borgbackup"
 REPO="fdcl"
 DATE="$(date +%Y-%m-%dT%H:%M:%S)"
 NEWNAME="${DATE}_${REPO}"
