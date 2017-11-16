@@ -20,4 +20,4 @@
 # For more information see the manual pages of crontab(5) and cron(8)
 # 
 # m h  dom mon dow   command
-30 6-18 * * * bash /home/shankar/Documents/system_setup/dotfiles/borg-backup-scripts/borg_local_cron.sh
+30 * * * * bash /home/shankar/Documents/system_setup/dotfiles/borg-backup-scripts/borg_local_cron.sh
