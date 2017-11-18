@@ -21,6 +21,7 @@ if has('nvim')
     " function! s:my_cr_function()
     "     return deoplete#mappings#close_popup()
     " endfunction
+    
     " Options for vim-jedi
     let g:jedi#auto_initialization = 1
     let g:jedi#completions_enabled = 0
@@ -92,3 +93,13 @@ let g:neosnippet#enable_preview = 1
 
 " For conceal markers.
 set conceallevel=0 concealcursor=niv
+
+" Echodoc settings
+set noshowmode
+
+let g:echodoc#enable_at_startup = 1
+
+" Hide matches from deoplete in status line area
+if has("patch-7.4.314")
+    set shortmess+=c
+endif

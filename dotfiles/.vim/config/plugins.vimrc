@@ -42,10 +42,10 @@ Plug 'Yggdroot/indentLine'
 if has("nvim")
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     Plug 'zchee/deoplete-jedi'
+    Plug 'Shougo/echodoc.vim'
 else
-    Plug 'Shougo/neocomplete.vim'
+    Plug 'davidhalter/jedi-vim'
 endif
-Plug 'davidhalter/jedi-vim'
 " Code linting
 if has("nvim")
     Plug 'neomake/neomake'
