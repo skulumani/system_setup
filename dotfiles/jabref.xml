@@ -177,8 +177,8 @@
 <entry key="openFoldersOfAttachedFiles" value="false"/>
 <entry key="openLastEdited" value="true"/>
 <entry key="overrideDefaultFonts" value="false"/>
-<entry key="overwriteOwner" value="false"/>
-<entry key="overwriteTimeStamp" value="false"/>
+<entry key="overwriteOwner" value="true"/>
+<entry key="overwriteTimeStamp" value="true"/>
 <entry key="pdfColumn" value="false"/>
 <entry key="pdfDirectory" value=""/>
 <entry key="pdfPreview" value="false"/>
