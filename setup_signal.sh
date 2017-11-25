@@ -15,9 +15,12 @@ else
 fi
 
 # Download Jabref to this directory if it doesn't exist
-if [ ! -f "${SIGNAL_DIR}/${SIGNAL_FNAME}" ]; then
+if [ ! -d "${SIGNAL_DIR}/bin" ]; then
     echo "Downloading ${SIGNAL_FNAME}"
-    wget ${SIGNAL_LINK} ${SIGNAL_DIR}/${SIGNAL_FNAME}
+    wget ${SIGNAL_LINK} -O /tmp/${SIGNAL_FNAME}
+    tar -xzvf /tmp/${SIGNAL_FNAME} -C /tmp/
+    mv /tmp/signal-cli-${SIGNAL_VERSION}/bin ${SIGNAL_DIR}
+    mv /tmp/signal-cli-${SIGNAL_VERSION}/lib ${SIGNAL_DIR}
 else
     echo "${SIGNAL_FNAME} already exists"
 fi

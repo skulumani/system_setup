@@ -16,10 +16,11 @@ fi
 # Download Jabref to this directory if it doesn't exist
 if [ ! -f "${JABREF_DIR}/${JABREF_FNAME}" ]; then
     echo "Downloading ${JABREF_FNAME}"
-    wget ${JABREF_LINK} ${JABREF_DIR}/${JABREF_FNAME}
+    wget ${JABREF_LINK} -O ${JABREF_DIR}/${JABREF_FNAME}
 else
     echo "${JABREF_FNAME} already exists"
 fi
 
 # setup links for Jabref icon/menu item
 
+# should be setup by the dotfiles installer
