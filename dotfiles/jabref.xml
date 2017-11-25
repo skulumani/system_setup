@@ -87,7 +87,7 @@
 <entry key="duplicatesSizeY" value="600"/>
 <entry key="emailSubject" value="References"/>
 <entry key="enforceLegalBibtexKey" value="true"/>
-<entry key="entryEditorHeight" value="415"/>
+<entry key="entryEditorHeight" value="430"/>
 <entry key="exportInOriginalOrder" value="false"/>
 <entry key="exportInSpecifiedOrder" value="true"/>
 <entry key="exportInStandardOrder" value="true"/>
@@ -151,10 +151,10 @@
 <entry key="listOfFileColumns" value=""/>
 <entry key="localAutoSave" value="false"/>
 <entry key="lookAndFeel" value="com.jgoodies.plaf.plastic.Plastic3DLookAndFeel"/>
-<entry key="mainWindowPosX" value="442"/>
-<entry key="mainWindowPosY" value="454"/>
-<entry key="mainWindowSizeX" value="1016"/>
-<entry key="mainWindowSizeY" value="1051"/>
+<entry key="mainWindowPosX" value="0"/>
+<entry key="mainWindowPosY" value="25"/>
+<entry key="mainWindowSizeX" value="1922"/>
+<entry key="mainWindowSizeY" value="1056"/>
 <entry key="markImportedEntries" value="true"/>
 <entry key="markedEntryBackground0" value="255:255:180"/>
 <entry key="markedEntryBackground1" value="255:220:180"/>
