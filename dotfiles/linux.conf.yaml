@@ -6,3 +6,5 @@
 
 - shell:
     - [fc-cache -vf ~/.fonts, Installing system fonts]
+    - [bash ~/Documents/system_setup/setup_jabref.sh, Install JabRef]
+    - [bash ~/Documents/system_setup/setup_signal.sh, Install Signal-CLI]
