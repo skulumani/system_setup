@@ -9,7 +9,7 @@ antigen bundle pip
 
 antigen bundle zsh-users/zsh-syntax-highlighting
 
-antigen theme robbyrussell
+antigen theme isqua/bureau
 
 antigen apply
 
