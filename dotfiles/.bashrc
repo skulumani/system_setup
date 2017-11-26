@@ -127,10 +127,10 @@ if [ -f ~/.path ]; then
 fi
 
 # Add powerline status
-if [ -f $HOME/anaconda3/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh ]; then 
-    source $HOME/anaconda3/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh
-    powerline-daemon -q
-fi
+# if [ -f $HOME/anaconda3/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh ]; then 
+#     source $HOME/anaconda3/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh
+#     powerline-daemon -q
+# fi
 
 # FZF finder
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
