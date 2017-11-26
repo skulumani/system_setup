@@ -52,7 +52,7 @@ export COLORTERM=gnome-terminal
 # Load my personal bash aliases
 source $HOME/.bash_aliases
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
-    swap_caps_escape
+    setxkbmap -option "caps:escape"
 fi
 # check for caps lock and swap automatically
 
