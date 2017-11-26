@@ -32,6 +32,7 @@
     ~/.todo: .todo
     ~/bin: bin
     ~/.ctags: .ctags
+    ~/antigen.zsh : antigen.zsh
 
 - shell:
     - [git submodule update --init --recursive --remote, Updating submodules]
