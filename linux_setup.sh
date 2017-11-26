@@ -56,8 +56,6 @@ apt_packages=(
 )
 
 python_packages=(
-    powerline-status
-    powerline-gitstatus
     glances
     neovim
     neovim-remote
