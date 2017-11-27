@@ -99,6 +99,13 @@ pdfmerge () {
     fi
 }
 
+pdfshrink () {
+    if [ -z "$1" ]; then
+        echo "Usage: pdfshrink output_file.pdf input_file.pdf"
+    else
+        gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile="$@" ;
+    fi
+}
 ## Add completions and alias for todo.txt
 source $HOME/bin/todo/todo_completion
 export TODOTXT_DEFAULT_ACTION=ls
