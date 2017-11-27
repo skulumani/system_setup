@@ -1,5 +1,7 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# ANITGEN PLUGINS
 source ~/antigen.zsh
 
 antigen use oh-my-zsh
@@ -7,12 +9,18 @@ antigen use oh-my-zsh
 antigen bundle git
 antigen bundle pip
 
+antigen bundle zsh-users/zsh-completions
+antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
 
-antigen theme isqua/bureau
+antigen theme https://github.com/denysdovhan/spaceship-zsh-theme spaceship
+
+# bundle settings
+# Autosuggestions
+ZSH_AUTOSUGGEST_USE_ASYNC=1
+bindkey '^ ' autosuggest-accept
 
 antigen apply
-
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
 
@@ -87,3 +95,4 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 # compaudit | xargs -I '%' chown $USER:$USER '%'
 # rm ~/.zcompdump*
 # exec zsh
+
