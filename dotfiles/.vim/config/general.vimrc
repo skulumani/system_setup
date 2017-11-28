@@ -46,6 +46,10 @@ if has("autocmd")
     augroup END
 endif
 
+" Autoread a buffer if it's changed
+au FocusGained,BufEnter * :checktime
+
+" Everything to figure out the correct python environment to use
 if has("nvim")
     " neomake settings
     let g:neomake_python_enable_makers = ['flake8, pylint']
