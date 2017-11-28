@@ -96,3 +96,6 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 # rm ~/.zcompdump*
 # exec zsh
 
+############## SPACESHIP THEME CUSTOMIZATION##################################
+SPACESHIP_GIT_PREFIX=""
+SPACESHIP_DIR_PREFIX=""
