@@ -5,3 +5,4 @@ autoload/
 plug.vim/
 signal-cli/
 JabRef*.jar
+*/.tmux/sidebar
