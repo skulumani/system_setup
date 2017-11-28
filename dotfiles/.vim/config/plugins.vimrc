@@ -67,6 +67,11 @@ Plug 'mileszs/ack.vim'
 Plug 'Shougo/neocomplete'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
+
+" Tmux plugins
+Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'tmux-plugins/vim-tmux'
+
 call plug#end()
 " start all the plugins above
 filetype plugin indent on
