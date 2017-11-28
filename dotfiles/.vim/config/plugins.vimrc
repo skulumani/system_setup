@@ -34,6 +34,7 @@ Plug 'tpope/vim-repeat'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'edkolev/tmuxline.vim'
 
 " Programming plugins
 Plug 'lervag/vimtex'
