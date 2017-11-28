@@ -9,18 +9,18 @@ antigen use oh-my-zsh
 antigen bundle git
 antigen bundle pip
 
-antigen bundle zsh-users/zsh-completions
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle zsh-users/zsh-syntax-highlighting
+# antigen bundle zsh-users/zsh-completions
+# antigen bundle zsh-users/zsh-autosuggestions
+# antigen bundle zsh-users/zsh-syntax-highlighting
 
 antigen theme https://github.com/denysdovhan/spaceship-zsh-theme spaceship
 
+antigen apply
 # bundle settings
 # Autosuggestions
 ZSH_AUTOSUGGEST_USE_ASYNC=1
 bindkey '^ ' autosuggest-accept
 
-antigen apply
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
 
