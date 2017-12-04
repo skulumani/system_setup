@@ -33,6 +33,7 @@
     ~/bin: bin
     ~/.ctags: .ctags
     ~/antigen.zsh : antigen.zsh
+    ~/.mutt: .mutt
 
 - shell:
     - [git submodule update --init --recursive --remote, Updating submodules]
