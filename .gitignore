@@ -6,3 +6,7 @@ plug.vim/
 signal-cli/
 JabRef*.jar
 */.tmux/sidebar
+
+dotfiles/.mutt/shanks.k/bodies/*
+dotfiles/.mutt/shanks.k/headers/*
+dotfiles/.mutt/certificates
