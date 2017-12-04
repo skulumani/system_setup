@@ -1,3 +1,5 @@
+## GPG key installation from Keybase
+
 * GPG signing keys
     1. Install [Keybase](https://keybase.io/)
     ~~~
@@ -20,6 +22,13 @@
         * `gpg --edit-key 666A332D` - edit the key
         * `adduid` - Type name, email, and comment then type `O`
         * `save` - save the key
+
+## Add password to GPG key
+
+* ``gpg --list-keys``
+* ``gpg --edit-key 666A332D``
+* ``passwd`` - change password using GPG
+* ``save`` - save key and exit
 
 ## Quick'n easy gpg cheatsheet
 
