@@ -62,6 +62,7 @@ nnoremap <leader>glg :Git lg<CR>
 nnoremap <leader>glg2 :Git lg2<CR>
 nnoremap <leader>ge :Gedit <CR>
 nnoremap <leader>gb :Gbrowse <CR>
+nnoremap <leader>gt :Git tag -s 
 
 xnoremap dp :diffput<CR>
 xnoremap do :diffget<CR>
