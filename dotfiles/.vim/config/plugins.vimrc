@@ -30,6 +30,7 @@ Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-unimpaired'
 Plug 'freitass/todo.txt-vim'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-obsession'
 
 " Appearance
 Plug 'rafi/awesome-vim-colorschemes'
