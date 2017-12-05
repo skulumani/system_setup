@@ -99,3 +99,6 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 ############## SPACESHIP THEME CUSTOMIZATION##################################
 SPACESHIP_GIT_PREFIX=""
 SPACESHIP_DIR_PREFIX=""
+
+# added by travis gem
+[ -f /home/shankar/.travis/travis.sh ] && source /home/shankar/.travis/travis.sh

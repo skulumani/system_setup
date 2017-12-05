@@ -138,3 +138,6 @@ fi
 if [[ -f $HOME/.fzf.bash ]]; then
     source $HOME/.fzf_options
 fi
+
+# added by travis gem
+[ -f /home/shankar/.travis/travis.sh ] && source /home/shankar/.travis/travis.sh
