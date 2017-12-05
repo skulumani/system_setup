@@ -52,7 +52,7 @@ if has("autocmd")
 endif
 
 nmap <leader>gst :Gstatus<cr>gg<C-n>
-nnoremap <leader>gco :Gco 
+nnoremap <leader>gco :Git checkout 
 nnoremap <leader>gp :Gpush <CR>
 nnoremap <leader>gl :Gpull <CR>
 nnoremap <leader>gd :Gdiff :0<CR>
