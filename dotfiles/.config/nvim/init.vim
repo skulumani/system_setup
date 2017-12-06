@@ -6,8 +6,7 @@ source $HOME/.vim/config/plugins.vimrc
  
 " Plugin options
 source $HOME/.vim/config/autocomplete.vimrc
-source $HOME/.vim/config/solarized.vimrc
-source $HOME/.vim/config/airline.vimrc
+source $HOME/.vim/config/appearance.vimrc
 source $HOME/.vim/config/vimtex.vimrc
 source $HOME/.vim/config/nerdtree.vimrc
 source $HOME/.vim/config/indentline.vimrc
