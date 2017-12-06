@@ -151,8 +151,8 @@
 <entry key="listOfFileColumns" value=""/>
 <entry key="localAutoSave" value="false"/>
 <entry key="lookAndFeel" value="com.jgoodies.plaf.plastic.Plastic3DLookAndFeel"/>
-<entry key="mainWindowPosX" value="0"/>
-<entry key="mainWindowPosY" value="25"/>
+<entry key="mainWindowPosX" value="1079"/>
+<entry key="mainWindowPosY" value="361"/>
 <entry key="mainWindowSizeX" value="1922"/>
 <entry key="mainWindowSizeY" value="1056"/>
 <entry key="markImportedEntries" value="true"/>
@@ -229,7 +229,7 @@
 <entry key="secDescending" value="false"/>
 <entry key="secSort" value=""/>
 <entry key="selectS" value="false"/>
-<entry key="selectedFetcherIndex" value="6"/>
+<entry key="selectedFetcherIndex" value="7"/>
 <entry key="serializeSpecialFields" value="false"/>
 <entry key="shortestToComplete" value="2"/>
 <entry key="showOneLetterHeadingForIconColumns" value="false"/>
