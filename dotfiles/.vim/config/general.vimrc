@@ -1,5 +1,8 @@
 filetype plugin indent on
 set autoindent
+" text encoding
+set encoding=utf8
+
 " use 4 spaces for tabs
 set expandtab
 set softtabstop =4

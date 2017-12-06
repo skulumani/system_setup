@@ -75,6 +75,9 @@ Plug 'Shougo/neosnippet-snippets'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'tmux-plugins/vim-tmux'
 
+" Cool fonts
+Plug 'ryanoasis/vim-devicons'
+
 call plug#end()
 " start all the plugins above
 filetype plugin indent on
