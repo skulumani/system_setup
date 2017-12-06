@@ -1,0 +1,19 @@
+# Condarc file
+
+channels:
+    - menpo
+    - anaconda
+    - default
+
+# show channel URLs during downloads or conda list
+show_channel_urls: True
+
+# don't change the command prompt when switching enviornments
+changeps1: False
+
+# ensure pip is always installed by conda
+add_pip_as_python_dependency: True
+use_pip: True
+
+# avoid updating installed dependencies
+update_dependencies: True

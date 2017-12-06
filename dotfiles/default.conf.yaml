@@ -34,6 +34,7 @@
     ~/.ctags: .ctags
     ~/antigen.zsh : antigen.zsh
     ~/.mutt: .mutt
+    ~/.condarc: .condarc
 
 - shell:
     - [git submodule update --init --recursive --remote, Updating submodules]
