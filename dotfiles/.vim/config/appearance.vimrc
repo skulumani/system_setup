@@ -9,10 +9,10 @@ endif
 
 syntax enable
 set background=dark
-colorscheme afterglow
+colorscheme flattened_dark
 
 " vim-airline theme
-let g:airline_theme='afterglow'
+let g:airline_theme='solarized'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
