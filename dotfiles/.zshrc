@@ -102,3 +102,5 @@ SPACESHIP_DIR_PREFIX=""
 
 # added by travis gem
 [ -f /home/shankar/.travis/travis.sh ] && source /home/shankar/.travis/travis.sh
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
