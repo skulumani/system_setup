@@ -1,22 +1,24 @@
-push @generated_exts, "cb";
-push @generated_exts, "cb2";
-push @generated_exts, "spl";
-push @generated_exts, "nav";
-push @generated_exts, "snm";
-push @generated_exts, "tdo";
-push @generated_exts, "nmo";
-push @generated_exts, "brf";
-push @generated_exts, "nlg";
-push @generated_exts, "nlo";
-push @generated_exts, "nls";
-push @generated_exts, "synctex.gz";
-push @generated_exts, "run.xml";
-push @generated_exts, "fot";
-push @generated_exts, "synctex.gz(busy)";
-push @generated_exts, "nav";
-push @generated_exts, "bbl";
-push @generated_exts, "blg";
-push @generated_exts, "fdb_latexmk";
+push @generated_exts, 'cb', 'cb2', 'spl', 'nav', 'snm', 'todo', 'nmo';
+push @generated_exts, 'brf', 'nlg', 'nlo', 'nls', 'synctex.gz', 'run.xml';
+push @generated_exts, 'fot', 'synctex.gz(busy)', 'bbl', 'blg', 'fdb_latexmk';
+
+push @generated_exts, 'glo', 'gls', 'glg';
+push @generated_exts, 'acn', 'acr', 'alg';
+
+add_cus_dep('glo', 'gls', 0, 'run_makeglossaries');
+add_cus_dep('acn', 'acr', 0, 'run_makeglossaries');
+
+sub run_makeglossaries {
+  if ( $silent ) {
+    system "makeglossaries -q '$_[0]'";
+  }
+  else {
+    system "makeglossaries '$_[0]'";
+  };
+}
+
+
+$clean_ext .= '%R.ist %R.xdy';
 
 #$pdflatex = 'xelatex -file-line-error -shell-escape -synctex=1';
 #$pdflatex = 'lualatex --interaction=nonstopmode --shell-escape --synctex=1';
