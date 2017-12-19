@@ -4,7 +4,9 @@ push @generated_exts, 'fot', 'synctex.gz(busy)', 'bbl', 'blg', 'fdb_latexmk';
 
 push @generated_exts, 'glo', 'gls', 'glg';
 push @generated_exts, 'acn', 'acr', 'alg';
+push @generated_exts, 'glg-abr', 'glo-abr', 'gls-abr';
 push @generated_exts, 'slg', 'slo', 'sls';
+push @generated_exts, 'dvi', 'aux';
 
 add_cus_dep('glo', 'gls', 0, 'run_makeglossaries');
 add_cus_dep('acn', 'acr', 0, 'run_makeglossaries');
