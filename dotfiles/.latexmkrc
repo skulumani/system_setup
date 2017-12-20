@@ -23,5 +23,6 @@ sub run_makeglossaries {
 
 $clean_ext .= '%R.ist %R.xdy';
 
+$pdf_mode = 1;
 #$pdflatex = 'xelatex -file-line-error -shell-escape -synctex=1';
 #$pdflatex = 'lualatex --interaction=nonstopmode --shell-escape --synctex=1';
