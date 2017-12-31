@@ -3,7 +3,6 @@
 channels:
     - menpo
     - anaconda
-    - default
 
 # show channel URLs during downloads or conda list
 show_channel_urls: True
