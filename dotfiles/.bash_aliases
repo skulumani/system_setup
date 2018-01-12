@@ -106,6 +106,14 @@ pdfshrink () {
         gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile="$@" ;
     fi
 }
+
+getmousepos () {
+    watch -t -n 0.0001 xdotool getmouselocation 
+}
+
+screenrecord () {
+    ffmpeg -video_size 400x300 -framerate 25 -f x11grab -i :0.0+520,380 output.mp4
+}
 ## Add completions and alias for todo.txt
 source $HOME/bin/todo/todo_completion
 export TODOTXT_DEFAULT_ACTION=ls
