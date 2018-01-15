@@ -1,4 +1,8 @@
 #!/bin/sh
+
+set -e
+set -x
+
 HOSTNAME=$(hostname)
 DIR="/media/shankar/data/Drive/backup/borgbackup"
 REPO="${HOSTNAME}"
