@@ -1,4 +1,6 @@
 #!/bin/bash
+set -e 
+set -x
 HOSTNAME=$(hostname)
 REPO="/media/shankar/data/Drive/backup/borgbackup/${HOSTNAME}"
 
@@ -45,11 +47,11 @@ MSG=$((/usr/bin/borg create --v --stats --compression "${COMPRESSION_ALGO},${COM
 #         --prefix '{hostname}-' --verbose --stats \
 #         "${REPO}"
 
-echo "SUCCESS $(date +%Y-%m-%dT%H:%M:%S)${newline} ${HOSTNAME} local borg backup ${newline} ${MSG}" | /home/shankar/bin/signal-cli/bin/signal-cli -u +16305579049 send "+16303366257"
+echo "SUCCESS $(date +%Y-%m-%dT%H:%M:%S)${newline} ${HOSTNAME} local borg backup" | /home/shankar/bin/signal-cli/bin/signal-cli -u +16305579049 send "+16303366257"
 
 } || {
 
-echo "FAILURE $(date +%Y-%m-%dT%H:%M:%S)${newline} ${HOSTNAME} local borg backup ${newline} ${MSG}" | /home/shankar/bin/signal-cli/bin/signal-cli -u +16305579049 send "+16303366257"
+echo "FAILURE $(date +%Y-%m-%dT%H:%M:%S)${newline} ${HOSTNAME} local borg backup" | /home/shankar/bin/signal-cli/bin/signal-cli -u +16305579049 send "+16303366257"
 }
 
 /home/shankar/bin/signal-cli/bin/signal-cli -u +16305579049 receive
