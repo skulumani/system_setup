@@ -30,8 +30,6 @@ if [[ -f $HOME/.rvm/bin ]]; then
     export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 fi
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
 # Add GOPath
 if [[ -d /usr/local/go ]]; then
     export PATH=$PATH:/usr/local/go/bin
@@ -40,3 +38,8 @@ fi
 if [[ "$OSTYPE" == "darwin"* ]]; then
     export PATH=$HOME/anaconda3/bin:"$PATH"
 fi
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
