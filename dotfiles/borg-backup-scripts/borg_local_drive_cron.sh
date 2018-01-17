@@ -38,11 +38,11 @@ MSG=$((/usr/bin/borg prune --keep-hourly="${KEEP_HOURLY}" --keep-daily="${KEEP_D
         --prefix '{hostname}-' --verbose --stats \
         "${DIR}/${REPO}") 2>&1)
 
-echo "SUCCESS $(date +%Y-%m-%dT%H:%M:%S)${newline} ${HOSTNAME} drive push" | /home/shankar/bin/signal-cli/bin/signal-cli -u +16305579049 send "+16303366257"
+echo "SUCCESS $(date +%Y-%m-%dT%H:%M:%S)${newline}${HOSTNAME} drive push" | /home/shankar/bin/signal-cli/bin/signal-cli -u +16305579049 send "+16303366257"
 
 } || {
 
-echo "FAILURE $(date +%Y-%m-%dT%H:%M:%S)${newline} ${HOSTNAME} drive push" | /home/shankar/bin/signal-cli/bin/signal-cli -u +16305579049 send "+16303366257"
+echo "FAILURE $(date +%Y-%m-%dT%H:%M:%S)${newline}${HOSTNAME} drive push" | /home/shankar/bin/signal-cli/bin/signal-cli -u +16305579049 send "+16303366257"
 }
 
 /home/shankar/bin/signal-cli/bin/signal-cli -u +16305579049 receive
