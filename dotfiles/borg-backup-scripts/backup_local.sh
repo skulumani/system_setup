@@ -30,6 +30,13 @@ readonly USER=login
 readonly HOST=example.com
 readonly REPO="/media/shankar/data/Drive/backup/borgbackup/$(hostname)" # Path to repository on the host
 readonly TARGET="${REPO}"
+MOUNTPOINT="/tmp/borg_mount"
+
+# check if it already exists and is empty
+
+# if doesn't exist then create it
+
+# if not empty then create a random directory
 
 # Valid options are "none", "keyfile", and "repokey". See Borg docs.
 readonly ENCRYPTION_METHOD=repokey
@@ -67,7 +74,7 @@ main() {
 
 # $1...: command line arguments
 parse_args() {
-    while getopts ":ichpdqlv" opt; do
+    while getopts ":ichpdmqluv" opt; do
         case $opt in
             i)  init
                 exit 0
@@ -93,6 +100,12 @@ parse_args() {
             l)  list
                 exit 0
                 ;;
+            m)  mount
+                exit 0
+                ;;
+            u)  unmount
+                exit 0
+                ;;
             :)  printf "Missing argument for option %s\n" "$OPTARG" >&2
                 usage
                 exit 1
@@ -106,14 +119,19 @@ parse_args() {
 }
 
 usage() {
+    printf "REPO : %s\n" "${REPO}"
+    printf "BACKUP DIRS : %s\n\n" "${SOURCE_PATHS}"
+
     printf "Usage: %s OPTION\n" "$(basename "$0")"
     printf "  %s\t%s\n" "-c" "create new archive"
     printf "  %s\t%s\n" "-d" "delete repository"
     printf "  %s\t%s\n" "-h" "print this help text and exit"
     printf "  %s\t%s\n" "-i" "initialize new repository"
     printf "  %s\t%s\n" "-l" "list contents of repository"
+    printf "  %s\t%s\n" "-m" "mount the repository"
     printf "  %s\t%s\n" "-p" "prune archive"
     printf "  %s\t%s\n" "-q" "check remote quota usage"
+    printf "  %s\t%s\n" "-u" "unmount the repository"
     printf "  %s\t%s\n" "-v" "verify repository consistency"
 }
 
@@ -147,6 +165,25 @@ prune() {
         "$TARGET"
 
     logger -p user.info "Finished Borg prune: ${TARGET}"
+}
+
+mount () {
+
+    logger -p user.info "Starting Borg mount: ${TARGET} Mount : ${MOUNTPOINT}"
+
+    borg mount ${TARGET} ${MOUNTPOINT}
+    
+    printf "Backup mounted at %s" "${MOUNTPOINT}"
+
+    logger -p user.info "Finished Borg mount: ${TARGET} Mount : ${MOUNTPOINT}"
+}
+
+unmount () {
+    logger -p user.info "Starting Borg unmount: ${TARGET} Mount : ${MOUNTPOINT}"
+
+    borg umount ${MOUNTPOINT}
+
+    logger -p user.info "Finished Borg unmount: ${TARGET} Mount : ${MOUNTPOINT}"
 }
 
 delete() {
