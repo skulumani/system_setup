@@ -2,7 +2,7 @@ push @generated_exts, 'cb', 'cb2', 'spl', 'nav', 'snm', 'todo', 'nmo';
 push @generated_exts, 'brf', 'nlg', 'nlo', 'nls', 'synctex.gz', 'run.xml';
 push @generated_exts, 'fot', 'synctex.gz(busy)', 'bbl', 'blg', 'fdb_latexmk';
 
-push @generated_exts, 'glo', 'gls', 'glg';
+push @generated_exts, 'glo', 'gls', 'glg', 'fls';
 push @generated_exts, 'acn', 'acr', 'alg';
 push @generated_exts, 'glg-abr', 'glo-abr', 'gls-abr';
 push @generated_exts, 'slg', 'slo', 'sls';
