@@ -53,10 +53,13 @@ apt_packages=(
     gnome-terminal
     vim-gnome
     borgbackup
+    conky
+    curl
+    lm-sensors
+    hddtemp
 )
 
 python_packages=(
-    glances
     neovim
     neovim-remote
 )
