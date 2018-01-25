@@ -29,6 +29,7 @@
     ~/.config/powerline: .config/powerline
     ~/.config/fontconfig: .config/fontconfig
     ~/.config/nvim: .config/nvim
+    ~/.config/conky: .config/conky
     ~/.todo: .todo
     ~/bin: bin
     ~/.ctags: .ctags
