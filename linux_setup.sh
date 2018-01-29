@@ -53,7 +53,8 @@ apt_packages=(
     gnome-terminal
     vim-gnome
     borgbackup
-    conky
+    conky-all
+    jq
     curl
     lm-sensors
     hddtemp
