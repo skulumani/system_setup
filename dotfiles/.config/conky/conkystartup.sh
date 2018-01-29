@@ -1,4 +1,4 @@
 #!/bin/bash
 
 sleep 10
-conky -b &
+conky -c ~/.config/conky/conky_stats.conf
