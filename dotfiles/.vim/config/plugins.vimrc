@@ -22,6 +22,7 @@ endif
 
 " Productivity
 " Plug 'ervandew/supertab'
+Plug 'junegunn/vim-plug'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
