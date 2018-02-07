@@ -30,6 +30,7 @@
     ~/.config/fontconfig: .config/fontconfig
     ~/.config/nvim: .config/nvim
     ~/.config/conky: .config/conky
+    ~/.config/redshift.conf: .config/redshift.conf
     ~/.todo: .todo
     ~/bin: bin
     ~/.ctags: .ctags
