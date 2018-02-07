@@ -2,8 +2,6 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-alias vim='vim --servername vim'
-
 function cs () {
     cd "$@" && ls 
     }
