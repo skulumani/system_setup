@@ -5,8 +5,9 @@ set encoding=utf8
 
 " use 4 spaces for tabs
 set expandtab
-set softtabstop =4
-set shiftwidth =4
+set tabstop=8
+set softtabstop=4
+set shiftwidth=4
 set shiftround
 
 set backspace =indent,eol,start
