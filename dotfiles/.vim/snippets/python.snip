@@ -4,10 +4,16 @@ options    head, indent
 	from __future__ import absolute_import, division, print_function, unicode_literals
 	${0}
 
+snippet modeline
+abbr    modeline
+options head, indent
+        # vim: ts=4 et sw=4 sts=4
+        ${0}
+
 snippet license
 abbr	license
 options head, indent
-	Copyright (C) {2017}  {Shankar Kulumani}
+	Copyright (C) {2017} {Shankar Kulumani}
 
 	This program is free software: you can redistribute it and/or modify
 	it under the terms of the GNU General Public License as published by
