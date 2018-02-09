@@ -43,9 +43,8 @@ fi
 # complete -F _fzf_dir_completion -o default -o bashdefault tree
 
 export FZF_TMUX=1
-export FZF_COMPLETION_TRIGGER='**'
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-if [ $(echo $0) = "-zsh" ]; then
+export FZF_COMPLETION_TRIGGER=''
+if [ -n "$ZSH_VERSION" ]; then
     bindkey '^T' fzf-completion
     bindkey '^I' $fzf_default_completion
 fi
