@@ -146,8 +146,8 @@
 <entry key="invalidFieldBackgroundColor" value="255:0:0"/>
 <entry key="keyGenAlwaysAddLetter" value="false"/>
 <entry key="keyGenFirstLetterA" value="true"/>
-<entry key="lastEdited" value="/home/shankar/texmf/bibtex/bib/library.bib"/>
-<entry key="lastFocused" value="/home/shankar/texmf/bibtex/bib/library.bib"/>
+<entry key="lastEdited" value="/home/shankar/texmf/bibtex/bib/library.bib;/home/shankar/texmf/tex/latex/local/glossaries_terms.bib"/>
+<entry key="lastFocused" value="/home/shankar/texmf/tex/latex/local/glossaries_terms.bib"/>
 <entry key="lastUsedImport" value="__all"/>
 <entry key="listOfFileColumns" value=""/>
 <entry key="localAutoSave" value="false"/>
@@ -205,7 +205,7 @@
 <entry key="proxyUsername" value=""/>
 <entry key="psDirectory" value=""/>
 <entry key="pushToApplication" value="Vim"/>
-<entry key="recentDatabases" value="/home/shankar/Documents/skulumani.github.io/_bibliography/references.bib;/home/shankar/texmf/bibtex/bib/library.bib"/>
+<entry key="recentDatabases" value="/home/shankar/texmf/tex/latex/local/glossaries_terms.bib;/home/shankar/Documents/skulumani.github.io/_bibliography/references.bib;/home/shankar/texmf/bibtex/bib/library.bib"/>
 <entry key="recentFiles" value="/home/shankar/Desktop/references.bib;/home/shankar/texmf/bibtex/bib/library.bib;/home/shankar/Documents/skulumani.github.io/_bibliography/references.bib"/>
 <entry key="reformatFileOnSaveAndExport" value="false"/>
 <entry key="regExpSearch" value="false"/>
@@ -297,7 +297,7 @@
 <entry key="warnBeforeOverwritingKey" value="true"/>
 <entry key="webSearchVisible" value="true"/>
 <entry key="windowMaximised" value="true"/>
-<entry key="workingDirectory" value="/home/shankar/Downloads/battin1999.pdf"/>
+<entry key="workingDirectory" value="/home/shankar/texmf/tex/latex/local"/>
 <entry key="writeFieldAddSpaces" value="true"/>
 <entry key="writeFieldCamelCase" value="true"/>
 </map>
