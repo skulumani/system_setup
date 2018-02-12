@@ -38,6 +38,7 @@ Plug 'rafi/awesome-vim-colorschemes'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'edkolev/tmuxline.vim'
+Plug 'machakann/vim-highlightedyank' " highlight yanked text
 
 " Programming plugins
 Plug 'lervag/vimtex'

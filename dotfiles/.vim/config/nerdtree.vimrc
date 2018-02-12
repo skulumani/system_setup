@@ -5,3 +5,4 @@
 "
 " Ignore files
 let NERDTreeIgnore = ['\.pyc$', 'tags.lock', 'tags', 'tags.temp']
+let NERDTreeHijackNetrw=1

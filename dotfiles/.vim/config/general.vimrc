@@ -41,6 +41,7 @@ set listchars=tab:▸\ ,eol:¬"
 set incsearch
 set showmatch
 set hlsearch
+set inccommand="nosplit"
 
 " Autoreload VIMRC
 if has("autocmd")
