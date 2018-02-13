@@ -30,7 +30,12 @@ fi
 
 # added by Anaconda3 4.3.0 installer
 if [[ -d $HOME/anaconda3 ]]; then
-    . /home/shankar/anaconda3/etc/profile.d/conda.sh
+    if [[ "$OSTYPE" == "linux-gnu" ]]; then
+        . /home/shankar/anaconda3/etc/profile.d/conda.sh
+    else
+        . /Users/shankar/anaconda3/etc/profile.d/conda.sh
+    fi
+
     conda activate
     export PATH=$HOME/anaconda3/bin:"$PATH"
     # export PATH=~/anaconda3/bin:"$PATH"
