@@ -74,3 +74,6 @@ nnoremap <leader>td :e ~/.todo/todo.txt<CR>
 
 " Search for todo or bug or fixme using AG
 nnoremap <leader>fix :Ack \(FIXME\)\\|\(TODO\)\\|\(BUG\)<CR>
+
+" Remap ESC for terminal window
+tnoremap <Esc> <C-\><C-n>
