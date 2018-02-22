@@ -81,8 +81,8 @@
 <entry key="dialogWarningForEmptyKey" value="true"/>
 <entry key="disableOnMultipleSelection" value="false"/>
 <entry key="doNotResolveStringsFor" value="url"/>
-<entry key="duplicatesPosX" value="0"/>
-<entry key="duplicatesPosY" value="31"/>
+<entry key="duplicatesPosX" value="559"/>
+<entry key="duplicatesPosY" value="253"/>
 <entry key="duplicatesSizeX" value="800"/>
 <entry key="duplicatesSizeY" value="600"/>
 <entry key="emailSubject" value="References"/>
