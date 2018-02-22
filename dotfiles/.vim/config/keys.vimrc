@@ -77,3 +77,12 @@ nnoremap <leader>fix :Ack \(FIXME\)\\|\(TODO\)\\|\(BUG\)<CR>
 
 " Remap ESC for terminal window this will break the FZF windows
 " tnoremap <Esc> <C-\><C-n>
+"
+" Neomake commands
+if has('nvim')
+    nnoremap <leader>m :Neomake<CR>
+else
+    nnoremap <leader>m :SyntasticCheck<CR>
+endif
+
+nnoremap <leader>mm :Neomake!<CR> :echo "MAKE!"<CR>

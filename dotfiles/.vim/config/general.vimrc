@@ -5,7 +5,7 @@ set encoding=utf8
 
 " use 4 spaces for tabs
 set expandtab
-set tabstop=8
+set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set shiftround
@@ -61,6 +61,12 @@ autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checkti
 autocmd FileChangedShellPost *
   \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
 
+
+" Makfile needs tabs and not spaces
+autocmd FileType make setlocal noexpandtab
+
+" make file compilation
+" let makeprg=make
 
 " Everything to figure out the correct python environment to use
 if has("nvim")

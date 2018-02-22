@@ -1,5 +1,4 @@
 if has('nvim')
-    nnoremap <leader>m :Neomake<CR>
     " Automatically open the error window
     let g:neomake_open_list = 0
     let g:neomake_python_enabled_makers = ['pylint', 'flake8' ]
@@ -24,7 +23,6 @@ if has('nvim')
             \ }
     let g:neoformat_enabled_python = ['autopep8', 'yapf']
 else
-    nnoremap <leader>m :SyntasticCheck<CR>
     set statusline+=%#warningmsg#
     set statusline+=%{SyntasticStatuslineFlag()}
     set statusline+=%*

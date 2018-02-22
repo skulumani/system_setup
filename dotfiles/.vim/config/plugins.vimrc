@@ -63,6 +63,7 @@ Plug 'tpope/vim-commentary'
 Plug 'junegunn/vim-easy-align'
 Plug 'airblade/vim-gitgutter'
 Plug 'Rip-Rip/clang_complete' " autcomplete for C++
+Plug 'octol/vim-cpp-enhanced-highlight' " c++ highlighting
 
 " set rtp+=~/.fzf
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
