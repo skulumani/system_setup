@@ -58,6 +58,7 @@ apt_packages=(
     curl
     lm-sensors
     hddtemp
+    clang
 )
 
 python_packages=(
