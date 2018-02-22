@@ -61,8 +61,8 @@ endif
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'tpope/vim-commentary'
 Plug 'junegunn/vim-easy-align'
-Plug 'tdehaeze/matlab-vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'Rip-Rip/clang_complete' " autcomplete for C++
 
 " set rtp+=~/.fzf
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }

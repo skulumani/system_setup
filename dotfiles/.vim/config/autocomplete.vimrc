@@ -43,6 +43,7 @@ if has('nvim')
     inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
     " use tab to backward cycle
     inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+
 else
     let g:neocomplete#enable_at_startup = 1
     let g:acp_enableAtStartup = 0
@@ -103,3 +104,8 @@ let g:echodoc#enable_at_startup = 1
 if has("patch-7.4.314")
     set shortmess+=c
 endif
+
+" Autocmoplete for C++ using clang
+let g:clang_library_path = '/usr/lib/llvm-3.8/lib/libclang.so.1'
+
+
