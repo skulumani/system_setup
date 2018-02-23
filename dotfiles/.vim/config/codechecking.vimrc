@@ -22,6 +22,13 @@ if has('nvim')
             \ 'exe': '/home/shankar/anaconda3/envs/neovim3/bin/yapf',
             \ }
     let g:neoformat_enabled_python = ['autopep8', 'yapf']
+
+    " C++ makers
+    let g:neomake_cpp_enabled_makers = ['clang']
+    let g:neomake_cpp_clang_maker = {
+        \ 'exe': 'clang++',
+        \ 'args': ['-Wall', '-Wextra', 'Weverything', '-pedantic', 'Wno-sign-conversion'],
+        \ }
 else
     set statusline+=%#warningmsg#
     set statusline+=%{SyntasticStatuslineFlag()}
