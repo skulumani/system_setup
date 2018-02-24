@@ -1,12 +1,14 @@
 if has('nvim')
-    " Automatically open the error window
+    call neomake#configure#automake('nw', 1000)
     let g:neomake_open_list = 0
+
+    " Automatically open the error window
     let g:neomake_python_enabled_makers = ['pylint', 'flake8' ]
-    augroup vimrc_neomake
-        autocmd!
-        autocmd BufWritePost * silent Neomake
-        autocmd VimLeave * let g:neomake_verbose = 0
-    augroup END
+    " augroup vimrc_neomake
+    "     autocmd!
+    "     autocmd BufWritePost * silent Neomake
+    "     autocmd VimLeave * let g:neomake_verbose = 0
+    " augroup END
     " Python
     let g:neomake_python_flake8_maker = {
                 \ 'exe': '/home/shankar/anaconda3/envs/neovim3/bin/flake8',
@@ -27,7 +29,7 @@ if has('nvim')
     let g:neomake_cpp_enabled_makers = ['clang']
     let g:neomake_cpp_clang_maker = {
         \ 'exe': 'clang++',
-        \ 'args': ['-Wall', '-Wextra', 'Weverything', '-pedantic', 'Wno-sign-conversion'],
+        \ 'args': ['-Wall', '-Wextra', '-Weverything', '-pedantic', '-Wno-sign-conversion'],
         \ }
 else
     set statusline+=%#warningmsg#
