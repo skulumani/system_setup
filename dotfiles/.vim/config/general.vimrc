@@ -42,6 +42,7 @@ set incsearch
 set showmatch
 set hlsearch
 set inccommand="nosplit"
+" set completeopt+=preview
 
 " Autoreload VIMRC
 if has("autocmd")
