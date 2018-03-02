@@ -1,21 +1,4 @@
 if executable('fzf')
-    " <C-p> or <C-t> to search files
-    nnoremap <silent> <C-t> :Tags <cr>
-    nnoremap <silent> <C-p> :Files <cr>
-    nnoremap <silent> <C-M-p> :Rg <CR>
-    " nnoremap <silent> <C-m> :Map <CR>
-
-    " search commits
-    nnoremap <silent> <C-c> :Commits <CR> 
-
-    " Search for all keyboard mappings
-    " nnoremap <silent> <C-m> :Maps <CR>
-    
-    " <M-p> for open buffers
-    nnoremap <silent> <M-p> :Buffers<cr>
-
-    " <M-S-p> for MRU
-    nnoremap <silent> <M-S-p> :History<cr>
     " Customize fzf colors to match your color scheme
     let g:fzf_colors =
                 \ { 'fg':      ['fg', 'Normal'],

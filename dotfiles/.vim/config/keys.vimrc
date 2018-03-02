@@ -24,6 +24,20 @@ map <C-n> :NERDTreeToggle<CR>
 nnoremap <leader>ev :e $MYVIMRC<CR>
 nnoremap <leader>sv :so $MYVIMRC<CR>
 
+" FZF mappings
+" <C-p> or <C-t> to search files
+nnoremap <silent> <leader>ft :Tags <cr>
+nnoremap <silent> <leader>ff :Files <cr>
+nnoremap <silent> <leader>fa :Rg <CR>
+" search commits
+nnoremap <silent> <leader>fc :Commits <CR> 
+" Search for all keyboard mappings
+nnoremap <silent> <leader>fm :Maps <CR>
+" <M-p> for open buffers
+nnoremap <silent> <leader>fb :Buffers<cr>
+" <M-S-p> for MRU
+nnoremap <silent> <leader>fh :History<cr>
+
 " nnoremap <leader>s :set spell!<CR>
 set spelllang=en_us
 
