@@ -9,3 +9,6 @@ let g:indentLine_leadingSpaceChar = '·'
 vmap <Enter> <Plug>(EasyAlign)
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
+
+" Options for vim-commentary
+autocmd FileType cmake setlocal commentstring=#\ %s
