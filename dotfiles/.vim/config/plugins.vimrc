@@ -37,9 +37,9 @@ Plug 'tpope/vim-obsession'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'edkolev/tmuxline.vim'
 Plug 'machakann/vim-highlightedyank' " highlight yanked text
 Plug 'octol/vim-cpp-enhanced-highlight' " c++ highlighting
+Plug 'ryanoasis/vim-devicons' " provides cool icons
 
 " Programming plugins
 Plug 'lervag/vimtex'
@@ -62,7 +62,7 @@ endif
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'tpope/vim-commentary'
 Plug 'junegunn/vim-easy-align'
-Plug 'airblade/vim-gitgutter'
+" Plug 'airblade/vim-gitgutter'
 " Plug 'Rip-Rip/clang_complete' " autcomplete for C++
 
 " set rtp+=~/.fzf
@@ -75,11 +75,10 @@ Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 
 " Tmux plugins
-Plug 'tmux-plugins/vim-tmux-focus-events'
-Plug 'tmux-plugins/vim-tmux'
+" Plug 'tmux-plugins/vim-tmux-focus-events'
+" Plug 'tmux-plugins/vim-tmux'
+" Plug 'edkolev/tmuxline.vim' " makes tmux look like vim-airline
 
-" Cool fonts
-Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 " start all the plugins above
