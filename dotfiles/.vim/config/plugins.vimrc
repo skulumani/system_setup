@@ -39,6 +39,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'edkolev/tmuxline.vim'
 Plug 'machakann/vim-highlightedyank' " highlight yanked text
+Plug 'octol/vim-cpp-enhanced-highlight' " c++ highlighting
 
 " Programming plugins
 Plug 'lervag/vimtex'
@@ -46,10 +47,10 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'Yggdroot/indentLine'
 if has("nvim")
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-    Plug 'zchee/deoplete-jedi'
-    Plug 'Shougo/echodoc.vim'
+    " Plug 'zchee/deoplete-jedi'
+    " Plug 'Shougo/echodoc.vim'
 else
-    Plug 'davidhalter/jedi-vim'
+    " Plug 'davidhalter/jedi-vim'
 endif
 " Code linting
 if has("nvim")
@@ -62,8 +63,7 @@ Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'tpope/vim-commentary'
 Plug 'junegunn/vim-easy-align'
 Plug 'airblade/vim-gitgutter'
-Plug 'Rip-Rip/clang_complete' " autcomplete for C++
-Plug 'octol/vim-cpp-enhanced-highlight' " c++ highlighting
+" Plug 'Rip-Rip/clang_complete' " autcomplete for C++
 
 " set rtp+=~/.fzf
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
