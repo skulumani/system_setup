@@ -46,7 +46,7 @@ Plug 'lervag/vimtex'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'Yggdroot/indentLine'
 if has("nvim")
-    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     " Plug 'zchee/deoplete-jedi'
     " Plug 'Shougo/echodoc.vim'
 else
@@ -75,9 +75,9 @@ Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 
 " Tmux plugins
-" Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'tmux-plugins/vim-tmux-focus-events'
 " Plug 'tmux-plugins/vim-tmux'
-" Plug 'edkolev/tmuxline.vim' " makes tmux look like vim-airline
+Plug 'edkolev/tmuxline.vim' " makes tmux look like vim-airline
 
 
 call plug#end()
