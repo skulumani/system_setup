@@ -46,18 +46,18 @@ Plug 'lervag/vimtex'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'Yggdroot/indentLine'
 if has("nvim")
-    " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-    " Plug 'zchee/deoplete-jedi'
-    " Plug 'Shougo/echodoc.vim'
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    Plug 'zchee/deoplete-jedi'
+    Plug 'Shougo/echodoc.vim'
 else
-    " Plug 'davidhalter/jedi-vim'
+    Plug 'davidhalter/jedi-vim'
 endif
 " Code linting
 if has("nvim")
     Plug 'neomake/neomake'
     Plug 'sbdchd/neoformat'
 else
-    " Plug 'vim-syntastic/syntastic', { 'on': 'SyntasticCheck' }
+    Plug 'vim-syntastic/syntastic', { 'on': 'SyntasticCheck' }
 endif
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'tpope/vim-commentary'
