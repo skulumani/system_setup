@@ -1,6 +1,6 @@
 if has('nvim')
     " call neomake#configure#automake('nw', 1000)
-    let g:neomake_open_list = 0
+    let g:neomake_open_list = 1
 
     " Automatically open the error window
     let g:neomake_python_enabled_makers = ['pylint', 'flake8' ]

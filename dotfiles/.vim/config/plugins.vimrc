@@ -78,7 +78,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
 
 " snippet completion
-" Plug 'Shougo/neocomplete'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 
