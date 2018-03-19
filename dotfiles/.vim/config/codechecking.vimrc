@@ -1,5 +1,5 @@
 if has('nvim')
-    call neomake#configure#automake('nw', 1000)
+    " call neomake#configure#automake('nw', 1000)
     let g:neomake_open_list = 0
 
     " Automatically open the error window
