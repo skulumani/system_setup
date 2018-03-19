@@ -45,13 +45,18 @@ Plug 'ryanoasis/vim-devicons' " provides cool icons
 Plug 'lervag/vimtex'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'Yggdroot/indentLine'
+
+" Autocompletion stuff
 if has("nvim")
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-    Plug 'zchee/deoplete-jedi'
-    Plug 'Shougo/echodoc.vim'
 else
-    Plug 'davidhalter/jedi-vim'
+    Plug 'Shougo/deoplete.nvim' 
+    Plug 'roxma/nvim-yarp'
+    Plug 'roxma/vim-hug-neovim-rpc'
 endif
+
+Plug 'zchee/deoplete-jedi'
+Plug 'Shougo/echodoc.vim'
 " Code linting
 if has("nvim")
     Plug 'neomake/neomake'
@@ -70,7 +75,8 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
 
-Plug 'Shougo/neocomplete'
+" snippet completion
+" Plug 'Shougo/neocomplete'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 
