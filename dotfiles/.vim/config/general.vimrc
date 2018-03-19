@@ -1,4 +1,5 @@
 filetype plugin indent on
+set nocp
 set autoindent
 " text encoding
 set encoding=utf8
@@ -41,7 +42,9 @@ set listchars=tab:▸\ ,eol:¬"
 set incsearch
 set showmatch
 set hlsearch
-set inccommand="nosplit"
+if has("nvim")
+    set inccommand="nosplit"
+endif
 " set completeopt+=preview
 
 " Autoreload VIMRC
