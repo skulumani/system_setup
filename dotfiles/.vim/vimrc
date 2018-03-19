@@ -13,5 +13,5 @@ source $HOME/.vim/config/vimtex.vimrc
 source $HOME/.vim/config/nerdtree.vimrc
 source $HOME/.vim/config/indentline.vimrc
 source $HOME/.vim/config/utltisnips.vimrc
-source $HOME/.vim/config/syntastic.vimrc
-source $HOME/.vim/config/ctrlp.vimrc
+" source $HOME/.vim/config/syntastic.vimrc
+" source $HOME/.vim/config/ctrlp.vimrc

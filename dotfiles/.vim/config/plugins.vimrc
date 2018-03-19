@@ -21,9 +21,7 @@ else
 endif
 
 " Productivity
-" Plug 'ervandew/supertab'
 Plug 'junegunn/vim-plug'
-Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-dispatch'
@@ -32,14 +30,16 @@ Plug 'tpope/vim-unimpaired'
 Plug 'freitass/todo.txt-vim'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-obsession'
+Plug 'tpope/vim-vinegar'
 
 " Appearance
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+
+" Plug 'romainl/flattened'
 Plug 'machakann/vim-highlightedyank' " highlight yanked text
 Plug 'octol/vim-cpp-enhanced-highlight' " c++ highlighting
-Plug 'ryanoasis/vim-devicons' " provides cool icons
 
 " Programming plugins
 Plug 'lervag/vimtex'
@@ -58,12 +58,13 @@ endif
 
 Plug 'zchee/deoplete-jedi'
 Plug 'Shougo/echodoc.vim'
+
 " Code linting
 if has("nvim")
     Plug 'neomake/neomake'
     Plug 'sbdchd/neoformat'
 else
-    Plug 'vim-syntastic/syntastic', { 'on': 'SyntasticCheck' }
+    " Plug 'vim-syntastic/syntastic', { 'on': 'SyntasticCheck' }
 endif
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'tpope/vim-commentary'

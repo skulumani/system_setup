@@ -18,8 +18,8 @@ map <C-l> <C-w>l
 " Use ctags
 " command! MakeTags !ctags -R .
 
-" Nerdtree hotkey to C-n
-map <C-n> :NERDTreeToggle<CR>
+" Use Netrw instead for speed
+" map <C-n> :Vexplore<CR>
 
 nnoremap <leader>ev :e $MYVIMRC<CR>
 nnoremap <leader>sv :so $MYVIMRC<CR>
