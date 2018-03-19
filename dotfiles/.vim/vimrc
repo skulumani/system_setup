@@ -1,5 +1,4 @@
 " no vi compatibility
-set nocompatible
 
 source $HOME/.vim/config/general.vimrc
 source $HOME/.vim/config/keys.vimrc

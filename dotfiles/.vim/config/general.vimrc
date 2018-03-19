@@ -1,5 +1,5 @@
 filetype plugin indent on
-set nocp
+set nocompatible
 set autoindent
 " text encoding
 set encoding=utf8
