@@ -46,7 +46,7 @@ Plug 'lervag/vimtex'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'Yggdroot/indentLine'
 if has("nvim")
-    " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     " Plug 'zchee/deoplete-jedi'
     " Plug 'Shougo/echodoc.vim'
 else
