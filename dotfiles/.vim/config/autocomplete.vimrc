@@ -1,75 +1,19 @@
 if has('nvim')
     let g:deoplete#enable_at_startup = 1
     " let g:deoplete#max_list = 10
-    let g:deoplete#enable_refresh_always = 1
+    let g:deoplete#enable_refresh_always = 0
 
-    " manual completions
-    " let g:deoplete#disable_auto_complete = 0
-    " inoremap <silent><expr> <TAB>
-    "             \ pumvisible() ? "\<C-n>" :
-    "             \ <SID>check_back_space() ? "\<TAB>" :
-    "             \ deoplete#mappings#manual_complete()
-    " function! s:check_back_space() abort "{{{
-    "     let col = col('.') - 1
-    "     return !col || getline('.')[col - 1]  =~ '\s'
-    " endfunction"}}}
 
     command! DeopleteToggle call deoplete#toggle()
     autocmd CompleteDone * pclose!
-    " <CR>: close popup.
-    " inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-    " function! s:my_cr_function()
-    "     return deoplete#mappings#close_popup()
-    " endfunction
     
-    " Options for vim-jedi
-    let g:jedi#auto_initialization = 1
-    let g:jedi#completions_enabled = 0
-    let g:jedi#goto_command = "<leader>d"
-    let g:jedi#goto_assignments_command = "<leader>g"
-    let g:jedi#goto_definitions_command = ""
-    let g:jedi#documentation_command = "K"
-    let g:jedi#usages_command = "<leader>n"
-    let g:jedi#completions_command = "<C-Space>"
-    let g:jedi#rename_command = "<leader>r"
-    let g:jedi#show_call_signatures = '1'
-    
-    autocmd BufWinEnter '__doc__' setlocal bufhidden=delete
-
-    let g:deoplete#sources#jedi#show_docstring = 1
-    let g:deoplete#sources#jedi#enable_cache = 1
-    let g:deoplete#sources#jedi#worker_threads = 2
     " use tab to forward cycle
     inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
     " use tab to backward cycle
     inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 
 else
-    let g:neocomplete#enable_at_startup = 1
-    let g:acp_enableAtStartup = 0
-    " Use smartcase.
-    let g:neocomplete#enable_smart_case = 1
-    " Set minimum syntax keyword length.
-    let g:neocomplete#sources#syntax#min_keyword_length = 3
-
-    " Recommended key-mappings.
-    " <CR>: close popup and save indent.
-    " inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-    " function! s:my_cr_function()
-    "     return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
-    "     " For no inserting <CR> key.
-    "     "return pumvisible() ? "\<C-y>" : "\<CR>"
-    " endfunction
-    " <TAB>: completion.
-    inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-    " <C-h>, <BS>: close popup and delete backword char.
-    inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-    inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-    " Close popup by <Space>.
-    "inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
-    
-    " Jedi autocomplete
-    let g:jedi#use_splits_not_buffers = "top"
+    " Remove old neocomplete shit
 endif
 
 " NeoSnippet options
@@ -79,13 +23,7 @@ let g:neosnippet#snippets_directory='~/.vim/snippets'
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>     <Plug>(neosnippet_expand_target)
-" SuperTab like snippets behavior.
-" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-"imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-"imap <expr><TAB>
-" \ pumvisible() ? "\<C-n>" :
-" \ neosnippet#expandable_or_jumpable() ?
-" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
 smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
             \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
