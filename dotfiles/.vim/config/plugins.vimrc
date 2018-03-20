@@ -24,13 +24,13 @@ endif
 Plug 'junegunn/vim-plug'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-dispatch'
+" Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-unimpaired'
 Plug 'freitass/todo.txt-vim'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-obsession'
-Plug 'tpope/vim-vinegar'
+" Plug 'tpope/vim-repeat'
+" Plug 'tpope/vim-obsession'
+" Plug 'tpope/vim-vinegar'
 
 " Appearance
 Plug 'rafi/awesome-vim-colorschemes'
@@ -39,7 +39,7 @@ Plug 'vim-airline/vim-airline-themes'
 
 " Plug 'romainl/flattened'
 Plug 'machakann/vim-highlightedyank' " highlight yanked text
-Plug 'octol/vim-cpp-enhanced-highlight' " c++ highlighting
+" Plug 'octol/vim-cpp-enhanced-highlight' " c++ highlighting
 
 " Programming plugins
 Plug 'lervag/vimtex'
@@ -49,6 +49,8 @@ Plug 'Yggdroot/indentLine'
 " Autocompletion stuff
 if has("nvim")
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    Plug 'zchee/deoplete-jedi'
+    " Plug 'Shougo/echodoc.vim'
 else
     " No autocomplete in normal vim
     " Plug 'Shougo/deoplete.nvim' 
@@ -56,8 +58,6 @@ else
     " Plug 'roxma/vim-hug-neovim-rpc'
 endif
 
-Plug 'zchee/deoplete-jedi'
-Plug 'Shougo/echodoc.vim'
 
 " Code linting
 if has("nvim")
@@ -69,7 +69,7 @@ endif
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'tpope/vim-commentary'
 Plug 'junegunn/vim-easy-align'
-Plug 'airblade/vim-gitgutter'
+" Plug 'airblade/vim-gitgutter'
 " Plug 'Rip-Rip/clang_complete' " autcomplete for C++
 
 " set rtp+=~/.fzf
@@ -84,7 +84,7 @@ Plug 'Shougo/neosnippet-snippets'
 " Tmux plugins
 Plug 'tmux-plugins/vim-tmux-focus-events'
 " Plug 'tmux-plugins/vim-tmux'
-Plug 'edkolev/tmuxline.vim' " makes tmux look like vim-airline
+" Plug 'edkolev/tmuxline.vim' " makes tmux look like vim-airline
 
 
 call plug#end()
