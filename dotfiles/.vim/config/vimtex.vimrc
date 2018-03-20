@@ -40,6 +40,11 @@ if has('nvim')
     let g:vimtex_compiler_progname = 'nvr'
 endif
 
+if !exists('g:deoplete#omni#input_patterns')
+    let g:deoplete#omni#input_patterns = {}
+endif
+let g:deoplete#omni#input_patterns.tex = g:vimtex#re#deoplete
+
 " One of the neosnippet plugins will conceal symbols in LaTeX which is
 " confusing
 let g:tex_conceal = ""
