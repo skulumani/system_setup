@@ -34,11 +34,12 @@ Plug 'freitass/todo.txt-vim'
 Plug 'scrooloose/nerdtree', { 'on' : 'NERDTreeToggle' }
 
 " Appearance
-Plug 'rafi/awesome-vim-colorschemes'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" Plug 'rafi/awesome-vim-colorschemes'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
 
-" Plug 'romainl/flattened'
+Plug 'romainl/flattened'
 Plug 'machakann/vim-highlightedyank' " highlight yanked text
 " Plug 'octol/vim-cpp-enhanced-highlight' " c++ highlighting
 
@@ -52,11 +53,6 @@ if has("nvim")
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     Plug 'zchee/deoplete-jedi'
     " Plug 'Shougo/echodoc.vim'
-else
-    " No autocomplete in normal vim
-    " Plug 'Shougo/deoplete.nvim' 
-    " Plug 'roxma/nvim-yarp'
-    " Plug 'roxma/vim-hug-neovim-rpc'
 endif
 
 
@@ -64,8 +60,6 @@ endif
 if has("nvim")
     Plug 'neomake/neomake'
     Plug 'sbdchd/neoformat'
-else
-    " Plug 'vim-syntastic/syntastic', { 'on': 'SyntasticCheck' }
 endif
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'tpope/vim-commentary'

@@ -19,7 +19,7 @@ map <C-l> <C-w>l
 " command! MakeTags !ctags -R .
 
 " Use Netrw instead for speed
-" map <C-n> :NERDTreeToggle<CR>
+map <C-n> :NERDTreeToggle<CR>
 
 nnoremap <leader>ev :e $MYVIMRC<CR>
 nnoremap <leader>sv :so $MYVIMRC<CR>
