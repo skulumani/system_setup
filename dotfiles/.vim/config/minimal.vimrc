@@ -47,12 +47,13 @@ if has("nvim")
 endif
 " set completeopt+=preview
 
-
 " make file compilation
 " let makeprg=make
 
 " Everything to figure out the correct python environment to use
 if has("nvim")
+    " neomake settings
+    let g:neomake_python_enable_makers = ['flake8, pylint']
 
     " Set important paths
     if has('unix')
@@ -104,4 +105,3 @@ if has("nvim")
 
     endif
 endif
-

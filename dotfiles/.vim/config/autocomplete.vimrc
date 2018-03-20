@@ -1,10 +1,10 @@
 if has('nvim')
-    let g:deoplete#enable_at_startup = 1
+    let g:deoplete#enable_at_startup = 0
     " let g:deoplete#max_list = 10
     let g:deoplete#enable_refresh_always = 0
 
 
-    " command! DeopleteToggle call deoplete#toggle()
+    command! DeopleteToggle call deoplete#toggle()
     " autocmd CompleteDone * pclose!
     
     " use tab to forward cycle

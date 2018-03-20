@@ -24,21 +24,13 @@ endif
 Plug 'junegunn/vim-plug'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
-" Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-unimpaired'
 Plug 'freitass/todo.txt-vim'
-" Plug 'tpope/vim-repeat'
-" Plug 'tpope/vim-obsession'
-" Plug 'tpope/vim-vinegar'
 Plug 'scrooloose/nerdtree', { 'on' : 'NERDTreeToggle' }
 
 " Appearance
-" Plug 'rafi/awesome-vim-colorschemes'
-" Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
 Plug 'itchyny/lightline.vim'
-
 Plug 'romainl/flattened'
 Plug 'machakann/vim-highlightedyank' " highlight yanked text
 " Plug 'octol/vim-cpp-enhanced-highlight' " c++ highlighting
@@ -49,11 +41,11 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'Yggdroot/indentLine'
 
 " Autocompletion stuff
-if has("nvim")
+" if has("nvim")
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-    Plug 'zchee/deoplete-jedi'
+    " Plug 'zchee/deoplete-jedi'
     " Plug 'Shougo/echodoc.vim'
-endif
+" endif
 
 
 " Code linting
@@ -78,10 +70,8 @@ Plug 'Shougo/neosnippet-snippets'
 
 " Tmux plugins
 Plug 'tmux-plugins/vim-tmux-focus-events'
-" Plug 'tmux-plugins/vim-tmux'
-" Plug 'edkolev/tmuxline.vim' " makes tmux look like vim-airline
+Plug 'edkolev/tmuxline.vim' " makes tmux look like vim-airline
 
 
 call plug#end()
 " start all the plugins above
-filetype plugin indent on

@@ -6,6 +6,7 @@ if has("autocmd")
         " autocmd! BufWritePost $MYVIMRC source $MYVIMRC | echom "Reloaded " . $MYVIMRC | redraw
         " Makfile needs tabs and not spaces
         autocmd FileType make setlocal noexpandtab
+        autocmd InsertEnter * call deoplete#enable()
     augroup END
 endif
 

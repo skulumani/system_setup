@@ -95,8 +95,6 @@ nnoremap <leader>fix :Ack \(FIXME\)\\|\(TODO\)\\|\(BUG\)<CR>
 " Neomake commands
 if has('nvim')
     nnoremap <leader>m :Neomake<CR> :echo "LINTING!"<CR>
-else
-    nnoremap <leader>m :SyntasticCheck<CR> :echo "LINTING!"<CR>
 endif
 
 nnoremap <leader>mm :Neomake!<CR> :echo "MAKE!"<CR>
