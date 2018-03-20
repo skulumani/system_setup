@@ -19,7 +19,7 @@ map <C-l> <C-w>l
 " command! MakeTags !ctags -R .
 
 " Use Netrw instead for speed
-map <C-n> :Vexplore<CR>
+" map <C-n> :NERDTreeToggle<CR>
 
 nnoremap <leader>ev :e $MYVIMRC<CR>
 nnoremap <leader>sv :so $MYVIMRC<CR>
@@ -57,13 +57,13 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 " Fugitive stuff
-if has("autocmd")
-    autocmd BufReadPost fugitive://* set bufhidden=delete
-    autocmd User fugitive 
-                \ if fugitive#buffer().type() =~# '^\%(tree\|blob\)$' |
-                \   nnoremap <buffer> .. :edit %:h<CR> |
-                \ endif
-endif
+" if has("autocmd")
+"     autocmd BufReadPost fugitive://* set bufhidden=delete
+"     autocmd User fugitive 
+"                 \ if fugitive#buffer().type() =~# '^\%(tree\|blob\)$' |
+"                 \   nnoremap <buffer> .. :edit %:h<CR> |
+"                 \ endif
+" endif
 
 nmap <leader>gst :Gstatus<cr>gg<C-n>
 nnoremap <leader>gco :Git checkout 

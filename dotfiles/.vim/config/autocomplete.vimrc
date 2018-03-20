@@ -4,8 +4,8 @@ if has('nvim')
     let g:deoplete#enable_refresh_always = 0
 
 
-    command! DeopleteToggle call deoplete#toggle()
-    autocmd CompleteDone * pclose!
+    " command! DeopleteToggle call deoplete#toggle()
+    " autocmd CompleteDone * pclose!
     
     " use tab to forward cycle
     inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
