@@ -29,7 +29,7 @@ if has('nvim')
     let g:neomake_cpp_enabled_makers = ['clang']
     let g:neomake_cpp_clang_maker = {
         \ 'exe': 'clang++',
-        \ 'args': ['-Wall', '-Wextra', '-Weverything', '-pedantic', '-Wno-sign-conversion'],
+        \ 'args': ['-Iinclude', '-Wall', '-Wextra', '-Weverything', '-pedantic', '-Wno-sign-conversion'],
         \ }
 else
     set statusline+=%#warningmsg#
