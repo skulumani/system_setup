@@ -98,3 +98,8 @@ if has('nvim')
 endif
 
 nnoremap <leader>mm :Neomake!<CR> :echo "MAKE!"<CR>
+
+" Options for vim-easy-align
+vmap <Enter> <Plug>(EasyAlign)
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)

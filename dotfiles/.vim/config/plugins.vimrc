@@ -32,6 +32,8 @@ Plug 'scrooloose/nerdtree', { 'on' : 'NERDTreeToggle' }
 " Appearance
 Plug 'itchyny/lightline.vim'
 Plug 'romainl/flattened'
+Plug 'joshdick/onedark.vim'
+Plug 'sheerun/vim-polyglot'
 Plug 'machakann/vim-highlightedyank' " highlight yanked text
 " Plug 'octol/vim-cpp-enhanced-highlight' " c++ highlighting
 
