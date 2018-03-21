@@ -19,9 +19,9 @@ endif
 
 set guifont=Sauce\ Code\ Pro\ Medium\ Nerd\ Font\ Complete\ Mono\ 12
 syntax on
-" set background=dark
+set background=dark
 let g:onedark_termcolors=16
-colorscheme onedark
+colorscheme flattened_dark
 
 " vim-airline theme
 let g:airline_theme='solarized'
@@ -31,7 +31,7 @@ let g:airline_powerline_fonts = 1
 
 " lightline settings
 let g:lightline = {
-  \   'colorscheme': 'onedark',
+  \   'colorscheme': 'solarized',
   \   'active': {
   \     'left':[ [ 'mode', 'paste' ],
   \              [ 'gitbranch', 'readonly', 'filename', 'modified' ]
