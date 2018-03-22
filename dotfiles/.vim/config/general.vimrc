@@ -26,7 +26,7 @@ set ruler
 set colorcolumn=80
 
 " minimum window size
-set winwidth=80
+set winwidth=85
 set winheight=5
 set winminheight=5
 
