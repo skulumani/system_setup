@@ -44,12 +44,12 @@ let g:lightline = {
   \     'gitbranch': 'fugitive#head',
   \   }
   \ }
-" let g:lightline.separator = {
-" 	\   'left': '', 'right': ''
-"   \}
-" let g:lightline.subseparator = {
-" 	\   'left': '', 'right': '' 
-"   \}
+let g:lightline.separator = {
+	\   'left': '', 'right': ''
+  \}
+let g:lightline.subseparator = {
+	\   'left': '', 'right': '' 
+  \}
 
 let g:lightline.tabline = {
   \   'left': [ ['tabs'] ],

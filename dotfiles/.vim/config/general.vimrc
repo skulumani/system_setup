@@ -1,6 +1,7 @@
 filetype plugin indent on
 set nocompatible
 set autoindent
+set nomodeline " disable modeline vulnerability
 " text encoding
 set encoding=utf8
 
@@ -21,32 +22,51 @@ set relativenumber
 set wrap
 
 " column ruler at 100
+set ruler
 set colorcolumn=80
+
+" minimum window size
+set winwidth=80
+set winheight=5
+set winminheight=5
 
 " Keep x lines below and above the cursor
 set scrolloff=5 
+set sidescroll=1
+set sidescrolloff=15
 " Folding in Vim
 set foldmethod=indent   
-set foldnestmax=10
+set foldnestmax=3
 set nofoldenable
 set foldlevel=2
 " finding files in vim
 set path+=**
-set wildchar=<Tab> wildmenu wildmode=full
-set wildignore+=*.swp,*.pyc,*.zip,*.so,*/tmp/*,*/.git/*
+set wildchar=<Tab> wildmenu wildmode=full,longest
+set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem
+set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
+set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*
+set wildignore+=*.swp,*~,._*
 " Hiddent characters
 " set listchars=tab:▸\ ,eol:¬" ,space:␣
 set listchars=tab:▸\ ,eol:¬"
 
+" opening new buffers
+set switchbuf=usetab
 " Highlight searching
 set incsearch
 set showmatch
 set hlsearch
+set ignorecase
+set smartcase
 if has("nvim")
     set inccommand="nosplit"
 endif
+set complete-=i
 " set completeopt+=preview
 
+
+set autoread " autoread files
+set mouse=a " use mouse for scroll or window size
 
 " make file compilation
 " let makeprg=make

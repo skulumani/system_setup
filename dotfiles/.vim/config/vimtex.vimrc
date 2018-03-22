@@ -39,6 +39,7 @@ let g:vimtex_quickfix_mode = 2
 if has('nvim')
     let g:vimtex_compiler_progname = 'nvr'
 endif
+let g:polyglot_disabled = ['latex']
 
 if !exists('g:deoplete#omni#input_patterns')
     let g:deoplete#omni#input_patterns = {}

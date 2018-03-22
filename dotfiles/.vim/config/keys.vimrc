@@ -9,6 +9,10 @@ nmap Q gqap
 nnoremap j gj
 nnoremap k gk
 
+" autocenter on matched strings
+noremap n nzz
+noremap N Nzz
+
 " Easy window navigation
 map <C-h> <C-w>h
 map <C-j> <C-w>j
