@@ -31,7 +31,7 @@ let g:airline_powerline_fonts = 1
 
 " lightline settings
 let g:lightline = {
-  \   'colorscheme': 'solarized',
+  \   'colorscheme': 'wombat',
   \   'active': {
   \     'left':[ [ 'mode', 'paste' ],
   \              [ 'gitbranch', 'readonly', 'filename', 'modified' ]
@@ -55,7 +55,7 @@ let g:lightline.tabline = {
   \   'left': [ ['tabs'] ],
   \   'right': [ ['close'] ]
   \ }
-set showtabline=1  " Show tabline
+set showtabline=2  " Show tabline
 set guioptions-=e  " Don't use GUI tabline
 
 " font settings
