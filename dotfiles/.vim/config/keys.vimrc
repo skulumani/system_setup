@@ -1,6 +1,8 @@
 " KEYBOARD MAPPINGS
+" Leader key goes to space
+let mapleader=' '
 " Press Space to turn off highlighting and clear any message already displayed.
-nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+nnoremap <silent> <leader>h :nohlsearch<Bar>:echo<CR>
 " Use Q for formatting the current paragraph (or selection)
 vmap Q gq
 nmap Q gqap
@@ -28,6 +30,7 @@ map <C-n> :NERDTreeToggle<CR>
 nnoremap <leader>ev :e $MYVIMRC<CR>
 nnoremap <leader>sv :so $MYVIMRC<CR>
 
+nnoremap <leader>w :write<CR> :echo "Saved file!"<CR>
 " FZF mappings
 " <C-p> or <C-t> to search files
 nnoremap <silent> <leader>ft :Tags <cr>
