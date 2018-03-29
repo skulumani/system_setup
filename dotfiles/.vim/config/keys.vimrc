@@ -1,6 +1,7 @@
 " KEYBOARD MAPPINGS
 " Leader key goes to space
 let mapleader=' '
+let maplocalleader=' '
 " Press Space to turn off highlighting and clear any message already displayed.
 nnoremap <silent> <leader>h :nohlsearch<Bar>:echo<CR>
 " Use Q for formatting the current paragraph (or selection)
