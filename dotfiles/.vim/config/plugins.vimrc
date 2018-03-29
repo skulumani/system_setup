@@ -28,7 +28,7 @@ Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-unimpaired'
 " Plug 'tpope/vim-dispatch'
 Plug 'freitass/todo.txt-vim'
-Plug 'scrooloose/nerdtree', { 'on' : 'NERDTreeToggle' }
+" Plug 'scrooloose/nerdtree', { 'on' : 'NERDTreeToggle' }
 
 " Appearance
 Plug 'itchyny/lightline.vim'
