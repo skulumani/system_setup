@@ -32,7 +32,7 @@ map <C-n> :NERDTreeToggle<CR>
 nnoremap <leader>ev :e $MYVIMRC<CR>
 nnoremap <leader>sv :so $MYVIMRC<CR>
 
-nnoremap <leader>w :write<CR> :echo "Saved file!"<CR>
+" nnoremap <leader>w :write<CR> :echo "Saved file!"<CR>
 " FZF mappings
 " <C-p> or <C-t> to search files
 nnoremap <silent> <leader>ft :Tags <cr>
