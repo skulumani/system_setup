@@ -1,10 +1,11 @@
 snippet     doc_func
 abbr        doc_func
 	/**
-		${1:Description}
-
-		@param ArgumentName Description which can span many lines
-		@returns Description which can span many lines
+		${1:Brief description on a single line.}
+        
+        ${2: Longer comment that can span multiple lines}
+		@param ${3:myParam1} ${4:Description of myparam}
+		@returns ${5:Description of returns}
 	*/${0}
 
 snippet     doc_file
@@ -15,3 +16,8 @@ abbr        doc_file
 		@author Shankar Kulumani
 		@version Date
 	*/${0}
+
+snippet     doc_param
+abbr        doc_param
+    /**< ${1:Detailed description after member} */
+    ${0}
