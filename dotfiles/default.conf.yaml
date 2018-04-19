@@ -31,6 +31,7 @@
     ~/.config/nvim: .config/nvim
     ~/.config/conky: .config/conky
     ~/.config/redshift.conf: .config/redshift.conf
+    ~/.config/base16_shell: .config/base16-shell
     ~/.todo: .todo
     ~/bin: bin
     ~/.ctags: .ctags

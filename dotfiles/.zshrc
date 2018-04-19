@@ -71,6 +71,10 @@ if [ -f $HOME/.path ]; then
     source $HOME/.path
 fi
 
+# BASE16 setup for colors
+BASE16_SHELL=$HOME/.config/base16-shell/
+[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+
 # Set 256 colors for the terminal
 # export TERM=tmux-256color
 export TERM=xterm-256color

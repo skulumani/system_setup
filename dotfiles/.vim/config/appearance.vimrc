@@ -23,6 +23,12 @@ set background=dark
 let g:onedark_termcolors=16
 colorscheme flattened_dark
 
+" base16 vim
+" if filereadable(expand("~/.vimrc_background"))
+"     let base16colorspace=256
+"     source ~/.vimrc_background
+" endif
+
 " vim-airline theme
 let g:airline_theme='solarized'
 let g:airline#extensions#tabline#enabled = 1
