@@ -35,7 +35,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'sheerun/vim-polyglot'
 Plug 'machakann/vim-highlightedyank' " highlight yanked text
-Plug 'chriskempson/base16-vim'
+" Plug 'chriskempson/base16-vim'
 
 " Programming plugins
 Plug 'lervag/vimtex'
