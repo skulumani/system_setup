@@ -1,11 +1,14 @@
 snippet     doc_func
 abbr        doc_func
-	/**
-		${1:Brief description on a single line.}
-        
-        ${2: Longer comment that can span multiple lines}
+	/** @fn ${1:Brief description}
+		    
+		${2:Description of function}
+
 		@param ${3:myParam1} ${4:Description of myparam}
-		@returns ${5:Description of returns}
+		@returns ${6:Description of returns}
+
+		@author Shankar Kulumani
+		@version ${7:Date}
 	*/${0}
 
 snippet     doc_file
@@ -19,5 +22,18 @@ abbr        doc_file
 
 snippet     doc_param
 abbr        doc_param
-    /**< ${1:Detailed description after member} */
-    ${0}
+	/**< ${1:Detailed description after member} */
+	${0}
+
+snippet     doc_class
+abbr        doc_class
+	/** @class ${1:Name of class}
+
+		@brief ${2:One line description}
+		
+		${3:extended description}
+
+		@author Shankar Kulumani
+		@version ${4:Date}
+	*/${0}
+
