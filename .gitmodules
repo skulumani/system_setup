@@ -18,3 +18,6 @@
 [submodule "dotfiles/.todo"]
 	path = dotfiles/.todo
 	url = git@github.com:skulumani/todo.git
+[submodule "dotfiles/.config/base16-shell"]
+	path = dotfiles/.config/base16-shell
+	url = https://github.com/chriskempson/base16-shell.git
