@@ -66,7 +66,7 @@ set complete-=i
 
 
 set autoread " autoread files
-" set mouse=a " use mouse for scroll or window size
+set mouse=n " use mouse for scroll or window size
 
 " make file compilation
 " let makeprg=make
