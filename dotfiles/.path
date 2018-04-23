@@ -31,7 +31,8 @@ if [[ -d $HOME/anaconda3 ]]; then
         . /Users/shankar/anaconda3/etc/profile.d/conda.sh
     fi
 
-    conda activate
+    # conda activate
+    export NOCONDA_PATH=$PATH
     export PATH="$PATH:$HOME/anaconda3/bin"
 fi
 
