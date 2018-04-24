@@ -33,7 +33,7 @@ if [[ -d $HOME/anaconda3 ]]; then
 
     # conda activate
     export NOCONDA_PATH=$PATH
-    export PATH="$PATH:$HOME/anaconda3/bin"
+    export PATH="$HOME/anaconda3/bin:$PATH"
 fi
 
 # add custom neovim path
