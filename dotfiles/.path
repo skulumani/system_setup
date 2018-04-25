@@ -9,10 +9,12 @@ if [[ -d $HOME/.local/bin ]]; then
 fi
 
 # Add TeXLive to PATH
-if [[ "$OSTYPE" == "linux-gnu" ]]; then
+if [[ -d /usr/local/texlive ]]; then
+    if [[ "$OSTYPE" == "linux-gnu" ]]; then
     export PATH=/usr/local/texlive/2017/bin/x86_64-linux:$PATH
     export MANPATH=/usr/local/texlive/2017/texmf-dist/doc/man:$MANPATH
     export INFOPATH=/usr/local/texlive/2017/texmf-dist/doc/info:$INFOPATH
+    fi
 fi
 
 # Add rsub path for remote sublime text
@@ -21,6 +23,11 @@ if [[ -d $HOME/bin ]]; then
 
     # Add path for signal-cli
     export PATH="$HOME/bin/signal-cli/bin:$PATH"
+fi
+
+# add HDF5 to path
+if [[ -d /usr/local/hdf5 ]]; then
+    export PATH="/usr/local/hdf5/bin:$PATH"
 fi
 
 # added by Anaconda3 4.3.0 installer
@@ -33,8 +40,9 @@ if [[ -d $HOME/anaconda3 ]]; then
 
     # conda activate
     export NOCONDA_PATH=$PATH
-    export PATH="$HOME/anaconda3/bin:$PATH"
+    export PATH="$PATH:$HOME/anaconda3/bin:"
 fi
+
 
 # add custom neovim path
 if [[ -d "$HOME/neovim/bin" ]]; then
