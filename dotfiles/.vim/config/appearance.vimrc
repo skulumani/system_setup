@@ -21,7 +21,7 @@ set guifont=Sauce\ Code\ Pro\ Medium\ Nerd\ Font\ Complete\ Mono\ 12
 syntax on
 set background=dark
 let g:onedark_termcolors=16
-colorscheme gruvbox
+colorscheme flattened_dark
 
 " base16 vim
 " if filereadable(expand("~/.vimrc_background"))
@@ -37,7 +37,7 @@ let g:airline_powerline_fonts = 1
 
 " lightline settings
 let g:lightline = {
-  \   'colorscheme': 'seoul256',
+  \   'colorscheme': 'wombat',
   \   'active': {
   \     'left':[ [ 'mode', 'paste' ],
   \              [ 'gitbranch', 'readonly', 'filename', 'modified' ]
