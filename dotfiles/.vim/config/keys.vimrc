@@ -104,10 +104,10 @@ nnoremap <leader>fix :Ack \(FIXME\)\\|\(TODO\)\\|\(BUG\)<CR>
 "
 " Neomake commands
 if has('nvim')
-    nnoremap <leader>m :Neomake<CR> :echo "LINTING!"<CR>
+    nnoremap <leader>mm :Neomake<CR> :echo "LINTING!"<CR>
 endif
 
-nnoremap <leader>mm :Neomake!<CR> :echo "MAKE!"<CR>
+nnoremap <leader>m :Make -C build<CR> :echo "MAKING!"<CR>
 
 " Options for vim-easy-align
 vmap <Enter> <Plug>(EasyAlign)
