@@ -50,7 +50,7 @@ nnoremap <silent> <leader>fh :History<cr>
 " nnoremap <leader>s :set spell!<CR>
 set spelllang=en_us
 
-nmap <leader>l :set list!<CR> <bar> :IndentLinesToggle<CR> <bar> :LeadingSpaceToggle<CR>
+" nmap <leader>l :set list!<CR> <bar> :IndentLinesToggle<CR> <bar> :LeadingSpaceToggle<CR>
 
 " delete a buffer without closing split
 " command Bd bp\|bd \#
@@ -107,7 +107,7 @@ if has('nvim')
     " nnoremap <leader>ml :Neomake<CR> :echo "LINTING!"<CR>
 endif
 
-nnoremap <leader>mm :Make -C build -j4<CR> :echo "MAKING!"<CR>
+nnoremap <leader>ll :Make -C build -j4<CR> :echo "MAKING!"<CR>
 
 " Options for vim-easy-align
 vmap <Enter> <Plug>(EasyAlign)
