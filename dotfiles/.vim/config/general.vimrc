@@ -5,6 +5,11 @@ set nomodeline " disable modeline vulnerability
 " text encoding
 set encoding=utf8
 
+" directories for swap files and things
+set backupdir=~/.vim/backup/
+set directory=~/.vim/swap/
+set undodir=~/.vim/undo/
+
 " use 4 spaces for tabs
 set expandtab
 set tabstop=4
