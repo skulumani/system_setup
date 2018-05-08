@@ -1,7 +1,7 @@
 
 # Download and setup Signal-Cli
 
-SIGNAL_VERSION="0.5.6"
+SIGNAL_VERSION="0.6.0"
 SIGNAL_FNAME="signal-cli-${SIGNAL_VERSION}.tar.gz"
 SIGNAL_LINK="https://github.com/AsamK/signal-cli/releases/download/v${SIGNAL_VERSION}/${SIGNAL_FNAME}"
 SIGNAL_DIR="$HOME/bin/signal-cli"
@@ -12,6 +12,8 @@ if [[ ! -d "${SIGNAL_DIR}" ]]; then
     mkdir -p ${SIGNAL_DIR}
 else
     echo "${SIGNAL_DIR} already exists"
+    echo "Removing old version and creating"
+    trash ${SIGNAL_DIR}/*
 fi
 
 # Download Jabref to this directory if it doesn't exist
