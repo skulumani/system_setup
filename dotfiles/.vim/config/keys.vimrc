@@ -50,7 +50,7 @@ nnoremap <silent> <leader>fh :History<cr>
 " nnoremap <leader>s :set spell!<CR>
 set spelllang=en_us
 
-nmap <leader>lg :set list!<CR> <bar> :IndentLinesToggle<CR> <bar> :LeadingSpaceToggle<CR>
+" nmap <leader>lg :set list!<CR> <bar> :IndentLinesToggle<CR> <bar> :LeadingSpaceToggle<CR>
 
 " delete a buffer without closing split
 " command Bd bp\|bd \#
