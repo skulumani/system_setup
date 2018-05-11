@@ -76,8 +76,8 @@ nmap ga <Plug>(EasyAlign)
 
 nnoremap <leader>gst :Gstatus<cr>gg<C-n>
 nnoremap <leader>gc :Gcommit -v -q<CR>
-nnoremap <leader>gcf :Gcommit -v -q %:p<CR>i
-nnoremap <leader>gt :Git tag -s<Space>
+nnoremap <leader>gf :Gcommit -v -q %:p<CR>i
+" nnoremap <leader>gt :Git tag -s<Space>
 nnoremap <leader>gco :Git checkout<Space>
 nnoremap <leader>gb :Git branch<Space>
 nnoremap <leader>gp :Dispatch! git push<CR>
