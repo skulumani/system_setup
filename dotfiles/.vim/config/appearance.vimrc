@@ -18,7 +18,6 @@ else
 endif
 
 set guifont=Sauce\ Code\ Pro\ Medium\ Nerd\ Font\ Complete\ Mono\ 12
-syntax on
 set background=dark
 let g:onedark_termcolors=16
 colorscheme flattened_dark
@@ -61,7 +60,5 @@ let g:lightline.tabline = {
   \   'left': [ ['tabs'] ],
   \   'right': [ ['close'] ]
   \ }
-set showtabline=2  " Show tabline
-set guioptions-=e  " Don't use GUI tabline
 
 " font settings

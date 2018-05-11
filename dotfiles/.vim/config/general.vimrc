@@ -1,4 +1,5 @@
 filetype plugin indent on
+syntax on
 set nocompatible
 set autoindent
 set nomodeline " disable modeline vulnerability
@@ -46,11 +47,15 @@ set nofoldenable
 set foldlevel=2
 " finding files in vim
 set path+=**
-set wildchar=<Tab> wildmenu wildmode=full,longest
+set wildchar=<Tab> wildmenu wildmode=full
 set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem
 set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
 set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*
 set wildignore+=*.swp,*~,._*
+
+set showtabline=2  " Show tabline
+set guioptions-=e  " Don't use GUI tabline
+
 " Hiddent characters
 " set listchars=tab:▸\ ,eol:¬" ,space:␣
 set listchars=tab:▸\ ,eol:¬"
