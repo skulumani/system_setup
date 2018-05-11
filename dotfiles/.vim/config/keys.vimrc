@@ -74,19 +74,21 @@ nmap ga <Plug>(EasyAlign)
 "                 \ endif
 " endif
 
-nmap <leader>gst :Gstatus<cr>gg<C-n>
-nnoremap <leader>gco :Git checkout 
-nnoremap <leader>gp :Gpush <CR>
-nnoremap <leader>gl :Gpull <CR>
+nnoremap <leader>gst :Gstatus<cr>gg<C-n>
+nnoremap <leader>gc :Gcommit -v -q<CR>
+nnoremap <leader>gcf :Gcommit -v -q %:p<CR>i
+nnoremap <leader>gt :Git tag -s<Space>
+nnoremap <leader>gco :Git checkout<Space>
+nnoremap <leader>gb :Git branch<Space>
+nnoremap <leader>gp :Dispatch! git push<CR>
+nnoremap <leader>gl :Dispatch! git pull<CR>
 nnoremap <leader>gd :Gdiff :0<CR>
+nnoremap <leader>ge :Gedit <CR>
 nnoremap <leader>gr :Gread<CR>
 nnoremap <leader>gw :Gwrite<CR>
 nnoremap <leader>glg :Git lg<CR>
 nnoremap <leader>glg2 :Git lg2<CR>
-nnoremap <leader>ge :Gedit <CR>
-nnoremap <leader>gb :Gbrowse <CR>
-nnoremap <leader>gt :Git tag -s 
-nnoremap <leader>gm :Git merge --no-ff 
+nnoremap <leader>gm :Git merge --no-ff<Space> 
 
 xnoremap dp :diffput<CR>
 xnoremap do :diffget<CR>
