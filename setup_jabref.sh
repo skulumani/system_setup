@@ -1,6 +1,6 @@
 # Download and setup JabRef into ~/
 
-JABREF_VERSION="4.1"
+JABREF_VERSION="4.2"
 JABREF_FNAME="JabRef-${JABREF_VERSION}.jar"
 JABREF_LINK="https://github.com/JabRef/jabref/releases/download/v${JABREF_VERSION}/${JABREF_FNAME}"
 JABREF_DIR="$HOME/bin/JabRef"
