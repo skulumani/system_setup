@@ -8,7 +8,7 @@ antigen use oh-my-zsh
 
 antigen bundle git
 antigen bundle pip
-
+antigen bundle vi-mode
 # antigen bundle zsh-users/zsh-completions
 # antigen bundle zsh-users/zsh-autosuggestions
 # antigen bundle zsh-users/zsh-syntax-highlighting
@@ -97,6 +97,9 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 # compaudit | xargs -I '%' chown $USER:$USER '%'
 # rm ~/.zcompdump*
 # exec zsh
+#
+# Customize Vi mode
+export KEYTIMEOUT=1 # Shorten lag when switching between edit modes
 
 ############## SPACESHIP THEME CUSTOMIZATION##################################
 SPACESHIP_GIT_PREFIX=""
