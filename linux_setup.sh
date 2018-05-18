@@ -238,7 +238,7 @@ export GOPATH=$HOME/.go
 export PATH=$PATH:$GOPATH/bin
 export PATH=$HOME/anaconda3/bin:"$PATH"
 export PATH=$PATH:/usr/local/go/bin
-export PATH=/usr/local/texlive/2016/bin/x86_64-linux:$PATH
+export PATH=/usr/local/texlive/${texlive_year}/bin/x86_64-linux:$PATH
 
 prompt "Test Anaconda" "python --version"
 
