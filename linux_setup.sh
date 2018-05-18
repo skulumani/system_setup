@@ -31,7 +31,7 @@ anaconda_hash="67f5c20232a3e493ea3f19a8e273e0618ab678fa14b03b59b1783613062143e9"
 go_version="1.8.1"
 go_hash="a579ab19d5237e263254f1eac5352efcf1d70b9dacadb6d6bb12b0911ede8994"
 
-texlive_year="2017"
+texlive_year="2018"
 
 apt_packages=(
     exuberant-ctags
@@ -238,7 +238,7 @@ export GOPATH=$HOME/.go
 export PATH=$PATH:$GOPATH/bin
 export PATH=$HOME/anaconda3/bin:"$PATH"
 export PATH=$PATH:/usr/local/go/bin
-export PATH=/usr/local/texlive/2016/bin/x86_64-linux:$PATH
+export PATH=/usr/local/texlive/${texlive_year}/bin/x86_64-linux:$PATH
 
 prompt "Test Anaconda" "python --version"
 
