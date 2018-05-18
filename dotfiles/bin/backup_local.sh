@@ -30,7 +30,8 @@ readonly USER=login
 readonly HOST=example.com
 readonly REPO="/media/shankar/data/Drive/backup/borgbackup/$(hostname)" # Path to repository on the host
 readonly TARGET="${REPO}"
-MOUNTPOINT="/tmp/borg_mount"
+readonly MOUNTPOINT="/tmp/borg_mount"
+readonly RCLONE_REMOTE="GWUDrive:/$(hostname)"
 
 # check if it already exists and is empty
 
@@ -74,7 +75,7 @@ main() {
 
 # $1...: command line arguments
 parse_args() {
-    while getopts ":ichpdmqluv" opt; do
+    while getopts ":ichpdmqluvr" opt; do
         case $opt in
             i)  init
                 exit 0
@@ -106,6 +107,9 @@ parse_args() {
             u)  unmount
                 exit 0
                 ;;
+            r)  rclone_sync
+                exit 0
+                ;;
             :)  printf "Missing argument for option %s\n" "$OPTARG" >&2
                 usage
                 exit 1
@@ -131,6 +135,7 @@ usage() {
     printf "  %s\t%s\n" "-m" "mount the repository"
     printf "  %s\t%s\n" "-p" "prune archive"
     printf "  %s\t%s\n" "-q" "check remote quota usage"
+    printf "  %s\t%s\n" "-r" "push repo to GWUDrive using rclone"
     printf "  %s\t%s\n" "-u" "unmount the repository"
     printf "  %s\t%s\n" "-v" "verify repository consistency"
 }
@@ -170,6 +175,10 @@ prune() {
 mount () {
 
     logger -p user.info "Starting Borg mount: ${TARGET} Mount : ${MOUNTPOINT}"
+    
+    if  [[ ! -d "${MOUNTPOINT}" ]]; then
+        mkdir -p ${MOUNTPOINT}
+    fi
 
     borg mount ${TARGET} ${MOUNTPOINT}
     
@@ -199,6 +208,14 @@ delete() {
     ssh "${USER}@${HOST}" rm -rf "${REPO}"
 
     logger -p user.info "Deleted Borg repository: ${TARGET}"
+}
+
+rclone_sync() {
+    logger -p user.info "Starting rclone push of ${TARGET} to ${RCLONE_REMOTE}"
+
+    rclone sync -v ${REPO} ${RCLONE_REMOTE}
+
+    logger -p user.info "Finished rclone push of ${TARGET} to ${RCLONE_REMOTE}"
 }
 
 quota() {
