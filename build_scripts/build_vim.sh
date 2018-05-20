@@ -60,7 +60,9 @@ sudo apt-get install liblua5.1-dev \
     libruby \
     libperl-dev \
     git \
-    checkinstall
+    checkinstall \
+    vim-runtime
+
 
 echo "We're going to clone and checkout Vim from github"
 
