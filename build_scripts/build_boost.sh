@@ -23,6 +23,7 @@ function cleanup {
 trap cleanup EXIT
 
 echo "Installing some dependencies"
+sudo apt-get -qq update
 sudo apt-get install -y build-essential g++ libicu-dev libbz2-dev autotools-dev
 
 echo "Now downloading Boost"
