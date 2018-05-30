@@ -41,10 +41,11 @@ set scrolloff=5
 set sidescroll=1
 set sidescrolloff=15
 " Folding in Vim
-set foldmethod=manual
+set foldmethod=indent
+set foldclose=all
 set foldnestmax=3
 set nofoldenable
-set foldlevel=2
+set foldlevel=99
 " finding files in vim
 set path+=**
 set wildchar=<Tab> wildmenu wildmode=full
