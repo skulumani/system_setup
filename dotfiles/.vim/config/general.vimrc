@@ -42,7 +42,7 @@ set sidescroll=1
 set sidescrolloff=15
 " Folding in Vim
 set foldmethod=indent
-set foldclose=all
+" set foldclose=all
 set foldnestmax=3
 set nofoldenable
 set foldlevel=99
