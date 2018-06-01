@@ -139,7 +139,7 @@
 <entry key="importFileNamePattern" value="[bibtexkey]"/>
 <entry key="importInspectionDialogHeight" value="650"/>
 <entry key="importInspectionDialogWidth" value="1109"/>
-<entry key="importWorkingDirectory" value="/home/shankar/Downloads/papers"/>
+<entry key="importWorkingDirectory" value="/tmp"/>
 <entry key="includeEmptyFields" value="false"/>
 <entry key="incompleteEntryBackground" value="250:175:175"/>
 <entry key="incrementS" value="false"/>
@@ -151,7 +151,7 @@
 <entry key="lastUsedImport" value="__all"/>
 <entry key="listOfFileColumns" value=""/>
 <entry key="localAutoSave" value="false"/>
-<entry key="lookAndFeel" value="com.jgoodies.plaf.plastic.Plastic3DLookAndFeel"/>
+<entry key="lookAndFeel" value="javax.swing.plaf.nimbus.NimbusLookAndFeel"/>
 <entry key="mainWindowPosX" value="-3"/>
 <entry key="mainWindowPosY" value="25"/>
 <entry key="mainWindowSizeX" value="1926"/>
