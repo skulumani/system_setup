@@ -50,7 +50,7 @@ let g:deoplete#omni#input_patterns.tex = g:vimtex#re#deoplete
 " confusing
 let g:tex_conceal = ""
 
-
+let g:vimtex_fold_enabled = 1
 
 " Can hide specifc warning messages from the quickfix window
 " Quickfix with Neovim is broken or something
