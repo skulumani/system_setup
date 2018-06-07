@@ -80,8 +80,8 @@ nnoremap <leader>gf :Gcommit -v -q %:p<CR>i
 " nnoremap <leader>gt :Git tag -s<Space>
 nnoremap <leader>gco :Git checkout<Space>
 nnoremap <leader>gb :Git branch<Space>
-nnoremap <leader>gp :Dispatch! git push<CR>
-nnoremap <leader>gl :Dispatch! git pull<CR>
+nnoremap <leader>gp :Gpush<CR>
+nnoremap <leader>gl :Gpull<CR>
 nnoremap <leader>gd :Gdiff :0<CR>
 nnoremap <leader>ge :Gedit <CR>
 nnoremap <leader>gr :Gread<CR>
