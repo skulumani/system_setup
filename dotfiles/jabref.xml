@@ -245,7 +245,7 @@
 <entry key="showSource" value="true"/>
 <entry key="sidePaneComponentNames" value="org.jabref.gui.groups.GroupSidePane;org.jabref.gui.importer.fetcher.GeneralFetcher"/>
 <entry key="sidePaneComponentPreferredPositions" value="1;0"/>
-<entry key="sidePaneWidth" value="297"/>
+<entry key="sidePaneWidth" value="276"/>
 <entry key="sizeX" value="1375"/>
 <entry key="sizeY" value="901"/>
 <entry key="specialFieldsEnabled" value="true"/>
@@ -292,6 +292,7 @@
 <entry key="useXmpPrivacyFilter" value="false"/>
 <entry key="userId" value="4187d8d4-c0f0-40d1-aed7-408d703ca017"/>
 <entry key="validFieldBackgroundColor" value="255:255:255"/>
+<entry key="validateInEntryEditor" value="true"/>
 <entry key="valueDelimiters" value="1"/>
 <entry key="warnAboutDuplicatesInInspection" value="true"/>
 <entry key="warnBeforeOverwritingKey" value="true"/>
