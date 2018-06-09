@@ -39,7 +39,7 @@ function! LightlineObsession()
 endfunction
 
 function! LightlineTags()
-    return '%{gutentags#statusline("[Generating\ tags...]")}'
+    return '%{gutentags#statusline()}'
 endfunction
 
 " lightline settings
