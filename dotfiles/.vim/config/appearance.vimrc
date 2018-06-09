@@ -34,20 +34,39 @@ let g:airline#extensions#tabline#enabled = 1
 let g:arline#extensions#tabline#show_buffers = 1
 let g:airline_powerline_fonts = 1
 
+function! LightlineObsession()
+    return '%{ObsessionStatus(''S'', '''')}'
+endfunction
+
+function! LightlineTags()
+    return '%{gutentags#statusline("[Generating\ tags...]")}'
+endfunction
+
 " lightline settings
 let g:lightline = {
   \   'colorscheme': 'wombat',
   \   'active': {
   \     'left':[ [ 'mode', 'paste' ],
-  \              [ 'gitbranch', 'readonly', 'filename', 'modified' ]
-  \     ]
+  \              [ 'gitbranch', 'readonly', 'filename', 'modified', ]
+  \     ],
+    \  'right': [
+    \ [ 'lineinfo' ], [ 'percent' ], 
+    \ [ 'fileformat' , 'fileencoding' , 'filetype' ] ]
   \   },
+    \ 'inactive' : {
+    \   'left': [ [ 'filename', 'modified' ] ]
+    \ },
 	\   'component': {
 	\     'lineinfo': ' %3l:%-2v',
+    \     'helloworld': 'Hello, world',
 	\   },
   \   'component_function': {
   \     'gitbranch': 'fugitive#head',
-  \   }
+  \   },
+    \ 'component_expand': {
+    \   'obsession': 'LightlineObsession',
+    \   'tags' : 'LightlineTags'
+    \   }
   \ }
 let g:lightline.separator = {
 	\   'left': '', 'right': ''
@@ -58,7 +77,7 @@ let g:lightline.subseparator = {
 
 let g:lightline.tabline = {
   \   'left': [ ['tabs'] ],
-  \   'right': [ ['close'] ]
+  \   'right': [ [ 'close', 'obsession', 'tags'] ]
   \ }
 
 " font settings
