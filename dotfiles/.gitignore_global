@@ -1,6 +1,8 @@
 
 # Created by https://www.gitignore.io/api/c,vim,c++,linux,macos,latex,python,windows
 
+tags.lock
+tags.temp
 ### C ###
 # Prerequisites
 *.d
