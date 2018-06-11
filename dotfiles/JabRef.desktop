@@ -3,6 +3,6 @@ Enconding=UTF-8
 Type=Application
 Terminal=false
 Icon=/home/shankar/bin/JabRef/JabRef.png
-Exec=java -jar /home/shankar/bin/JabRef/JabRef-4.2.jar
+Exec=java -jar /home/shankar/bin/JabRef/JabRef-4.3.1.jar
 Name=JabRef
 Categories=Office;Development;
