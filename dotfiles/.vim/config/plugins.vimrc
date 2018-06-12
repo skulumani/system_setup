@@ -43,6 +43,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'lervag/vimtex'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'Yggdroot/indentLine'
+Plug 'majutsushi/tagbar'
 
 " Autocompletion stuff
 if has("nvim")

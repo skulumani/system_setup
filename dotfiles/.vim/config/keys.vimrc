@@ -50,6 +50,8 @@ nnoremap <silent> <leader>fh :History<cr>
 " nnoremap <leader>s :set spell!<CR>
 set spelllang=en_us
 
+" tagbar
+nnoremap <silent> <leader>tb :TagbarToggle<CR>
 " nmap <leader>lg :set list!<CR> <bar> :IndentLinesToggle<CR> <bar> :LeadingSpaceToggle<CR>
 
 " delete a buffer without closing split
