@@ -152,7 +152,7 @@
 <entry key="listOfFileColumns" value=""/>
 <entry key="localAutoSave" value="false"/>
 <entry key="lookAndFeel" value="javax.swing.plaf.nimbus.NimbusLookAndFeel"/>
-<entry key="mainWindowPosX" value="-3"/>
+<entry key="mainWindowPosX" value="0"/>
 <entry key="mainWindowPosY" value="25"/>
 <entry key="mainWindowSizeX" value="1926"/>
 <entry key="mainWindowSizeY" value="1058"/>
