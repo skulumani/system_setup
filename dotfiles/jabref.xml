@@ -297,7 +297,7 @@
 <entry key="warnAboutDuplicatesInInspection" value="true"/>
 <entry key="warnBeforeOverwritingKey" value="true"/>
 <entry key="webSearchVisible" value="true"/>
-<entry key="windowMaximised" value="true"/>
+<entry key="windowMaximised" value="false"/>
 <entry key="workingDirectory" value="/home/shankar/texmf/tex/latex/local"/>
 <entry key="writeFieldAddSpaces" value="true"/>
 <entry key="writeFieldCamelCase" value="true"/>
