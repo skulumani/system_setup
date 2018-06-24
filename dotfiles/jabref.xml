@@ -152,10 +152,10 @@
 <entry key="listOfFileColumns" value=""/>
 <entry key="localAutoSave" value="false"/>
 <entry key="lookAndFeel" value="javax.swing.plaf.nimbus.NimbusLookAndFeel"/>
-<entry key="mainWindowPosX" value="0"/>
+<entry key="mainWindowPosX" value="-1"/>
 <entry key="mainWindowPosY" value="0"/>
-<entry key="mainWindowSizeX" value="960"/>
-<entry key="mainWindowSizeY" value="1080"/>
+<entry key="mainWindowSizeX" value="1922"/>
+<entry key="mainWindowSizeY" value="1081"/>
 <entry key="markImportedEntries" value="true"/>
 <entry key="markedEntryBackground0" value="255:255:180"/>
 <entry key="markedEntryBackground1" value="255:220:180"/>
@@ -223,6 +223,7 @@
 <entry key="searchDialogPosX" value="0"/>
 <entry key="searchDialogPosY" value="25"/>
 <entry key="searchDialogWidth" value="650"/>
+<entry key="searchDisplayMode" value="FLOAT"/>
 <entry key="searchGen" value="true"/>
 <entry key="searchOpt" value="true"/>
 <entry key="searchPanelVisible" value="true"/>
@@ -297,7 +298,7 @@
 <entry key="warnAboutDuplicatesInInspection" value="true"/>
 <entry key="warnBeforeOverwritingKey" value="true"/>
 <entry key="webSearchVisible" value="true"/>
-<entry key="windowMaximised" value="false"/>
+<entry key="windowMaximised" value="true"/>
 <entry key="workingDirectory" value="/home/shankar/texmf/tex/latex/local"/>
 <entry key="writeFieldAddSpaces" value="true"/>
 <entry key="writeFieldCamelCase" value="true"/>
