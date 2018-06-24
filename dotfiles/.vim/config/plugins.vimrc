@@ -68,6 +68,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
+" Plug 'dyng/ctrlsf.vim'
 
 " snippet completion
 Plug 'Shougo/neosnippet.vim'
