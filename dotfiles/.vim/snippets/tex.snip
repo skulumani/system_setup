@@ -17,3 +17,18 @@ abbr    texroot
 options head, indent
         % !TEX root = ${1:../root.tex}
         ${0}
+
+snippet newglossaryentry
+abbr    glos_abbr
+alias   glos, abbr, glossary, new, acronym
+options head, indent
+        \newglossaryentry{${1:#:lower case abbreviation for referencing}}{
+            name={${2:#:Upper case of abbreviation}},
+            type=\glsxtrabbrvtype,
+            description={${3:#:Text expansion of the acronym}},
+            first={\glsenetry{$1} (\glsentrytext{$1})},
+            plural={${4:#:RWAs}},
+            descriptionplural={${5:#:Plural expansion}},
+            firstplural={\glsentrydescplural{$1} (\glsentryplural{$1})}
+        }
+        ${0}
