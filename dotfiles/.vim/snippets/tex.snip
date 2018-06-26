@@ -1,6 +1,5 @@
 snippet subfigure
-abbr    subfigure
-options head, indent
+alias   \subfigure, \begin{subfigure}
         \begin{subfigure}[htbp]{${1}\textwidth} 
                 \includegraphics[width=\textwidth, keepaspectratio]{${2}} 
                 \caption{${3} \label{fig:${4}}} 
@@ -8,20 +7,16 @@ options head, indent
         ${0}
 
 snippet subcaptionbox
-abbr    subcaptionbox
-options head, indent
+alias   \subcaptionbox, subcap, subcaption
         \subcaptionbox{${1:Caption}\label{fig:${2:label}}}{\includegraphics[width=0.5\textwidth]{${3}}}${0}
 
 snippet texroot
-abbr    texroot
-options head, indent
+alias   texroot, tex, root
         % !TEX root = ${1:../root.tex}
         ${0}
 
 snippet newglossaryentry
-abbr    glos_abbr
-alias   glos, abbr, glossary, new, acronym
-options head, indent
+alias   glos, abbr, glossary, new, acronym, \newglossaryentry
         \newglossaryentry{${1:#:lower case abbreviation for referencing}}{
             name={${2:#:Upper case of abbreviation}},
             type=\glsxtrabbrvtype,
@@ -32,3 +27,24 @@ options head, indent
             firstplural={\glsentrydescplural{$1} (\glsentryplural{$1})}
         }
         ${0}
+
+snippet subequations
+alias   sub, subeq, eq, \subequations
+        \begin{subequations}\label{eq:${1:subequation}}
+            \begin{align}
+                ${2} 
+            \end{align}
+        \end{subequations}     
+        ${0}
+
+snippet frac
+alias   \frac, fr
+        \frac{${1}}{${2}} ${0}
+
+snippet parenth
+alias   \parenth, par
+        \parenth{${1}} ${0}
+
+snippet cref
+alias   ref, cref, \cref
+        \cref{${1}}${0}
