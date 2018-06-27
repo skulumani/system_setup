@@ -108,7 +108,7 @@ nnoremap <leader>fix :Ack \(FIXME\)\\|\(TODO\)\\|\(BUG\)<CR>
 "
 " Neomake commands
 if has('nvim')
-    " nnoremap <leader>ml :Neomake<CR> :echo "LINTING!"<CR>
+    nnoremap <leader>m :Neomake<CR> :echo "LINTING!"<CR>
 endif
 
 autocmd FileType cpp nnoremap <buffer> <leader>ll :Make -C build -j4<CR> :echo "MAKING!"<CR>

@@ -1,6 +1,8 @@
 if has('nvim')
     " call neomake#configure#automake('nw', 1000)
     let g:neomake_open_list = 1
+    " When writing a buffer (no delay).
+    call neomake#configure#automake('w')
 
     " Automatically open the error window
     let g:neomake_python_enabled_makers = ['pylint', 'flake8' ]
@@ -31,4 +33,7 @@ if has('nvim')
         \ 'exe': 'clang++',
         \ 'args': ['-Iinclude', '-Wall', '-Wextra', '-Weverything', '-pedantic', '-Wno-sign-conversion'],
         \ }
+
+     " LaTeX makers
+     let g:neomake_tex_enabled_makers = ['lacheck']
 endif

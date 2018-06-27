@@ -2,7 +2,10 @@ if has('nvim')
     let g:deoplete#enable_at_startup = 0
     " let g:deoplete#max_list = 10
     let g:deoplete#enable_refresh_always = 0
-
+    call deoplete#custom#option({
+                \ 'auto_complete_delay': 10,
+                \ 'num_processes': 4,
+                \ })
 
     command! DeopleteToggle call deoplete#toggle()
     " autocmd CompleteDone * pclose!
@@ -24,8 +27,8 @@ imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>     <Plug>(neosnippet_expand_target)
 
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-            \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+" smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+"             \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
 set completeopt+=preview
 let g:neosnippet#enable_preview = 1
