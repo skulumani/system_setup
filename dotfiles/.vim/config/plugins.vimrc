@@ -24,12 +24,15 @@ endif
 Plug 'junegunn/vim-plug'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
+Plug 'junegunn/gv.vim'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-dispatch'
 Plug 'freitass/todo.txt-vim'
 Plug 'scrooloose/nerdtree', { 'on' : 'NERDTreeToggle' }
+Plug 'andymass/vim-matchup'
+Plug 'machakann/vim-sandwich'
 
 " Appearance
 Plug 'itchyny/lightline.vim'

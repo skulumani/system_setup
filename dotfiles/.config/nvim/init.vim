@@ -13,5 +13,6 @@ source $HOME/.vim/config/nerdtree.vimrc
 source $HOME/.vim/config/indentline.vimrc
 source $HOME/.vim/config/fzf.vimrc
 source $HOME/.vim/config/codechecking.vimrc 
+source $HOME/.vim/config/surround.vimrc
 
  

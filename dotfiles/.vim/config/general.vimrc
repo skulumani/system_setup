@@ -25,6 +25,13 @@ set laststatus =2
 " Set linenumbers
 set number
 set relativenumber
+" automatically switch to absolute line numbers when losing focus
+augroup numbertoggle
+    autocmd!
+    autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+    autocmd BufLeave,FocusLost,InsertEnter * set norelativenumber
+augroup END
+
 set wrap
 
 " column ruler at 100

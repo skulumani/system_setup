@@ -5,16 +5,26 @@ if has('nvim')
     call deoplete#custom#option({
                 \ 'auto_complete_delay': 10,
                 \ 'num_processes': 4,
+                \ 'auto_complete': v:false,
                 \ })
 
     command! DeopleteToggle call deoplete#toggle()
     " autocmd CompleteDone * pclose!
-    
+        
     " use tab to forward cycle
     inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
     " use tab to backward cycle
     inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 
+    " manual completion for deoplete
+    inoremap <silent><expr> <TAB>
+                \ pumvisible() ? "\<C-n>" :
+                \ <SID>check_back_space() ? "\<TAB>" :
+                \ deoplete#mappings#manual_complete()
+    function! s:check_back_space() abort "{{{
+        let col = col('.') - 1
+        return !col || getline('.')[col - 1]  =~ '\s'
+    endfunction"}}}
 else
     " Remove old neocomplete shit
 endif

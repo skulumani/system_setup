@@ -53,7 +53,9 @@ let g:tex_conceal = ""
 let g:vimtex_fold_enabled = 0
 let g:vimtex_fold_manual = 1
 let g:vimtex_indent_enabled = 1
-let g:vimtex_matchparen_enabled = 1
+let g:vimtex_matchparen_enabled = 0
+let g:matchup_override_vimtex = 1
+let g:matchup_matchparen_deferred = 1
 
 " Can hide specifc warning messages from the quickfix window
 " Quickfix with Neovim is broken or something
