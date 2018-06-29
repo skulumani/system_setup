@@ -75,6 +75,9 @@ endif
 set complete-=i
 " set completeopt+=preview
 
+" matchparen options
+let g:matchparen_timeout = 20
+let g:matchparen_insert_timeout = 20
 
 set autoread " autoread files
 " Triger `autoread` when files changes on disk
