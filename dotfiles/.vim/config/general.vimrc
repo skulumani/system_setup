@@ -47,6 +47,7 @@ set winminheight=5
 set scrolloff=5 
 set sidescroll=1
 set sidescrolloff=15
+
 " Folding in Vim
 set foldmethod=indent
 " set foldclose=all
@@ -67,6 +68,8 @@ set guioptions-=e  " Don't use GUI tabline
 " Hiddent characters
 " set listchars=tab:▸\ ,eol:¬" ,space:␣
 set listchars=tab:▸\ ,eol:¬"
+
+set fillchars=vert:│,fold:\ 
 
 " opening new buffers
 set switchbuf=usetab
