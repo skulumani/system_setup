@@ -28,7 +28,7 @@ if has('unix')
         endfunction
     else
         let g:latex_view_general_viewer = "zathura"
-        let g:vimtex_view_method = "zathura"
+       let g:vimtex_view_method = "zathura"
     endif
 elseif has('win32')
 
@@ -50,10 +50,10 @@ let g:deoplete#omni#input_patterns.tex = g:vimtex#re#deoplete
 " confusing
 let g:tex_conceal = ""
 
-let g:vimtex_fold_enabled = 0
-let g:vimtex_fold_manual = 1
-let g:vimtex_indent_enabled = 1
+let g:vimtex_fold_enabled = 1
+let g:vimtex_toc_fold = 1
 let g:vimtex_matchparen_enabled = 0
+
 let g:matchup_override_vimtex = 1
 let g:matchup_matchparen_deferred = 1
 
@@ -79,30 +79,3 @@ let g:vimtex_quickfix_latexlog = {
             \   'titlesec' : 1,
             \ },
             \}
-" vim-surround in LaTeX
-" augroup latexSurround
-"     autocmd!
-"     autocmd FileType tex call s:latexSurround()
-" augroup END
-" 
-" function! s:latexSurround()
-"     let b:surround_{char2nr("e")}
-"     \ = "\\begin{\1environment: \1}\n\t\r\n\\end{\1\1}"
-"     let b:surround_{char2nr("c")} = "\\\1command: \1{\r}"
-" endfunction
-" if !exists('g:deoplete#omni#input_patterns')
-"     let g:deoplete#omni#input_patterns = {}
-" endif
-" let g:deoplete#omni#input_patterns.tex = '\\(?:'
-"             \ .  '\w*cite\w*(?:\s*\[[^]]*\]){0,2}\s*{[^}]*'
-"             \ . '|\w*ref(?:\s*\{[^}]*|range\s*\{[^,}]*(?:}{)?)'
-"             \ . '|hyperref\s*\[[^]]*'
-"             \ . '|includegraphics\*?(?:\s*\[[^]]*\]){0,2}\s*\{[^}]*'
-"             \ . '|(?:include(?:only)?|input)\s*\{[^}]*'
-"             \ . '|\w*(gls|Gls|GLS)(pl)?\w*(\s*\[[^]]*\]){0,2}\s*\{[^}]*'
-"             \ . '|includepdf(\s*\[[^]]*\])?\s*\{[^}]*'
-"             \ . '|includestandalone(\s*\[[^]]*\])?\s*\{[^}]*'
-"             \ . '|usepackage(\s*\[[^]]*\])?\s*\{[^}]*'
-"             \ . '|documentclass(\s*\[[^]]*\])?\s*\{[^}]*'
-"             \ . '|\w*'
-"             \ .')'
