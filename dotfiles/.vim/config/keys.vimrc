@@ -111,7 +111,10 @@ if has('nvim')
     nnoremap <leader>m :Neomake<CR> :echo "LINTING!"<CR>
 endif
 
-autocmd FileType cpp nnoremap <buffer> <leader>ll :Make -C build -j4<CR> :echo "MAKING!"<CR>
+augroup cpp_mak
+    autocmd!
+    autocmd FileType cpp nnoremap <buffer> <leader>ll :Make -C build -j4<CR> :echo "MAKING!"<CR>
+augroup END
 
 " Options for vim-easy-align
 vmap <Enter> <Plug>(EasyAlign)
