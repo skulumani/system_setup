@@ -51,11 +51,7 @@ set sidescroll=1
 set sidescrolloff=15
 
 " Folding in Vim
-set foldmethod=indent
-augroup filetype_tex
-    autocmd!
-    autocmd FileType *tex set foldmethod=manual
-augroup END
+set foldmethod=syntax
 
 " set foldclose=all
 set foldnestmax=3
