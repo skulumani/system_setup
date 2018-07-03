@@ -54,7 +54,7 @@ set sidescrolloff=15
 set foldmethod=indent
 augroup filetype_tex
     autocmd!
-    autocmd FileType tex set foldmethod=manual
+    autocmd FileType *tex set foldmethod=manual
 augroup END
 
 " set foldclose=all
