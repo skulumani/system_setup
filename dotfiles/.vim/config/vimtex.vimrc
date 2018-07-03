@@ -49,8 +49,9 @@ let g:deoplete#omni#input_patterns.tex = g:vimtex#re#deoplete
 " One of the neosnippet plugins will conceal symbols in LaTeX which is
 " confusing
 let g:tex_conceal = ""
-
-let g:vimtex_fold_enabled = 1
+let g:tex_fold_enabled = 1
+let g:vimtex_fold_enabled = 0
+let g:vimtex_fold_manual = 1
 let g:vimtex_toc_fold = 1
 let g:vimtex_matchparen_enabled = 0
 

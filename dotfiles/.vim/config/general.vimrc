@@ -38,6 +38,8 @@ set wrap
 set ruler
 set colorcolumn=80
 
+set lazyredraw " for faster scrolling
+
 " minimum window size
 set winwidth=85
 set winheight=5
@@ -49,11 +51,11 @@ set sidescroll=1
 set sidescrolloff=15
 
 " Folding in Vim
-set foldmethod=indent
+set foldmethod=manual
 " set foldclose=all
 set foldnestmax=3
 set nofoldenable
-set foldlevel=99
+
 " finding files in vim
 set path+=**
 set wildchar=<Tab> wildmenu wildmode=full
