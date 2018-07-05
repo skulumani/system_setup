@@ -6,7 +6,6 @@ function cs () {
     cd "$@" && ls 
     }
 alias jabref='java -jar $HOME/bin/JabRef/JabRef-*.jar'
-alias nvim='~/bin/neovim/nvim'
 # create and move to new directory
 mcd () {
     mkdir -p $1
