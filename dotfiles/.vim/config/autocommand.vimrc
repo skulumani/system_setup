@@ -6,7 +6,7 @@ if has("autocmd")
         " autocmd! BufWritePost $MYVIMRC source $MYVIMRC | echom "Reloaded " . $MYVIMRC | redraw
         " Makfile needs tabs and not spaces
         autocmd FileType make setlocal noexpandtab
-        autocmd InsertEnter * call deoplete#enable()
+        " autocmd InsertEnter * call deoplete#enable()
     augroup END
 endif
 
@@ -20,14 +20,3 @@ endif
 " autocmd FileChangedShellPost *
   " \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
 
-
-augroup latexSurround
-    autocmd!
-    autocmd FileType tex call s:latexSurround()
-augroup END
-
-function! s:latexSurround()
-    let b:surround_{char2nr("e")}
-                \ = "\\begin{\1environment: \1}\n\t\r\n\\end{\1\1}"
-    let b:surround_{char2nr("c")} = "\\\1command: \1{\r}"
-endfunction

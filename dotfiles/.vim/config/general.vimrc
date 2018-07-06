@@ -41,9 +41,9 @@ set colorcolumn=80
 set lazyredraw " for faster scrolling
 
 " minimum window size
-set winwidth=85
-set winheight=5
-set winminheight=5
+" set winwidth=85
+"set winheight=5
+" set winminheight=5
 
 " Keep x lines below and above the cursor
 set scrolloff=5 

@@ -49,11 +49,15 @@ Plug 'Yggdroot/indentLine'
 Plug 'Konfekt/FastFold'
 
 " Autocompletion stuff
-if has("nvim")
+if has('nvim')
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-    " Plug 'zchee/deoplete-jedi'
-    " Plug 'Shougo/echodoc.vim'
+else
+    Plug 'Shougo/deoplete.nvim'
+    Plug 'roxma/nvim-yarp'
+    Plug 'roxma/vim-hug-neovim-rpc'
 endif
+Plug 'zchee/deoplete-jedi'
+Plug 'Shougo/echodoc.vim'
 
 
 " Code linting

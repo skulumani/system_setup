@@ -51,7 +51,6 @@ nnoremap <silent> <leader>fh :History<cr>
 set spelllang=en_us
 
 " tagbar
-nnoremap <silent> <leader>tb :TagbarToggle<CR>
 " nmap <leader>lg :set list!<CR> <bar> :IndentLinesToggle<CR> <bar> :LeadingSpaceToggle<CR>
 
 " delete a buffer without closing split
@@ -111,7 +110,7 @@ if has('nvim')
     nnoremap <leader>m :Neomake<CR> :echo "LINTING!"<CR>
 endif
 
-augroup cpp_mak
+augroup cpp_make
     autocmd!
     autocmd FileType cpp nnoremap <buffer> <leader>ll :Make -C build -j4<CR> :echo "MAKING!"<CR>
 augroup END
