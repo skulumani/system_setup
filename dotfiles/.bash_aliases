@@ -15,6 +15,8 @@ mcd () {
 # alias to swap escape and capslock
 alias swap_caps_escape='setxkbmap -option "caps:escape"'
 
+nonascii() { LANG=C grep --color=always '[^ -~]\+'; }
+
 # From https://github.com/xvoland/Extract/blob/master/extract.sh
 function extract {
  if [ -z "$1" ]; then
