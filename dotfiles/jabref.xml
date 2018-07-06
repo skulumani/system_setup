@@ -8,13 +8,14 @@
 <node name="jabref">
 <map>
 <entry key="CleanUpConvertToBiblatex" value="false"/>
+<entry key="CleanUpConvertToBibtex" value="false"/>
 <entry key="CleanUpDOI" value="false"/>
 <entry key="CleanUpFixFileLinks" value="true"/>
-<entry key="CleanUpFormatters" value="enabled;date[normalize_date]&#10;pages[normalize_page_numbers]&#10;month[normalize_month]&#10;title[protect_terms,title_case]&#10;"/>
+<entry key="CleanUpFormatters" value="enabled;date[normalize_date]&#10;all[unicode_to_latex]&#10;pages[normalize_page_numbers]&#10;month[normalize_month]&#10;all-text-fields[identity,html_to_latex,unicode_to_latex,ordinals_to_superscript]&#10;abstract[unicode_to_latex]&#10;"/>
 <entry key="CleanUpISSN" value="false"/>
 <entry key="CleanUpMakePathsRelative" value="false"/>
 <entry key="CleanUpMovePDF" value="false"/>
-<entry key="CleanUpRenamePDF" value="true"/>
+<entry key="CleanUpRenamePDF" value="false"/>
 <entry key="CleanUpRenamePDFonlyRelativePaths" value="false"/>
 <entry key="CleanUpUpgradeExternalLinks" value="false"/>
 <entry key="DroppedFileHandler_CopyFile" value="false"/>
