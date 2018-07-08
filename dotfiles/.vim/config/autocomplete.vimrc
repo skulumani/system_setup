@@ -5,7 +5,7 @@ if has('nvim')
     call deoplete#custom#option({
                 \ 'auto_complete_delay': 10,
                 \ 'num_processes': 4,
-                \ 'auto_complete': v:true,
+                \ 'auto_complete': v:false,
                 \ })
 
     command! DeopleteToggle call deoplete#toggle()

@@ -7,6 +7,7 @@ if has("autocmd")
         " Makfile needs tabs and not spaces
         autocmd FileType make setlocal noexpandtab
         " autocmd InsertEnter * call deoplete#enable()
+        autocmd BufNewFile,BufReadPost *.tikz set filetype=tex
     augroup END
 endif
 
