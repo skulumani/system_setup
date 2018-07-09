@@ -1,11 +1,12 @@
 let g:deoplete#enable_at_startup = 1
 " let g:deoplete#max_list = 10
 let g:deoplete#enable_refresh_always = 0
-" call deoplete#custom#option({
-"             \ 'auto_complete_delay': 10,
-"             \ 'num_processes': 4,
-"             \ 'auto_complete': v:false,
-"             \ })
+call deoplete#custom#option({
+            \ 'auto_complete_delay': 50,
+            \ 'num_processes': 4,
+            \ 'auto_complete': v:true,
+            \ 'max_list': 20,
+            \ })
 
 command! DeopleteToggle call deoplete#toggle()
 " autocmd CompleteDone * pclose!

@@ -51,5 +51,6 @@ sub run_bib2gls {
 $clean_ext .= '%R.ist %R.xdy';
 
 $pdf_mode = 1;
+$pdflatex = 'pdflatex -synctex=1 -interaction=nonstopmode -shell-escape';
 #$pdflatex = 'xelatex -file-line-error -shell-escape -synctex=1';
 #$pdflatex = 'lualatex --interaction=nonstopmode --shell-escape --synctex=1';
