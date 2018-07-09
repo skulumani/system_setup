@@ -1,33 +1,33 @@
-if has('nvim')
-    let g:deoplete#enable_at_startup = 1
-    " let g:deoplete#max_list = 10
-    let g:deoplete#enable_refresh_always = 0
-    " call deoplete#custom#option({
-    "             \ 'auto_complete_delay': 10,
-    "             \ 'num_processes': 4,
-    "             \ 'auto_complete': v:false,
-    "             \ })
+let g:deoplete#enable_at_startup = 1
+" let g:deoplete#max_list = 10
+let g:deoplete#enable_refresh_always = 0
+" call deoplete#custom#option({
+"             \ 'auto_complete_delay': 10,
+"             \ 'num_processes': 4,
+"             \ 'auto_complete': v:false,
+"             \ })
 
-    command! DeopleteToggle call deoplete#toggle()
-    " autocmd CompleteDone * pclose!
-        
-    " use tab to forward cycle
-    inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-    " use tab to backward cycle
-    inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+command! DeopleteToggle call deoplete#toggle()
+" autocmd CompleteDone * pclose!
 
-    " manual completion for deoplete
-    " inoremap <silent><expr> <TAB>
-    "             \ pumvisible() ? "\<C-n>" :
-    "             \ <SID>check_back_space() ? "\<TAB>" :
-    "             \ deoplete#mappings#manual_complete()
-    " function! s:check_back_space() abort "{{{
-    "     let col = col('.') - 1
-    "     return !col || getline('.')[col - 1]  =~ '\s'
-    " endfunction"}}}
-else
-    " Remove old neocomplete shit
+" use tab to forward cycle
+inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+" use tab to backward cycle
+inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+
+" manual completion for deoplete
+" inoremap <silent><expr> <TAB>
+"             \ pumvisible() ? "\<C-n>" :
+"             \ <SID>check_back_space() ? "\<TAB>" :
+"             \ deoplete#mappings#manual_complete()
+" function! s:check_back_space() abort "{{{
+"     let col = col('.') - 1
+"     return !col || getline('.')[col - 1]  =~ '\s'
+" endfunction"}}}
+if !exists('g:deoplete#omni#input_patterns')
+    let g:deoplete#omni#input_patterns = {}
 endif
+let g:deoplete#omni#input_patterns.tex = g:vimtex#re#deoplete
 
 " NeoSnippet options
 let g:neosnippet#snippets_directory='~/.vim/snippets'
