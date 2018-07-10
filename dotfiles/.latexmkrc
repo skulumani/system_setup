@@ -7,6 +7,7 @@ push @generated_exts, 'acn', 'acr', 'alg';
 push @generated_exts, 'glg-abr', 'glo-abr', 'gls-abr';
 push @generated_exts, 'slg', 'slo', 'sls';
 push @generated_exts, 'dvi', 'aux';
+push @generated_exts, 'figlist', 'ist', 'makefile', 'unq';
 
 add_cus_dep('glo', 'gls', 0, 'run_makeglossaries');
 add_cus_dep('acn', 'acr', 0, 'run_makeglossaries');
@@ -57,7 +58,6 @@ $pdflatex = 'pdflatex -synctex=1 -interaction=nonstopmode -shell-escape';
 
 # Adapted from http://tex.stackexchange.com/a/145878/26980
 # Add a few files to cleanup
-push @generated_exts, 'figlist', 'ist', 'makefile', 'unq';
 # On the initial run, %tikzexternalflag is set to an empty list (when
 # it reads this .latexmkrc).
 #
@@ -65,7 +65,7 @@ push @generated_exts, 'figlist', 'ist', 'makefile', 'unq';
 
 our %tikzexternalflag = ();
 
-$pdflatex = 'internal tikzpdflatex -shell-escape -synctex=1 %O %S %B';
+# $pdflatex = 'internal tikzpdflatex -shell-escape -synctex=1 %O %S %B';
 
 sub tikzpdflatex {
     our %externalflag;
