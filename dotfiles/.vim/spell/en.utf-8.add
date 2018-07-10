@@ -128,3 +128,7 @@ mascon
 cartesian
 polyhedra
 halfedge
+cartesian
+centrobaric
+defacto
+halfedges
