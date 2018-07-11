@@ -29,7 +29,7 @@ Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-dispatch'
-Plug 'freitass/todo.txt-vim'
+" Plug 'freitass/todo.txt-vim'
 Plug 'scrooloose/nerdtree', { 'on' : 'NERDTreeToggle' }
 Plug 'andymass/vim-matchup'
 Plug 'machakann/vim-sandwich'
@@ -45,7 +45,7 @@ Plug 'ryanoasis/vim-devicons'
 " Programming plugins
 Plug 'lervag/vimtex'
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'Yggdroot/indentLine'
+" Plug 'Yggdroot/indentLine'
 Plug 'Konfekt/FastFold'
 
 " Autocompletion stuff
@@ -65,9 +65,9 @@ if has("nvim")
     Plug 'neomake/neomake'
     Plug 'sbdchd/neoformat'
 endif
-Plug 'Vimjas/vim-python-pep8-indent'
+" Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'tpope/vim-commentary'
-Plug 'junegunn/vim-easy-align'
+" Plug 'junegunn/vim-easy-align'
 " Plug 'airblade/vim-gitgutter'
 " Plug 'Rip-Rip/clang_complete' " autcomplete for C++
 
