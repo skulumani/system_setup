@@ -9,6 +9,8 @@ call deoplete#custom#option({
             \ })
 
 command! DeopleteToggle call deoplete#toggle()
+command! DeopleteEnable call deoplete#enable()
+command! DeopleteDisable call deoplete#disable()
 " autocmd CompleteDone * pclose!
 
 " use tab to forward cycle

@@ -38,7 +38,7 @@
           <entry key="askedCollectTelemetry" value="true"/>
           <entry key="autoAssignGroup" value="true"/>
           <entry key="autoCompFF" value="false"/>
-          <entry key="autoCompFirstNameMode" value="BOTH"/>
+          <entry key="autoCompFirstNameMode" value="ONLY_FULL"/>
           <entry key="autoCompLF" value="false"/>
           <entry key="autoComplete" value="true"/>
           <entry key="autoCompleteFields" value="author;editor;title;journal;publisher;keywords;crossref;related;entryset"/>
@@ -89,7 +89,7 @@
           <entry key="emailSubject" value="References"/>
           <entry key="enforceLegalBibtexKey" value="true"/>
           <entry key="entryEditorHeight" value="576"/>
-          <entry key="entryEditorHeightFX" value="0.21902654867256638"/>
+          <entry key="entryEditorHeightFX" value="0.21913236929922136"/>
           <entry key="exportInOriginalOrder" value="false"/>
           <entry key="exportInSpecifiedOrder" value="true"/>
           <entry key="exportInStandardOrder" value="true"/>

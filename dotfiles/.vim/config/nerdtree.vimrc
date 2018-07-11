@@ -6,7 +6,7 @@
 " Ignore files
 let NERDTreeIgnore = ['\.pyc$', 'tags.lock', 'tags', 'tags.temp']
 let NERDTreeHijackNetrw=1
-let g:NERDTreeWinSize=40
+" let g:NERDTreeWinSize=40
 
 " Netrw options
 let g:netrw_liststyle=3
