@@ -51,8 +51,6 @@ apt_packages=(
     python-pip
     python3-pip
     gnome-terminal
-    vim-gnome
-    borgbackup
     conky-all
     jq
     curl
