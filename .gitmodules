@@ -7,7 +7,7 @@
 	url = https://github.com/skulumani/sublime_settings.git
 [submodule "dotfiles/texmf"]
 	path = dotfiles/texmf
-	url = git@github.com:skulumani/texmf.git
+	url = https://github.com/skulumani/texmf.git
 [submodule "dotfiles/.tmux/plugins/tpm"]
 	path = dotfiles/.tmux/plugins/tpm
         url = https://github.com/tmux-plugins/tpm.git
