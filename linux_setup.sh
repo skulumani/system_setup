@@ -263,7 +263,7 @@ prompt "Install pip packages" "install_pips"
 # setup zsh as default
 prompt "Set zsh as default shell" "chsh -s $(which zsh)"
 
-prompt "Install oh-my-zsh" "git clone git://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh"
+prompt "Install oh-my-zsh" "git clone https://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh"
 
 # build custom versions of apps
 prompt "Build TMUX" "bash ~/Documents/system_setup/build_tmux.sh"
