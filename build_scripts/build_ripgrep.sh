@@ -1,7 +1,7 @@
 #!/bin/bash
 
 set -e
-RG_VERSION=0.8.1
+RG_VERSION=0.9.0
 RG_LINK="https://github.com/BurntSushi/ripgrep/releases/download/0.8.1/ripgrep-${RG_VERSION}-x86_64-unknown-linux-musl.tar.gz"
 RG_DIR="$HOME/bin"
 
