@@ -89,7 +89,7 @@
           <entry key="emailSubject" value="References"/>
           <entry key="enforceLegalBibtexKey" value="true"/>
           <entry key="entryEditorHeight" value="576"/>
-          <entry key="entryEditorHeightFX" value="0.5183537263626251"/>
+          <entry key="entryEditorHeightFX" value="0.5188053097345132"/>
           <entry key="exportInOriginalOrder" value="false"/>
           <entry key="exportInSpecifiedOrder" value="true"/>
           <entry key="exportInStandardOrder" value="true"/>
@@ -252,7 +252,7 @@
           <entry key="sidePaneComponentNames" value="org.jabref.gui.groups.GroupSidePane;org.jabref.gui.importer.fetcher.GeneralFetcher"/>
           <entry key="sidePaneComponentPreferredPositions" value="1;0"/>
           <entry key="sidePaneWidth" value="283"/>
-          <entry key="sidePaneWidthFX" value="0.14166666666666666"/>
+          <entry key="sidePaneWidthFX" value="0.20833333333333334"/>
           <entry key="sizeX" value="1375"/>
           <entry key="sizeY" value="901"/>
           <entry key="specialFieldsEnabled" value="true"/>
