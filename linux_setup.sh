@@ -42,17 +42,10 @@ apt_packages=(
     zathura-dev
     xdotool
     redshift-gtk
-    openjdk-8-jre
-    openjfx
     trash-cli
     software-properties-common
-    python-dev
-    python3-dev
-    python-pip
-    python3-pip
     gnome-terminal
     conky-all
-    jq
     curl
     lm-sensors
     hddtemp
