@@ -24,7 +24,8 @@ fi
 echo "Install Oracle  JAVA"
 sudo add-apt-repository ppa:webupd8team/java
 sudo apt-get update
-suod apt-get install oracle-java8-installer
+sudo apt-get install oracle-java8-installer
+
 # setup links for Jabref icon/menu item
 
 # should be setup by the dotfiles installer
