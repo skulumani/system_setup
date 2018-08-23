@@ -11,3 +11,4 @@ dotfiles/.mutt/shanks.k/bodies/*
 dotfiles/.mutt/shanks.k/headers/*
 dotfiles/.mutt/certificates
 dotfiles/.vim/swap/*.swo
+dotfiles/bin/nvim
