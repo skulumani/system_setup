@@ -1,5 +1,7 @@
 " Autoload vim plug if not already there
+if has("win32")
 
+else
 if has("nvim")
     if empty(glob('~/.config/nvim/autoload/plug.vim'))
         silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
@@ -13,13 +15,18 @@ else
         " autocmd VimEnter * PlugInstall
     endif
 endif
+
+
 " All the plugins are listed here
+if has("win32")
+
+else
 if has('nvim')
     call plug#begin('~/.config/nvim/plug.vim')
 else
     call plug#begin('~/.vim/plug.vim')
 endif
-
+endif
 " Productivity
 Plug 'junegunn/vim-plug'
 Plug 'tpope/vim-surround'
@@ -88,3 +95,4 @@ Plug 'edkolev/tmuxline.vim' " makes tmux look like vim-airline
 
 call plug#end()
 " start all the plugins above
+endif
