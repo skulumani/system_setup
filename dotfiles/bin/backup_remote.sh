@@ -29,7 +29,7 @@ source ~/borg_passphrase.sh
 readonly USER=login
 readonly HOST=example.com
 readonly REPO="/sharedfolders/borgbackup/$(hostname)" # Path to repository on the host
-readonly TARGET="root@10.0.0.3:${REPO}"
+readonly TARGET="shankar@10.0.0.3:${REPO}"
 
 # Valid options are "none", "keyfile", and "repokey". See Borg docs.
 readonly ENCRYPTION_METHOD=repokey
