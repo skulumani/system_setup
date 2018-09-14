@@ -28,8 +28,8 @@ source ~/borg_passphrase.sh
 # https://borgbackup.readthedocs.io/en/stable/faq.html#can-i-backup-from-multiple-servers-into-a-single-repository
 readonly USER=login
 readonly HOST=example.com
-readonly REPO="/media/shankar/borg/backup/borgbackup/$(hostname)" # Path to repository on the host
-readonly TARGET="seas13009_borg:${REPO}"
+readonly REPO="/sharedfolders/borgbackup/$(hostname)" # Path to repository on the host
+readonly TARGET="root@10.0.0.3:${REPO}"
 
 # Valid options are "none", "keyfile", and "repokey". See Borg docs.
 readonly ENCRYPTION_METHOD=repokey
@@ -43,7 +43,7 @@ readonly COMPRESSION_LEVEL=6
 readonly HOME=/home/shankar
 
 # Whitespace-separated list of paths to back up.
-readonly SOURCE_PATHS="${HOME}/Documents ${HOME}/Downloads /media/shankar/data/Drive/docs /media/shankar/data/Drive/GWU ${HOME}/Drive"
+readonly SOURCE_PATHS="${HOME}/Documents ${HOME}/Downloads ${HOME}/Drive"
 
 # Whitespace-separated list of paths to exclude from backup.
 readonly EXCLUDE="*.pyc"
