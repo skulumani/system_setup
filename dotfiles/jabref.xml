@@ -44,7 +44,7 @@
 <entry key="autoCompleteFields" value="author;editor;title;journal;publisher;keywords;crossref;related;entryset"/>
 <entry key="autoDoubleBraces" value="false"/>
 <entry key="autoOpenForm" value="true"/>
-<entry key="autoResizeMode" value="true"/>
+<entry key="autoResizeMode" value="4"/>
 <entry key="autoSave" value="true"/>
 <entry key="autoSaveInterval" value="5"/>
 <entry key="autoSyncSpecialFieldsToKeywords" value="true"/>
@@ -154,12 +154,12 @@
 <entry key="lastFocused" value="/home/shankar/texmf/bibtex/bib/library.bib"/>
 <entry key="lastUsedImport" value="__all"/>
 <entry key="listOfFileColumns" value=""/>
-<entry key="localAutoSave" value="true"/>
+<entry key="localAutoSave" value="false"/>
 <entry key="lookAndFeel" value="javax.swing.plaf.nimbus.NimbusLookAndFeel"/>
-<entry key="mainWindowPosX" value="960"/>
+<entry key="mainWindowPosX" value="-1"/>
 <entry key="mainWindowPosY" value="25"/>
-<entry key="mainWindowSizeX" value="960"/>
-<entry key="mainWindowSizeY" value="1055"/>
+<entry key="mainWindowSizeX" value="1922"/>
+<entry key="mainWindowSizeY" value="1056"/>
 <entry key="markImportedEntries" value="true"/>
 <entry key="markedEntryBackground0" value="255:255:180"/>
 <entry key="markedEntryBackground1" value="255:220:180"/>
@@ -304,7 +304,7 @@
 <entry key="warnAboutDuplicatesInInspection" value="true"/>
 <entry key="warnBeforeOverwritingKey" value="true"/>
 <entry key="webSearchVisible" value="true"/>
-<entry key="windowMaximised" value="false"/>
+<entry key="windowMaximised" value="true"/>
 <entry key="workingDirectory" value="/home/shankar/texmf/tex/latex/local"/>
 <entry key="writeFieldAddSpaces" value="true"/>
 <entry key="writeFieldCamelCase" value="true"/>
