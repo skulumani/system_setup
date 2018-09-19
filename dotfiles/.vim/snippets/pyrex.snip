@@ -1,0 +1,115 @@
+snippet    future
+abbr	   future 
+options    head, indent 
+	from __future__ import absolute_import, division, print_function, unicode_literals
+	${0}
+
+snippet modeline
+abbr    modeline
+options head, indent
+        # vim: ai ts=4 et sw=4 sts=4 ft=python
+        ${0}
+
+snippet license
+abbr	license
+options head, indent
+	Copyright (C) {2017} {Shankar Kulumani}
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.${0}
+
+snippet doc_func
+abbr	doc_func
+	r"""${1:A one line description of the function}
+
+	${2:Extended description of the function.}
+
+	Parameters
+	----------
+	${3:var1} : ${4:array_like and type}
+		${5:Description of the variable}
+
+	Returns
+	-------
+	${6:describe} : ${7:type}
+		${8:Explanation of return value named describe}
+
+	Other Parameters
+	----------------
+	${9:only_seldom_used_keywords} : ${10:type}
+		${11:Explanation of this parameter}
+
+	Raises
+	------
+	${12:BadException}
+		Because you shouldn't have done that.
+
+	See Also
+	--------
+        other_func: Other function that this one might call
+
+	Notes
+	-----
+	You may include some math:
+
+	.. math:: X(e^{j\omega } ) = x(n)e^{ - j\omega n}
+
+	Author
+	------
+	Shankar Kulumani		GWU		skulumani@gwu.edu
+
+	References
+	----------
+	Cite the relevant literature, e.g. [1]_.  You may also cite these
+	references in the notes section above.
+
+	.. [1] Shannon, Claude E. "Communication theory of secrecy systems."
+	Bell Labs Technical Journal 28.4 (1949): 656-715
+
+	Examples
+	--------
+	An example of how to use the function
+
+	>>> a = [1, 2, 3]
+	>>> print [x + 3 for x in a]
+	[4, 5, 6]
+	>>> print "a\n\nb"
+	a
+	b
+
+	"""${0}
+
+snippet doc_module
+abbr	doc_module
+options	head, indent
+	"""${1:Module Name}
+	
+	Extended description of the module
+
+	Notes
+	-----
+		This is an example of an indented section. It's like any other section,
+		but the body is indented to help it stand out from surrounding text.
+	
+	If a section is indented, then a section break is created by
+	resuming unindented text.
+	
+	Attributes
+	----------
+	module_level_variable1 : int
+		Descrption of the variable
+
+	Author
+	------
+	Shankar Kulumani		GWU		skulumani@gwu.edu
+	"""${0}
