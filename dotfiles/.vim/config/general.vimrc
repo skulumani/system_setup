@@ -2,7 +2,7 @@ filetype plugin indent on
 syntax on
 set nocompatible
 set autoindent
-set nomodeline " disable modeline vulnerability
+set modeline " disable modeline vulnerability
 " text encoding
 set encoding=utf8
 
