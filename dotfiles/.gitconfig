@@ -34,3 +34,5 @@
     staged = diff --cached
     p = add --patch
     update = "!git pull && git submodule update --init --recursive"
+[credential]
+	helper = cache --timeout=84600
