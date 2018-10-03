@@ -111,3 +111,6 @@ SPACESHIP_DIR_PREFIX=""
 # BASE16 setup for colors
 BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+
+# added by travis gem
+[ -f /Users/shankar/.travis/travis.sh ] && source /Users/shankar/.travis/travis.sh
