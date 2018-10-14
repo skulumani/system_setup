@@ -20,7 +20,7 @@ endif
 set guifont=Sauce\ Code\ Pro\ Medium\ Nerd\ Font\ Complete\ Mono\ 12
 set background=dark
 let g:onedark_termcolors=16
-colorscheme flattened_dark
+colorscheme onedark
 
 " base16 vim
 " if filereadable(expand("~/.vimrc_background"))
