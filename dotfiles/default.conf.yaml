@@ -38,6 +38,8 @@
     ~/antigen.zsh : antigen.zsh
     ~/.mutt: .mutt
     ~/.condarc: .condarc
+    ~/.gnupg/gpg.conf: gpg.conf
+    ~/.gnupg/gpg-agent.conf: gpg-agent.conf
 
 - shell:
     - [git submodule update --init --recursive --remote, Updating submodules]
