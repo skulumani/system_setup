@@ -1,7 +1,7 @@
 [user]
     email = shanks.k@gmail.com
     name = Shankar Kulumani
-    signingkey = 95F19D10666A332D
+	signingkey = 0x20D0685093466FC7
 [core]
     excludesfile = ~/.gitignore_global
     filemode = false

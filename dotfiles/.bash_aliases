@@ -1,3 +1,5 @@
+export KEYID=0x20D0685093466FC7
+
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'

@@ -9,6 +9,7 @@
     ~/.tmux.conf: .tmux.conf
     ~/.tmux: .tmux
     ~/.ssh/config: .ssh/config
+    ~/.ssh/id_rsa_yubikey.pub: .ssh/id_rsa_yubikey.pub
     ~/.bash_aliases: .bash_aliases
     ~/.bash_profile: .bash_profile
     ~/.bashrc: .bashrc
@@ -38,8 +39,8 @@
     ~/antigen.zsh : antigen.zsh
     ~/.mutt: .mutt
     ~/.condarc: .condarc
-    ~/.gnupg/gpg.conf: gpg.conf
-    ~/.gnupg/gpg-agent.conf: gpg-agent.conf
+    ~/.gnupg/gpg.conf: .gnupg/gpg.conf
+    ~/.gnupg/gpg-agent.conf: .gnupg/gpg-agent.conf
 
 - shell:
     - [git submodule update --init --recursive --remote, Updating submodules]
