@@ -56,3 +56,7 @@ if [[ -d "$HOME/.rvm/bin" ]]; then
     export PATH="$PATH:$HOME/.rvm/bin"
 fi
 
+# set gpg stuff
+export GPG_TTY="$(tty)"
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent
