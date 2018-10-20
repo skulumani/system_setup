@@ -16,3 +16,9 @@ if [[ -n "$BASH_VERSION" ]]; then
     fi
 fi
 
+# set gpg stuff
+export GPG_TTY="$(tty)"
+if [ -z "$SSH_AUTH_SOCK" ]; then
+    export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+    gpgconf --launch gpg-agent
+fi
