@@ -50,6 +50,11 @@ apt_packages=(
     lm-sensors
     hddtemp
     clang
+    gnupg2 
+    pcscd
+    scdaemon
+    gnupg-agent
+    yubikey-personalization
 )
 
 python_packages=(
@@ -172,24 +177,24 @@ else
 fi
 
 # setup ssh 
-echo "Now setup SSH keys so we can clone our Git repos"
-if [[ -d "$HOME/.ssh" ]]; then
-    echo "$HOME/.ssh exists - using keys that are there"
-    eval "$(ssh-agent -s)"
-    prompt "Add ssh keys" "ssh-add ~/.ssh/id_rsa"
+# echo "Now setup SSH keys so we can clone our Git repos"
+# if [[ -d "$HOME/.ssh" ]]; then
+#     echo "$HOME/.ssh exists - using keys that are there"
+#     eval "$(ssh-agent -s)"
+#     prompt "Add ssh keys" "ssh-add ~/.ssh/id_rsa"
     
-    prompt "Display ~/.ssh/id_rsa.pub" "cat ~/.ssh/id_rsa.pub"
-    echo "Copy the default SSH key and input it into Github/Bitbucket"
-else
-    echo "Create new ssh keys"
+#     prompt "Display ~/.ssh/id_rsa.pub" "cat ~/.ssh/id_rsa.pub"
+#     echo "Copy the default SSH key and input it into Github/Bitbucket"
+# else
+#     echo "Create new ssh keys"
 
-    prompt "Create new ssh keys" "ssh-keygen -t rsa -b 4096 -C 'shanks.k@gmail.com'"
-    prompt "Start the ssh-agen" "eval '$(ssh-agent -s)'"
-    prompt "Add ssh key" "ssh-add ~/.ssh/id_rsa"
+#     prompt "Create new ssh keys" "ssh-keygen -t rsa -b 4096 -C 'shanks.k@gmail.com'"
+#     prompt "Start the ssh-agen" "eval '$(ssh-agent -s)'"
+#     prompt "Add ssh key" "ssh-add ~/.ssh/id_rsa"
     
-    prompt "Copy the default key to terminal" "cat ~/.ssh/id_rsa.pub"
-    echo "Copy the default SSH key and input it into Github/Bitbucket"
-fi
+#     prompt "Copy the default key to terminal" "cat ~/.ssh/id_rsa.pub"
+#     echo "Copy the default SSH key and input it into Github/Bitbucket"
+# fi
 
 # Now we'll setup Boinc
 echo "Now we're going to install Boinc if desired"
