@@ -1,5 +1,10 @@
 export KEYID=0x20D0685093466FC7
 
+# set gpg stuff
+export GPG_TTY="$(tty)"
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent
+
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
