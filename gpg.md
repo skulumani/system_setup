@@ -1,4 +1,4 @@
-## GPG key installation from Keybase
+## GPG key installation from Keybase/Yubikey
 
 * GPG signing keys
     1. Install [Keybase](https://keybase.io/)
@@ -15,42 +15,28 @@
         *  `keybase pgp export -q 01019ee8044 --secret | gpg --allow-secret-key-import --import` - import private key into GPG
         * `gpg --list-secret-keys` - list keys on system
         * `git config --global user.signingkey 666A332D` - set git to use the default GPG key
-        * `subl ~/.gnupg/gpg.conf'` - add `default-key 666A332D` to set key as the default
         * `git commit -S` or `git tag -s` - now sign commits/tags
     3. Add email to GPG key
         * `gpg --list-keys`
-        * `gpg --edit-key 666A332D` - edit the key
-        * `adduid` - Type name, email, and comment then type `O`
-        * `save` - save the key
-
-## Add password to GPG key
-
-* ``gpg --list-keys``
-* ``gpg --edit-key 666A332D``
-* ``passwd`` - change password using GPG
-* ``save`` - save key and exit
 
 ## Quick'n easy gpg cheatsheet
 
-If you found this page, hopefully it's what you were looking for. It's just a brief explanation of some of the command line functionality from gnu privacy guard (gpg). Please email me if you find any errors ( scout3801@gmail.com ).
-
-Filenames are italicized (loosely, some aren't, sorry), so if you see something italicized, think "put my filename there."
-
-I've used User Name as being the name associated with the key. Sorry that isn't very imaginative. I *think* gpg is pretty wide in it's user assignments, ie. the name for my private key is Charles Lockhart, but I can reference that by just putting in Lockhart. That doesn't make any sense, sorry.
-
 to create a key:
+
+~~~
 gpg --gen-key
-generally you can select the defaults.
+~~~
+
 to export a public key into file public.key:
+~~~
 gpg --export -a "User Name" > public.key
-This will create a file called public.key with the ascii representation of the public key for User Name. This is a variation on:
-gpg --export
-which by itself is basically going to print out a bunch of crap to your screen. I recommend against doing this.
-gpg --export -a "User Name"
-prints out the public key for User Name to the command line, which is only semi-useful
+~~~
+This will create a file called public.key with the ascii representation of the public key for User Name. This is a variation on `gpg --export` which outputs a binary file
 
 to export a private key:
+~~~
 gpg --export-secret-key -a "User Name" > private.key
+~~~
 This will create a file called private.key with the ascii representation of the private key for User Name.
 It's pretty much like exporting a public key, but you have to override some default protections. There's a note (*) at the bottom explaining why you may want to do this.
 
@@ -108,3 +94,70 @@ NOTE!: the following use cases indicate why the secret-key import/export command
 Use Case *.1 : Mentioned above were the commands for exporting and importing secret keys, and I want to explain one reason of why maybe you'd want to do this. Basically if you want one key-pair for all of your computers (assuming you have multiple computers), then this allows you export that key-pair from the original computer and import it to your other computers. 
 
 Use Case *.2 : Mentioned above were the commands for exporting and importing secret keys, and I want to explain one reason of why maybe you'd want to do this. Basically, if you belonged to a group, and wanted to create a single key-pair for that group, one person would create the key-pair, then export the public and private keys, give them to the other members of the group, and they would all import that key-pair. Then a member of the group or someone outside could use the group public key, encrypt the message and/or data, and send it to members of the group, and all of them would be able to access the message and/or data. Basically you could create a simplified system where only one public key was needed to send encrypted stuffs to muliple recipients.
+
+To move to a new system
+
+* Install dependencies 
+
+~~~
+sudo apt-get install -y gnupg2 gnupg-agent scdaemon pcscd
+~~~
+
+or for MacOS
+
+~~~
+brew install gnupg pinentry-mac
+~~~
+
+* Import [PGP Public Key](https://keybase.io/skulumani/pgp_keys.asc?fingerprint=5dc0e5c9ad73dc63d61d744520d0685093466fc7)
+
+~~~
+curl https://keybase.io/skulumani/pgp_keys.asc?fingerprint=5dc0e5c9ad73dc63d61d744520d0685093466fc7 | gpg --import
+export KEYID=0x20D0685093466FC7
+~~~
+
+* Move public ssh key to store (Git and Bitbucket are setup with this public key)
+~~~
+curl https://gist.github.com/skulumani/9b839df5b3774956dc562a46a666395f/raw/c9324839f6d08c9402e392898ab066deba176a90/id_rsa_yubikey.pub > ~/.ssh/id_rsa_yubikey.pub
+~~~
+
+*. Insert and get data from yubikey
+
+~~~
+gpg --card-status
+~~~
+
+
+* Encryption
+
+~~~
+echo "test message string" | gpg --encrypt --armor --recipient $KEYID > /tmp/test.txt
+~~~
+
+* Decryption
+
+~~~
+gpg --decrypt --armor /tmp/test.txt
+~~~
+
+* Signing
+
+~~~
+echo "test message string" | gpg --armor --clearsign --default-key $KEYID
+~~~
+
+SSH onto remote server which has public ssh key
+
+~~~
+ssh -i ~/.ssh/id_rsa_yubikey.pub name@server
+~~~
+
+## Additional help
+
+* https://github.com/drduh/YubiKey-Guide
+
+* https://gist.github.com/ageis/14adc308087859e199912b4c79c4aaa4
+
+* [Secrets live on Yubikey](https://security.stackexchange.com/questions/108190/export-secret-key-after-yubikey-is-plugged-in)
+
+* [Best practices](https://riseup.net/en/security/message-security/openpgp/best-practices)
