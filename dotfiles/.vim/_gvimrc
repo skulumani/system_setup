@@ -1,0 +1,103 @@
+filetype plugin indent on
+syntax on
+set nocompatible
+set autoindent
+set modeline " disable modeline vulnerability
+" text encoding
+set encoding=utf8
+
+" directories for swap files and things
+set backupdir=~\_vim\backup
+set directory=~\_vim\swap\
+set undodir=~\_vim\undo\
+
+" use 4 spaces for tabs
+set expandtab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set shiftround
+
+set backspace =indent,eol,start
+set hidden
+set laststatus =2
+
+" Set linenumbers
+set number
+set relativenumber
+" automatically switch to absolute line numbers when losing focus
+augroup numbertoggle
+    autocmd!
+    autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+    autocmd BufLeave,FocusLost,InsertEnter * set norelativenumber
+augroup END
+
+set wrap
+
+" column ruler at 100
+set ruler
+set colorcolumn=80
+
+set lazyredraw " for faster scrolling
+
+" minimum window size
+" set winwidth=85
+"set winheight=5
+" set winminheight=5
+
+" Keep x lines below and above the cursor
+set scrolloff=5 
+set sidescroll=1
+set sidescrolloff=15
+
+" Folding in Vim
+set foldmethod=syntax
+
+" set foldclose=all
+set foldnestmax=3
+set nofoldenable
+
+" finding files in vim
+set path+=**
+set wildchar=<Tab> wildmenu wildmode=full
+set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem
+set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
+set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*
+set wildignore+=*.swp,*~,._*
+
+set showtabline=2  " Show tabline
+set guioptions-=e  " Don't use GUI tabline
+
+" opening new buffers
+set switchbuf=usetab
+" Highlight searching
+set incsearch
+set showmatch
+set hlsearch
+set ignorecase
+set smartcase
+if has("nvim")
+    set inccommand="nosplit"
+endif
+set complete-=i
+" set completeopt+=preview
+
+" matchparen options
+let g:matchparen_timeout = 20
+let g:matchparen_insert_timeout = 20
+
+set autoread " autoread files
+augroup autoread_files
+    autocmd!
+    " Triger `autoread` when files changes on disk
+    " https://unix.stackexchange.com/questions/149209/refresh-changed-content-of-file-opened-in-vim/383044#383044
+    " https://vi.stackexchange.com/questions/13692/prevent-focusgained-autocmd-running-in-command-line-editing-mode
+    autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
+    " Notification after file change
+    " https://vi.stackexchange.com/questions/13091/autocmd-event-for-autoread
+    autocmd FileChangedShellPost *
+                \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
+augroup END
+
+
+set mouse=n " use mouse for scroll or window size
