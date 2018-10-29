@@ -262,3 +262,19 @@ Plug 'junegunn/vim-easy-align'
 
 
 call plug#end()
+set guifont=SourceCodePro_Nerd_Font_Mono:h12:cANSI:qDRAFT
+set background=dark
+let g:onedark_termcolors=16
+colorscheme onedark
+
+" base16 vim
+" if filereadable(expand("~/.vimrc_background"))
+"     " let base16colorspace=256
+"     source ~/.vimrc_background
+" endif
+
+" vim-airline theme
+let g:airline_theme='solarized'
+let g:airline#extensions#tabline#enabled = 1
+let g:arline#extensions#tabline#show_buffers = 1
+let g:airline_powerline_fonts = 1
