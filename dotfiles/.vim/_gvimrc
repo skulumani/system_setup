@@ -223,3 +223,42 @@ augroup END
 vmap <Enter> <Plug>(EasyAlign)
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
+
+" Plugins
+call plug#begin()
+" Productivity
+Plug 'junegunn/vim-plug'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
+Plug 'junegunn/gv.vim'
+Plug 'tpope/vim-rhubarb'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-obsession'
+Plug 'tpope/vim-dispatch'
+" Plug 'freitass/todo.txt-vim'
+Plug 'scrooloose/nerdtree', { 'on' : 'NERDTreeToggle' }
+Plug 'andymass/vim-matchup'
+Plug 'machakann/vim-sandwich'
+
+" Appearance
+Plug 'itchyny/lightline.vim'
+Plug 'rafi/awesome-vim-colorschemes'
+Plug 'sheerun/vim-polyglot'
+Plug 'machakann/vim-highlightedyank' " highlight yanked text
+Plug 'ryanoasis/vim-devicons'
+" Plug 'chriskempson/base16-vim'
+
+" Programming plugins
+Plug 'lervag/vimtex'
+Plug 'ludovicchabant/vim-gutentags'
+" Plug 'Yggdroot/indentLine'
+Plug 'Konfekt/FastFold'
+
+
+
+Plug 'tpope/vim-commentary'
+Plug 'junegunn/vim-easy-align'
+
+
+
+call plug#end()
