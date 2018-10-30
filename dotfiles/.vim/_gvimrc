@@ -133,8 +133,8 @@ map <C-l> <C-w>l
 map <C-n> :NERDTreeToggle<CR>
 " map <C-n> :Vex<CR>
 
-nnoremap <leader>ev :e $MYVIMRC<CR>
-nnoremap <leader>sv :so $MYVIMRC<CR>
+nnoremap <leader>ev :e ~\_gvimrc<CR>
+nnoremap <leader>sv :so ~\_gvimrc<CR>
 
 " nnoremap <leader>w :write<CR> :echo "Saved file!"<CR>
 " FZF mappings
@@ -225,7 +225,7 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 " Plugins
-call plug#begin()
+call plug#begin('C:\vimfiles\plugged')
 " Productivity
 Plug 'junegunn/vim-plug'
 Plug 'tpope/vim-surround'
@@ -254,14 +254,12 @@ Plug 'ludovicchabant/vim-gutentags'
 " Plug 'Yggdroot/indentLine'
 Plug 'Konfekt/FastFold'
 
-
-
 Plug 'tpope/vim-commentary'
 Plug 'junegunn/vim-easy-align'
 
 
-
 call plug#end()
+
 set guifont=SourceCodePro_Nerd_Font_Mono:h12:cANSI:qDRAFT
 set background=dark
 let g:onedark_termcolors=16
