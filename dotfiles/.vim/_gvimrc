@@ -139,15 +139,15 @@ nnoremap <leader>sv :so ~\_gvimrc<CR>
 " nnoremap <leader>w :write<CR> :echo "Saved file!"<CR>
 " FZF mappings
 " <C-p> or <C-t> to search files
-nnoremap <silent> <leader>ft :Tags <cr>
-nnoremap <silent> <leader>ff :Files <cr>
+nnoremap <silent> <leader>ft :CtrlPTag <cr>
+nnoremap <silent> <leader>ff :CtrlP <cr>
 nnoremap <silent> <leader>fa :Rg <CR>
 " search commits
 nnoremap <silent> <leader>fc :Commits <CR> 
 " Search for all keyboard mappings
 nnoremap <silent> <leader>fm :Maps <CR>
 " <M-p> for open buffers
-nnoremap <silent> <leader>fb :Buffers<cr>
+nnoremap <silent> <leader>fb :CtrlPBuffer<cr>
 " <M-S-p> for MRU
 nnoremap <silent> <leader>fh :History<cr>
 
@@ -239,6 +239,7 @@ Plug 'tpope/vim-dispatch'
 Plug 'scrooloose/nerdtree', { 'on' : 'NERDTreeToggle' }
 Plug 'andymass/vim-matchup'
 Plug 'machakann/vim-sandwich'
+Plug 'ctrlpvim/ctrlp.vim'
 
 " Appearance
 Plug 'itchyny/lightline.vim'
