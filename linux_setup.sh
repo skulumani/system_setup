@@ -55,6 +55,7 @@ apt_packages=(
     scdaemon
     gnupg-agent
     yubikey-personalization
+    pinentry-curses
 )
 
 python_packages=(
