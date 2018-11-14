@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# echo "gpg agent kill"
+# eval $(gpg-connect-agent updatestartuptty /bye)
+
 echo "kill gpg-agent"
 code=0
 while [ 1 -ne $code ]; do
@@ -19,8 +22,6 @@ done
 echo "restart gpg-agent"
 eval $(gpg-agent --daemon)
 
-echo "gpg agent kill"
-eval $(gpg-connect-agent updatestartuptty /bye)
 
 echo
 echo "All done. Now unplug / replug the NEO token."
