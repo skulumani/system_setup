@@ -1,16 +1,11 @@
 export KEYID=0x20D0685093466FC7
 
 # set gpg stuff
-GPG_TTY=$(tty)
-export GPG_TTY
-if [ -z "$GPG_AGENT_INFO" ]; then
-    eval "$(gpg-agent --daemon --options ~/.gnupg/gpg-agent.conf)"
-fi
-
-if [ -z "$SSH_AUTH_SOCK" ]; then
-    SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
-    export SSH_AUTH_SOCK
-fi
+export GPG_TTY=$(tty)
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent
+# export SSH_AUTH_SOCK="/run/user/$UID/gnupg/S.gpg-agent.ssh"
+# eval "gpg-connect-agent updatestartuptty /bye"
 
 alias ll='ls -alF'
 alias la='ls -A'

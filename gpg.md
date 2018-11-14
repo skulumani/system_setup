@@ -177,3 +177,5 @@ ssh -i ~/.ssh/id_rsa_yubikey.pub name@server
 * [Secrets live on Yubikey](https://security.stackexchange.com/questions/108190/export-secret-key-after-yubikey-is-plugged-in)
 
 * [Best practices](https://riseup.net/en/security/message-security/openpgp/best-practices)
+
+* [GPG and Yubiki wiki](https://wiki.bootc.net/gnupg/agent-config-linux.html)
