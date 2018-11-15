@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# echo "gpg agent kill"
-# eval $(gpg-connect-agent updatestartuptty /bye)
+echo "gpg agent kill"
+gpg-connect-agent updatestartuptty /bye
 
 echo "kill gpg-agent"
 code=0

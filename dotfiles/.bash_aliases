@@ -2,8 +2,9 @@ export KEYID=0x20D0685093466FC7
 
 # set gpg stuff
 export GPG_TTY=$(tty)
+unset SSH_AGENT_PID
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-gpgconf --launch gpg-agent
+# gpgconf --launch gpg-agent
 # export SSH_AUTH_SOCK="/run/user/$UID/gnupg/S.gpg-agent.ssh"
 # eval "gpg-connect-agent updatestartuptty /bye"
 
