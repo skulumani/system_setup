@@ -35,7 +35,7 @@ if [ ! -d "${REPO}" ]; then
     /usr/bin/borg init --encryption=repokey "${REPO}"
 fi
 
-MSG=$((/usr/bin/borg create --v --stats --compression "${COMPRESSION_ALGO},${COMPRESSION_LEVEL}" \
+MSG=$((/usr/bin/borg create --verbose --stats --compression "${COMPRESSION_ALGO},${COMPRESSION_LEVEL}" \
     --exclude "$EXCLUDE" \
     "${REPO}::{hostname}-{now:%Y-%m-%dT%H:%M:%S}" $SOURCE_PATHS) 2>&1)
 
@@ -47,11 +47,11 @@ MSG=$((/usr/bin/borg create --v --stats --compression "${COMPRESSION_ALGO},${COM
 #         --prefix '{hostname}-' --verbose --stats \
 #         "${REPO}"
 
-echo "SUCCESS $(date +%Y-%m-%dT%H:%M:%S)${newline}${HOSTNAME} local borg backup" | /home/shankar/bin/signal-cli/bin/signal-cli -u +16305579049 send "+16303366257"
+echo "SUCCESS $(date +%Y-%m-%dT%H:%M:%S)${newline}${HOSTNAME} ${MSG}" | /home/shankar/bin/signal-cli/bin/signal-cli -u +16305579049 send "+16303366257"
 
 } || {
 
-echo "FAILURE $(date +%Y-%m-%dT%H:%M:%S)${newline}${HOSTNAME} local borg backup" | /home/shankar/bin/signal-cli/bin/signal-cli -u +16305579049 send "+16303366257"
+echo "FAILURE $(date +%Y-%m-%dT%H:%M:%S)${newline}${HOSTNAME} ${MSG}" | /home/shankar/bin/signal-cli/bin/signal-cli -u +16305579049 send "+16303366257"
 }
 
 /home/shankar/bin/signal-cli/bin/signal-cli -u +16305579049 receive
