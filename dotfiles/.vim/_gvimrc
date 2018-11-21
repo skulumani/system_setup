@@ -201,7 +201,7 @@ xnoremap do :diffget<CR>
 xnoremap <leader>du :diffupdate<CR>
 
 " Todo.txt mappings
-nnoremap <leader>td :e ~/.todo/todo.txt<CR>
+nnoremap <leader>td :e ~/_todo/todo.txt<CR>
 
 " Search for todo or bug or fixme using AG
 nnoremap <leader>fix :Ack \(FIXME\)\\|\(TODO\)\\|\(BUG\)<CR>
@@ -235,11 +235,12 @@ Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-dispatch'
-" Plug 'freitass/todo.txt-vim'
+Plug 'freitass/todo.txt-vim'
 Plug 'scrooloose/nerdtree', { 'on' : 'NERDTreeToggle' }
 Plug 'andymass/vim-matchup'
 Plug 'machakann/vim-sandwich'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tdehaeze/matlab-vim'
 
 " Appearance
 Plug 'itchyny/lightline.vim'
@@ -277,3 +278,49 @@ let g:airline_theme='solarized'
 let g:airline#extensions#tabline#enabled = 1
 let g:arline#extensions#tabline#show_buffers = 1
 let g:airline_powerline_fonts = 1
+
+function! LightlineObsession()
+    return '%{ObsessionStatus(''S'', '''')}'
+endfunction
+
+function! LightlineTags()
+    return '%{gutentags#statusline()}'
+endfunction
+
+" lightline settings
+let g:lightline = {
+  \   'colorscheme': 'wombat',
+  \   'active': {
+  \     'left':[ [ 'mode', 'paste' ],
+  \              [ 'gitbranch', 'readonly', 'filename', 'modified', ]
+  \     ],
+    \  'right': [
+    \ [ 'lineinfo' ], [ 'percent' ], 
+    \ [ 'fileformat' , 'fileencoding' , 'filetype' ] ]
+  \   },
+    \ 'inactive' : {
+    \   'left': [ [ 'filename', 'modified' ] ]
+    \ },
+	\   'component': {
+	\     'lineinfo': ' %3l:%-2v',
+    \     'helloworld': 'Hello, world',
+	\   },
+  \   'component_function': {
+  \     'gitbranch': 'fugitive#head',
+  \   },
+    \ 'component_expand': {
+    \   'obsession': 'LightlineObsession',
+    \   'tags' : 'LightlineTags'
+    \   }
+  \ }
+let g:lightline.separator = {
+	\   'left': '', 'right': ''
+  \}
+let g:lightline.subseparator = {
+	\   'left': '', 'right': '' 
+  \}
+
+let g:lightline.tabline = {
+  \   'left': [ ['tabs'] ],
+  \   'right': [ [ 'close', 'obsession', 'tags'] ]
+  \ }
