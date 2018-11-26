@@ -15,7 +15,7 @@ readonly COMPRESSION_LEVEL=6
 readonly HOME=/home/shankar
 
 # Whitespace-separated list of paths to back up.
-readonly SOURCE_PATHS="/home/shankar/Documents /home/shankar/Downloads /home/shankar/Drive/docs /home/shankar/Drive/GWU"
+readonly SOURCE_PATHS="/home/shankar/Documents /home/shankar/Downloads /home/shankar/Drive"
 
 # Whitespace-separated list of paths to exclude from backup.
 readonly EXCLUDE="*.pyc"
