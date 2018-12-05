@@ -28,6 +28,11 @@ options head, indent
 	You should have received a copy of the GNU General Public License
 	along with this program.  If not, see <http://www.gnu.org/licenses/>.${0}
 
+snippet doc_var
+abbr    doc_var
+    r"""${1:int}: ${2:description}
+    """${0}
+
 snippet doc_func
 abbr	doc_func
 	r"""${1:A one line description of the function}
@@ -109,7 +114,6 @@ options	head, indent
 	module_level_variable1 : int
 		Descrption of the variable
 
-	Author
-	------
-	Shankar Kulumani		GWU		skulumani@gwu.edu
+    .. _NumPy Documentation HOWTO:
+        https://github.com/numpy/numpy/blob/master/doc/HOWTO_DOCUMENT.rst.txt
 	"""${0}
