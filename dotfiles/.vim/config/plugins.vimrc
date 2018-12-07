@@ -75,7 +75,7 @@ endif
 " Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'tpope/vim-commentary'
 Plug 'junegunn/vim-easy-align'
-" Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 " Plug 'Rip-Rip/clang_complete' " autcomplete for C++
 
 " set rtp+=~/.fzf
