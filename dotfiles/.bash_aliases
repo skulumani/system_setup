@@ -77,6 +77,10 @@ signal-receive () {
     signal-cli -u +16305579049 receive
 }
 
+function cheat() {
+    curl cht.sh/$1
+}
+
 # Allow for Sublime and rsub to work correctly
 if [ -z "$SSH_CLIENT" ]; then
 	export EDITOR="subl"
