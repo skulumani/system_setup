@@ -13,8 +13,8 @@ echo "First we'll remove gnucash"
 read -p "Press Enter to continue"
 
 sudo apt-get purge gnucash
-sudo apt-get install checkinstall
-sudo apt-get build-dep gnucash
+sudo apt-get install checkinstall webkit2gtk-4.0 webkit2gtk-3.0
+sudo apt-get build-dep gnucash 
 
 echo "Now going to download gnucash v$VERSION$BUILD"
 
@@ -46,5 +46,5 @@ cd build
 cmake -DCMAKE_INSTALL_PREFIX=/usr/local ../gnucash
 make -j 4
 # TODO Look up checkinstall flags to make this automatic
-sudo checkinstall make install
+# sudo checkinstall make install
 echo $TEMP_DIR
