@@ -32,3 +32,6 @@ if [ ! -f "/usr/local/bin/signal-cli" ]; then
 else
     echo "Link already exists"
 fi
+
+# now setup Signal dbus 
+
