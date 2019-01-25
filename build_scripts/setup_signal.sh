@@ -4,27 +4,31 @@
 SIGNAL_VERSION="0.6.2"
 SIGNAL_FNAME="signal-cli-${SIGNAL_VERSION}.tar.gz"
 SIGNAL_LINK="https://github.com/AsamK/signal-cli/releases/download/v${SIGNAL_VERSION}/${SIGNAL_FNAME}"
-SIGNAL_DIR="$HOME/bin/signal-cli"
-# test to see if Jabref directory exists in /usr/local
+SIGNAL_DIR="/opt/signal-cli"
 
 if [[ ! -d "${SIGNAL_DIR}" ]]; then
     echo "Creating ${SIGNAL_DIR}"
-    mkdir -p ${SIGNAL_DIR}
+    sudo mkdir -p ${SIGNAL_DIR}
 else
     echo "${SIGNAL_DIR} already exists"
     echo "Removing old version and creating"
-    trash ${SIGNAL_DIR}/*
+    sudo rm -rI ${SIGNAL_DIR}
+    sudo mkdir -p ${SIGNAL_DIR}
 fi
 
-# Download Jabref to this directory if it doesn't exist
+# download signal to this directory
 if [ ! -d "${SIGNAL_DIR}/bin" ]; then
     echo "Downloading ${SIGNAL_FNAME}"
     wget ${SIGNAL_LINK} -O /tmp/${SIGNAL_FNAME}
     tar -xzvf /tmp/${SIGNAL_FNAME} -C /tmp/
-    mv /tmp/signal-cli-${SIGNAL_VERSION}/bin ${SIGNAL_DIR}
-    mv /tmp/signal-cli-${SIGNAL_VERSION}/lib ${SIGNAL_DIR}
+    sudo mv /tmp/signal-cli-${SIGNAL_VERSION}/* ${SIGNAL_DIR}
 else
     echo "${SIGNAL_FNAME} already exists"
 fi
 
-# setup links for Jabref icon/menu item
+# setup symlinks to path
+if [ ! -f "/usr/local/bin/signal-cli" ]; then
+    sudo ln -sf /opt/signal-cli/bin/signal-cli /usr/local/bin
+else
+    echo "Link already exists"
+fi
