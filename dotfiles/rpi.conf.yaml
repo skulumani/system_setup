@@ -1,0 +1,35 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+
+- clean: ['~', '~./config']
+
+- link:
+    ~/.tmux.conf: .tmux.conf
+    ~/.tmux: .tmux
+    ~/.bash_aliases: .bash_aliases
+    ~/.bash_profile: .bash_profile
+    ~/.bashrc: .bashrc
+    ~/.gitconfig: .gitconfig
+    ~/.agignore: .agignore
+    ~/.gitignore_global: .gitignore_global
+    ~/.profile: .profile
+    ~/.vim: .vim
+    ~/.zshrc: .zshrc
+    ~/.path: .path
+    ~/.fzf_options: .fzf_options
+    ~/.config/nvim: .config/nvim
+    ~/.config/conky: .config/conky
+    ~/bin: bin
+    ~/.fonts: .fonts
+    ~/.ctags: .ctags
+    ~/antigen.zsh : antigen.zsh
+    ~/.mutt: .mutt
+    ~/.condarc: .condarc
+    ~/.gnupg/gpg.conf: .gnupg/gpg.conf
+    ~/.gnupg/gpg-agent.conf: .gnupg/gpg-agent.conf
+
+- shell:
+    - [fc-cache -vf ~/.fonts, Installing system fonts]
+    - [git submodule update --init --recursive --remote, Updating submodules]
