@@ -34,4 +34,14 @@ else
 fi
 
 # now setup Signal dbus 
+sudo useradd signal-cli
+
+# copy files to system-d
+sudo cp dotfiles/signal-cli/org.asamk.Signal.conf /etc/dbus-1/system.d/
+sudo cp dotfiles/signal-cli/org.asamk.Signal.service /usr/share/dbus-1/system-services/
+sudo cp dotfiles/signal-cli/signal.service /etc/systemd/system/
+
+sudo systemctl daemon-reload
+sudo systemctl enable signal.service
+sudo systemctl reload dbus.service
 
