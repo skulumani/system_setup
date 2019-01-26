@@ -1,4 +1,3 @@
-
 # Download and setup Signal-Cli
 
 SIGNAL_VERSION="0.6.2"
@@ -32,6 +31,8 @@ if [ ! -f "/usr/local/bin/signal-cli" ]; then
 else
     echo "Link already exists"
 fi
+
+sudo apt-get install libunixsocket-java
 
 # now setup Signal dbus 
 sudo useradd signal-cli
