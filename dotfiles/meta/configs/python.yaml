@@ -1,0 +1,8 @@
+- link:
+    ~/.ipython/profile_default/ipython_config.py: dotfiles/ipython_config.py
+    ~/.condarc: dotfiles/condarc
+
+- shell:
+    - [conda env update -n neovim2 -f ~/Documents/system_setup/conda/neovim2.yml, Update neovim2]
+    - [conda env update -n neovim3 -f ~/Documents/system_setup/conda/neovim3.yml, Update neovim3]
+

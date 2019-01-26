@@ -1,0 +1,5 @@
+- link:
+    ~/.fonts: dotfiles/fonts
+
+- shell:
+    - [fc-cache -vf ~/.fonts, Installing system fonts]

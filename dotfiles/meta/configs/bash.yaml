@@ -3,3 +3,4 @@
     ~/.bash_profile: dotfiles/bash_profile
     ~/.bashrc: dotfiles/bashrc
     ~/.path: dotfiles/path
+    ~/.profile: dotfiles/profile

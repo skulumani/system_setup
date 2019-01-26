@@ -1,0 +1,6 @@
+- link:
+    ~/.zshrc: dotfiles/zshrc
+    ~/.path: dotfiles/path
+    ~/.bash_aliases: dotfiles/bash_aliases
+    ~/antigen.zsh : dotfiles/antigen.zsh
+

@@ -1,0 +1,3 @@
+- link:
+    ~/.mrconfig: dotfiles/myrepos/mrconfig
+    ~/.mrtrust: dotfiles/myrepos/mrtrust

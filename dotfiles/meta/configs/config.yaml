@@ -1,0 +1,7 @@
+- link:
+    ~/.config/powerline: dotfiles/.config/powerline
+    ~/.config/fontconfig: dotfiles/.config/fontconfig
+    ~/.config/nvim: dotfiles/.config/nvim
+    ~/.config/conky: dotfiles/.config/conky
+    ~/.config/redshift.conf: dotfiles/.config/redshift.conf
+    ~/.config/base16_shell: dotfiles/.config/base16-shell
