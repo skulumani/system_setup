@@ -1,0 +1,5 @@
+- link:
+    ~/.bash_aliases: dotfiles/bash_aliases
+    ~/.bash_profile: dotfiles/bash_profile
+    ~/.bashrc: dotfiles/bashrc
+    ~/.path: dotfiles/path

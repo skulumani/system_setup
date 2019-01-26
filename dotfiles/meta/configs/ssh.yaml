@@ -1,0 +1,3 @@
+- link:
+    ~/.ssh/config: dotfiles/ssh/config
+    ~/.ssh/id_rsa_yubikey.pub: dotfiles/ssh/id_rsa_yubikey.pub

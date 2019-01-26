@@ -1,0 +1,3 @@
+/Users/shankar/Drive/GWU/classes/MAE3145/Library	40
+/Users/shankar/Drive/GWU/research/asteroid_dumbbell/extern/fdcl-hdf5	40
+/private/tmp	40
