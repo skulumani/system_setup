@@ -9,7 +9,7 @@
 	path = dotfiles/texmf
 	url = https://github.com/skulumani/texmf.git
 [submodule "dotfiles/.tmux/plugins/tpm"]
-	path = dotfiles/.tmux/plugins/tpm
+	path = dotfiles/tmux/plugins/tpm
         url = https://github.com/tmux-plugins/tpm.git
         ignore = dirty
 [submodule "dotfiles/dircolors-solarized"]
