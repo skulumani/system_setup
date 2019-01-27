@@ -40,3 +40,6 @@
 
 4. There is a python script that also provides some dbus support.
 
+## Documentation
+
+https://github.com/AsamK/signal-cli/wiki/DBus-service
