@@ -76,7 +76,8 @@ signal-send () {
 
 signal-receive () {
     # signal-cli -u +12029305414 receive
-    signal-cli --dbus-system receive
+    # signal-cli --dbus-system receive
+    dbus-monitor --system  "interface='org.asamk.Signal'" | grep string
 }
 
 function cheat() {
