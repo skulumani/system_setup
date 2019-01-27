@@ -78,14 +78,14 @@ signal-receive () {
     # signal-cli -u +12029305414 receive
     # signal-cli --dbus-system receive
     # dbus-monitor --system  "interface='org.asamk.Signal'" | grep string
-    dbus-monitor --system "interface='org.asamk.Signal'" | \
-    while read -r line;
-    do
-        # ignore the first line
-        grep -q '.*NameAcquired.*' <<< "$line" && continue
-        # echo "$line"
-        grep string <<< "$line" | awk '{print $2}'
-    done
+    dbus-monitor --system "interface='org.asamk.Signal'" 
+    # while read -r line;
+    # do
+    #     # ignore the first line
+    #     grep -q '.*NameAcquired.*' <<< "$line" && continue
+    #     # echo "$line"
+    #     grep string <<< "$line" | grep string
+    # done
 }
 
 function cheat() {
