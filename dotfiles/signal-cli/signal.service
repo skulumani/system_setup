@@ -9,7 +9,7 @@ After=network-online.target
 Type=dbus
 Environment="SIGNAL_CLI_OPTS=-Xms2m"
 ExecStart=/opt/signal-cli/bin/signal-cli -u +12029305414 daemon --system
-User=signal-cli
+User=shankar
 BusName=org.asamk.Signal
 
 [Install]
