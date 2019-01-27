@@ -47,13 +47,12 @@ MSG=$((/usr/bin/borg create --verbose --stats --compression "${COMPRESSION_ALGO}
 #         --prefix '{hostname}-' --verbose --stats \
 #         "${REPO}"
 
-echo "SUCCESS $(date +%Y-%m-%dT%H:%M:%S)${newline}${HOSTNAME} ${MSG}" | /home/shankar/bin/signal-cli/bin/signal-cli --dbus-system -u +12029305414 send "+16303366257"
+echo "SUCCESS $(date +%Y-%m-%dT%H:%M:%S)${newline}${HOSTNAME} ${MSG}" | /opt/signal-cli/bin/signal-cli --dbus-system send "+16303366257"
 
 } || {
 
-echo "FAILURE $(date +%Y-%m-%dT%H:%M:%S)${newline}${HOSTNAME} ${MSG}" | /home/shankar/bin/signal-cli/bin/signal-cli --dbus-system -u +12029305414 send "+16303366257"
+echo "FAILURE $(date +%Y-%m-%dT%H:%M:%S)${newline}${HOSTNAME} ${MSG}" | /opt/signal-cli/bin/signal-cli --dbus-system send "+16303366257"
 }
 
-/home/shankar/bin/signal-cli/bin/signal-cli --dbus-system -u +12029305414 receive
  
 
