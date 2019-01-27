@@ -38,7 +38,11 @@
     dbus-send --system --type=method_call --print-reply --dest="org.asamk.Signal" /org/asamk/Signal org.asamk.Signal.sendMessage string:MessageText array:string: string:RECIPIENT
     ~~~
 
-4. There is a python script that also provides some dbus support.
+4. There is a python script that also provides some dbus support. You need `pydbus`
+    
+    ~~~
+    pip3 install --user pydbus
+    ~~~
 
 ## Documentation
 
