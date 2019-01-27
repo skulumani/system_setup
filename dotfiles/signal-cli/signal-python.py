@@ -1,14 +1,17 @@
 #!/usr/bin/python3
 # Need to install pydbus - pip3 install --user pydbus
 
+# Look into threading to have main loop receiving messages and threads called on specific actions
+
 from pydbus import SystemBus
 from gi.repository import GLib
 import argparse
 from datetime import datetime
 
+bus = SystemBus()
+signal = bus.get('org.asamk.Signal')
+
 def send_message(number, message):
-    bus = SystemBus()
-    signal = bus.get('org.asamk.Signal')
     signal.sendMessage(message, [], number)
     return 0
 
@@ -20,16 +23,11 @@ def msgRcv(timestamp, source, groupID, message, attachments):
     # ts = datetime.utcfromtimestamp(int(timestamp)).strftime('%Y-%m-%d %H:%M:%S')
     print("\n{} From:{}\n{}".format(timestamp, source, message))
     # parse the message to check for strings
-    
-    if message == "help":
-        send_message(source, "This is teh help")
 
     return 0
 
 def receive_message_loop():
-    bus = SystemBus()
     loop = GLib.MainLoop()
-    signal = bus.get('org.asamk.Signal')
     signal.onMessageReceived = msgRcv
     loop.run()
 
