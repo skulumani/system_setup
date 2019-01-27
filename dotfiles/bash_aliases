@@ -74,9 +74,9 @@ signal-send () {
     fi
 }
 
-signal-receive () {
-    signal-cli -u +12029305414 receive
-}
+# signal-receive () {
+#     signal-cli -u +12029305414 receive
+# }
 
 function cheat() {
     curl cht.sh/$1
