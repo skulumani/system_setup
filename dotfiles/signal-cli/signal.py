@@ -20,6 +20,10 @@ def msgRcv(timestamp, source, groupID, message, attachments):
     # ts = datetime.utcfromtimestamp(int(timestamp)).strftime('%Y-%m-%d %H:%M:%S')
     print("\n{} From:{}\n{}".format(timestamp, source, message))
     # parse the message to check for strings
+    
+    if message == "help":
+        send_message(source, "This is teh help")
+
     return 0
 
 def receive_message_loop():
