@@ -7,15 +7,16 @@ from pydbus import SystemBus
 from gi.repository import GLib
 import argparse
 from datetime import datetime
+import threading
 
-bus = SystemBus()
-signal = bus.get('org.asamk.Signal')
 
 def send_message(number, message):
+    bus = SystemBus()
+    signal = bus.get('org.asamk.Signal')
     signal.sendMessage(message, [], number)
     return 0
 
-def msgRcv(timestamp, source, groupID, message, attachments):
+def message_callback(timestamp, source, groupID, message, attachments):
     # groupID is empty if not a group
     # attachments will be a path to the attachment
 
@@ -23,13 +24,20 @@ def msgRcv(timestamp, source, groupID, message, attachments):
     # ts = datetime.utcfromtimestamp(int(timestamp)).strftime('%Y-%m-%d %H:%M:%S')
     print("\n{} From:{}\n{}".format(timestamp, source, message))
     # parse the message to check for strings
-
+    if message == 'help':
+        # send a message back on the bus 
     return 0
 
-def receive_message_loop():
+def listen():
+    bus = SystemBus()
+    signal = bus.get('org.asamk.Signal')
+    signal.onMessageReceived = message_callback
+
     loop = GLib.MainLoop()
-    signal.onMessageReceived = msgRcv
-    loop.run()
+    try:
+        loop.run()
+    except KeyboardInterrupt:
+        loop.quit()
 
 # signal.sendGroupMessage(data, [], [___GROUP___])
 # replace ___GROUP___ with byte-representation of 
@@ -51,7 +59,8 @@ if __name__ == "__main__":
     if args.send:
         number = args.send[1:]
         message = args.send[0]
+        # t = threading.Thread(target=send_message, args=(number,message,))
+        # t.start()
         send_message(number, message)
-
     elif args.receive:
-        receive_message_loop()
+        listen()
