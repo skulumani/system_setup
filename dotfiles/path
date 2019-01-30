@@ -34,11 +34,11 @@ fi
 
 # added by Anaconda3 4.3.0 installer
 if [[ -d $HOME/anaconda3 ]]; then
-    if [[ "$OSTYPE" == "linux-gnu" ]]; then
-        . /home/shankar/anaconda3/etc/profile.d/conda.sh
-    else
-        . /Users/shankar/anaconda3/etc/profile.d/conda.sh
-    fi
+    # if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    #     . ~/anaconda3/etc/profile.d/conda.sh
+    # else
+    #     . ~/anaconda3/etc/profile.d/conda.sh
+    # fi
 
     # conda activate
     export NOCONDA_PATH=$PATH
