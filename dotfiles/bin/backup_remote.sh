@@ -28,8 +28,8 @@ source ~/borg_passphrase.sh
 # https://borgbackup.readthedocs.io/en/stable/faq.html#can-i-backup-from-multiple-servers-into-a-single-repository
 readonly USER=login
 readonly HOST=example.com
-readonly REPO="/sharedfolders/borgbackup/$(hostname)" # Path to repository on the host
-readonly TARGET="shankar@raspberrypi:${REPO}"
+readonly REPO="/media/data/borgbackup/$(hostname)" # Path to repository on the host
+readonly TARGET="pi@raspberrypi:${REPO}"
 
 # Valid options are "none", "keyfile", and "repokey". See Borg docs.
 readonly ENCRYPTION_METHOD=repokey
