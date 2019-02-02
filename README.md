@@ -120,3 +120,20 @@ After setting up the nvidia drivers and connecting both monitors you can move th
 ~~~
 Settings Mangaer > Panel > Output dropdown > Select Monitor
 ~~~
+
+## Mounting an external drive
+
+Create a mount point - sudo mkdir /media/data
+
+Change ownership sudo chown pi:users /media/data
+
+Mount sudo mount /dev/sda /media/data
+
+Edit fstab
+
+UUID=<UUID> /<mount point> auto defaults,user,nofail 0 0 
+
+Get UUID - sudo blkid
+
+Add execute bit recursively sudo chmod u+x -R /media/data
+
