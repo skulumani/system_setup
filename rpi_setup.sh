@@ -18,4 +18,7 @@ ssh-add ~/.ssh/id_rsa
 # download Pi VPN
 
 
-
+# setup testing
+# edit /etc/apt/sources.list and add a line with testing
+# deb http://raspbian.raspberrypi.org/raspbian/ testing main contrib non-free rpi
+sudo apt-get install borgbackup -t testing
