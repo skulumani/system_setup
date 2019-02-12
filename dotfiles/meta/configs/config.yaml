@@ -5,3 +5,4 @@
     ~/.config/conky: dotfiles/.config/conky
     ~/.config/redshift.conf: dotfiles/.config/redshift.conf
     ~/.config/base16_shell: dotfiles/.config/base16-shell
+    ~/.config/kmymoney: dotfiles/.config/kmymoney

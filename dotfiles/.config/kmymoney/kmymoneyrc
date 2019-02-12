@@ -1,0 +1,239 @@
+Height 1080=1030
+State=AAAA/wAAAAD9AAAAAAAAA74AAAO1AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
+Width 1920=958
+
+[Color Options]
+fieldRequiredColor=254,238,230
+groupMarkerColor=179,171,116
+missingConversionRateColor=41,128,185
+transactionErroneousColor=218,68,83
+transactionImportedColor=205,168,168
+transactionMatchedColor=78,154,6
+useCustomColors=true
+
+[Equity Price Update]
+PriceUpdatingPolicy=1
+
+[General Options]
+AutoSaveFile=true
+AutoSaveOnClose=true
+AutoSavePeriod=2
+Geometry=1920,1031
+LastUsedDirectory=/home/shankar/Drive/docs/finance/kmymoney
+LastUsedFile=/home/shankar/Drive/docs/finance/kmymoney/master.kmy
+LastViewSelected=7
+Show Statusbar=true
+ShowSplash=false
+firstTimeRun=false
+
+[Homepage Options]
+ItemList=2,8,-1,-3,4,-5,-6,7,9,-10
+ShowBalanceStatusOfOnlineAccounts=true
+ShowCountOfClearedTransactions=true
+ShowCountOfNotReconciledTransactions=true
+ShowCountOfUnmarkedTransactions=true
+
+[KAccountsView]
+ColumnsSelection=0
+HeaderState=\x00\x00\x00ˇ\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x01\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x06Ú\x00\x00\x00\x01\x01\x01\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00dˇˇˇˇ\x00\x00\x00Å\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x06Ú\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x03Ë\x00\x00\x00\x00d
+
+[KBalanceChartDlg]
+Height 1080=500
+Width 1920=700
+
+[KBudgetsView]
+ColumnsSelection=0
+HeaderState=\x00\x00\x00ˇ\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x01\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01Û\x00\x00\x00\x01\x01\x01\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00dˇˇˇˇ\x00\x00\x00Å\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x01Û\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x03Ë\x00\x00\x00\x00d
+
+[KCategoriesView]
+ColumnsSelection=0
+HeaderState=\x00\x00\x00ˇ\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00d\x00\x00\x00\x01\x01\x01\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00dˇˇˇˇ\x00\x00\x00Å\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00d\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x03Ë\x00\x00\x00\x00d
+
+[KInstitutionsView]
+ColumnsSelection=0
+HeaderState=\x00\x00\x00ˇ\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x01\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x06Ú\x00\x00\x00\x01\x01\x01\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00dˇˇˇˇ\x00\x00\x00Å\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x06Ú\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x03Ë\x00\x00\x00\x00d
+
+[KInvestmentView_Equities]
+ColumnsSelection=0,2,4,3,1
+HeaderState=\x00\x00\x00ˇ\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x01\x00\x00\x00\n\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x03,\x00\x00\x00\x05\x01\x01\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00dˇˇˇˇ\x00\x00\x00Å\x00\x00\x00\x00\x00\x00\x00\x05\x00\x00\x01\x0f\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00d\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00d\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00d\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00Ò\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x03Ë\x00\x00\x00\x00d
+
+[KInvestmentView_Securities]
+ColumnsSelection=0,2,3,5,1
+HeaderState=\x00\x00\x00ˇ\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x01\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02{\x00\x00\x00\x05\x01\x01\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00dˇˇˇˇ\x00\x00\x00Å\x00\x00\x00\x00\x00\x00\x00\x05\x00\x00\x00Î\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00d\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00d\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00d\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00d\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x03Ë\x00\x00\x00\x00d
+
+[KOnlineJobOutbox]
+HeaderState=\x00\x00\x00ˇ\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x06Q\x00\x00\x00\x04\x01\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00dˇˇˇˇ\x00\x00\x00Å\x00\x00\x00\x00\x00\x00\x00\x04\x00\x00\x00d\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00d\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00d\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x05%\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x03Ë\x00\x00\x00\x00d
+
+[Last Use Settings]
+KBackupDlg_BackupMountPoint=/mnt/floppy
+KBackupDlg_mountDevice=false
+KBudgetViewSplitterSize=\x00\x00\x00ˇ\x00\x00\x00\x01\x00\x00\x00\x02\x00\x00\x01\x06\x00\x00\x02\x03\x00ˇˇˇˇ\x01\x00\x00\x00\x01\x00
+KForecastView_LastType=0
+KImportDlg_LastFile=/tmp/history.qif
+KImportDlg_LastProfile=
+KPayeesViewSplitterSize=\x00\x00\x00ˇ\x00\x00\x00\x01\x00\x00\x00\x02\x00\x00\x01\x1c\x00\x00\x03\x18\x00ˇˇˇˇ\x01\x00\x00\x00\x01\x00
+KScheduleView_openBills=true
+KScheduleView_openDeposits=true
+KScheduleView_openLoans=true
+KScheduleView_openTransfers=true
+KScheduleView_treeState=\x00\x00\x00ˇ\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x01\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x06Ú\x00\x00\x00\x07\x01\x01\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00dˇˇˇˇ\x00\x00\x00Å\x00\x00\x00\x00\x00\x00\x00\x07\x00\x00\x00Ô\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00V\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00c\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00<\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\\\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00C\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x04o\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x03Ë\x00\x00\x00\x00l
+KTagsViewSplitterSize=\x00\x00\x00ˇ\x00\x00\x00\x01\x00\x00\x00\x02\x00\x00\x01\x1c\x00\x00\x03|\x00ˇˇˇˇ\x01\x00\x00\x00\x01\x00
+
+[List Options]
+IconsTheme=oxygen
+logImportedStatements=false
+logOfxTransactions=false
+
+[MainWindow]
+Height 1080=1031
+State=AAAA/wAAAAD9AAAAAAAAB4AAAAO2AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
+ToolBarsMovable=Disabled
+Width 1920=1920
+Window-Maximized 1080x1920=true
+
+[Online-Quote-Source-B√∂rse Online - Aktien]
+CSVURL=
+DateFormatRegex=%d.%m.%y
+DateRegex=Datum (\\d{2}\\.\\d{2}\\.\\d{4})
+IDBy=2
+IDRegex=
+PriceRegex=Aktienkurs\\D+(\\d+,\\d{2})
+URL=http://www.boerse-online.de/aktie/%1-Aktie
+
+[Online-Quote-Source-Financial Times]
+CSVURL=
+DateFormatRegex=%m %d %y
+DateRegex=Data delayed at least 15 minutes, as of\\ (.*)\\.
+IDBy=1
+IDRegex=
+PriceRegex=Price\\D+([\\d,]*\\d+\\.\\d+)
+SkipStripping=true
+URL=http://funds.ft.com/uk/Tearsheet/Summary?s=%1
+
+[Online-Quote-Source-Finanztreff]
+CSVURL=
+DateFormatRegex=%d.%m.%y
+DateRegex=\\).(\\d+\\D+\\d+\\D+\\d+)
+IDBy=1
+IDRegex=
+PriceRegex=([0-9]+,\\d+).+Gattung:Fonds
+URL=http://finanztreff.de/kurse_einzelkurs_detail.htn?u=100&i=%1
+
+[Online-Quote-Source-Globe & Mail]
+CSVURL=
+DateFormatRegex=%m %d %y
+DateRegex=Fund Price:.+as at (\\w+ \\d+, \\d+)\\)
+IDBy=1
+IDRegex=
+PriceRegex=Fund Price:\\D+(\\d+\\.\\d+)
+URL=http://globefunddb.theglobeandmail.com/gishome/plsql/gis.price_history?pi_fund_id=%1
+
+[Online-Quote-Source-KMyMoney Currency]
+CSVURL=
+DateFormatRegex=%d/%m/%y
+DateRegex=updated\\s\\d+:\\d+:\\d+\\(\\w+\\)\\s+(\\d{1,2}/\\d{2}/\\d{4})
+IDBy=0
+IDRegex=https://fx-rate.net/([^/]+/[^/]+)
+PriceRegex=1\\s[^=]+\\s=</span><br\\s/>\\s([^\\s]+)
+SkipStripping=true
+URL=https://fx-rate.net/%1/%2
+
+[Online-Quote-Source-MSN]
+CSVURL=
+DateFormatRegex=%y %m %d
+DateRegex=(\\d+/\\d+/\\d+)
+IDBy=0
+IDRegex=
+PriceRegex=(\\d+\\.\\d+) [+-]\\d+.\\d+
+URL=http://www.msn.com/en-us/money/stockdetails/%1
+
+[Online-Quote-Source-Nasdaq Baltic - Funds]
+CSVURL=http://www.nasdaqbaltic.com/market/?instrument=%1&pg=details&tab=historical&lang=en&date=&start=%d.%m.%y&end=%d.%m.%y&pg=details&pg2=equity&downloadcsv=1&csv_style=english
+DateFormatRegex=%d.%m.%y
+DateRegex=as of: (\\d{2}.\\d{2}.\\d{4})
+IDBy=1
+IDRegex=
+PriceRegex=marketShareDetailTable(.+\\n){21}\\D+(\\d+)
+SkipStripping=true
+URL=http://www.nasdaqbaltic.com/market/?pg=details&instrument=%1&lang=en
+
+[Online-Quote-Source-Nasdaq Baltic - Shares]
+CSVURL=http://www.nasdaqbaltic.com/market/?instrument=%1&pg=details&tab=historical&lang=en&date=&start=%d.%m.%y&end=%d.%m.%y&pg=details&pg2=equity&downloadcsv=1&csv_style=english
+DateFormatRegex=%d.%m.%y
+DateRegex=as of: (\\d{2}.\\d{2}.\\d{4})
+IDBy=1
+IDRegex=
+PriceRegex=lastPrice\\D+(\\d+,\\d+)
+SkipStripping=true
+URL=http://www.nasdaqbaltic.com/market/?pg=details&instrument=%1&lang=en
+
+[Online-Quote-Source-New Quote Source]
+CSVURL=
+DateFormatRegex=%m %d %y
+DateRegex="regularMarketTime":([\\d]+)
+IDBy=0
+IDRegex=%1
+PriceRegex="regularMarketPrice":((\\d+|\\d{1,3}(?:[,]\\d{3})).\\d+)
+SkipStripping=true
+URL=https://query1.finance.yahoo.com/v7/finance/quote?fields=regularMarketPrice&symbols=%1
+
+[Online-Quote-Source-Puls Biznesu]
+CSVURL=
+DateFormatRegex=%y %m %d
+DateRegex=(\\d{4}-\\d{2}-\\d{2}) \\d{2}:\\d{2}:\\d{2}
+IDBy=1
+IDRegex=
+PriceRegex=(\\d+,\\d{2})\\D+\\d+,\\d{2}%
+URL=http://notowania.pb.pl/instrument/%1
+
+[Online-Quote-Source-Stooq]
+CSVURL=http://stooq.pl/q/d/l/?s=%1&d1=%y%m%d&d2=%y%m%d&i=d&c=1
+DateFormatRegex=%y %m %d
+DateRegex=(\\d{4,4}-\\d{2,2}-\\d{2,2})
+IDBy=0
+IDRegex=
+PriceRegex=Last(\\d+\\.\\d+).*Date
+URL=http://stooq.com/q/?s=%1
+
+[Online-Quote-Source-Stooq Currency]
+CSVURL=http://stooq.pl/q/d/l/?s=%1%2&d1=%y%m%d&d2=%y%m%d&i=d&c=1
+DateFormatRegex=%y %m %d
+DateRegex=(\\d{4,4}-\\d{2,2}-\\d{2,2})
+IDBy=0
+IDRegex=
+PriceRegex=Last.*(\\d+\\.\\d+).*Date
+URL=http://stooq.com/q/?s=%1%2
+
+[Online-Quote-Source-Wallstreet-Online.DE (Default)]
+CSVURL=
+DateFormatRegex=%d %m %y
+DateRegex=, (\\d+\\D+\\d+\\D+\\d+)
+IDBy=0
+IDRegex=Symbol:(\\w+)
+PriceRegex=Letzter Kurs: ([0-9.]+,\\d+)
+URL=http://www.wallstreet-online.de/si/?k=%1&spid=ws
+
+[Online-Quote-Source-Wallstreet-Online.DE (Hamburg)]
+CSVURL=
+DateFormatRegex=%d %m %y
+DateRegex=, (\\d+\\D+\\d+\\D+\\d+)
+IDBy=0
+IDRegex=Symbol:(\\w+)
+PriceRegex=Fonds \\(EUR\\) ([0-9.]+,\\d+)
+URL=http://fonds.wallstreet-online.de/si/?k=%1&spid=ws&mpid=5
+
+[Recent Files]
+File1[$e]=$HOME/Drive/docs/finance/kmymoney/shankar.kmy
+File2[$e]=$HOME/Drive/docs/finance/kmymoney/backup.xml
+File3[$e]=$HOME/Drive/docs/finance/kmymoney/20190120.kmy
+File4[$e]=$HOME/Drive/docs/finance/kmymoney/master.kmy
+Name1[$e]=shankar.kmy
+Name2[$e]=backup.xml
+Name3[$e]=20190120.kmy
+Name4[$e]=master.kmy
+
+[SplitTable]
+HeaderState=\x00\x00\x00ˇ\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x01\x00\x00\x00\x03\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x0e\x00\x00\x00\x03\x00\x01\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00dˇˇˇˇ\x00\x00\x00Ñ\x00\x00\x00\x00\x00\x00\x00\x03\x00\x00\x00q\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00d\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x019\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x03Ë\x00\x00\x00\x00d
+
+[SplitTransactionEditor]
+Geometry=656,408
