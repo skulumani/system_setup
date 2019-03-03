@@ -40,6 +40,7 @@ Plug 'freitass/todo.txt-vim'
 Plug 'scrooloose/nerdtree', { 'on' : 'NERDTreeToggle' }
 Plug 'andymass/vim-matchup'
 Plug 'machakann/vim-sandwich'
+Plug 'tpope/vim-eunuch'
 
 " Appearance
 Plug 'itchyny/lightline.vim'
