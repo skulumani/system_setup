@@ -63,7 +63,7 @@
           <entry key="columnInSortOrder" value="entrytype;"/>
           <entry key="columnInSortOrderType" value="DESCENDING;DESCENDING"/>
           <entry key="columnNames" value="entrytype;bibtexkey;author;title;year;timestamp"/>
-          <entry key="columnWidths" value="91.69978905371215;126.20069978679197;171.59663496189697;725.4270440981782;87.16019553620164;108.95024442025205"/>
+          <entry key="columnWidths" value="97.316313216724;133.93037165469931;182.10676433624587;769.8587550511133;92.49867394856933;115.62334243571166"/>
           <entry key="confirmDelete" value="true"/>
           <entry key="consoleCommand" value=""/>
           <entry key="ctrlClick" value="false"/>
@@ -117,7 +117,7 @@
           <entry key="fontSize" value="14"/>
           <entry key="fontStyle" value="0"/>
           <entry key="fxFontRenderingTweak" value="true"/>
-          <entry key="fxTheme" value="Dark.css"/>
+          <entry key="fxTheme" value="Base.css"/>
           <entry key="generateKeysAfterInspection" value="true"/>
           <entry key="generateKeysBeforeSaving" value="false"/>
           <entry key="grayOutNonHits" value="false"/>
@@ -127,7 +127,7 @@
           <entry key="groupEditGroupMembershipMode" value="false"/>
           <entry key="groupExpandTree" value="true"/>
           <entry key="groupIntersectSelections" value="true"/>
-          <entry key="groupIntersectUnionViewModes" value="INTERSECTION"/>
+          <entry key="groupIntersectUnionViewModes" value="UNION"/>
           <entry key="groupInvertSelections" value="false"/>
           <entry key="groupKeywordSeparator" value=", "/>
           <entry key="groupSelectMatches" value="false"/>
@@ -261,7 +261,7 @@
           <entry key="sidePaneComponentNames" value="GROUPS;WEB_SEARCH"/>
           <entry key="sidePaneComponentPreferredPositions" value="1;0"/>
           <entry key="sidePaneWidth" value="283"/>
-          <entry key="sidePaneWidthFX" value="0.20833333333333334"/>
+          <entry key="sidePaneWidthFX" value="0.15729166666666666"/>
           <entry key="sizeX" value="1375"/>
           <entry key="sizeY" value="901"/>
           <entry key="specialFieldsEnabled" value="true"/>
