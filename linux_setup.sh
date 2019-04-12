@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
+# vim: set ts=4 sw=4 sts=4 et:
+
 # trap functions to delete temporary folder on exit
 # find directory of script
 DIR="$HOME"
-
+    
 # create a temp directory inside $DIR
 WORK_DIR=$(mktemp -d -p "$DIR")
 
@@ -22,21 +24,9 @@ cleanup () {
 trap cleanup EXIT
 ########################################################################
 # list of packages to download for linux
-
-# anaconda version
-anaconda_version="5.0.0"
-anaconda_hash="67f5c20232a3e493ea3f19a8e273e0618ab678fa14b03b59b1783613062143e9"
-
-# go lang source
-go_version="1.8.1"
-go_hash="a579ab19d5237e263254f1eac5352efcf1d70b9dacadb6d6bb12b0911ede8994"
-
-texlive_year="2018"
-
 apt_packages=(
     exuberant-ctags
     git
-    myrepos
     zsh
     zathura
     zathura-dev
@@ -44,24 +34,37 @@ apt_packages=(
     redshift-gtk
     trash-cli
     software-properties-common
-    gnome-terminal
     conky-all
     curl
     lm-sensors
     hddtemp
-    clang
     gnupg2 
-    pcscd
-    scdaemon
     gnupg-agent
-    yubikey-personalization
+    pcscd
     pinentry-curses
+    synaptic
+    vim
 )
+
+# Old packages that might be useful
+# myrepos
+# gnome-terminal
+
+# miniconda version
+anaconda_version="5.0.0"
+anaconda_hash="67f5c20232a3e493ea3f19a8e273e0618ab678fa14b03b59b1783613062143e9"
+
+miniconda_path="https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh"
+miniconda_hash="866ae9dff53ad0874e1d1a60b1ad1ef8" # md5sum
+
+# use an ubuntu package instead
+texlive_year="2018"
 
 python_packages=(
     neovim
     neovim-remote
 )
+
 ######################################## End of app list ########################################
 set +e
 options=("Yes" "No" "Quit")
@@ -103,62 +106,105 @@ install_packages () {
     done    
 }
 
+install_amd_driver () {
+    echo "Are you sure you want to update AMD drivers?"
+    read -p "Press enter to continue"
+    
+    sudo add-apt-repository ppa:paulo-miguel-dias/pkppa
+    sudo apt dist-upgrade
+    sudo apt install mesa-vulkan-drivers mesa-vulkan-drivers:i386
+}
+
+install_nvidia_driver () {
+    prompt "Add NVIDIA driver repo" "sudo add-apt-repository ppa:graphics-drivers/ppa"
+}
+
+install_texlive_directly () {
+    if [[ ! -d "/usr/local/texlive/$texlive_year" ]]; then
+        echo "TeXlive is not installed"
+        prompt "Download texlive installer" "wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz -O $WORK_DIR/install-tl.tar.gz"
+        eval "tar -C $WORK_DIR -xzf $WORK_DIR/install-tl.tar.gz"
+
+        prompt "Create TeXLive directory and set correct permissions" "sudo mkdir -p /usr/local/texlive/$texlive_year; sudo chown -R $USER: /usr/local/texlive/; sudo chmod -R u+rw /usr/local/texlive"
+        prompt "Install TeXlive" "$WORK_DIR/install-tl-*/install-tl"
+    else
+        echo "TexLive is already installed"
+    fi
+}
+
+install_miniconda () {
+    if [[ ! -d "$HOME/anaconda3" ]]; then
+        echo "Anaconda is not installed"
+        prompt "Download Miniconda install script" "wget ${miniconda_path} -O $WORK_DIR/anaconda.sh"
+
+        if ! md5sum -c <<< "$miniconda_hash  $WORK_DIR/anaconda.sh"; then
+            echo "Hash does not match. Aborting!"
+            exit 1
+        else
+            echo "Hash match. Installing Anaconda"
+            prompt "Install Anaconda" "bash ${WORK_DIR}/anaconda.sh -b -p $HOME/anaconda3"
+        fi
+    else
+        echo "Anaconda is already installed"
+    fi
+}
+
+install_google_chrome () {
+
+    if command_exists google-chrome; then
+        echo "Google Chrome already installed"
+    else
+        echo "Chrome not installed"
+        wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O $WORK_DIR/google_chrome.deb
+        sudo dpkg -i $WORK_DIR/google_chrome.deb
+        # prompt "Fix the Chrome dependencies" "sudo apt-get -y install -f"
+    fi
+}
+
+install_neovim () {
+    neovim_version="0.3.4"
+    neovim_path="https://github.com/neovim/neovim/releases/download/v${neovim_version}/nvim.appimage"
+
+    if command_exists nvim; then
+        echo "NeoVim already installed"
+    else
+        echo "Neovim not installed"
+        wget ${neovim_path} -O $HOME/bin/nvim
+        chmod u+x $HOME/bin/nvim
+        #prompt "Do you want to add Neovim Ubuntu repo" "sudo add-apt-repository -y ppa:neovim-ppa/stable && sudo apt-get -y update"
+        #prompt "Do you want to install Neovim" "sudo apt-get -y install neovim"
+    fi
+}
 ######################################## Functions #############################################
 # install graphics drivers
 
 echo "We're going to update and install a bunch of stuff"
+echo "There are echo statements along the way and PROMPTS"
+echo "This is interactive!!!"
+echo " "
+
 sudo apt-get -y update
-prompt "Add NVIDIA driver repo" "sudo add-apt-repository ppa:graphics-drivers/ppa"
+
+# AMD Driver
+prompt "Install AMD PPA and drivers" "install_amd_driver"
+# prompt "Install NVIDIA PPA" "install_nvidia_driver"
 
 # download packages
 prompt "Install packages" "install_packages"
+
 # check and then install chrome
-if command_exists google-chrome; then
-    echo "Google Chrome already installed"
-else
-    echo "Chrome not installed"
-    prompt "Download Google Chrome" "wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O $WORK_DIR/google_chrome.deb"
-    prompt "Install Google Chrome" "sudo dpkg -i $WORK_DIR/google_chrome.deb"
+prompt "Install Google Chrome" "install_google_chrome"
 
-    prompt "Fix the Chrome dependencies" "sudo apt-get -y install -f"
-fi
-
-# install neovim
-if command_exists nvim; then
-    echo "NeoVim already installed"
-else
-    echo "Neovim not installed"
-    prompt "Do you want to add Neovim Ubuntu repo" "sudo add-apt-repository -y ppa:neovim-ppa/stable && sudo apt-get -y update"
-    prompt "Do you want to install Neovim" "sudo apt-get -y install neovim"
-fi
+# install neovim by copying the appimage
+# TODO need to do this after ~/bin is setup by dotfiles
+# prompt "Install NeoVim" "install_neovim"
 
 # install anaconda
-if [[ ! -d "$HOME/anaconda3" ]]; then
-    echo "Anaconda is not installed"
-    prompt "Download Anaconda install script" "wget https://repo.continuum.io/archive/Anaconda3-${anaconda_version}-Linux-x86_64.sh -O $WORK_DIR/anaconda.sh"
-
-    if ! sha256sum -c <<< "$anaconda_hash  $WORK_DIR/anaconda.sh"; then
-        echo "Hash does not match. Aborting!"
-        exit 1
-    else
-        echo "Hash match. Installing Anaconda"
-        prompt "Install Anaconda" "bash ${WORK_DIR}/anaconda.sh -b -p $HOME/anaconda3"
-    fi
-else
-    echo "Anaconda is already installed"
-fi
+prompt "Install latest Miniconda" "install_miniconda"
 
 # install texlive
-if [[ ! -d "/usr/local/texlive/$texlive_year" ]]; then
-    echo "TeXlive is not installed"
-    prompt "Download texlive installer" "wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz -O $WORK_DIR/install-tl.tar.gz"
-    eval "tar -C $WORK_DIR -xzf $WORK_DIR/install-tl.tar.gz"
-    
-    prompt "Create TeXLive directory and set correct permissions" "sudo mkdir -p /usr/local/texlive/$texlive_year; sudo chown -R $USER: /usr/local/texlive/; sudo chmod -R u+rw /usr/local/texlive"
-    prompt "Install TeXlive" "$WORK_DIR/install-tl-*/install-tl"
-else
-    echo "TexLive is already installed"
-fi
+prompt "Install TexLive $texlive_year directly" "install_texlive_directly"
+
 
 # install the go language
 if [[ ! -d "/usr/local/go" ]]; then
