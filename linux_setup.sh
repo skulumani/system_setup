@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash -xv
 # vim: set ts=4 sw=4 sts=4 et:
 
 # trap functions to delete temporary folder on exit
@@ -209,11 +209,12 @@ install_dotfiles () {
         git submodule update --recursive --remote
         echo "Now installing the dotfiles"
         bash install_profile.sh ubuntu
+	cd $CURRENT_DIR
     else
         echo "System setup repo does not exist"
         echo "Now cloning from Github"
 
-        git clone git@github.com:skulumani/system_setup.git $HOME/Documents/system_setup
+        git clone https://github.com/skulumani/system_setup.git $HOME/Documents/system_setup
         echo "Now we'll update the submodules and install all the dotfiles"
         if [[ -f "$HOME/.profile" ]]; then
             mv $HOME/.profile $HOME/.profile_backup
@@ -227,9 +228,12 @@ install_dotfiles () {
             mv $HOME/.zshrc $HOME/.zshrc_backup
         fi
         echo "Now installing the dotfiles"
+
+	cd $HOME/Documents/system_setup
         git submodule init  
         git submodule update --recursive --remote
         bash install_profile.sh ubuntu
+	cd $CURRENT_DIR
     fi
 }
 
