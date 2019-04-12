@@ -39,12 +39,9 @@ apt_packages=(
     curl
     lm-sensors
     hddtemp
-    gnupg2 
-    gnupg-agent
-    pcscd
-    pinentry-curses
     synaptic
     vim
+    tmux
 )
 
 # Old packages that might be useful
@@ -67,6 +64,7 @@ python_packages=(
 )
 
 ######################################## End of app list ########################################
+################# FUNCTIONS ################################################## 
 set +e
 options=("Yes" "No" "Quit")
 prompt () {
@@ -131,6 +129,10 @@ install_texlive_directly () {
     else
         echo "TexLive is already installed"
     fi
+
+    export PATH=/usr/local/texlive/${texlive_year}/bin/x86_64-linux:$PATH
+    tlmgr paper letter
+    tlmgr update --list; tlmgr update --all
 }
 
 install_miniconda () {
@@ -148,6 +150,13 @@ install_miniconda () {
     else
         echo "Anaconda is already installed"
     fi
+
+    export PATH=$HOME/anaconda3/bin:"$PATH"
+    echo "Make sure Python is actually using Anaconda"
+    python --version
+    read -p "Press Enter to continue"
+     
+    prompt "Install Neovim2 and Neovim3 anaconda env" "conda-env create -f ~/Documents/system_setup/conda/neovim2.yml && conda-env create -f ~/Documents/system_setup/conda/neovim3.yml"
 }
 
 install_google_chrome () {
@@ -178,7 +187,17 @@ install_neovim () {
 }
 
 install_yubikey () {
-
+    sudo apt-get install gnupg2 gnupg-agent pcscd pinentry-curses
+    echo "Now download my public key"
+    curl https://keybase.io/skulumani/pgp_keys.asc | gpg --import
+    echo "Now set the trust level of the key"
+    echo "Enter gpg> trust, followed by save, and then quit"
+    gpg --edit-key $KEYID
+    echo "Test the Yubikey - plug it in"
+    read -p "Press Enter when Yubikey is available"
+    gpg --card-status
+    echo "You should see something like sec# and the yubikey information"
+    read -p "Press enter to continue"
 }
 
 install_dotfiles () {
@@ -213,7 +232,15 @@ install_dotfiles () {
         bash install_profile.sh ubuntu
     fi
 }
-######################################## Functions #############################################
+
+install_zsh () {
+    echo "Set default shell"
+    chsh -s $(which zsh)
+    
+    echo "Setup oh my zsh"
+    git clone https://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh
+}
+######################################## INSTALLATION ##########################
 # install graphics drivers
 
 echo "We're going to update and install a bunch of stuff"
@@ -230,12 +257,17 @@ prompt "Install AMD PPA and drivers" "install_amd_driver"
 # download packages
 prompt "Install packages" "install_packages"
 
+prompt "Setup Yubikey" "install_yubikey"
+
+# setup system_setup repo and install dotfiles
+echo "Now we'll setup git and clone the dotfiles repository"
+prompt "Setup dotfiles" "install_dotfiles"
+
 # check and then install chrome
 prompt "Install Google Chrome" "install_google_chrome"
 
 # install neovim by copying the appimage
-# TODO need to do this after ~/bin is setup by dotfiles
-# prompt "Install NeoVim" "install_neovim"
+prompt "Install NeoVim" "install_neovim"
 
 # install anaconda
 prompt "Install latest Miniconda" "install_miniconda"
@@ -243,6 +275,14 @@ prompt "Install latest Miniconda" "install_miniconda"
 # install texlive
 prompt "Install TexLive $texlive_year directly" "install_texlive_directly"
 
+# setup zsh as default
+prompt "Setup zsh" "install_zsh"
+
+# build custom versions of apps
+# prompt "Enable SSH server" "sudo apt-get install openssh-server && sudo service ssh restart"
+
+echo "All finished"
+echo "Might need to restart and rerun dotfiles/install linux to make sure eerything is working"
 
 # install the go language
 # if [[ ! -d "/usr/local/go" ]]; then
@@ -286,52 +326,25 @@ prompt "Install TexLive $texlive_year directly" "install_texlive_directly"
 # prompt "Install Boinc-client and Manger" "sudo apt-get install boinc-client boinc-manager"
 # prompt "Install Boinc-client headless mode" "sudo apt-get install boinc-client && boinccmd --join_acct_mgr bam.boincstats.com 9339_bd290f245f79b42e8672e1a077c14f48 random"
 
-# setup system_setup repo and install dotfiles
-echo "Now we'll setup git and clone the dotfiles repository"
-
-prompt "Setup dotfiles" "install_dotfiles"
 
 # make sure Anaconda is on the path
-echo "Now make sure you're using the correct version of Anaconda"
-echo "Add Anaconda and Golang to the path"
-export GOPATH=$HOME/.go
-export PATH=$PATH:$GOPATH/bin
-export PATH=$HOME/anaconda3/bin:"$PATH"
-export PATH=$PATH:/usr/local/go/bin
-export PATH=/usr/local/texlive/${texlive_year}/bin/x86_64-linux:$PATH
+# export GOPATH=$HOME/.go
+# export PATH=$PATH:$GOPATH/bin
+# export PATH=$PATH:/usr/local/go/bin
 
-prompt "Test Anaconda" "python --version"
+# prompt "Test Golang" "go --version"
 
-prompt "Install Neovim2 and Neovim3 anaconda env" "conda-env create -f ~/Documents/system_setup/conda/neovim2.yml && conda-env create -f ~/Documents/system_setup/conda/neovim3.yml"
+# TODO Use the ubuntu package instead install drive client
+# echo "Installing Google Drive client"
+# if command_exists drive; then 
+#     echo "drive client already installed"
+# else
+#     prompt "Install drive client" "go get -u github.com/odeke-em/drive/cmd/drive"
+# fi
 
-prompt "Test Golang" "go --version"
+# prompt "Test drive client" "drive --version"
 
-# install drive client
-echo "Installing Google Drive client"
-if command_exists drive; then 
-    echo "drive client already installed"
-else
-    prompt "Install drive client" "go get -u github.com/odeke-em/drive/cmd/drive"
-fi
 
-prompt "Test drive client" "drive --version"
+# echo "Install all the pip packages"
+# prompt "Install pip packages" "install_pips"
 
-prompt "Set correct TeX paper size" "tlmgr paper letter"
-prompt "Update TeXLive" "tlmgr update --list; tlmgr update --all"
-
-echo "Install all the pip packages"
-prompt "Install pip packages" "install_pips"
-
-# setup zsh as default
-prompt "Set zsh as default shell" "chsh -s $(which zsh)"
-
-prompt "Install oh-my-zsh" "git clone https://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh"
-
-# build custom versions of apps
-prompt "Build TMUX" "bash ~/Documents/system_setup/build_tmux.sh"
-prompt "Build ag" "bash ~/Documents/system_setup/build_ag.sh"
-
-prompt "Enable SSH server" "sudo apt-get install openssh-server && sudo service ssh restart"
-
-echo "All finished"
-echo "Might need to restart and rerun dotfiles/install linux to make sure eerything is working"
