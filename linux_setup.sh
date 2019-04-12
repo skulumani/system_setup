@@ -7,6 +7,7 @@ DIR="$HOME"
     
 # create a temp directory inside $DIR
 WORK_DIR=$(mktemp -d -p "$DIR")
+CURRENT_DIR=$(pwd)
 
 # make sure tmp dir was actually created
 if [[ ! -d "$WORK_DIR" ]]; then
@@ -175,6 +176,43 @@ install_neovim () {
         #prompt "Do you want to install Neovim" "sudo apt-get -y install neovim"
     fi
 }
+
+install_yubikey () {
+
+}
+
+install_dotfiles () {
+
+    if [[ -d "$HOME/Documents/system_setup" ]]; then
+        echo "System setup repo already exits"
+        cd $HOME/Documents/system_setup 
+        git submodule init  
+        git submodule update --recursive --remote
+        echo "Now installing the dotfiles"
+        bash install_profile.sh ubuntu
+    else
+        echo "System setup repo does not exist"
+        echo "Now cloning from Github"
+
+        git clone git@github.com:skulumani/system_setup.git $HOME/Documents/system_setup
+        echo "Now we'll update the submodules and install all the dotfiles"
+        if [[ -f "$HOME/.profile" ]]; then
+            mv $HOME/.profile $HOME/.profile_backup
+        fi
+
+        if [[ -f "$HOME/.bashrc" ]]; then
+            mv $HOME/.bashrc $HOME/.bashrc_backup
+        fi
+
+        if [[ -f "$HOME/.bashrc" ]]; then
+            mv $HOME/.zshrc $HOME/.zshrc_backup
+        fi
+        echo "Now installing the dotfiles"
+        git submodule init  
+        git submodule update --recursive --remote
+        bash install_profile.sh ubuntu
+    fi
+}
 ######################################## Functions #############################################
 # install graphics drivers
 
@@ -207,21 +245,21 @@ prompt "Install TexLive $texlive_year directly" "install_texlive_directly"
 
 
 # install the go language
-if [[ ! -d "/usr/local/go" ]]; then
-    echo "Golang is not installed"
+# if [[ ! -d "/usr/local/go" ]]; then
+#     echo "Golang is not installed"
 
-    prompt "Download Golang install binary" "wget https://storage.googleapis.com/golang/go${go_version}.linux-amd64.tar.gz -O $WORK_DIR/go.tar.gz"
+#     prompt "Download Golang install binary" "wget https://storage.googleapis.com/golang/go${go_version}.linux-amd64.tar.gz -O $WORK_DIR/go.tar.gz"
 
-    if ! sha256sum -c <<< "${go_hash} ${WORK_DIR}/go.tar.gz"; then
-        echo "Hash does not match. Aborting!"
-        exit 1
-    else
-        echo "Hash match. Installing Golang"
-        prompt "Install Golang" "sudo tar -C /usr/local -xzf $WORK_DIR/go.tar.gz"
-    fi
-else
-    echo "Golang is already installed"
-fi
+#     if ! sha256sum -c <<< "${go_hash} ${WORK_DIR}/go.tar.gz"; then
+#         echo "Hash does not match. Aborting!"
+#         exit 1
+#     else
+#         echo "Hash match. Installing Golang"
+#         prompt "Install Golang" "sudo tar -C /usr/local -xzf $WORK_DIR/go.tar.gz"
+#     fi
+# else
+#     echo "Golang is already installed"
+# fi
 
 # setup ssh 
 # echo "Now setup SSH keys so we can clone our Git repos"
@@ -244,35 +282,14 @@ fi
 # fi
 
 # Now we'll setup Boinc
-echo "Now we're going to install Boinc if desired"
-prompt "Install Boinc-client and Manger" "sudo apt-get install boinc-client boinc-manager"
-prompt "Install Boinc-client headless mode" "sudo apt-get install boinc-client && boinccmd --join_acct_mgr bam.boincstats.com 9339_bd290f245f79b42e8672e1a077c14f48 random"
+# echo "Now we're going to install Boinc if desired"
+# prompt "Install Boinc-client and Manger" "sudo apt-get install boinc-client boinc-manager"
+# prompt "Install Boinc-client headless mode" "sudo apt-get install boinc-client && boinccmd --join_acct_mgr bam.boincstats.com 9339_bd290f245f79b42e8672e1a077c14f48 random"
 
 # setup system_setup repo and install dotfiles
 echo "Now we'll setup git and clone the dotfiles repository"
 
-if [[ -d "$HOME/Documents/system_setup" ]]; then
-    echo "System setup repo already exits"
-    prompt "Update the repo" "(cd $HOME/Documents/system_setup && git submodule init && git submodule update --recursive --remote)"
-    prompt "Install the dotfiles" "(cd $HOME/Documents/system_setup/dotfiles && ./install linux)"
-else
-    echo "System setup repo does not exist"
-
-    prompt "Clone system_setup repo" "git clone git@github.com:skulumani/system_setup.git $HOME/Documents/system_setup"
-    echo "Now we'll update the submodules and install all the dotfiles"
-    if [[ -f "$HOME/.profile" ]]; then
-        mv $HOME/.profile $HOME/.profile_backup
-    fi
-
-    if [[ -f "$HOME/.bashrc" ]]; then
-        mv $HOME/.bashrc $HOME/.bashrc_backup
-    fi
-
-    if [[ -f "$HOME/.bashrc" ]]; then
-        mv $HOME/.zshrc $HOME/.zshrc_backup
-    fi
-    prompt "Install dotfiles" "(cd $HOME/Documents/system_setup && git submodule init && git submodule update --recursive --remote && ./dotfiles/install linux)"
-fi
+prompt "Setup dotfiles" "install_dotfiles"
 
 # make sure Anaconda is on the path
 echo "Now make sure you're using the correct version of Anaconda"
