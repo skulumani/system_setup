@@ -60,10 +60,10 @@
           <entry key="caseSensitiveSearch" value="false"/>
           <entry key="citeCommand" value="\cite"/>
           <entry key="collectTelemetry" value="true"/>
-          <entry key="columnInSortOrder" value="entrytype;"/>
+          <entry key="columnInSortOrder" value="title;"/>
           <entry key="columnInSortOrderType" value="DESCENDING;DESCENDING"/>
           <entry key="columnNames" value="entrytype;bibtexkey;author;title;year;timestamp"/>
-          <entry key="columnWidths" value="91.69978905371215;126.20069978679197;171.59663496189697;725.4270440981782;87.16019553620164;108.95024442025205"/>
+          <entry key="columnWidths" value="97.72681943795796;134.49532576115;182.8749393442975;773.1062250586967;92.88885807964319;116.11107259955395"/>
           <entry key="confirmDelete" value="true"/>
           <entry key="consoleCommand" value=""/>
           <entry key="ctrlClick" value="false"/>
@@ -93,7 +93,7 @@
           <entry key="emailSubject" value="References"/>
           <entry key="enforceLegalBibtexKey" value="true"/>
           <entry key="entryEditorHeight" value="576"/>
-          <entry key="entryEditorHeightFX" value="0.5188053097345132"/>
+          <entry key="entryEditorHeightFX" value="0.5210176991150443"/>
           <entry key="exportInOriginalOrder" value="false"/>
           <entry key="exportInSpecifiedOrder" value="true"/>
           <entry key="exportInStandardOrder" value="true"/>
@@ -117,7 +117,7 @@
           <entry key="fontSize" value="14"/>
           <entry key="fontStyle" value="0"/>
           <entry key="fxFontRenderingTweak" value="true"/>
-          <entry key="fxTheme" value="Dark.css"/>
+          <entry key="fxTheme" value="Base.css"/>
           <entry key="generateKeysAfterInspection" value="true"/>
           <entry key="generateKeysBeforeSaving" value="false"/>
           <entry key="grayOutNonHits" value="false"/>
@@ -127,7 +127,7 @@
           <entry key="groupEditGroupMembershipMode" value="false"/>
           <entry key="groupExpandTree" value="true"/>
           <entry key="groupIntersectSelections" value="true"/>
-          <entry key="groupIntersectUnionViewModes" value="INTERSECTION"/>
+          <entry key="groupIntersectUnionViewModes" value="UNION"/>
           <entry key="groupInvertSelections" value="false"/>
           <entry key="groupKeywordSeparator" value=", "/>
           <entry key="groupSelectMatches" value="false"/>
@@ -156,7 +156,7 @@
           <entry key="invalidFieldBackgroundColor" value="255:0:0"/>
           <entry key="keyGenAlwaysAddLetter" value="false"/>
           <entry key="keyGenFirstLetterA" value="true"/>
-          <entry key="lastEdited" value="/home/shankar/texmf/bibtex/bib/library.bib"/>
+          <entry key="lastEdited" value="/home/shankar/texmf/bibtex/bib/library.bib;/home/shankar/Drive/RCCT/futurenav/references.bib"/>
           <entry key="lastFocused" value="/home/shankar/texmf/bibtex/bib/library.bib"/>
           <entry key="lastUsedExport" value="ISO 690"/>
           <entry key="lastUsedImport" value="__all"/>
@@ -219,7 +219,7 @@
           <entry key="proxyUsername" value=""/>
           <entry key="psDirectory" value=""/>
           <entry key="pushToApplication" value="Vim"/>
-          <entry key="recentDatabases" value="/home/shankar/texmf/tex/latex/local/glossaries_terms.bib;/home/shankar/Documents/skulumani.github.io/_bibliography/references.bib;/home/shankar/texmf/bibtex/bib/library.bib"/>
+          <entry key="recentDatabases" value="/home/shankar/Drive/RCCT/futurenav/references.bib;/home/shankar/texmf/tex/latex/local/glossaries_terms.bib;/home/shankar/Documents/skulumani.github.io/_bibliography/references.bib;/home/shankar/texmf/bibtex/bib/library.bib"/>
           <entry key="recentFiles" value="/home/shankar/Desktop/references.bib;/home/shankar/texmf/bibtex/bib/library.bib;/home/shankar/Documents/skulumani.github.io/_bibliography/references.bib"/>
           <entry key="reformatFileOnSaveAndExport" value="false"/>
           <entry key="regExpSearch" value="false"/>
@@ -261,7 +261,7 @@
           <entry key="sidePaneComponentNames" value="GROUPS;WEB_SEARCH"/>
           <entry key="sidePaneComponentPreferredPositions" value="1;0"/>
           <entry key="sidePaneWidth" value="283"/>
-          <entry key="sidePaneWidthFX" value="0.20833333333333334"/>
+          <entry key="sidePaneWidthFX" value="0.14947916666666666"/>
           <entry key="sizeX" value="1375"/>
           <entry key="sizeY" value="901"/>
           <entry key="specialFieldsEnabled" value="true"/>
@@ -314,7 +314,7 @@
           <entry key="warnBeforeOverwritingKey" value="true"/>
           <entry key="webSearchVisible" value="true"/>
           <entry key="windowMaximised" value="true"/>
-          <entry key="workingDirectory" value="/home/shankar/texmf/tex/latex/local"/>
+          <entry key="workingDirectory" value="/home/shankar/Drive/RCCT/futurenav"/>
           <entry key="writeFieldAddSpaces" value="true"/>
           <entry key="writeFieldCamelCase" value="true"/>
           <entry key="xmpPrivacyFilters" value="pdf;timestamp;keywords;owner;note;review"/>
