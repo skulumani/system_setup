@@ -188,6 +188,7 @@ install_neovim () {
 
 install_yubikey () {
     sudo apt-get install gnupg2 gnupg-agent pcscd pinentry-curses scdaemon
+    sudo ln -s /usr/bin/pinentry-curses /usr/local/bin/pinentry-curses
     echo "Now download my public key"
     curl https://keybase.io/skulumani/pgp_keys.asc | gpg --import
     echo "Now set the trust level of the key"
