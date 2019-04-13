@@ -16,6 +16,8 @@
 * Build Essentials and Cmake
 * Set up fstab mounting for data drive to `/media/shankar/data` with gnome-disks
 * Setup conky autostart
+* Setup crontab for automatic borg backups to local and remote
+* rclone - software center
 
 ### Mac specifics
 
