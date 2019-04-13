@@ -4,6 +4,19 @@
 
     * [Anaconda Hashes](https://docs.anaconda.com/anaconda/install/hashes/)
 
+## Apps to install
+
+* Steam - software center
+* Discord - software center
+* gnome-disks - software center
+* Drive
+* Borg backup - run `bash build_scripts/build_borg.sh`
+* Kmymoney - software center
+* Veracrypt
+* Build Essentials and Cmake
+* Set up fstab mounting for data drive to `/media/shankar/data` with gnome-disks
+* Setup conky autostart
+
 ### Mac specifics
 
 * Install the fonts located in `dotfiles/.fonts` by just clicking on them
