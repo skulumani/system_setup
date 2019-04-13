@@ -11,7 +11,7 @@
 * gnome-disks - software center
 * Drive
 * Borg backup - run `bash build_scripts/build_borg.sh`
-* Kmymoney - software center
+* Kmymoney - software center and install `oxygen-icon-theme` to get icons
 * Veracrypt
 * Build Essentials and Cmake
 * Set up fstab mounting for data drive to `/media/shankar/data` with gnome-disks
