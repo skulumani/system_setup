@@ -187,12 +187,12 @@ install_neovim () {
 }
 
 install_yubikey () {
-    sudo apt-get install gnupg2 gnupg-agent pcscd pinentry-curses
+    sudo apt-get install gnupg2 gnupg-agent pcscd pinentry-curses scdaemon
     echo "Now download my public key"
     curl https://keybase.io/skulumani/pgp_keys.asc | gpg --import
     echo "Now set the trust level of the key"
     echo "Enter gpg> trust, followed by save, and then quit"
-    gpg --edit-key $KEYID
+    gpg --edit-key 0x20D0685093466FC7
     echo "Test the Yubikey - plug it in"
     read -p "Press Enter when Yubikey is available"
     gpg --card-status
@@ -233,6 +233,8 @@ install_dotfiles () {
         git submodule init  
         git submodule update --recursive --remote
         bash install_profile.sh ubuntu
+	echo "Now change the remote back to using ssh for yubikey"
+	git remote set-url origin git@github.com:skulumani/systems_setup.git
 	cd $CURRENT_DIR
     fi
 }
@@ -244,6 +246,7 @@ install_zsh () {
     echo "Setup oh my zsh"
     git clone https://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh
 }
+
 ######################################## INSTALLATION ##########################
 # install graphics drivers
 
@@ -252,7 +255,7 @@ echo "There are echo statements along the way and PROMPTS"
 echo "This is interactive!!!"
 echo " "
 
-sudo apt-get -y update
+prompt "Update packages" "sudo apt-get -y update"
 
 # AMD Driver
 prompt "Install AMD PPA and drivers" "install_amd_driver"
