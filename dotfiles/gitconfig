@@ -5,6 +5,7 @@
 [core]
     excludesfile = ~/.gitignore_global
     filemode = false
+	editor = vim
 [push]
     default = simple
 [commit]
