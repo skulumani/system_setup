@@ -42,7 +42,9 @@ if [[ -d $HOME/anaconda3 ]]; then
 
     # conda activate
     export NOCONDA_PATH=$PATH
-    export PATH="$PATH:$HOME/anaconda3/bin:"
+    #export PATH="$PATH:$HOME/anaconda3/bin:"
+    # anaconda should be ahead of the normal path variables
+    export PATH="$HOME/anaconda3/bin:$PATH"
 fi
 
 
