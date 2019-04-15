@@ -286,6 +286,8 @@ prompt "Install TexLive $texlive_year directly" "install_texlive_directly"
 # setup zsh as default
 prompt "Setup zsh" "install_zsh"
 
+prompt "Install rclone" "bash ~/Documents/system_setup/build_rclone.sh"
+
 # build custom versions of apps
 # prompt "Enable SSH server" "sudo apt-get install openssh-server && sudo service ssh restart"
 

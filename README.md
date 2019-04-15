@@ -17,8 +17,8 @@
 * Set up fstab mounting for data drive to `/media/shankar/data` with gnome-disks
 * Setup conky autostart
 * Setup crontab for automatic borg backups to local and remote
-* rclone - software center
 * Signal Desktop - `bash build_scripts/build_signal_desktop.sh`
+* rclone - run `bash build_scripts/build_rclone.sh` then follow [Drive](https://rclone.org/drive/)
 
 ### Mac specifics
 
@@ -29,7 +29,21 @@
 
 ## Dot files
 
-After cloning the system setup repo, make sure it's up to date and run `./dotfiles/install linux` or `./dotfiles/install mac`
+Can install profiles:
+
+~~~
+bash install_profile.sh <ubuntu or mac or rpi>
+~~~
+
+Or install standalone items using:
+
+~~~
+bash install_standalone.sh <vim or tmux or etc>
+~~~
+
+Profiles: `dotfiles/meta/profiles`
+
+Configs: `dotfiles/meta/configs`
 
 ### TMUX Plugins
 The plugin manager `tpm` lives inside `.tmux/plugins/tpm`. 
@@ -49,37 +63,10 @@ To uninstall a plugin `prefix + alt + u`
 To update plugins `prefix + U`
 
 ### Vim plugins
+
 Just run `:PluginInstall` a few times and be happy
 
-### `ctag` help
-
-Run `:MakeTags` inside vim to generate all the tags for the current directory.
-Then use one of the following:
-* `Ctrl-]` to jump to tag under cursor
-* `g-Ctrl-]` for ambiguous tag
-* `Ctrl-t` to jump back up the tag stack
-
-### Autocomplete for vim
-
-Just type `Ctrl-n` for autocomplete then `Ctrl-n` or `Ctrl-p` to go forward and backward.
-
-You can autocomplete filenames using `Ctrl-x` then `Ctrl-f`.
-
-Look at `:help ins-completion` for extra help.
-
-
-## `font` installation
-* [Source Code Pro version](https://github.com/adobe-fonts/source-code-pro/releases/tag/2.030R-ro%2F1.050R-it)
-
-All the fonts are in the `~/.fonts` directory which is installed by `dotbot`
-
 ## [GPG setup](./gpg.md)
-
-* Import GPG key from Lastpass into the system key store
-~~~
-gpg --import public.key
-gpg --allow-secret-key-import --import private.key
-~~~
 
 ## Xfce setup
 
@@ -105,36 +92,6 @@ bundle update
 * Create website
 ~~~
 bundle exec jekyll serve
-~~~
-
-## Building Vim
-
-Some useful links 
-
-* [YouCompleteMe Instructions](https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source)
-* [Github Gist](https://gist.github.com/Mistobaan/b1384a44e8b5a8b35c6e1c7a4c546e84)
-* [Building Vim](https://www.xorpd.net/blog/vim_python3_install.html)
-
-You should be able to simply run `./build_vim.sh`
-
-Also depending on the options, you might need to install an Anaconda environment first.
-
-## FSTAB for GWU shared drives
-
-In order to add the shared drives to Linux
-
-Add the following to `/etc/fstab`
-
-~~~
-//titan.seas.gwu.edu/Homes/skulumani /media/titan_drive/ cifs username=USERNAME_HERE,password=PASSWORD_HERE,domain=seas.gwu.edu,_netdev,iocharset=utf8,sec=ntlmv2,users 0 0
-~~~
-
-## Dual monitors on xfce
-
-After setting up the nvidia drivers and connecting both monitors you can move the default panel to the chosen monitor by going to
-
-~~~
-Settings Mangaer > Panel > Output dropdown > Select Monitor
 ~~~
 
 ## Mounting an external drive
