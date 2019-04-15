@@ -18,6 +18,7 @@
 * Setup conky autostart
 * Setup crontab for automatic borg backups to local and remote
 * rclone - software center
+* Signal Desktop - `bash build_scripts/build_signal_desktop.sh`
 
 ### Mac specifics
 
