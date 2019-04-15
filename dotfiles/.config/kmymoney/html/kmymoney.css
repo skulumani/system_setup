@@ -8,13 +8,13 @@
   A:hover { text-decoration: none; font-weight: normal; color: #4C59A6 }
 
   body {
-    background-color: #fcfcfc;
+    background-color: #eff0f1;
     color:#232627;
     font-family: verdana, arial, sans-serif;
   }
 
   .setcolor { /*sets color of some spacing elements (such as the column between assets and liabilities) to the desired color*/
-    background-color:#fcfcfc;
+    background-color:#eff0f1;
 }
 
 body#summaryview { /* set body attributes that affect only the summary view (and not reports) */
@@ -51,7 +51,7 @@ body#summaryview { /* set body attributes that affect only the summary view (and
     position:relative;
     top:-6px;
     left:-6px;
-    background-color: #fcfcfc;
+    background-color: #eff0f1;
     border-right: 1px solid #7f8c8d;
     border-bottom: 1px solid #7f8c8d;
     border-left: 1px solid #7f8c8d;
@@ -73,8 +73,8 @@ body#summaryview { /* set body attributes that affect only the summary view (and
 
   .summarytable td { /*style <td> in the tables in the financial summary */
     padding:5px 10px;
-    border-left: medium solid #fcfcfc;
-    border-right: medium solid #fcfcfc;
+    border-left: medium solid #eff0f1;
+    border-right: medium solid #eff0f1;
     color:#232627;
   }
 
@@ -143,7 +143,7 @@ body#summaryview { /* set body attributes that affect only the summary view (and
   .itemheader { /*column labels in reports */
     font-family: verdana, arial, helvetica, sans-serif;
     font-weight: bold;
-    background-color: #fcfcfc;
+    background-color: #eff0f1;
     color: #232627;
     padding-top: 5px;
     padding-left: 20px;
