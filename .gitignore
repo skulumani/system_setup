@@ -10,7 +10,8 @@ JabRef*.jar
 dotfiles/.mutt/shanks.k/bodies/*
 dotfiles/.mutt/shanks.k/headers/*
 dotfiles/.mutt/certificates
-dotfiles/.vim/swap/*.swo
+dotfiles/.vim/swap/*
+dotfiles/vim/swap/*
 dotfiles/bin/nvim
 dotfiles/bin/borg
 dotfiles/bin/drive
