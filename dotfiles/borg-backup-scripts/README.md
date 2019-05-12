@@ -111,7 +111,11 @@ like this:
     ~~~
     30 * * * * export BORG_PASSPHRASE="password" && bash /home/shankar/borg_local_cron.sh 
     ~~~
-
+3. Can use `systemd` as well
+    * Copy `borg-backup.service` and `borg-backup.timer` to `/etc/systemd/system`
+    * Run `sudo systemctl enable borg-backup` to enable
+    * Check timers: `systemctl list-timers`
+    * Check status: `systemctl status borg-backup` 
 4. Can recieve notifications for cron jobs. Just paste the following at the end of each crontab line
 
 ~~~
