@@ -116,6 +116,7 @@ like this:
     * Run `sudo systemctl enable borg-backup` to enable
     * Check timers: `systemctl list-timers`
     * Check status: `systemctl status borg-backup` 
+    * Symlink borg: `ln /home/shankar/bin/borg /usr/local/bin/borg` so the systemd script can run it as well
 4. Can recieve notifications for cron jobs. Just paste the following at the end of each crontab line
 
 ~~~
