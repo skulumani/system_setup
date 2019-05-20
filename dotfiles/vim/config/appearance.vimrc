@@ -81,3 +81,8 @@ let g:lightline.tabline = {
   \ }
 
 " font settings
+" git gutter settings
+set updatetime=250
+let g:gitgutter_override_sign_column_highlight = 1
+highlight SignColumn guibg=bg
+highlight SignColumn ctermbg=bg
