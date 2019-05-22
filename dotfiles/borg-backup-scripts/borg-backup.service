@@ -1,0 +1,12 @@
+[Unit]
+Description=Borg User Backup
+
+[Service]
+Type=simple
+Nice=19
+IOSchedulingClass=2
+IOSchedulingPriority=7
+ExecStartPre=bash /home/shankar/bin/backup_local.sh -b
+ExecStart=bash /home/shankar/bin/backup_local.sh -c
+User=shankar
+Group=shankar

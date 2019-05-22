@@ -55,6 +55,39 @@ StartLine=5
 TextDelimiter=0
 TrailerLines=0
 
+[Invest-UTC]
+AmountCol=6
+BuyParam=buy,Converted Balances,Company Automatic Feature,Before Tax,Company Match (ESOP)
+DateCol=0
+DateFormat=1
+DecimalSymbol=0
+Directory=/tmp
+DivXParam=dividend
+DontAsk=0
+Encoding=106
+FeeCol=-1
+FeeIsPercentage=false
+FeeRate=
+FieldDelimiter=0
+IntIncParam=interest,income
+MemoCol=
+MinFee=
+NameCol=-1
+PriceCol=7
+PriceFraction=2
+QuantityCol=8
+ReinvdivParam=reinvest,reinv,re-inv
+SecurityName=
+SecuritySymbol=
+SellParam=sell,repurchase,
+ShrsinParam=add,stock dividend,divd reinv,transfer in,re-registration in,journal entry
+ShrsoutParam=remove
+StartLine=1
+SymbolCol=5
+TextDelimiter=0
+TrailerLines=0
+TypeCol=2
+
 [Misc]
 Height=400
 KMMVer=5,0,0
@@ -63,9 +96,9 @@ Width=800
 [ProfileNames]
 Bank=USAA,Uber,Ally
 CPrices=
-Invest=Fidelity
+Invest=Fidelity,UTC
 PriorBank=2
 PriorCPrices=0
-PriorInvest=0
+PriorInvest=1
 PriorSPrices=0
 SPrices=

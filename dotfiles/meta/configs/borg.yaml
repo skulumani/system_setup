@@ -1,0 +1,3 @@
+- link:
+    /etc/systemd/system/borg-backup.service: dotfiles/borg-backup-scripts/borg-backup.service
+    /etc/systemd/system/borg-backup.timer: dotfiles/borg-backup-scripts/borg-backup.timer

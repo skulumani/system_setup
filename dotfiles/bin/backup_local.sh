@@ -75,7 +75,7 @@ main() {
 
 # $1...: command line arguments
 parse_args() {
-    while getopts ":ichpdmqluvr" opt; do
+    while getopts ":ichpdmqluvrb" opt; do
         case $opt in
             i)  init
                 exit 0
@@ -110,6 +110,9 @@ parse_args() {
             r)  rclone_sync
                 exit 0
                 ;;
+            b)  break_lock
+                exit 0
+                ;;
             :)  printf "Missing argument for option %s\n" "$OPTARG" >&2
                 usage
                 exit 1
@@ -138,6 +141,7 @@ usage() {
     printf "  %s\t%s\n" "-r" "push repo to GWUDrive using rclone"
     printf "  %s\t%s\n" "-u" "unmount the repository"
     printf "  %s\t%s\n" "-v" "verify repository consistency"
+    printf "  %s\t%s\n" "-b" "break lock on repository"
 }
 
 init() {
@@ -216,6 +220,15 @@ rclone_sync() {
     rclone sync -v ${REPO} ${RCLONE_REMOTE}
 
     logger -p user.info "Finished rclone push of ${TARGET} to ${RCLONE_REMOTE}"
+}
+
+break_lock() {
+    logger -p user.info "Breaking lock on ${REPO}"
+
+    borg break-lock ${REPO}
+
+    logger -p user.info "Finished breaking lock on ${REPO}"
+
 }
 
 quota() {
