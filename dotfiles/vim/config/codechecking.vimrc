@@ -37,3 +37,7 @@ if has('nvim')
      " LaTeX makers
      let g:neomake_tex_enabled_makers = ['lacheck']
 endif
+
+" gutentags settings
+let g:gutentags_define_advanced_commands
+
