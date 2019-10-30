@@ -57,7 +57,7 @@ TrailerLines=0
 
 [Invest-UTC]
 AmountCol=6
-BuyParam=buy,Converted Balances,Company Automatic Feature,Before Tax,Company Match (ESOP)
+BuyParam=buy,Converted Balances,Company Automatic Feature,Before Tax,Company Match (ESOP),Fund Transfers
 DateCol=0
 DateFormat=1
 DecimalSymbol=0
@@ -76,10 +76,10 @@ NameCol=-1
 PriceCol=7
 PriceFraction=2
 QuantityCol=8
-ReinvdivParam=reinvest,reinv,re-inv
+ReinvdivParam=reinvest,reinv,re-inv,E- UTC Common Stoc Pass Div,E- ESOP Pass Div
 SecurityName=
 SecuritySymbol=
-SellParam=sell,repurchase,
+SellParam=sell,repurchase,,Pooled Fund Transfer (UTC Employee Savings Plan)
 ShrsinParam=add,stock dividend,divd reinv,transfer in,re-registration in,journal entry
 ShrsoutParam=remove
 StartLine=1
