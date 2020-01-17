@@ -110,3 +110,6 @@ Get UUID - sudo blkid
 
 Add execute bit recursively sudo chmod u+x -R /media/data
 
+# Wireguard VPN
+
+https://github.com/adrianmihalko/raspberrypiwireguard
