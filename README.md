@@ -113,3 +113,4 @@ Add execute bit recursively sudo chmod u+x -R /media/data
 # Wireguard VPN
 
 https://github.com/adrianmihalko/raspberrypiwireguard
+https://github.com/adrianmihalko/raspberrypiwireguard/issues/13
