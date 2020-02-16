@@ -41,6 +41,9 @@ Plug 'scrooloose/nerdtree', { 'on' : 'NERDTreeToggle' }
 Plug 'andymass/vim-matchup'
 Plug 'machakann/vim-sandwich'
 Plug 'tpope/vim-eunuch'
+Plug 'vimwiki/vimwiki'
+let g:vimwiki_list = [{'path': '~/todo/',
+                      \ 'syntax': 'markdown', 'ext': '.wiki'}]
 
 " Appearance
 Plug 'itchyny/lightline.vim'

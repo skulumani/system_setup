@@ -106,7 +106,7 @@ nmap <Leader>gah <Plug>GitGutterStageHunk  " git add (chunk)
 nmap <Leader>guh <Plug>GitGutterUndoHunk   " git undo (chunk)
 
 " Todo.txt mappings
-nnoremap <leader>td :e ~/.todo/todo.txt<CR>
+" nnoremap <leader>td :e ~/.todo/todo.txt<CR>
 
 " Search for todo or bug or fixme using AG
 nnoremap <leader>fix :Ack \(FIXME\)\\|\(TODO\)\\|\(BUG\)<CR>

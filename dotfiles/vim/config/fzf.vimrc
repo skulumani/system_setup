@@ -29,6 +29,7 @@ else
     " CtrlP fallback
     echom "No FZF installed. Try again"
 end
+
 if executable('rg')
     " let g:ackprg = 'ag --vimgrep'
     let g:ackprg = 'rg --vimgrep --no-heading'
