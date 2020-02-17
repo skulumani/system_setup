@@ -9,6 +9,16 @@ if has("autocmd")
         " autocmd InsertEnter * call deoplete#enable()
         autocmd BufNewFile,BufReadPost *.tikz set filetype=tex
     augroup END
+    
+    
+    " augroup vimwiki
+"     autocmd!
+"     autocmd BufWritePost C:\Users\skuluman\Documents\_todo\*
+"         \ execute '!cd ' . expand("<amatch>:p:h")
+"         \ . ' && git commit -m "Auto commit of ' 
+"         \ . expand("<afile>:t") . '." "' . expand("<afile>") . '"'
+" augroup END
+
 endif
 
 " Autoread a buffer if it's changed
