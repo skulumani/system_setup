@@ -42,8 +42,7 @@ Plug 'andymass/vim-matchup'
 Plug 'machakann/vim-sandwich'
 Plug 'tpope/vim-eunuch'
 Plug 'vimwiki/vimwiki'
-let g:vimwiki_list = [{'path': '~/todo/',
-                      \ 'syntax': 'markdown', 'ext': '.wiki'}]
+Plug 'mattn/calendar-vim'
 
 " Appearance
 Plug 'itchyny/lightline.vim'
