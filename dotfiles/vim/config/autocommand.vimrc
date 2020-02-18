@@ -19,6 +19,13 @@ if has("autocmd")
 "         \ . expand("<afile>:t") . '." "' . expand("<afile>") . '"'
 " augroup END
 
+
+
+augroup vimwiki
+    autocmd!
+    autocmd BufWritePost C:/Users/skuluman/Documents/_todo/* :Git add -A | :Gcommit -m "Auto commit wiki"
+augroup END
+
 endif
 
 " Autoread a buffer if it's changed
