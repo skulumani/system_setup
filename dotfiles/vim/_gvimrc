@@ -7,9 +7,9 @@ set modeline " disable modeline vulnerability
 set encoding=utf8
 
 " directories for swap files and things
-set backupdir=~\_vim\backup
-set directory=~\_vim\swap\
-set undodir=~\_vim\undo\
+set backupdir=$VIM\_vim\backup
+set directory=$VIM\_vim\swap\
+set undodir=$VIM\_vim\undo\
 
 " use 4 spaces for tabs
 set expandtab
@@ -133,8 +133,8 @@ map <C-l> <C-w>l
 map <C-n> :NERDTreeToggle<CR>
 " map <C-n> :Vex<CR>
 
-nnoremap <leader>ev :e ~\_gvimrc<CR>
-nnoremap <leader>sv :so ~\_gvimrc<CR>
+nnoremap <leader>ev :e $VIM\_gvimrc<CR>
+nnoremap <leader>sv :so $VIM\_gvimrc<CR>
 
 " nnoremap <leader>w :write<CR> :echo "Saved file!"<CR>
 " FZF mappings
@@ -150,6 +150,8 @@ nnoremap <silent> <leader>fm :Maps <CR>
 nnoremap <silent> <leader>fb :CtrlPBuffer<cr>
 " <M-S-p> for MRU
 nnoremap <silent> <leader>fh :History<cr>
+
+let g:ctrlp_working_path_mode = 0
 
 " nnoremap <leader>s :set spell!<CR>
 set spelllang=en_us
@@ -201,7 +203,7 @@ xnoremap do :diffget<CR>
 xnoremap <leader>du :diffupdate<CR>
 
 " Todo.txt mappings
-nnoremap <leader>td :e ~/_todo/todo.txt<CR>
+nnoremap <leader>td :e $VIM/_todo/todo.txt<CR>
 
 " Search for todo or bug or fixme using AG
 nnoremap <leader>fix :Ack \(FIXME\)\\|\(TODO\)\\|\(BUG\)<CR>
@@ -259,6 +261,9 @@ Plug 'Konfekt/FastFold'
 Plug 'tpope/vim-commentary'
 Plug 'junegunn/vim-easy-align'
 
+Plug 'vimwiki/vimwiki'
+Plug 'mattn/calendar-vim'
+
 
 call plug#end()
 
@@ -287,6 +292,8 @@ function! LightlineTags()
     return '%{gutentags#statusline()}'
 endfunction
 
+let g:polyglot_disabled = ['latex']
+
 " lightline settings
 let g:lightline = {
   \   'colorscheme': 'wombat',
@@ -302,7 +309,7 @@ let g:lightline = {
     \   'left': [ [ 'filename', 'modified' ] ]
     \ },
 	\   'component': {
-	\     'lineinfo': ' %3l:%-2v',
+	\     'lineinfo': '%3l:%-2v',
     \     'helloworld': 'Hello, world',
 	\   },
   \   'component_function': {
@@ -313,14 +320,46 @@ let g:lightline = {
     \   'tags' : 'LightlineTags'
     \   }
   \ }
-let g:lightline.separator = {
-	\   'left': '', 'right': ''
-  \}
-let g:lightline.subseparator = {
-	\   'left': '', 'right': '' 
-  \}
+" let g:lightline.separator = {
+" 	\   'left': '', 'right': ''
+"   \}
+" let g:lightline.subseparator = {
+" 	\   'left': '', 'right': '' 
+"   \}
 
 let g:lightline.tabline = {
   \   'left': [ ['tabs'] ],
   \   'right': [ [ 'close', 'obsession', 'tags'] ]
   \ }
+
+" vimtex settings
+let g:vimtex_view_method = 'general'
+let g:vimtex_view_automatic = 0
+let g:vimtex_view_general_viewer = 'SumatraPDF'
+let g:vimtex_view_general_options
+            \ = '-reuse-instance -forward-search @tex @line @pdf'
+            \ . ' -inverse-search "gvim --servername ' . v:servername
+            \ . ' --remote-send \"^<C-\^>^<C-n^>'
+            \ . ':drop \%f^<CR^>:\%l^<CR^>:normal\! zzzv^<CR^>'
+            \ . ':execute ''drop '' . fnameescape(''\%f'')^<CR^>'
+            \ . ':\%l^<CR^>:normal\! zzzv^<CR^>'
+            \ . ':call remote_foreground('''.v:servername.''')^<CR^>^<CR^>\""'
+let g:vimtex_view_general_options_latexmk = '-reuse-instance'
+
+let mapleader=' '
+let maplocalleader=' '
+
+" gutentags settings
+let g:gutentags_enabled=1
+let g:gutentags_define_advanced_commands=1
+" let g:gutentags_ctags_executable = 'U:\bin\ctags.exe'
+"
+
+" vimwiki settings
+let g:vimwiki_list = [{'path': 'C:\Users\skuluman\Documents\_todo\', 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_global_ext = 0
+
+augroup vimwiki
+    autocmd!
+    autocmd BufWritePost C:/Users/skuluman/Documents/_todo/* :Git add -A | :Gcommit -m "Auto commit wiki"
+augroup END
