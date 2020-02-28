@@ -24,21 +24,32 @@ cleanup () {
 # register cleanup function to be called on exit
 trap cleanup EXIT
 ########################################################################
-# list of packages to download for linux
+# list of essential packages to download for linux
 apt_packages=(
     exuberant-ctags
-    borgbackup
     nvim
     git
     zsh
-    zathura
-    zathura-dev
-    trash-cli
-    conky-all
     curl
     lm-sensors
     hddtemp
     tmux
+    ripgrep
+)
+
+texlive_packages=(
+    texlive-full
+    zathura
+    zathura-dev
+    jabref
+)
+
+extra_packages=(
+    signal-desktop
+    borgbackup
+    rclone
+    conky-all
+    trash-cli
 )
 
 # Old packages that might be useful
@@ -49,6 +60,7 @@ apt_packages=(
 # software-properties-common
 # redshift-gtk
 # xdotool
+# rclone
 
 # miniconda version
 anaconda_version="5.0.0"
@@ -107,6 +119,30 @@ install_packages () {
     done    
 }
 
+install_texlive_packages () {
+    cmd="sudo apt-get -y install"
+    shift
+    for pkg in "${texlive_packages[@]}";
+    do
+        exec="$cmd ${pkg}"
+        eval "${exec}"
+        # prompt "Execute: $exec" "${exec}"
+    done    
+
+}
+
+install_extra_packages () {
+    cmd="sudo apt-get -y install"
+    shift
+    for pkg in "${extra_packages[@]}";
+    do
+        exec="$cmd ${pkg}"
+        eval "${exec}"
+        # prompt "Execute: $exec" "${exec}"
+    done    
+
+
+}
 install_amd_driver () {
     echo "Are you sure you want to update AMD drivers?"
     read -p "Press enter to continue"
@@ -266,6 +302,7 @@ prompt "Update packages" "sudo apt-get -y update"
 
 # download packages
 prompt "Install packages" "install_packages"
+prompt "Install extra packages" "install_extra_packages"
 
 prompt "Setup Yubikey" "install_yubikey"
 
@@ -277,13 +314,14 @@ prompt "Setup dotfiles" "install_dotfiles"
 # prompt "Install Google Chrome" "install_google_chrome"
 
 # install neovim by copying the appimage
-prompt "Install NeoVim" "install_neovim"
+# prompt "Install NeoVim" "install_neovim"
 
 # install anaconda
 prompt "Install latest Miniconda" "install_miniconda"
 
 # install texlive
 prompt "Install TexLive $texlive_year directly" "install_texlive_directly"
+prompt "Install TexLive using apt" "install_texlive_packages"
 
 # setup zsh as default
 prompt "Setup zsh" "install_zsh"
