@@ -114,3 +114,11 @@ Add execute bit recursively sudo chmod u+x -R /media/data
 
 https://github.com/adrianmihalko/raspberrypiwireguard
 https://github.com/adrianmihalko/raspberrypiwireguard/issues/13
+
+## Conky
+
+~~~
+conky --config=/home/shankar/.config/conky/conky_stats.conf
+~~~
+
+Use gnome-tweaks for gnome or Session and Startup for XFCE
