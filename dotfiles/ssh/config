@@ -21,10 +21,10 @@ Host ddwrt
     HostName 10.0.0.2
 Host github.com
     # IdentitiesOnly yes
-    IdentityFile ~/.ssh/id_rsa_yubikey.pub
+    IdentityFile ~/.ssh/id_rsa
 Host bitbucket.org
     # IdentitiesOnly yes
-    IdentityFile ~/.ssh/id_rsa_yubikey.pub
+    IdentityFile ~/.ssh/id_rsa
 Host *
     IdentitiesOnly yes
 #ForwardX11 yes
