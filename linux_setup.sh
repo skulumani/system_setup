@@ -24,39 +24,53 @@ cleanup () {
 # register cleanup function to be called on exit
 trap cleanup EXIT
 ########################################################################
-# list of packages to download for linux
+# list of essential packages to download for linux
 apt_packages=(
     exuberant-ctags
+    nvim
     git
     zsh
-    zathura
-    zathura-dev
-    xdotool
-    redshift-gtk
-    trash-cli
-    software-properties-common
-    conky-all
     curl
     lm-sensors
     hddtemp
-    synaptic
-    vim
     tmux
+    ripgrep
+)
+
+texlive_packages=(
+    texlive-full
+    zathura
+    zathura-dev
+    jabref
+)
+
+extra_packages=(
+    signal-desktop
+    borgbackup
+    rclone
+    conky-all
+    trash-cli
 )
 
 # Old packages that might be useful
 # myrepos
 # gnome-terminal
+# vim
+# synaptic
+# software-properties-common
+# redshift-gtk
+# xdotool
+# rclone
 
 # miniconda version
 anaconda_version="5.0.0"
 anaconda_hash="67f5c20232a3e493ea3f19a8e273e0618ab678fa14b03b59b1783613062143e9"
 
 miniconda_path="https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh"
-miniconda_hash="866ae9dff53ad0874e1d1a60b1ad1ef8" # md5sum
+miniconda_hash="bfe34e1fa28d6d75a7ad05fd02fa5472275673d5f5621b77380898dee1be15d2<Paste>" # sha256 has
 
 # use an ubuntu package instead
-texlive_year="2018"
+texlive_year="2019"
 
 python_packages=(
     neovim
@@ -105,6 +119,30 @@ install_packages () {
     done    
 }
 
+install_texlive_packages () {
+    cmd="sudo apt-get -y install"
+    shift
+    for pkg in "${texlive_packages[@]}";
+    do
+        exec="$cmd ${pkg}"
+        eval "${exec}"
+        # prompt "Execute: $exec" "${exec}"
+    done    
+
+}
+
+install_extra_packages () {
+    cmd="sudo apt-get -y install"
+    shift
+    for pkg in "${extra_packages[@]}";
+    do
+        exec="$cmd ${pkg}"
+        eval "${exec}"
+        # prompt "Execute: $exec" "${exec}"
+    done    
+
+
+}
 install_amd_driver () {
     echo "Are you sure you want to update AMD drivers?"
     read -p "Press enter to continue"
@@ -140,7 +178,7 @@ install_miniconda () {
         echo "Anaconda is not installed"
         prompt "Download Miniconda install script" "wget ${miniconda_path} -O $WORK_DIR/anaconda.sh"
 
-        if ! md5sum -c <<< "$miniconda_hash  $WORK_DIR/anaconda.sh"; then
+        if ! sha256sum -c <<< "$miniconda_hash  $WORK_DIR/anaconda.sh"; then
             echo "Hash does not match. Aborting!"
             exit 1
         else
@@ -259,11 +297,12 @@ echo " "
 prompt "Update packages" "sudo apt-get -y update"
 
 # AMD Driver
-prompt "Install AMD PPA and drivers" "install_amd_driver"
+# prompt "Install AMD PPA and drivers" "install_amd_driver"
 # prompt "Install NVIDIA PPA" "install_nvidia_driver"
 
 # download packages
 prompt "Install packages" "install_packages"
+prompt "Install extra packages" "install_extra_packages"
 
 prompt "Setup Yubikey" "install_yubikey"
 
@@ -272,21 +311,22 @@ echo "Now we'll setup git and clone the dotfiles repository"
 prompt "Setup dotfiles" "install_dotfiles"
 
 # check and then install chrome
-prompt "Install Google Chrome" "install_google_chrome"
+# prompt "Install Google Chrome" "install_google_chrome"
 
 # install neovim by copying the appimage
-prompt "Install NeoVim" "install_neovim"
+# prompt "Install NeoVim" "install_neovim"
 
 # install anaconda
 prompt "Install latest Miniconda" "install_miniconda"
 
 # install texlive
 prompt "Install TexLive $texlive_year directly" "install_texlive_directly"
+prompt "Install TexLive using apt" "install_texlive_packages"
 
 # setup zsh as default
 prompt "Setup zsh" "install_zsh"
 
-prompt "Install rclone" "bash ~/Documents/system_setup/build_rclone.sh"
+# prompt "Install rclone" "bash ~/Documents/system_setup/build_rclone.sh"
 
 # build custom versions of apps
 # prompt "Enable SSH server" "sudo apt-get install openssh-server && sudo service ssh restart"

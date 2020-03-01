@@ -1,4 +1,3 @@
-ag
 bash
 bin
 config
@@ -9,8 +8,6 @@ git
 gpg
 jabref_linux
 latex
-mr
-mutt
 python
 ssh
 texmf_linux
