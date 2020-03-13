@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # script to install latest version of LaTeX
-texlive_year="2018"
+texlive_year="2019"
 texlive_path="/usr/local/texlive/${texlive_year}"
 WORK_DIR=$(mktemp -d )
 
