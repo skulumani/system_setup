@@ -128,14 +128,14 @@ if has("nvim")
         "
         if s:uname == "Darwin\n"
 
-            if glob('/Users/shankar/anaconda3/envs/neovim2/bin/python') != ''
-                let g:python_host_prog = expand('/Users/shankar/anaconda3/envs/neovim2/bin/python')
-                let g:python2_host_prog = expand('/Users/shankar/anaconda3/envs/neovim2/bin/python')
-            else
-                echom "Use conda to install neovim2"
-                let g:python_host_prog = 'python'
-                let g:python2_host_prog = 'python2'
-            endif
+            " if glob('/Users/shankar/anaconda3/envs/neovim2/bin/python') != ''
+            "     let g:python_host_prog = expand('/Users/shankar/anaconda3/envs/neovim2/bin/python')
+            "     let g:python2_host_prog = expand('/Users/shankar/anaconda3/envs/neovim2/bin/python')
+            " else
+            "     echom "Use conda to install neovim2"
+            "     let g:python_host_prog = 'python'
+            "     let g:python2_host_prog = 'python2'
+            " endif
 
             if glob('/Users/shankar/anaconda3/envs/neovim3/bin/python') != ''
                 let g:python3_host_prog = expand('/Users/shankar/anaconda3/envs/neovim3/bin/python')
@@ -144,14 +144,14 @@ if has("nvim")
                 let g:python3_host_prog = 'python3'
             endif
         else " linux
-            if glob('~/anaconda3/envs/neovim2/bin/python') != ''
-                let g:python_host_prog = expand('/home/shankar/anaconda3/envs/neovim2/bin/python')
-                let g:python2_host_prog = expand('/home/shankar/anaconda3/envs/neovim2/bin/python')
-            else
-                echom "Use conda to install neovim2"
-                let g:python_host_prog = 'python'
-                let g:python2_host_prog = 'python2'
-            endif
+            " if glob('~/anaconda3/envs/neovim2/bin/python') != ''
+            "     let g:python_host_prog = expand('/home/shankar/anaconda3/envs/neovim2/bin/python')
+            "     let g:python2_host_prog = expand('/home/shankar/anaconda3/envs/neovim2/bin/python')
+            " else
+            "     echom "Use conda to install neovim2"
+            "     let g:python_host_prog = 'python'
+            "     let g:python2_host_prog = 'python2'
+            " endif
 
             if glob('~/anaconda3/envs/neovim3/bin/python') != ''
                 let g:python3_host_prog = expand('/home/shankar/anaconda3/envs/neovim3/bin/python')
