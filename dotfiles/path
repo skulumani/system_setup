@@ -1,5 +1,5 @@
 
-TEXLIVE_YEAR="2018"
+TEXLIVE_YEAR="2019"
 
 # Go path for drive utility
 export GOPATH=$HOME/.go
