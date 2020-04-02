@@ -40,7 +40,7 @@ readonly COMPRESSION_LEVEL=6
 
 # Define home directory explicitly, since this script will be run by root.
 # (We could also define $HOME in our anacrontab instead.)
-readonly HOME=/home/shankar
+readonly HOME=~/
 
 # Whitespace-separated list of paths to back up.
 readonly SOURCE_PATHS="${HOME}/Documents ${HOME}/Downloads ${HOME}/Drive"
