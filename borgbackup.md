@@ -57,3 +57,10 @@ borg create user@host.net:/path/to/repo::Archive_Name ~/src ~/Drive
 ~~~
 5. Remount by running - `sudo mount -a `
 
+## rclone google drive setup
+
+You can copy the `rclone` config from Bitwarden to `$HOME/.config/rclone/rclone.conf`
+
+This setups a rclone remote that points to the `Drive/backup/borgbackup` directory. 
+It is primarily used by Borgbackup scripts to push the local borg repo to Google Drive. 
+
