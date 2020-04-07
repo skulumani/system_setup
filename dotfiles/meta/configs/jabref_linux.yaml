@@ -1,3 +1,3 @@
 - link:
-    ~/.local/share/applications/JabRef.desktop: dotfiles/JabRef.desktop
     ~/jabref.xml: dotfiles/jabref.xml
+    # ~/.local/share/applications/JabRef.desktop: dotfiles/JabRef.desktop
