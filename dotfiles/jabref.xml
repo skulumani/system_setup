@@ -65,7 +65,7 @@
           <entry key="columnNames" value="groups;files;linked_id;field:entrytype;field:bibtexkey;field:author;field:title;field:year;field:timestamp"/>
           <entry key="columnSortOrder" value=""/>
           <entry key="columnSortTypes" value="ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING"/>
-          <entry key="columnWidths" value="28.0;28.0;28.0;104.58186738836265;145.23680649526386;197.97834912043302;847.3585926928281;99.08795669824086;125.45872801082544"/>
+          <entry key="columnWidths" value="28.0;28.0;28.0;75.34234383226905;105.40824681724293;144.4126615004523;624.6545172874675;71.27938396943473;90.78159131103942"/>
           <entry key="confirmDelete" value="true"/>
           <entry key="consoleCommand" value=""/>
           <entry key="ctrlClick" value="false"/>
@@ -158,7 +158,7 @@
           <entry key="invalidFieldBackgroundColor" value="255:0:0"/>
           <entry key="keyGenAlwaysAddLetter" value="false"/>
           <entry key="keyGenFirstLetterA" value="true"/>
-          <entry key="lastEdited" value="/home/shankar/texmf/bibtex/bib/library.bib;/home/shankar/Drive/RCCT/futurenav/references.bib"/>
+          <entry key="lastEdited" value="/home/shankar/texmf/bibtex/bib/library.bib"/>
           <entry key="lastFocused" value="/home/shankar/texmf/bibtex/bib/library.bib"/>
           <entry key="lastUsedExport" value="ISO 690"/>
           <entry key="lastUsedImport" value="__all"/>
@@ -264,7 +264,7 @@
           <entry key="sidePaneComponentNames" value="GROUPS;WEB_SEARCH"/>
           <entry key="sidePaneComponentPreferredPositions" value="1;0"/>
           <entry key="sidePaneWidth" value="283"/>
-          <entry key="sidePaneWidthFX" value="0.14947916666666666"/>
+          <entry key="sidePaneWidthFX" value="0.38177083333333334"/>
           <entry key="sizeX" value="1375"/>
           <entry key="sizeY" value="901"/>
           <entry key="specialFieldsEnabled" value="true"/>
@@ -315,7 +315,7 @@
           <entry key="valueDelimiters" value="1"/>
           <entry key="warnAboutDuplicatesInInspection" value="true"/>
           <entry key="warnBeforeOverwritingKey" value="true"/>
-          <entry key="webSearchVisible" value="true"/>
+          <entry key="webSearchVisible" value="false"/>
           <entry key="windowMaximised" value="true"/>
           <entry key="workingDirectory" value="/home/shankar/Drive/RCCT/futurenav"/>
           <entry key="writeFieldAddSpaces" value="true"/>
