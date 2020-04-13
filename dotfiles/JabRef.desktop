@@ -3,6 +3,6 @@ Enconding=UTF-8
 Type=Application
 Terminal=false
 Icon=/home/shankar/bin/JabRef/JabRef.png
-Exec=/snap/bin/jabref
+Exec=/home/shankar/bin/Jabref/bin/JabRef
 Name=JabRef
 Categories=Office;Development;

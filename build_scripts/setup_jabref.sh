@@ -1,10 +1,26 @@
 # Download and setup JabRef into ~/
 
-JABREF_VERSION="4.3.1"
-JABREF_FNAME="JabRef-${JABREF_VERSION}.jar"
-JABREF_LINK="https://github.com/JabRef/jabref/releases/download/v${JABREF_VERSION}/${JABREF_FNAME}"
+JABREF_VERSION="5.1"
+JABREF_FNAME="JabRef-${JABREF_VERSION}-portable_linux.tar.gz"
+JABREF_LINK="https://builds.jabref.org/master/${JABREF_FNAME}"
 JABREF_DIR="$HOME/bin/JabRef"
-# test to see if Jabref directory exists in /usr/local
+
+WORK_DIR=$(mktemp -d)
+
+# make sure tmp dir was actually created
+if [[ ! -d "$WORK_DIR" ]]; then
+    echo "Could not create temp directory"
+    exit 1
+fi
+
+# delete temp dir
+cleanup () {
+    rm -rf "$WORK_DIR"
+    echo "Deleted temp working directory: $WORK_DIR"
+}
+
+# trap cleanup EXIT
+# test to see if Jabref directory exists
 
 if [[ ! -d "${JABREF_DIR}" ]]; then
     echo "Creating ${JABREF_DIR}"
@@ -13,18 +29,18 @@ else
     echo "${JABREF_DIR} already exists"
 fi
 
-# Download Jabref to this directory if it doesn't exist
-if [ ! -f "${JABREF_DIR}/${JABREF_FNAME}" ]; then
-    echo "Downloading ${JABREF_FNAME}"
-    wget ${JABREF_LINK} -O ${JABREF_DIR}/${JABREF_FNAME}
-else
-    echo "${JABREF_FNAME} already exists"
-fi
+echo "Downloading ${JABREF_FNAME}"
+wget ${JABREF_LINK} -O ${WORK_DIR}/${JABREF_FNAME}
 
-echo "Install Oracle  JAVA"
-sudo add-apt-repository ppa:webupd8team/java
-sudo apt-get update
-sudo apt-get install oracle-java8-installer
+# untar it 
+cd $WORK_DIR
+tar -xvzf ${JABREF_FNAME}
+mv ./JabRef/bin ${JABREF_DIR}
+mv ./JabRef/lib ${JABREF_DIR}
+# echo "Install Oracle  JAVA"
+# sudo add-apt-repository ppa:webupd8team/java
+# sudo apt-get update
+# sudo apt-get install oracle-java8-installer
 
 # setup links for Jabref icon/menu item
 
