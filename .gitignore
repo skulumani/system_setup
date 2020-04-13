@@ -4,6 +4,7 @@ resurrect/
 autoload/
 plug.vim/
 JabRef*.jar
+
 */.tmux/sidebar
 .uuid
 
@@ -15,3 +16,5 @@ dotfiles/vim/swap/*
 dotfiles/bin/nvim
 dotfiles/bin/borg
 dotfiles/bin/drive
+dotfiles/bin/JabRef/bin/*
+dotfiles/bin/JabRef/lib/*
