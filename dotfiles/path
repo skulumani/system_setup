@@ -32,6 +32,10 @@ if [[ -d /usr/local/hdf5 ]]; then
     export PATH="/usr/local/hdf5/bin:$PATH"
 fi
 
+if [[ -d $HOME/JabRef/bin ]]; then
+    export PATH="$PATH:$HOME/JabRef/bin"
+fi
+
 ## added by Anaconda3 4.3.0 installer
 if [[ -d $HOME/anaconda3 ]]; then
     # if [[ "$OSTYPE" == "linux-gnu"* ]]; then

@@ -3,7 +3,7 @@
 JABREF_VERSION="5.1"
 JABREF_FNAME="JabRef-${JABREF_VERSION}-portable_linux.tar.gz"
 JABREF_LINK="https://builds.jabref.org/master/${JABREF_FNAME}"
-JABREF_DIR="$HOME/bin/JabRef"
+JABREF_DIR="$HOME/JabRef"
 
 WORK_DIR=$(mktemp -d)
 
