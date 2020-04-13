@@ -1,3 +1,5 @@
 - link:
     ~/jabref.xml: dotfiles/jabref.xml
-    ~/.local/share/applications/JabRef.desktop: dotfiles/JabRef.desktop
+    # ~/.local/share/applications/JabRef.desktop: dotfiles/JabRef.desktop
+- shell:
+  - [desktop-file-install --dir=$HOME/.local/share/applications ~/Documents/system_setup/dotfiles/JabRef.desktop, Install JabRef desktop link]
