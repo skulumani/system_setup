@@ -1,8 +1,8 @@
 [Desktop Entry]
-X-Enconding=UTF-8
 Type=Application
 Terminal=false
 Icon=/home/shankar/bin/JabRef/JabRef.png
 Exec=/home/shankar/Jabref/bin/JabRef
 Name=JabRef
-Categories=Office;Development;
+Comment=Bibtex manager
+Categories=Office

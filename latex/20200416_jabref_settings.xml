@@ -44,7 +44,7 @@
           <entry key="autoCompFirstNameMode" value="ONLY_FULL"/>
           <entry key="autoCompLF" value="false"/>
           <entry key="autoComplete" value="true"/>
-          <entry key="autoCompleteFields" value="author;editor;title;journal;publisher;keywords;crossref;related;entryset"/>
+          <entry key="autoCompleteFields" value="editor;related;crossref;author;keywords;journal;publisher;title;entryset"/>
           <entry key="autoDoubleBraces" value="false"/>
           <entry key="autoOpenForm" value="true"/>
           <entry key="autoResizeMode" value="true"/>
@@ -63,10 +63,10 @@
           <entry key="collectTelemetry" value="true"/>
           <entry key="columnInSortOrder" value="title;"/>
           <entry key="columnInSortOrderType" value="DESCENDING;DESCENDING"/>
-          <entry key="columnNames" value="groups;files;linked_id;field:entrytype;field:bibtexkey;field:author;field:title;field:year;field:timestamp"/>
-          <entry key="columnSortOrder" value=""/>
-          <entry key="columnSortTypes" value="ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING"/>
-          <entry key="columnWidths" value="28.0;28.0;28.0;94.37831061254812;136.7275671615194;191.6671432250496;868.1106735072657;88.65543810593039;116.12522613769552"/>
+          <entry key="columnNames" value="groups;files;field:bibtexkey;field:author;field:title;field:year;special:readstatus;field:timestamp"/>
+          <entry key="columnSortOrder" value="field:bibtexkey"/>
+          <entry key="columnSortTypes" value="ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING"/>
+          <entry key="columnWidths" value="28.0;28.0;165.2428622787351;191.94128863600787;946.9124929629311;76.90335612232599;28.0;160.0"/>
           <entry key="confirmDelete" value="true"/>
           <entry key="consoleCommand" value=""/>
           <entry key="ctrlClick" value="false"/>
@@ -109,7 +109,7 @@
           <entry key="exportTerDescending" value="false"/>
           <entry key="exportTerSort" value="year"/>
           <entry key="exportWorkingDirectory" value="/tmp"/>
-          <entry key="extraFileColumns" value="false"/>
+          <entry key="extraFileColumns" value="true"/>
           <entry key="fieldEditorTextColor" value="0:0:0"/>
           <entry key="fileColumn" value="true"/>
           <entry key="fileDirectory" value="/home/shankar/Drive/docs/technical_papers/bibdesk_papers"/>
@@ -121,7 +121,7 @@
           <entry key="fontSize" value="14"/>
           <entry key="fontStyle" value="0"/>
           <entry key="fxFontRenderingTweak" value="true"/>
-          <entry key="fxTheme" value="Base.css"/>
+          <entry key="fxTheme" value="Dark.css"/>
           <entry key="generateKeysAfterInspection" value="true"/>
           <entry key="generateKeysBeforeSaving" value="false"/>
           <entry key="grayOutNonHits" value="false"/>
@@ -179,7 +179,7 @@
           <entry key="markedEntryBackground3" value="255:120:120"/>
           <entry key="markedEntryBackground4" value="255:75:75"/>
           <entry key="markedEntryBackground5" value="220:255:220"/>
-          <entry key="memoryStickMode" value="true"/>
+          <entry key="memoryStickMode" value="false"/>
           <entry key="mergeEntriesDiffMode" value="0"/>
           <entry key="mergeEntriesPosX" value="0"/>
           <entry key="mergeEntriesPosY" value="31"/>
@@ -270,7 +270,7 @@
           <entry key="sidePaneComponentNames" value="GROUPS;WEB_SEARCH"/>
           <entry key="sidePaneComponentPreferredPositions" value="1;0"/>
           <entry key="sidePaneWidth" value="283"/>
-          <entry key="sidePaneWidthFX" value="0.16614583333333333"/>
+          <entry key="sidePaneWidthFX" value="0.15208333333333332"/>
           <entry key="sizeX" value="1375"/>
           <entry key="sizeY" value="901"/>
           <entry key="specialFieldsEnabled" value="true"/>
