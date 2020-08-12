@@ -8,7 +8,7 @@ Host fdcl
     RemoteForward 52698 localhost:52698
 Host raspberrypi
     User pi
-    HostName 10.0.0.85
+    HostName 10.0.0.3
     IdentityFile ~/.ssh/omv_rsa
 Host moca
     User moca
