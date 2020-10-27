@@ -30,7 +30,7 @@
           <entry key="SameFolder" value="false"/>
           <entry key="SameName" value="false"/>
           <entry key="abbrAuthorNames" value="true"/>
-          <entry key="acceptRecommendations" value="false"/>
+          <entry key="acceptRecommendations" value="true"/>
           <entry key="activeFieldEditorBackgroundColor" value="220:220:255"/>
           <entry key="activePreview" value="1"/>
           <entry key="adobeAcrobatCommand" value=""/>
@@ -44,7 +44,7 @@
           <entry key="autoCompFirstNameMode" value="ONLY_FULL"/>
           <entry key="autoCompLF" value="false"/>
           <entry key="autoComplete" value="true"/>
-          <entry key="autoCompleteFields" value="author;editor;title;journal;publisher;keywords;crossref;related;entryset"/>
+          <entry key="autoCompleteFields" value="crossref;publisher;entryset;title;editor;keywords;author;related;journal"/>
           <entry key="autoDoubleBraces" value="false"/>
           <entry key="autoOpenForm" value="true"/>
           <entry key="autoResizeMode" value="true"/>
@@ -63,10 +63,10 @@
           <entry key="collectTelemetry" value="true"/>
           <entry key="columnInSortOrder" value="title;"/>
           <entry key="columnInSortOrderType" value="DESCENDING;DESCENDING"/>
-          <entry key="columnNames" value="groups;files;linked_id;field:entrytype;field:bibtexkey;field:author;field:title;field:year;field:timestamp"/>
+          <entry key="columnNames" value="entrytype;author/editor;title;year;journal/booktitle;bibtexkey"/>
           <entry key="columnSortOrder" value=""/>
-          <entry key="columnSortTypes" value="ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING"/>
-          <entry key="columnWidths" value="28.0;28.0;28.0;94.37831061254812;136.7275671615194;191.6671432250496;868.1106735072657;88.65543810593039;116.12522613769552"/>
+          <entry key="columnSortTypes" value=""/>
+          <entry key="columnWidths" value="100;100;100;100;100;100"/>
           <entry key="confirmDelete" value="true"/>
           <entry key="consoleCommand" value=""/>
           <entry key="ctrlClick" value="false"/>
@@ -85,6 +85,7 @@
           <entry key="defaultLabelPattern" value="[auth:lower][year]"/>
           <entry key="defaultOwner" value="shankar"/>
           <entry key="defaultShowSource" value="false"/>
+          <entry key="defaultUnwantedBibtexKeyCharacters" value="-`ʹ:!;?^+"/>
           <entry key="dialogWarningForDuplicateKey" value="true"/>
           <entry key="dialogWarningForEmptyKey" value="true"/>
           <entry key="disableOnMultipleSelection" value="false"/>
@@ -97,7 +98,7 @@
           <entry key="emailSubject" value="References"/>
           <entry key="enforceLegalBibtexKey" value="true"/>
           <entry key="entryEditorHeight" value="576"/>
-          <entry key="entryEditorHeightFX" value="0.5208098987626547"/>
+          <entry key="entryEditorHeightFX" value="0.5209988649262202"/>
           <entry key="exportInOriginalOrder" value="false"/>
           <entry key="exportInSpecifiedOrder" value="true"/>
           <entry key="exportInStandardOrder" value="true"/>
@@ -111,6 +112,7 @@
           <entry key="exportWorkingDirectory" value="/tmp"/>
           <entry key="extraFileColumns" value="false"/>
           <entry key="fieldEditorTextColor" value="0:0:0"/>
+          <entry key="fileBrowserCommand" value=""/>
           <entry key="fileColumn" value="true"/>
           <entry key="fileDirectory" value="/home/shankar/Drive/docs/technical_papers/bibdesk_papers"/>
           <entry key="fileWorkingDirectory" value="/home/shankar/Drive/docs/technical_papers/bibdesk_papers"/>
@@ -121,7 +123,7 @@
           <entry key="fontSize" value="14"/>
           <entry key="fontStyle" value="0"/>
           <entry key="fxFontRenderingTweak" value="true"/>
-          <entry key="fxTheme" value="Base.css"/>
+          <entry key="fxTheme" value="Dark.css"/>
           <entry key="generateKeysAfterInspection" value="true"/>
           <entry key="generateKeysBeforeSaving" value="false"/>
           <entry key="grayOutNonHits" value="false"/>
@@ -168,7 +170,11 @@
           <entry key="localAutoSave" value="false"/>
           <entry key="lookAndFeel" value="javax.swing.plaf.nimbus.NimbusLookAndFeel"/>
           <entry key="mainFontSize" value="9"/>
-          <entry key="mainWindowPosX" value="0.0"/>
+          <entry key="mainTableColumnNames" value="groups;files;linked_id;field:entrytype;field:author/editor;field:title;field:year;field:journal/booktitle;field:bibtexkey"/>
+          <entry key="mainTableColumnSortOrder" value=""/>
+          <entry key="mainTableColumnSortTypes" value="ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING"/>
+          <entry key="mainTableColumnWidths" value="28.0;28.0;28.0;99.034456246915;414.3869914172692;652.653351323759;78.0109539022247;176.12063151077933;134.0736268213988"/>
+          <entry key="mainWindowPosX" value="1080.0"/>
           <entry key="mainWindowPosY" value="27.0"/>
           <entry key="mainWindowSizeX" value="1920.0"/>
           <entry key="mainWindowSizeY" value="1053.0"/>
@@ -193,6 +199,11 @@
           <entry key="namesNatbib" value="true"/>
           <entry key="newline" value="&#13;&#10;"/>
           <entry key="numberColWidth" value="50"/>
+          <entry key="ooBibliographyStyleFile" value="/resource/openoffice/default_authoryear.jstyle"/>
+          <entry key="ooExecutablePath" value="/usr/lib/libreoffice/program/soffice"/>
+          <entry key="ooExternalStyleFiles" value=""/>
+          <entry key="ooJarsPath" value="/usr/lib/libreoffice"/>
+          <entry key="ooPath" value="/usr/lib/libreoffice"/>
           <entry key="openFoldersOfAttachedFiles" value="false"/>
           <entry key="openLastEdited" value="true"/>
           <entry key="overrideDefaultFontSize" value="false"/>
@@ -253,10 +264,14 @@
           <entry key="secSort" value=""/>
           <entry key="selectS" value="false"/>
           <entry key="selectedFetcherIndex" value="7"/>
+          <entry key="sendLanguageData" value="true"/>
+          <entry key="sendOSData" value="true"/>
+          <entry key="sendTimezoneData" value="true"/>
           <entry key="serializeSpecialFields" value="false"/>
           <entry key="shortestToComplete" value="2"/>
           <entry key="showAdvancedHints" value="true"/>
           <entry key="showLatexCitations" value="true"/>
+          <entry key="showOOPanel" value="false"/>
           <entry key="showOneLetterHeadingForIconColumns" value="false"/>
           <entry key="showPrintedColumn" value="false"/>
           <entry key="showPriorityColumn" value="true"/>
@@ -270,7 +285,7 @@
           <entry key="sidePaneComponentNames" value="GROUPS;WEB_SEARCH"/>
           <entry key="sidePaneComponentPreferredPositions" value="1;0"/>
           <entry key="sidePaneWidth" value="283"/>
-          <entry key="sidePaneWidthFX" value="0.16614583333333333"/>
+          <entry key="sidePaneWidthFX" value="0.13541666666666666"/>
           <entry key="sizeX" value="1375"/>
           <entry key="sizeY" value="901"/>
           <entry key="specialFieldsEnabled" value="true"/>
@@ -278,6 +293,7 @@
           <entry key="stringsPosY" value="331"/>
           <entry key="stringsSizeX" value="600"/>
           <entry key="stringsSizeY" value="400"/>
+          <entry key="syncOOWhenCiting" value="false"/>
           <entry key="tableBackground" value="255:255:255"/>
           <entry key="tableColorCodesOn" value="true"/>
           <entry key="tableOptFieldBackground" value="230:255:230"/>
@@ -299,6 +315,7 @@
           <entry key="unmarkAllEntriesBeforeImporting" value="true"/>
           <entry key="updateTimestamp" value="true"/>
           <entry key="urlColumn" value="true"/>
+          <entry key="useAllOpenBases" value="true"/>
           <entry key="useCaseKeeperOnSearch" value="true"/>
           <entry key="useConvertToEquation" value="false"/>
           <entry key="useDefaultConsoleApplication" value="true"/>
