@@ -47,6 +47,7 @@ Plug 'mattn/calendar-vim'
 " Appearance
 Plug 'itchyny/lightline.vim'
 Plug 'rafi/awesome-vim-colorschemes'
+let g:polyglot_disabled = ['latex']
 Plug 'sheerun/vim-polyglot'
 Plug 'machakann/vim-highlightedyank' " highlight yanked text
 Plug 'ryanoasis/vim-devicons'

@@ -39,12 +39,11 @@ let g:vimtex_quickfix_mode = 2
 if has('nvim')
     let g:vimtex_compiler_progname = 'nvr'
 endif
-let g:polyglot_disabled = ['latex']
 
-if !exists('g:deoplete#omni#input_patterns')
-    let g:deoplete#omni#input_patterns = {}
-endif
-let g:deoplete#omni#input_patterns.tex = g:vimtex#re#deoplete
+" if !exists('g:deoplete#omni#input_patterns')
+"     let g:deoplete#omni#input_patterns = {}
+" endif
+" let g:deoplete#omni#input_patterns.tex = g:vimtex#re#deoplete
 
 " One of the neosnippet plugins will conceal symbols in LaTeX which is
 " confusing

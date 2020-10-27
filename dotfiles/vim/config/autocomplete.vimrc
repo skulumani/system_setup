@@ -1,11 +1,11 @@
 let g:deoplete#enable_at_startup = 1
 " let g:deoplete#max_list = 10
-let g:deoplete#enable_refresh_always = 0
 call deoplete#custom#option({
             \ 'auto_complete_delay': 100,
             \ 'num_processes': 4,
             \ 'auto_complete': v:true,
             \ 'max_list': 20,
+			\ 'enable_refresh_always': 0,
             \ })
 
 command! DeopleteToggle call deoplete#toggle()
@@ -27,10 +27,10 @@ inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 "     let col = col('.') - 1
 "     return !col || getline('.')[col - 1]  =~ '\s'
 " endfunction"}}}
-if !exists('g:deoplete#omni#input_patterns')
-    let g:deoplete#omni#input_patterns = {}
-endif
-let g:deoplete#omni#input_patterns.tex = g:vimtex#re#deoplete
+" if !exists('g:deoplete#omni#input_patterns')
+"     let g:deoplete#omni#input_patterns = {}
+" endif
+" let g:deoplete#omni#input_patterns.tex = g:vimtex#re#deoplete
 
 " NeoSnippet options
 let g:neosnippet#snippets_directory='~/.vim/snippets'
