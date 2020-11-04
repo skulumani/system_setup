@@ -6,9 +6,9 @@ sudo apt-get install vim git tmux
 echo "Now going to setup ssh key for git"
 read -p "Press enter to continue"
 
-# setup ssh keys
-ssh-keygen -t rsa -b 4096 -C "shanks.k@gmail.com"
-ssh-add ~/.ssh/id_rsa
+# # setup ssh keys
+# ssh-keygen -t rsa -b 4096 -C "shanks.k@gmail.com"
+# ssh-add ~/.ssh/id_rsa
 
 echo "Now setting up docker and docker-compose"
 read -p "Press enter to continue"
