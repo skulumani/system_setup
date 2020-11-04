@@ -1,31 +1,50 @@
+#!/bin/bash
+
 sudo apt-get update
 sudo apt-get install vim git tmux
-sudo apt-get install transmission-daemon transmission-common transmission-cli
+
+echo "Now going to setup ssh key for git"
+read -p "Press enter to continue"
 
 # setup ssh keys
 ssh-keygen -t rsa -b 4096 -C "shanks.k@gmail.com"
 ssh-add ~/.ssh/id_rsa
 
-# download signal and add to path
+echo "Now setting up docker and docker-compose"
+read -p "Press enter to continue"
 
-# download no-ip dynamic update client
+curl -fsSL https://get.docker.com -o get-docker.sh
 
-# download Pi VPN
+sudo sh get-docker.sh
+sudo usermod -aG docker ${USER}
+sudo su - ${USER}
 
-# setup anaconda lite
+docker version
 
-# stop transmission daemon so we can edit the config options
-sudo service transmission-daemon stop
+echo "Docker should be installed. Now installing docker-compose"
+read -p "Press enter to continue"
 
-echo "Now copy and edit /var/lib/transmission-daemon/info/settings.json"
+sudo apt-get -y install libffi-dev libssl-dev python3-dev python3 python3-pip
+sudo pip3 install docker-compose
 
-read -p "Press Enter to continue"
+# syncthing and borgbackup
+echo "Now going to install and setup syncthing"
+read -p "Press enter to continue"
 
-echo "You can install specific dotfiles using bash install_standalone.sh git bash vim"
-echo "Choose the ones you wnat"
+curl -s https://syncthing.net/release-key.txt | sudo apt-key add -
+echo "deb https://apt.syncthing.net/ syncthing stable" | sudo tee /etc/apt/sources.list.d/syncthing.list
+sudo apt update
+sudo apt install syncthing
+syncthing
 
+echo "Change address to 0.0.0.0:8384 in the ~/.config/syncthing/config.xml"
+read -p "Press enter to continue"
 
-# setup testing
-# edit /etc/apt/sources.list and add a line with testing
-# deb http://raspbian.raspberrypi.org/raspbian/ testing main contrib non-free rpi
-sudo apt-get install borgbackup -t testing
+sudo vim ~/.config/syncthing/config.xml
+
+sudo wget https://raw.githubusercontent.com/syncthing/syncthing/master/etc/linux-systemd/system/syncthing%40.service -O /etc/systemd/user/syncthing@.service
+
+sudo systemctl enable syncthing@pi.service
+sudo reboot
+
+# borgbackup
