@@ -35,6 +35,11 @@ apt_packages=(
     hddtemp
     tmux
     ripgrep
+    conky-all
+    borgbackup
+    rclone
+    conky-all
+    trash-cli
 )
 
 texlive_packages=(
@@ -46,10 +51,6 @@ texlive_packages=(
 
 extra_packages=(
     signal-desktop
-    borgbackup
-    rclone
-    conky-all
-    trash-cli
 )
 
 # Old packages that might be useful
