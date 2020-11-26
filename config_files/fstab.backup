@@ -13,4 +13,9 @@ UUID=8DA3-69BB  /boot/efi       vfat    umask=0077      0       1
 # 1TB linux data drive
 UUID=0899b9fa-9aba-4725-ac5d-474107fe4834 /media/shankar/data auto defaults 0 0
 # 500GB windows storage drive
-UUID=4A5A2ED05A2EB899 /media/shankar/data_win auto nosuid,nodev,nofail,x-gvfs-show 0 0 
+UUID=4A5A2ED05A2EB899 /media/shankar/data_win auto defaults 0 0 
+# USB drive
+UUID=617bbac3-edca-4698-bb50-77e723992cd8 /media/shankar/usbdrive auto defaults 0 0
+# bind mounts for sharing over network
+/media/shankar/data /export/data none bind 0 0
+/media/shankar/data_win /export/data_win none bind 0 0
