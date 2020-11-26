@@ -7,3 +7,5 @@
 2. boinc
 3. borgbackup
 4. homeassistant
+5. glances
+    `sudo apt-get install lm-sensors hddtemp` 
