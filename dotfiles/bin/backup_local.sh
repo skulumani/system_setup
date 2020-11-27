@@ -31,7 +31,7 @@ readonly HOST=example.com
 readonly REPO="/media/shankar/data/Drive/backup/borgbackup/$(hostname)" # Path to repository on the host
 readonly TARGET="${REPO}"
 readonly MOUNTPOINT="/tmp/borg_mount"
-readonly RCLONE_REMOTE="GWUDrive:/$(hostname)"
+readonly RCLONE_REMOTE="server_borgbackup:/$(hostname)"
 
 # check if it already exists and is empty
 
