@@ -9,3 +9,11 @@
 4. homeassistant
 5. glances
     `sudo apt-get install lm-sensors hddtemp` 
+6. Syncthing
+
+
+## SSH Port forwarding
+
+~~~
+ssh -L 9384:127.0.0.1:8384 remote-server
+~~~
