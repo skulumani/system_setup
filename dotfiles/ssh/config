@@ -10,6 +10,10 @@ Host raspberrypi
     User pi
     HostName 192.168.88.10
     IdentityFile ~/.ssh/omv_rsa
+Host ubuntu-server
+    user shankar
+    HostName 192.168.88.12
+    IdentityFile ~/.ssh/id_rsa
 Host moca
     User moca
     HostName 161.253.73.179
