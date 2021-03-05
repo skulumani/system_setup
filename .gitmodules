@@ -23,4 +23,4 @@
 	url = https://github.com/skulumani/signal-cli.git
 [submodule "homeassistant"]
 	path = homeassistant
-	url = https://github.com/skulumani/homeassistant.git
+	url = git@github.com:skulumani/homeassistant.git
