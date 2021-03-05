@@ -106,16 +106,17 @@ services:
     devices:
       - "/dev/ttyACM0:/dev/ttyACM0"
 
-  # mosquitto:
-  #   image: eclipse-mosquitto
-  #   hostname: mosquitto
-  #   container_name: mosquitto
-  #   ports:
-  #     - "1883:1883"
-  #     - "9001:9001"
-  #   # volumes: 
-  #   # - mosquitto.conf:/mosquitto/config/mosquitto.conf
-    
+  mosquitto:
+    image: eclipse-mosquitto
+    hostname: mosquitto
+    container_name: mosquitto
+    ports:
+      - 1883:1883
+      - 9001:9001
+    volumes: 
+      - mosquitto-conf:/mosquitto/config
+      - mosquitto-data:/mosquitto/data
+      - mosquitto-log:/mosquitto/log
 
   photoview_db:
     image: mariadb:10.5
@@ -162,3 +163,7 @@ volumes:
   omada-logs:
   db_data:
   api_cache:
+
+  mosquitto-data:
+  mosquitto-log:
+  mosquitto-conf:
