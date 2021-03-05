@@ -51,10 +51,10 @@ readonly COMPRESSION_LEVEL=6
 readonly HOME=/home/shankar
 
 # Whitespace-separated list of paths to back up.
-readonly SOURCE_PATHS="${HOME}/Documents ${HOME}/Downloads ${HOME}/Drive"
+readonly SOURCE_PATHS="${HOME}/Documents ${HOME}/Downloads /media/shankar/data/pictures /media/shankar/data/syncthing"
 
 # Whitespace-separated list of paths to exclude from backup.
-readonly EXCLUDE="*.pyc"
+readonly EXCLUDE="*.pyc ${HOME}/Documents/homeassistant/*"
 
 # Number of days, weeks, &c. of backups to keep when pruning.
 readonly KEEP_DAILY=7
@@ -159,7 +159,7 @@ create() {
     # We want $SOURCE_PATHS to undergo word splitting here.
     borg create --remote-path=borg \
         --compression "${COMPRESSION_ALGO},${COMPRESSION_LEVEL}" \
-        --exclude "$EXCLUDE" \
+        --exclude "${EXCLUDE}" \
         "${TARGET}::{hostname}-{now:%Y-%m-%dT%H:%M:%S}" $SOURCE_PATHS
 
     logger -p user.info "Finished Borg archive creation: ${TARGET}"
