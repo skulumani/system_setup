@@ -1,0 +1,198 @@
+version: '3'
+services:
+
+  homeassistant:
+    container_name: homeassistant
+    image: homeassistant/home-assistant:latest
+    # devices:
+      # - /dev/ttyUSB0:/dev/ttyUSB0
+    volumes:
+      - /home/shankar/Documents/system_setup/homeassistant:/config
+      - /tmp:/tmp
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /media/shankar/usbdrive/video:/media/camera
+      # - /etc/localtime:/etc/localtime:ro
+    ports:
+      - "8123:8123"
+    # privileged: true
+    environment:
+      - TZ=America/New_York
+    restart: always
+    network_mode: host
+    # user: "1000:1000"
+    depends_on:
+      - signal-cli-rest-api
+      - mariadb_homeassistant
+      - deconz
+
+  mariadb_homeassistant:
+    image: mariadb
+    container_name: mariadb_homeassistant
+    ports:
+      - 3310:3306
+    volumes:
+      - /home/shankar/Documents/system_setup/docker_data/homeassistant_db:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: "2PtZXpJDDjSGsv"
+      MYSQL_PASSWORD: "2PtZXpJDDjSGsv"
+      MYSQL_DATABASE: homeassistant
+      MYSQL_USER: homeassistant
+    # user: "1000:1000"
+    restart: always
+
+  signal-cli-rest-api:
+    container_name: signalcli
+    image: bbernhard/signal-cli-rest-api:latest
+    ports:
+      - "8080:8080" # map docker port 8080 to host port 8080.
+    network_mode: "host"
+    restart: always
+    # user: "1000:1000"
+    volumes:
+      - "/home/shankar/Documents/system_setup/docker_data/signal-cli-config:/home/.local/share/signal-cli" # map "signal-cli-config" folder 
+      - "/media/shankar/usbdrive/video:/media/camera"
+  
+  omada-controller:
+    container_name: omada-controller
+    image: mbentley/omada-controller:latest
+    restart: always
+    network_mode: "host"
+    # user: "1000:1000"
+    environment:
+      - TZ=America/New_York
+      - MANAGE_HTTP_PORT=8088
+      - MANAGE_HTTPS_PORT=8043
+      - PORTAL_HTTP_PORT=8088
+      - PORTAL_HTTPS_PORT=8843
+    volumes:
+      - omada-data:/opt/tplink/EAPController/data
+      - omada-work:/opt/tplink/EAPController/work
+      - omada-logs:/opt/tplink/EAPController/logs
+  # glances:
+  #   container_name: glances
+  #   image: nicolargo/glances:latest-alpine
+  #   restart: always
+  #   pid: host
+  #   network_mode: host
+  #   ports:
+  #     - "61208:61208"
+  #   volumes:
+  #     - /var/run/docker.sock:/var/run/docker.sock
+  #   environment:
+  #     - "GLANCES_OPT=-w"
+  #
+
+
+  # Deconz
+  deconz:
+    container_name: deconz
+    image: marthoc/deconz
+    restart: always
+    network_mode: host
+    environment:
+      # You can access Deconz at this port
+      DECONZ_WEB_PORT: 44449
+      DECONZ_WS_PORT: 44448
+
+      # Set VNC_MODE to 0 to disable it completely
+      DECONZ_VNC_MODE: 1
+      DECONZ_VNC_PORT: 44447
+      DECONZ_VNC_PASSWORD: "password"
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+      # Replace <local path> with a path where all deconz config will be stored.
+      - /home/shankar/Documents/system_setup/docker_data/deconz:/root/.local/share/dresden-elektronik/deCONZ
+    devices:
+      - "/dev/ttyACM0:/dev/ttyACM0"
+
+  mosquitto:
+    image: eclipse-mosquitto
+    hostname: mosquitto
+    container_name: mosquitto
+    # network_mode: host
+    ports:
+      - "1883:1883"
+      - "9001:9001"
+    user: "1000:1000"
+    volumes: 
+      - /home/shankar/Documents/system_setup/docker_data/mosquitto/config/mosquitto.conf:/mosquitto/config/mosquitto.conf
+      - mosquitto_data:/mosquitto/data
+      - mosquitto_log:/mosquitto/log
+
+  photoview_db:
+    container_name: photoview_db
+    image: mariadb:10.5
+    restart: always
+    environment:
+      - MYSQL_DATABASE=photoview
+      - MYSQL_USER=photoview
+      - MYSQL_PASSWORD=photosecret
+      - MYSQL_RANDOM_ROOT_PASSWORD=1
+    volumes:
+      - db_data:/var/lib/mysql
+
+  photoview:
+    image: viktorstrate/photoview:latest
+    container_name: photoview
+    restart: always
+    ports:
+      - "8000:80"
+    depends_on:
+      - photoview_db
+
+    environment:
+      - PHOTOVIEW_DATABASE_DRIVER=mysql
+      - PHOTOVIEW_MYSQL_URL=photoview:photosecret@tcp(photoview_db)/photoview
+      - PHOTOVIEW_LISTEN_IP=photoview
+      - PHOTOVIEW_LISTEN_PORT=80
+      - PHOTOVIEW_MEDIA_CACHE=/app/cache
+      - PHOTOVIEW_PUBLIC_ENDPOINT=http://192.168.88.12:8000
+      # Optional: To enable map related features, you need to create a mapbox token.
+      # A token can be generated for free here https://account.mapbox.com/access-tokens/
+      # It's a good idea to limit the scope of the token to your own domain, to prevent others from using it.
+      - MAPBOX_TOKEN=pk.eyJ1IjoiY29tcGFuaW9uLWdhbGxlcnkiLCJhIjoiY2tsdG4zZXluMXRzNTJvbGJ1dnJ3dHc4dSJ9.BhCbQ982RogUC1s6UJ9KhQ
+
+    volumes:
+      - api_cache:/app/cache
+
+      # Change This: to the directory where your photos are located on your server.
+      # If the photos are located at `/home/user/photos`, then change this value
+      # to the following: `/home/user/photos:/photos:ro`.
+      # You can mount multiple paths, if your photos are spread across multiple directories.
+      - /media/shankar/data/pictures:/photos:ro
+
+  frigate:
+    container_name: frigate
+    # privileged: true # this may not be necessary for all setups
+    restart: unless-stopped
+    image: blakeblackshear/frigate:stable-amd64
+    devices:
+      # - /dev/bus/usb:/dev/bus/usb # for coral devices
+      - /dev/dri/renderD128 # for intel hwaccel, needs to be updated for your hardware
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /home/shankar/Documents/system_setup/docker_data/frigate/config.yml:/config/config.yml:ro
+      - /media/shankar/usbdrive/frigate:/media/frigate
+      - type: tmpfs # Optional: 1GB of memory, reduces SSD/SD Card wear
+        target: /tmp/cache
+        tmpfs:
+          size: 1000000000
+    ports:
+      - '5000:5000'
+      - '1935:1935' # RTMP feeds
+    environment:
+      FRIGATE_FRONT_CAM_IP: "192.168.200.15"
+      FRIGATE_BACK_CAM_IP: "192.168.200.16"
+      FRIGATE_CAM_PASSWORD: "dgdiPUdFwqkqBwRFSq"
+      FRIGATE_CAM_USERNAME: "stream"
+
+volumes:
+  omada-data:
+  omada-work:
+  omada-logs:
+  db_data:
+  api_cache:
+  mosquitto_data:
+  mosquitto_log:
+

@@ -21,3 +21,6 @@
 [submodule "build_scripts/signal-cli"]
 	path = build_scripts/signal-cli
 	url = https://github.com/skulumani/signal-cli.git
+[submodule "homeassistant"]
+	path = homeassistant
+	url = git@github.com:skulumani/homeassistant.git
