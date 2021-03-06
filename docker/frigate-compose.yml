@@ -1,0 +1,26 @@
+version: '3.9'
+services:
+  frigate:
+    container_name: frigate
+    # privileged: true # this may not be necessary for all setups
+    restart: unless-stopped
+    image: blakeblackshear/frigate:stable-amd64
+    devices:
+      # - /dev/bus/usb:/dev/bus/usb
+      - /dev/dri/renderD128 # for intel hwaccel, needs to be updated for your hardware
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /home/shankar/Documents/system_setup/docker_data/frigate/config.yml:/config/config.yml:ro
+      - /media/shankar/usbdrive/frigate:/media/frigate
+      - type: tmpfs # Optional: 1GB of memory, reduces SSD/SD Card wear
+        target: /tmp/cache
+        tmpfs:
+          size: 1000000000
+    ports:
+      - '5000:5000'
+      - '1935:1935' # RTMP feeds
+    environment:
+      FRIGATE_FRONT_CAM_IP: "192.168.200.15"
+      FRIGATE_BACK_CAM_IP: "192.168.200.16"
+      FRIGATE_CAM_PASSWORD: "dgdiPUdFwqkqBwRFSq"
+      FRIGATE_CAM_USERNAME: "stream"

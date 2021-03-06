@@ -110,15 +110,18 @@ services:
     image: eclipse-mosquitto
     hostname: mosquitto
     container_name: mosquitto
+    # network_mode: host
     ports:
-      - 1883:1883
-      - 9001:9001
+      - "1883:1883"
+      - "9001:9001"
+    user: "1000:1000"
     volumes: 
-      - mosquitto-conf:/mosquitto/config
-      - mosquitto-data:/mosquitto/data
-      - mosquitto-log:/mosquitto/log
+      - /home/shankar/Documents/system_setup/docker_data/mosquitto/config/mosquitto.conf:/mosquitto/config/mosquitto.conf
+      - mosquitto_data:/mosquitto/data
+      - mosquitto_log:/mosquitto/log
 
   photoview_db:
+    container_name: photoview_db
     image: mariadb:10.5
     restart: always
     environment:
@@ -131,6 +134,7 @@ services:
 
   photoview:
     image: viktorstrate/photoview:latest
+    container_name: photoview
     restart: always
     ports:
       - "8000:80"
@@ -157,13 +161,38 @@ services:
       # to the following: `/home/user/photos:/photos:ro`.
       # You can mount multiple paths, if your photos are spread across multiple directories.
       - /media/shankar/data/pictures:/photos:ro
+
+  frigate:
+    container_name: frigate
+    # privileged: true # this may not be necessary for all setups
+    restart: unless-stopped
+    image: blakeblackshear/frigate:stable-amd64
+    devices:
+      # - /dev/bus/usb:/dev/bus/usb
+      - /dev/dri/renderD128 # for intel hwaccel, needs to be updated for your hardware
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /home/shankar/Documents/system_setup/docker_data/frigate/config.yml:/config/config.yml:ro
+      - /media/shankar/usbdrive/frigate:/media/frigate
+      - type: tmpfs # Optional: 1GB of memory, reduces SSD/SD Card wear
+        target: /tmp/cache
+        tmpfs:
+          size: 1000000000
+    ports:
+      - '5000:5000'
+      - '1935:1935' # RTMP feeds
+    environment:
+      FRIGATE_FRONT_CAM_IP: "192.168.200.15"
+      FRIGATE_BACK_CAM_IP: "192.168.200.16"
+      FRIGATE_CAM_PASSWORD: "dgdiPUdFwqkqBwRFSq"
+      FRIGATE_CAM_USERNAME: "stream"
+
 volumes:
   omada-data:
   omada-work:
   omada-logs:
   db_data:
   api_cache:
+  mosquitto_data:
+  mosquitto_log:
 
-  mosquitto-data:
-  mosquitto-log:
-  mosquitto-conf:
