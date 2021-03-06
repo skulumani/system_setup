@@ -1,0 +1,102 @@
+detectors:
+  cpu1:
+    type: cpu
+  cpu2:
+    type: cpu
+
+mqtt:
+  # Required: host name
+  host: mosquitto
+  # Optional: port (default: shown below)
+  port: 1883
+  # Optional: topic prefix (default: shown below)
+  # WARNING: must be unique if you are running multiple instances
+  topic_prefix: frigate
+  # Optional: client id (default: shown below)
+  # WARNING: must be unique if you are running multiple instances
+  client_id: frigate
+  # Optional: user
+  #user: mqtt_user
+  # Optional: password
+  # NOTE: Environment variables that begin with 'FRIGATE_' may be referenced in {}.
+  #       eg. password: '{FRIGATE_MQTT_PASSWORD}'
+  #password: password
+  # Optional: interval in seconds for publishing stats (default: shown below)
+  stats_interval: 60
+
+cameras:
+  front:
+    ffmpeg:
+      inputs:
+        - path: rtsp://{FRIGATE_CAM_USERNAME}:{FRIGATE_CAM_PASSWORD}@{FRIGATE_FRONT_CAM_IP}:554/h264Preview_01_sub
+        # - path: rtmp://{FRIGATE_FRONT_CAM_IP}/bcs/channel0_sub.bcs?channel=0&stream=0&user={FRIGATE_CAM_USERNAME}&password={FRIGATE_CAM_PASSWORD}
+        # - path: rtmp://192.168.200.15/bcs/channel0_main.bcs?channel=0&stream=0&user=stream&password=dgdiPUdFwqkqBwRFSq
+          roles:
+            - detect
+            - rtmp
+        - path: rtsp://{FRIGATE_CAM_USERNAME}:{FRIGATE_CAM_PASSWORD}@{FRIGATE_FRONT_CAM_IP}:554/h264Preview_01_main
+        # - path: rtmp://{FRIGATE_FRONT_CAM_IP}/bcs/channel0_main.bcs?channel=0&stream=0&user={FRIGATE_CAM_USERNAME}&password={FRIGATE_CAM_PASSWORD}
+          roles:
+            - clips
+            - record
+    width: 640
+    height: 480
+    fps: 7
+  back:
+    ffmpeg:
+      inputs:
+        - path: rtsp://{FRIGATE_CAM_USERNAME}:{FRIGATE_CAM_PASSWORD}@{FRIGATE_BACK_CAM_IP}:554/h264Preview_01_sub
+  #       - path: rtmp://{FRIGATE_BACK_CAM_IP}/bcs/channel0_sub.bcs?channel=0&stream=0&user={FRIGATE_CAM_USERNAME}&password={FRIGATE_CAM_PASSWORD}
+          roles:
+            - detect
+            - rtmp
+        - path: rtsp://{FRIGATE_CAM_USERNAME}:{FRIGATE_CAM_PASSWORD}@{FRIGATE_BACK_CAM_IP}:554/h264Preview_01_main
+  #       - path: rtmp://{FRIGATE_BACK_CAM_IP}/bcs/channel0_main.bcs?channel=0&stream=0&user={FRIGATE_CAM_USERNAME}&password={FRIGATE_CAM_PASSWORD}
+          roles:
+            - clips
+            - record
+    width: 640
+    height: 480
+    fps: 7
+
+# ffmpeg + global_args + input_args + -i + input + output_args
+ffmpeg:
+  global_args: -hide_banner -loglevel warning
+  hwaccel_args:
+    - -hwaccel
+    - vaapi
+    - -hwaccel_device
+    - /dev/dri/renderD128
+    - -hwaccel_output_format
+    - yuv420p
+#   # input_args:
+#   #   - -avoid_negative_ts
+#   #   - make_zero
+#   #   - -fflags
+#   #   - nobuffer
+#   #   - -flags
+#   #   - low_delay
+#   #   - -strict
+#   #   - experimental
+#   #   - -fflags
+#   #   - +genpts+discardcorrupt
+#   #   - -rw_timeout
+#   #   - '5000000'
+#   #   - -use_wallclock_as_timestamps
+#   #   - '1'
+#   output_args:
+#     detect: []
+#     record: []
+#     clips: []
+#     rtmp: []
+
+clips:
+  max_seconds: 300 # max length of video clip
+  retain: # retentation limit on clips
+    default: 3 # keep for 10 days
+    objects: # per object retention policy
+      person: 10
+
+record:
+  enabled: False
+  retain_days: 3
