@@ -20,4 +20,5 @@ dotfiles/bin/JabRef/bin/*
 dotfiles/bin/JabRef/lib/*
 
 docker_data/
+!./docker_data/frigate/config.yml
 !*/.gitkeep

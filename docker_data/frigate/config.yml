@@ -28,37 +28,116 @@ cameras:
   front:
     ffmpeg:
       inputs:
-        - path: rtsp://{FRIGATE_CAM_USERNAME}:{FRIGATE_CAM_PASSWORD}@{FRIGATE_FRONT_CAM_IP}:554/h264Preview_01_sub
-        # - path: rtmp://{FRIGATE_FRONT_CAM_IP}/bcs/channel0_sub.bcs?channel=0&stream=0&user={FRIGATE_CAM_USERNAME}&password={FRIGATE_CAM_PASSWORD}
-        # - path: rtmp://192.168.200.15/bcs/channel0_main.bcs?channel=0&stream=0&user=stream&password=dgdiPUdFwqkqBwRFSq
+        # - path: rtsp://{FRIGATE_CAM_USERNAME}:{FRIGATE_CAM_PASSWORD}@{FRIGATE_FRONT_CAM_IP}:554/h264Preview_01_sub
+        - path: rtmp://{FRIGATE_CAM_USERNAME}:{FRIGATE_CAM_PASSWORD}@{FRIGATE_FRONT_CAM_IP}/bcs/channel0_sub.bcs?token=sdasdasd&channel=0&stream=0&user={FRIGATE_CAM_USERNAME}&password={FRIGATE_CAM_PASSWORD}
           roles:
             - detect
-            - rtmp
-        - path: rtsp://{FRIGATE_CAM_USERNAME}:{FRIGATE_CAM_PASSWORD}@{FRIGATE_FRONT_CAM_IP}:554/h264Preview_01_main
-        # - path: rtmp://{FRIGATE_FRONT_CAM_IP}/bcs/channel0_main.bcs?channel=0&stream=0&user={FRIGATE_CAM_USERNAME}&password={FRIGATE_CAM_PASSWORD}
+            # - clips
+            # - rtmp
+        # - path: rtsp://{FRIGATE_CAM_USERNAME}:{FRIGATE_CAM_PASSWORD}@{FRIGATE_FRONT_CAM_IP}:554/h264Preview_01_main
+        - path: rtmp://{FRIGATE_CAM_USERNAME}:{FRIGATE_CAM_PASSWORD}@{FRIGATE_FRONT_CAM_IP}/bcs/channel0_main.bcs?token=sdasdasd&channel=0&stream=0&user={FRIGATE_CAM_USERNAME}&password={FRIGATE_CAM_PASSWORD}
           roles:
             - clips
-            - record
+            - rtmp
     width: 640
     height: 480
-    fps: 7
+    fps: 4
+    
+    detect:
+      enabled: True
+      max_disappeared: 25
+
+    clips:
+      enabled: True
+      # required_zones: []
+      # objects:
+      #   - person
+      pre_capture: 5
+      post_capture: 5
+
+    record:
+      enabled: False
+      retain_days: 10
+
+    snapshots:
+      enabled: True
+      timestamp: False
+      bounding_box: True
+      crop: False
+
+    mqtt:
+      enabled: True
+      timestamp: True
+      bounding_box: True
+      crop: True
+      height: 270
+      required_zones: []
+
+    objects:
+      track:
+        - person
+      filters:
+        person:
+          mask: 538,155,640,262,640,413,523,281,471,226,429,171,347,82,370,37
+
+    zones:
+      porch:
+        coordinates: 0,480,396,480,305,196,324,0,114,0
+      front_steps:
+        coordinates: 455,203,515,282,589,379,364,364,290,225,313,159
+      street:
+        coordinates: 538,155,640,262,640,413,523,281,471,226,429,171,347,82,370,37
+
   back:
     ffmpeg:
       inputs:
-        - path: rtsp://{FRIGATE_CAM_USERNAME}:{FRIGATE_CAM_PASSWORD}@{FRIGATE_BACK_CAM_IP}:554/h264Preview_01_sub
-  #       - path: rtmp://{FRIGATE_BACK_CAM_IP}/bcs/channel0_sub.bcs?channel=0&stream=0&user={FRIGATE_CAM_USERNAME}&password={FRIGATE_CAM_PASSWORD}
+        # - path: rtsp://{FRIGATE_CAM_USERNAME}:{FRIGATE_CAM_PASSWORD}@{FRIGATE_BACK_CAM_IP}:554/h264Preview_01_sub
+        - path: rtmp://{FRIGATE_CAM_USERNAME}:{FRIGATE_CAM_PASSWORD}@{FRIGATE_BACK_CAM_IP}/bcs/channel0_sub.bcs?token=sdasdasd&channel=0&stream=1&user={FRIGATE_CAM_USERNAME}&password={FRIGATE_CAM_PASSWORD}
           roles:
             - detect
-            - rtmp
-        - path: rtsp://{FRIGATE_CAM_USERNAME}:{FRIGATE_CAM_PASSWORD}@{FRIGATE_BACK_CAM_IP}:554/h264Preview_01_main
-  #       - path: rtmp://{FRIGATE_BACK_CAM_IP}/bcs/channel0_main.bcs?channel=0&stream=0&user={FRIGATE_CAM_USERNAME}&password={FRIGATE_CAM_PASSWORD}
+            # - clips
+            # - rtmp
+        # - path: rtsp://{FRIGATE_CAM_USERNAME}:{FRIGATE_CAM_PASSWORD}@{FRIGATE_BACK_CAM_IP}:554/h264Preview_01_main
+        - path: rtmp://{FRIGATE_CAM_USERNAME}:{FRIGATE_CAM_PASSWORD}@{FRIGATE_BACK_CAM_IP}/bcs/channel0_main.bcs?token=sdasdasd&channel=0&stream=0&user={FRIGATE_CAM_USERNAME}&password={FRIGATE_CAM_PASSWORD}
           roles:
             - clips
-            - record
+            - rtmp
     width: 640
     height: 480
-    fps: 7
+    fps: 4
 
+    detect:
+      enabled: True
+      max_disappeared: 25
+
+    clips:
+      enabled: True
+      pre_capture: 5
+      post_capture: 5
+
+    record:
+      enabled: False
+      retain_days: 10
+
+    snapshots:
+      enabled: True
+      timestamp: False
+      bounding_box: True
+      crop: False
+
+    mqtt:
+      enabled: True
+      timestamp: True
+      bounding_box: True
+      crop: True
+      height: 270
+      required_zones: []
+
+    objects:
+      track:
+        - person
+
+      
 # ffmpeg + global_args + input_args + -i + input + output_args
 ffmpeg:
   global_args: -hide_banner -loglevel warning
@@ -69,26 +148,37 @@ ffmpeg:
     - /dev/dri/renderD128
     - -hwaccel_output_format
     - yuv420p
-#   # input_args:
-#   #   - -avoid_negative_ts
-#   #   - make_zero
-#   #   - -fflags
-#   #   - nobuffer
-#   #   - -flags
-#   #   - low_delay
-#   #   - -strict
-#   #   - experimental
-#   #   - -fflags
-#   #   - +genpts+discardcorrupt
-#   #   - -rw_timeout
-#   #   - '5000000'
-#   #   - -use_wallclock_as_timestamps
-#   #   - '1'
-#   output_args:
-#     detect: []
-#     record: []
-#     clips: []
-#     rtmp: []
+  input_args: # only use for RTMP
+    - -avoid_negative_ts
+    - make_zero
+    - -fflags
+    - nobuffer
+    - -flags
+    - low_delay
+    - -strict
+    - experimental
+    - -fflags
+    - +genpts+discardcorrupt
+    - -rw_timeout
+    - '5000000'
+    - -use_wallclock_as_timestamps
+    - '1'
+  # input_args:
+  #   - -avoid_negative_ts
+  #   - make_zero
+  #   - -fflags
+  #   - +genpts+discardcorrupt
+  #   - -rtsp_transport
+  #   - tcp
+  #   - -stimeout
+  #   - '5000000'
+  #   - -use_wallclock_as_timestamps
+  #   - '1'
+  output_args:
+    detect: -f rawvideo -pix_fmt yuv420p
+    record: -f segment -segment_time 60 -segment_format mp4 -reset_timestamps 1 -strftime 1 -vcoded copy -acodec copy
+    clips: -f segment -segment_time 10 -segment_format mp4 -reset_timestamps 1 -strftime 1 -vcodec copy -acodec copy
+    rtmp: -c copy -f flv
 
 clips:
   max_seconds: 300 # max length of video clip
@@ -98,5 +188,10 @@ clips:
       person: 10
 
 record:
-  enabled: False
   retain_days: 3
+
+snapshots: 
+  retain:
+    default: 10
+    objects:
+      person: 10
