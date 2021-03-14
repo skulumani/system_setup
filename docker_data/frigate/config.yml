@@ -141,13 +141,13 @@ cameras:
 # ffmpeg + global_args + input_args + -i + input + output_args
 ffmpeg:
   global_args: -hide_banner -loglevel warning
-  hwaccel_args:
-    - -hwaccel
-    - vaapi
-    - -hwaccel_device
-    - /dev/dri/renderD128
-    - -hwaccel_output_format
-    - yuv420p
+  # hwaccel_args:
+  #   - -hwaccel
+  #   - vaapi
+  #   - -hwaccel_device
+  #   - /dev/dri/renderD128
+  #   - -hwaccel_output_format
+  #   - yuv420p
   input_args: # only use for RTMP
     - -avoid_negative_ts
     - make_zero
