@@ -24,3 +24,19 @@ Call docker compose
 ~~~
 ssh -L 9384:127.0.0.1:8384 remote-server
 ~~~
+
+## Mount ssh drive
+
+1. Mount
+
+~~~
+mkdir /tmp/mount_point
+sudo sshfs -o allow_other,default_permissions shankar@192.168.88.12:/media/<path to dir> /tmp/mount_point
+~~~
+
+2. Unmount
+
+~~~
+sudo umount /tmp/mount_point
+~~~
+
