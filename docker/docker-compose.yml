@@ -187,6 +187,15 @@ services:
   #     FRIGATE_CAM_PASSWORD: "dgdiPUdFwqkqBwRFSq"
   #     FRIGATE_CAM_USERNAME: "stream"
 
+  watchtower:
+    image: containrrr/watchtower
+    container_name: watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /root/.docker/config.json:/config.json
+      - /etc/timezone:/etc/timezone:ro
+    command: --cleanup --interval 86400
+
 volumes:
   omada-data:
   omada-work:
