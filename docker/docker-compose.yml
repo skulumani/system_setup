@@ -194,7 +194,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - /root/.docker/config.json:/config.json
       - /etc/timezone:/etc/timezone:ro
-    command: --cleanup --interval 86400
+    command: --cleanup --interval 43200
 
 volumes:
   omada-data:
