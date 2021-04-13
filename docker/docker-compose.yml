@@ -161,6 +161,15 @@ services:
       # to the following: `/home/user/photos:/photos:ro`.
       # You can mount multiple paths, if your photos are spread across multiple directories.
       - /media/shankar/data/pictures:/photos:ro
+  
+  influxdb:
+    image: influxdb:latest
+    container_name: influxdb
+    restart: always
+    ports:
+      - 8086:8086
+    volumes:
+      - /home/shankar/Documents/system_setup/docker_data/influx_db:/root/.influxdbv2
 
   # frigate:
   #   container_name: frigate
@@ -187,14 +196,14 @@ services:
   #     FRIGATE_CAM_PASSWORD: "dgdiPUdFwqkqBwRFSq"
   #     FRIGATE_CAM_USERNAME: "stream"
 
-  watchtower:
-    image: containrrr/watchtower
-    container_name: watchtower
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - /root/.docker/config.json:/config.json
-      - /etc/timezone:/etc/timezone:ro
-    command: --cleanup --interval 43200
+  # watchtower:
+  #   image: containrrr/watchtower
+  #   container_name: watchtower
+  #   volumes:
+  #     - /var/run/docker.sock:/var/run/docker.sock
+  #     - /root/.docker/config.json:/config.json
+  #     - /etc/timezone:/etc/timezone:ro
+  #   command: --cleanup --interval 43200
 
 volumes:
   omada-data:
