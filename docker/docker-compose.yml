@@ -171,6 +171,8 @@ services:
     volumes:
       - /home/shankar/Documents/system_setup/docker_data/influx_db:/root/.influxdbv2
 
+  # GRAFANA
+
   # frigate:
   #   container_name: frigate
   #   # privileged: true # this may not be necessary for all setups
