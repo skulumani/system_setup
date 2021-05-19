@@ -19,7 +19,7 @@ services:
       - TZ=America/New_York
     restart: always
     network_mode: host
-    # user: "1000:1000"
+   # user: "1000:1000"
     depends_on:
       - signal-cli-rest-api
       - mariadb_homeassistant
@@ -169,13 +169,26 @@ services:
     ports:
       - 8086:8086
     volumes:
-      - /home/shankar/Documents/system_setup/docker_data/influx_db:/var/lib/influxdb
+      - influxdb-storage:/var/lib/influxdb
     environment:
       - INFLUXDB_DB=db0
       - INFLUXDB_ADMIN_USER=admin
       - INFLUXDB_ADMIN_PASSWORD=password
 
-  # GRAFANA
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    ports:
+      - 3000:3000
+    volumes:
+      - grafana-storage:/var/lib/grafana
+      - /home/shankar/Documents/system_setup/docker_data/grafana-provisioning/:/etc/grafana/provisioning
+    depends_on:
+      - influxdb
+    environment: 
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=password
+
 
   # frigate:
   #   container_name: frigate
@@ -228,34 +241,6 @@ services:
   #     - /etc/timezone:/etc/timezone:ro
   #   command: --cleanup --interval 43200
 
-          # chronograf:
-    # image: chronograf:latest
-    # ports:
-      # - '127.0.0.1:8888:8888'
-    # volumes:
-      # - chronograf-storage:/var/lib/chronograf
-    # depends_on:
-      # - influxdb
-    # environment:
-      # - INFLUXDB_URL=http://influxdb:8086
-      # - INFLUXDB_USERNAME=${INFLUXDB_USERNAME}
-      # - INFLUXDB_PASSWORD=${INFLUXDB_PASSWORD}
-  # grafana:
-    # image: grafana/grafana:latest
-    # ports:
-      # - '3000:3000'
-    # volumes:
-      # - grafana-storage:/var/lib/grafana
-      # - ./grafana-provisioning/:/etc/grafana/provisioning
-    # depends_on:
-      # - influxdb
-    # environment:
-      # - GF_SECURITY_ADMIN_USER=${GRAFANA_USERNAME}
-      # - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_PASSWORD}
-# volumes:
-  # influxdb-storage:
-  # chronograf-storage:
-  # grafana-storage:
 volumes:
   omada-data:
   omada-work:
@@ -264,4 +249,7 @@ volumes:
   api_cache:
   mosquitto_data:
   mosquitto_log:
+  influxdb-storage:
+  grafana-storage:
+
 
