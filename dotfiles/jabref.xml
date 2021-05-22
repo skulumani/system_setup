@@ -7,6 +7,7 @@
       <map/>
       <node name="jabref">
         <map>
+          <entry key="AskAutoNamingPDFsAgain" value="true"/>
           <entry key="CleanUpConvertToBiblatex" value="false"/>
           <entry key="CleanUpConvertToBibtex" value="false"/>
           <entry key="CleanUpDOI" value="false"/>
@@ -29,6 +30,7 @@
           <entry key="RenamePattern" value="[bibtexkey]"/>
           <entry key="SameFolder" value="false"/>
           <entry key="SameName" value="false"/>
+          <entry key="TeXstudioPath" value="texstudio"/>
           <entry key="abbrAuthorNames" value="true"/>
           <entry key="acceptRecommendations" value="true"/>
           <entry key="activeFieldEditorBackgroundColor" value="220:220:255"/>
@@ -44,7 +46,7 @@
           <entry key="autoCompFirstNameMode" value="ONLY_FULL"/>
           <entry key="autoCompLF" value="false"/>
           <entry key="autoComplete" value="true"/>
-          <entry key="autoCompleteFields" value="crossref;publisher;entryset;title;editor;keywords;author;related;journal"/>
+          <entry key="autoCompleteFields" value="entryset;crossref;title;journal;keywords;editor;author;publisher;related"/>
           <entry key="autoDoubleBraces" value="false"/>
           <entry key="autoOpenForm" value="true"/>
           <entry key="autoResizeMode" value="true"/>
@@ -78,7 +80,7 @@
           <entry key="customTabName_1" value="Website"/>
           <entry key="customTabName_2" value="Abstract"/>
           <entry key="customTabName_3" value="Review"/>
-          <entry key="cyclePreview" value="Preview;/ieee.csl"/>
+          <entry key="cyclePreview" value="Customized preview style;/ieee.csl"/>
           <entry key="cyclePreviewPos" value="0"/>
           <entry key="defaultBibtexKeyPattern" value="[auth:lower][year]"/>
           <entry key="defaultEncoding" value="UTF-8"/>
@@ -91,10 +93,13 @@
           <entry key="disableOnMultipleSelection" value="false"/>
           <entry key="displayGroupCount" value="true"/>
           <entry key="doNotResolveStringsFor" value="url"/>
+          <entry key="downloadLinkedFiles" value="true"/>
           <entry key="duplicatesPosX" value="559"/>
           <entry key="duplicatesPosY" value="253"/>
           <entry key="duplicatesSizeX" value="800"/>
           <entry key="duplicatesSizeY" value="600"/>
+          <entry key="emacsParameters" value="-n -e"/>
+          <entry key="emacsPath" value="emacsclient"/>
           <entry key="emailSubject" value="References"/>
           <entry key="enforceLegalBibtexKey" value="true"/>
           <entry key="entryEditorHeight" value="576"/>
@@ -135,7 +140,7 @@
           <entry key="groupIntersectSelections" value="true"/>
           <entry key="groupIntersectUnionViewModes" value="UNION"/>
           <entry key="groupInvertSelections" value="false"/>
-          <entry key="groupKeywordSeparator" value=", "/>
+          <entry key="groupKeywordSeparator" value=","/>
           <entry key="groupSelectMatches" value="false"/>
           <entry key="groupShowDynamic" value="true"/>
           <entry key="groupShowIcons" value="true"/>
@@ -169,11 +174,12 @@
           <entry key="listOfFileColumns" value=""/>
           <entry key="localAutoSave" value="false"/>
           <entry key="lookAndFeel" value="javax.swing.plaf.nimbus.NimbusLookAndFeel"/>
+          <entry key="lyxpipe" value="/home/shankar/.lyx/lyxpipe"/>
           <entry key="mainFontSize" value="9"/>
           <entry key="mainTableColumnNames" value="groups;files;linked_id;field:entrytype;field:author/editor;field:title;field:year;field:journal/booktitle;field:bibtexkey"/>
           <entry key="mainTableColumnSortOrder" value=""/>
           <entry key="mainTableColumnSortTypes" value="ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING"/>
-          <entry key="mainTableColumnWidths" value="28.0;28.0;28.0;89.82394829246756;382.21627295152473;603.134918249479;70.3311266485304;161.2976276535704;122.31198436569612"/>
+          <entry key="mainTableColumnWidths" value="28.0;28.0;28.0;70.03109437651236;398.9485891923164;647.4640297198125;48.1032613887921;150.43314866481998;106.57748268937942"/>
           <entry key="mainWindowPosX" value="1080.0"/>
           <entry key="mainWindowPosY" value="27.0"/>
           <entry key="mainWindowSizeX" value="1920.0"/>
@@ -198,6 +204,7 @@
           <entry key="namesLastOnly" value="false"/>
           <entry key="namesNatbib" value="true"/>
           <entry key="newline" value="&#13;&#10;"/>
+          <entry key="nonWrappableFields" value="pdf;ps;url;doi;file;isbn;issn"/>
           <entry key="numberColWidth" value="50"/>
           <entry key="ooBibliographyStyleFile" value="/resource/openoffice/default_authoryear.jstyle"/>
           <entry key="ooExecutablePath" value="/usr/lib/libreoffice/program/soffice"/>
@@ -227,7 +234,7 @@
           <entry key="previewEnabled" value="true"/>
           <entry key="previewPanelHeight" value="417"/>
           <entry key="previewPanelHeightFX" value="0.6504424778761062"/>
-          <entry key="previewStyle" value="&lt;font face=&quot;sans-serif&quot;&gt;&lt;b&gt;&lt;i&gt;\bibtextype&lt;/i&gt;&lt;a name=&quot;\bibtexkey&quot;&gt;\begin{bibtexkey} (\bibtexkey)&lt;/a&gt;\end{bibtexkey}&lt;/b&gt;&lt;br&gt;__NEWLINE__\begin{author} \format[Authors(LastFirst,Initials,Semicolon,Amp),HTMLChars]{\author}&lt;BR&gt;\end{author}__NEWLINE__\begin{editor} \format[Authors(LastFirst,Initials,Semicolon,Amp),HTMLChars]{\editor} &lt;i&gt;(\format[IfPlural(Eds.,Ed.)]{\editor})&lt;/i&gt;&lt;BR&gt;\end{editor}__NEWLINE__\begin{title} \format[HTMLChars]{\title} \end{title}&lt;BR&gt;__NEWLINE__\begin{chapter} \format[HTMLChars]{\chapter}&lt;BR&gt;\end{chapter}__NEWLINE__\begin{journal} &lt;em&gt;\format[HTMLChars]{\journal}, &lt;/em&gt;\end{journal}__NEWLINE__\begin{booktitle} &lt;em&gt;\format[HTMLChars]{\booktitle}, &lt;/em&gt;\end{booktitle}__NEWLINE__\begin{school} &lt;em&gt;\format[HTMLChars]{\school}, &lt;/em&gt;\end{school}__NEWLINE__\begin{institution} &lt;em&gt;\format[HTMLChars]{\institution}, &lt;/em&gt;\end{institution}__NEWLINE__\begin{publisher} &lt;em&gt;\format[HTMLChars]{\publisher}, &lt;/em&gt;\end{publisher}__NEWLINE__\begin{year}&lt;b&gt;\year&lt;/b&gt;\end{year}\begin{volume}&lt;i&gt;, \volume&lt;/i&gt;\end{volume}\begin{pages}, \format[FormatPagesForHTML]{\pages} \end{pages}__NEWLINE__\begin{abstract}&lt;BR&gt;&lt;BR&gt;&lt;b&gt;Abstract: &lt;/b&gt; \format[HTMLChars]{\abstract} \end{abstract}__NEWLINE__\begin{comment}&lt;BR&gt;&lt;BR&gt;&lt;b&gt;Comment: &lt;/b&gt; \format[Markdown,HTMLChars]{\comment} \end{comment}&lt;/dd&gt;__NEWLINE__&lt;p&gt;&lt;/p&gt;&lt;/font&gt;"/>
+          <entry key="previewStyle" value="&lt;font face=&quot;sans-serif&quot;&gt;&lt;b&gt;&lt;i&gt;\bibtextype&lt;/i&gt;&lt;a name=&quot;\citationkey&quot;&gt;\begin{citationkey} (\citationkey)&lt;/a&gt;\end{citationkey}&lt;/b&gt;&lt;br&gt;__NEWLINE__\begin{author} \format[Authors(LastFirst,Initials,Semicolon,Amp),HTMLChars]{\author}&lt;BR&gt;\end{author}__NEWLINE__\begin{editor} \format[Authors(LastFirst,Initials,Semicolon,Amp),HTMLChars]{\editor} &lt;i&gt;(\format[IfPlural(Eds.,Ed.)]{\editor})&lt;/i&gt;&lt;BR&gt;\end{editor}__NEWLINE__\begin{title} \format[HTMLChars]{\title} \end{title}&lt;BR&gt;__NEWLINE__\begin{chapter} \format[HTMLChars]{\chapter}&lt;BR&gt;\end{chapter}__NEWLINE__\begin{journal} &lt;em&gt;\format[HTMLChars]{\journal}, &lt;/em&gt;\end{journal}__NEWLINE__\begin{booktitle} &lt;em&gt;\format[HTMLChars]{\booktitle}, &lt;/em&gt;\end{booktitle}__NEWLINE__\begin{school} &lt;em&gt;\format[HTMLChars]{\school}, &lt;/em&gt;\end{school}__NEWLINE__\begin{institution} &lt;em&gt;\format[HTMLChars]{\institution}, &lt;/em&gt;\end{institution}__NEWLINE__\begin{publisher} &lt;em&gt;\format[HTMLChars]{\publisher}, &lt;/em&gt;\end{publisher}__NEWLINE__\begin{year}&lt;b&gt;\year&lt;/b&gt;\end{year}\begin{volume}&lt;i&gt;, \volume&lt;/i&gt;\end{volume}\begin{pages}, \format[FormatPagesForHTML]{\pages} \end{pages}__NEWLINE__\begin{abstract}&lt;BR&gt;&lt;BR&gt;&lt;b&gt;Abstract: &lt;/b&gt; \format[HTMLChars]{\abstract} \end{abstract}__NEWLINE__\begin{comment}&lt;BR&gt;&lt;BR&gt;&lt;b&gt;Comment: &lt;/b&gt; \format[Markdown,HTMLChars]{\comment} \end{comment}&lt;/dd&gt;__NEWLINE__&lt;p&gt;&lt;/p&gt;&lt;/font&gt;"/>
           <entry key="priDescending" value="false"/>
           <entry key="priSort" value="year"/>
           <entry key="promptBeforeUsingAutosave" value="true"/>
@@ -241,6 +248,7 @@
           <entry key="recentFiles" value="/home/shankar/Desktop/references.bib;/home/shankar/texmf/bibtex/bib/library.bib;/home/shankar/Documents/skulumani.github.io/_bibliography/references.bib"/>
           <entry key="reformatFileOnSaveAndExport" value="false"/>
           <entry key="regExpSearch" value="false"/>
+          <entry key="regExpSearchExpression" value="**/.*[citationkey].*\\.[extension]"/>
           <entry key="remoteServerPort" value="6050"/>
           <entry key="renameOnMoveFileToFileDir" value="true"/>
           <entry key="renamefileShow" value="true"/>
@@ -282,8 +290,8 @@
           <entry key="showRelevanceColumn" value="false"/>
           <entry key="showSearchInDialog" value="false"/>
           <entry key="showSource" value="true"/>
-          <entry key="sidePaneComponentNames" value="GROUPS;WEB_SEARCH"/>
-          <entry key="sidePaneComponentPreferredPositions" value="1;0"/>
+          <entry key="sidePaneComponentNames" value="WEB_SEARCH;GROUPS"/>
+          <entry key="sidePaneComponentPreferredPositions" value="0;1"/>
           <entry key="sidePaneWidth" value="283"/>
           <entry key="sidePaneWidthFX" value="0.20833333333333334"/>
           <entry key="sizeX" value="1375"/>
@@ -309,6 +317,7 @@
           <entry key="termsPosY" value="573"/>
           <entry key="termsSizeX" value="500"/>
           <entry key="termsSizeY" value="500"/>
+          <entry key="texmakerPath" value="texmaker"/>
           <entry key="timeStampField" value="timestamp"/>
           <entry key="timeStampFormat" value="yyyy.MM.dd HH:MM"/>
           <entry key="toolbarVisible" value="true"/>
@@ -337,14 +346,17 @@
           <entry key="validFieldBackgroundColor" value="255:255:255"/>
           <entry key="validateInEntryEditor" value="true"/>
           <entry key="valueDelimiters" value="1"/>
+          <entry key="vim" value="vim"/>
+          <entry key="vimServer" value="vim"/>
           <entry key="warnAboutDuplicatesInInspection" value="true"/>
           <entry key="warnBeforeOverwritingKey" value="true"/>
           <entry key="webSearchVisible" value="false"/>
+          <entry key="winEdtPath" value="WinEdt"/>
           <entry key="windowMaximised" value="true"/>
           <entry key="workingDirectory" value="/home/shankar/Drive/RCCT/futurenav"/>
           <entry key="writeFieldAddSpaces" value="true"/>
           <entry key="writeFieldCamelCase" value="true"/>
-          <entry key="xmpPrivacyFilters" value="pdf;timestamp;keywords;owner;note;review"/>
+          <entry key="xmpPrivacyFilters" value="timestamp;owner;review;keywords;pdf;note"/>
         </map>
         <node name="bibtexkeypatterns">
           <map/>
