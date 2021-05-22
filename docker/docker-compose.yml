@@ -121,47 +121,118 @@ services:
       - mosquitto_data:/mosquitto/data
       - mosquitto_log:/mosquitto/log
 
-  photoview_db:
-    container_name: photoview_db
-    image: mariadb:10.5
-    restart: always
-    environment:
-      - MYSQL_DATABASE=photoview
-      - MYSQL_USER=photoview
-      - MYSQL_PASSWORD=photosecret
-      - MYSQL_RANDOM_ROOT_PASSWORD=1
-    volumes:
-      - db_data:/var/lib/mysql
-
-  photoview:
-    image: viktorstrate/photoview:latest
-    container_name: photoview
-    restart: always
+  photoprism:
+    # Use photoprism/photoprism:preview instead for testing preview builds:
+    image: photoprism/photoprism:latest
+    container_name: photoprism
+    # Only enable automatic restarts once your installation is properly
+    # configured as it otherwise may get stuck in a restart loop:
+    # https://docs.photoprism.org/getting-started/faq/#why-is-photoprism-getting-stuck-in-a-restart-loop
+    # restart: unless-stopped
+    security_opt:
+      - seccomp:unconfined
+      - apparmor:unconfined
     ports:
-      - "8000:80"
-    depends_on:
-      - photoview_db
-
+      - 2342:2342 # [local port]:[container port]
     environment:
-      - PHOTOVIEW_DATABASE_DRIVER=mysql
-      - PHOTOVIEW_MYSQL_URL=photoview:photosecret@tcp(photoview_db)/photoview
-      - PHOTOVIEW_LISTEN_IP=photoview
-      - PHOTOVIEW_LISTEN_PORT=80
-      - PHOTOVIEW_MEDIA_CACHE=/app/cache
-      - PHOTOVIEW_PUBLIC_ENDPOINT=http://192.168.88.12:8000
-      # Optional: To enable map related features, you need to create a mapbox token.
-      # A token can be generated for free here https://account.mapbox.com/access-tokens/
-      # It's a good idea to limit the scope of the token to your own domain, to prevent others from using it.
-      - MAPBOX_TOKEN=pk.eyJ1IjoiY29tcGFuaW9uLWdhbGxlcnkiLCJhIjoiY2tsdG4zZXluMXRzNTJvbGJ1dnJ3dHc4dSJ9.BhCbQ982RogUC1s6UJ9KhQ
-
+      PHOTOPRISM_ADMIN_PASSWORD: "insecure"          # PLEASE CHANGE: Your initial admin password (min 4 characters)
+      PHOTOPRISM_ORIGINALS_LIMIT: 1000               # File size limit for originals in MB (increase for high-res video)
+      PHOTOPRISM_HTTP_COMPRESSION: "gzip"            # Improves transfer speed and bandwidth utilization (none or gzip)
+      PHOTOPRISM_DEBUG: "false"                      # Run in debug mode (shows additional log messages)
+      PHOTOPRISM_PUBLIC: "true"                     # No authentication required (disables password protection)
+      PHOTOPRISM_READONLY: "false"                   # Don't modify originals directory (reduced functionality)
+      PHOTOPRISM_EXPERIMENTAL: "false"               # Enables experimental features
+      PHOTOPRISM_DISABLE_WEBDAV: "true"             # Disables built-in WebDAV server
+      PHOTOPRISM_DISABLE_SETTINGS: "false"           # Disables Settings in Web UI
+      PHOTOPRISM_DISABLE_TENSORFLOW: "false"         # Disables using TensorFlow for image classification
+      PHOTOPRISM_DARKTABLE_PRESETS: "false"          # Enables Darktable presets and disables concurrent RAW conversion
+      PHOTOPRISM_DETECT_NSFW: "false"                # Flag photos as private that MAY be offensive (requires TensorFlow)
+      PHOTOPRISM_UPLOAD_NSFW: "true"                 # Allow uploads that MAY be offensive
+      # PHOTOPRISM_DATABASE_DRIVER: "sqlite"         # SQLite is an embedded database that doesn't require a server
+      PHOTOPRISM_DATABASE_DRIVER: "mysql"            # Use MariaDB (or MySQL) instead of SQLite for improved performance
+      PHOTOPRISM_DATABASE_SERVER: "mariadb:3311"     # MariaDB database server (hostname:port)
+      PHOTOPRISM_DATABASE_NAME: "photoprism"         # MariaDB database schema name
+      PHOTOPRISM_DATABASE_USER: "photoprism"         # MariaDB database user name
+      PHOTOPRISM_DATABASE_PASSWORD: "insecure"       # MariaDB database user password
+      PHOTOPRISM_SITE_URL: "http://localhost:2342/"  # Public PhotoPrism URL
+      PHOTOPRISM_SITE_TITLE: "PhotoPrism"
+      PHOTOPRISM_SITE_CAPTION: "Browse Your Life"
+      PHOTOPRISM_SITE_DESCRIPTION: ""
+      PHOTOPRISM_SITE_AUTHOR: ""
+      # You may optionally set a user / group id using environment variables if your Docker version or NAS does not
+      # support this natively (see next example):
+      # UID: 1000
+      # GID: 1000
+      # UMASK: 0000
+    # Uncomment and edit the following line to set a specific user / group id (native):
+    user: "1000:1000"
     volumes:
-      - api_cache:/app/cache
+      # Your photo and video files ([local path]:[container path]):
+      - "/media/shankar/data/pictures/originals:/photoprism/originals"
+      # Multiple folders can be indexed by mounting them as sub-folders of /photoprism/originals:
+      # - "/mnt/Family:/photoprism/originals/Family"    # [folder_1]:/photoprism/originals/[folder_1]
+      # - "/mnt/Friends:/photoprism/originals/Friends"  # [folder_2]:/photoprism/originals/[folder_2]
+      # Mounting an import folder is optional (see docs):
+      - "/media/shankar/data/pictures/import:/photoprism/import"
+      # Permanent storage for settings, index & sidecar files (DON'T REMOVE):
+      - photoprism_storage:/photoprism/storage
+  photoprism_db:
+    image: mariadb:10.5
+    container_name: photoprism_db
+    restart: unless-stopped
+    security_opt:
+      - seccomp:unconfined
+      - apparmor:unconfined
+    command: mysqld --transaction-isolation=READ-COMMITTED --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --max-connections=512 --innodb-rollback-on-timeout=OFF --innodb-lock-wait-timeout=50
+    volumes: # Don't remove permanent storage for index database files!
+      - photoprism_db_storage:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: please_change
+      MYSQL_DATABASE: photoprism
+      MYSQL_USER: photoprism
+      MYSQL_PASSWORD: insecure
 
-      # Change This: to the directory where your photos are located on your server.
-      # If the photos are located at `/home/user/photos`, then change this value
-      # to the following: `/home/user/photos:/photos:ro`.
-      # You can mount multiple paths, if your photos are spread across multiple directories.
-      - /media/shankar/data/pictures:/photos:ro
+  # photoview_db:
+  #   container_name: photoview_db
+  #   image: mariadb:10.5
+  #   restart: always
+  #   environment:
+  #     - MYSQL_DATABASE=photoview
+  #     - MYSQL_USER=photoview
+  #     - MYSQL_PASSWORD=photosecret
+  #     - MYSQL_RANDOM_ROOT_PASSWORD=1
+  #   volumes:
+  #     - db_data:/var/lib/mysql
+
+  # photoview:
+  #   image: viktorstrate/photoview:latest
+  #   container_name: photoview
+  #   restart: always
+  #   ports:
+  #     - "8000:80"
+  #   depends_on:
+  #     - photoview_db
+
+  #   environment:
+  #     - PHOTOVIEW_DATABASE_DRIVER=mysql
+  #     - PHOTOVIEW_MYSQL_URL=photoview:photosecret@tcp(photoview_db)/photoview
+  #     - PHOTOVIEW_LISTEN_IP=photoview
+  #     - PHOTOVIEW_LISTEN_PORT=80
+  #     - PHOTOVIEW_MEDIA_CACHE=/app/cache
+  #     - PHOTOVIEW_PUBLIC_ENDPOINT=http://192.168.88.12:8000
+  #     # Optional: To enable map related features, you need to create a mapbox token.
+  #     # A token can be generated for free here https://account.mapbox.com/access-tokens/
+  #     # It's a good idea to limit the scope of the token to your own domain, to prevent others from using it.
+  #     - MAPBOX_TOKEN=pk.eyJ1IjoiY29tcGFuaW9uLWdhbGxlcnkiLCJhIjoiY2tsdG4zZXluMXRzNTJvbGJ1dnJ3dHc4dSJ9.BhCbQ982RogUC1s6UJ9KhQ
+
+  #   volumes:
+  #     - api_cache:/app/cache
+
+  #     # Change This: to the directory where your photos are located on your server.
+  #     # If the photos are located at `/home/user/photos`, then change this value
+  #     # to the following: `/home/user/photos:/photos:ro`.
+  #     # You can mount multiple paths, if your photos are spread across multiple directories.
+  #     - /media/shankar/data/pictures:/photos:ro
   
   influxdb:
     image: influxdb:latest
@@ -170,11 +241,8 @@ services:
     ports:
       - 8086:8086
     volumes:
-      - influxdb-storage:/var/lib/influxdb
-    environment:
-      - INFLUXDB_DB=db0
-      - INFLUXDB_ADMIN_USER=admin
-      - INFLUXDB_ADMIN_PASSWORD=password
+      - /home/shankar/Documents/system_setup/docker_data/influxdb/data/:/var/lib/influxdb2
+      - /home/shankar/Documents/system_setup/docker_data/influxdb/config/:/etc/influxdb2
 
   grafana:
     image: grafana/grafana:latest
@@ -192,30 +260,31 @@ services:
       - GF_SECURITY_ADMIN_PASSWORD=password
 
 
-  # frigate:
-  #   container_name: frigate
-  #   # privileged: true # this may not be necessary for all setups
-  #   restart: unless-stopped
-  #   image: blakeblackshear/frigate:stable-amd64
-  #   devices:
-  #     # - /dev/bus/usb:/dev/bus/usb # for coral devices
-  #     - /dev/dri/renderD128 # for intel hwaccel, needs to be updated for your hardware
-  #   volumes:
-  #     - /etc/localtime:/etc/localtime:ro
-  #     - /home/shankar/Documents/system_setup/docker_data/frigate/config.yml:/config/config.yml:ro
-  #     - /media/shankar/usbdrive/frigate:/media/frigate
-  #     - type: tmpfs # Optional: 1GB of memory, reduces SSD/SD Card wear
-  #       target: /tmp/cache
-  #       tmpfs:
-  #         size: 1000000000
-  #   ports:
-  #     - '5000:5000'
-  #     - '1935:1935' # RTMP feeds
-  #   environment:
-  #     FRIGATE_FRONT_CAM_IP: "192.168.200.15"
-  #     FRIGATE_BACK_CAM_IP: "192.168.200.16"
-  #     FRIGATE_CAM_PASSWORD: "dgdiPUdFwqkqBwRFSq"
-  #     FRIGATE_CAM_USERNAME: "stream"
+  frigate:
+    container_name: frigate
+    # privileged: true # this may not be necessary for all setups
+    restart: unless-stopped
+    image: blakeblackshear/frigate:stable-amd64
+    devices:
+      # - /dev/bus/usb:/dev/bus/usb # for coral devices
+      - /dev/dri/renderD128 # for intel hwaccel, needs to be updated for your hardware
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /home/shankar/Documents/system_setup/docker_data/frigate/config.yml:/config/config.yml:ro
+      - /media/shankar/usbdrive/frigate:/media/frigate
+      - type: tmpfs # Optional: 1GB of memory, reduces SSD/SD Card wear
+        target: /tmp/cache
+        tmpfs:
+          size: 1000000000
+    ports:
+      - '5000:5000'
+      - '1935:1935' # RTMP feeds
+    environment:
+      FRIGATE_FRONT_CAM_IP: "192.168.200.15"
+      FRIGATE_BACK_CAM_IP: "192.168.200.16"
+      FRIGATE_CAM_PASSWORD: "dgdiPUdFwqkqBwRFSq"
+      FRIGATE_CAM_USERNAME: "stream"
+
   motioneye:
     image: ccrisan/motioneye:master-amd64  # Change to ccrisan/motioneye:master-armhf for ARM chips (Pi etc.)
     container_name: motioneye
@@ -247,11 +316,16 @@ volumes:
   omada-data:
   omada-work:
   omada-logs:
-  db_data:
-  api_cache:
   mosquitto_data:
   mosquitto_log:
-  influxdb-storage:
   grafana-storage:
+  
+  # photoview data
+  db_data:
+  api_cache:
+
+  # photoprism
+  photoprism_storage:
+  photoprism_db_storage:
 
 
