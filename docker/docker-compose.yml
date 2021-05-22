@@ -121,6 +121,34 @@ services:
       - mosquitto_data:/mosquitto/data
       - mosquitto_log:/mosquitto/log
 
+  # Example Docker Compose config file for PhotoPrism (Linux / AMD64)
+#
+# Documentation : https://docs.photoprism.org/getting-started/docker-compose/
+# Docker Hub URL: https://hub.docker.com/r/photoprism/photoprism/
+#
+# Please run behind a reverse proxy like Caddy, Traefik or Nginx if you need HTTPS / SSL support
+# e.g. when running PhotoPrism on a public server outside your home network.
+#
+# ------------------------------------------------------------------
+# DOCKER COMPOSE COMMAND REFERENCE
+# ------------------------------------------------------------------
+# Start    | docker-compose up -d
+# Stop     | docker-compose stop
+# Update   | docker-compose pull
+# Logs     | docker-compose logs --tail=25 -f
+# Terminal | docker-compose exec photoprism bash
+# Help     | docker-compose exec photoprism photoprism help
+# Config   | docker-compose exec photoprism photoprism config
+# Reset    | docker-compose exec photoprism photoprism reset
+# Backup   | docker-compose exec photoprism photoprism backup -a -i
+# Restore  | docker-compose exec photoprism photoprism restore -a -i
+# Index    | docker-compose exec photoprism photoprism index
+# Reindex  | docker-compose exec photoprism photoprism index -a
+# Import   | docker-compose exec photoprism photoprism import
+# -------------------------------------------------------------------
+# Note: All commands may have to be prefixed with "sudo" when not running as root.
+#       This will change the home directory "~" to "/root" in your configuration.
+#
   photoprism:
     # Use photoprism/photoprism:preview instead for testing preview builds:
     image: photoprism/photoprism:latest
@@ -150,15 +178,17 @@ services:
       PHOTOPRISM_UPLOAD_NSFW: "true"                 # Allow uploads that MAY be offensive
       # PHOTOPRISM_DATABASE_DRIVER: "sqlite"         # SQLite is an embedded database that doesn't require a server
       PHOTOPRISM_DATABASE_DRIVER: "mysql"            # Use MariaDB (or MySQL) instead of SQLite for improved performance
-      PHOTOPRISM_DATABASE_SERVER: "mariadb:3311"     # MariaDB database server (hostname:port)
+      PHOTOPRISM_DATABASE_SERVER: "192.168.88.12:3311"     # MariaDB database server (hostname:port)
       PHOTOPRISM_DATABASE_NAME: "photoprism"         # MariaDB database schema name
       PHOTOPRISM_DATABASE_USER: "photoprism"         # MariaDB database user name
       PHOTOPRISM_DATABASE_PASSWORD: "insecure"       # MariaDB database user password
-      PHOTOPRISM_SITE_URL: "http://localhost:2342/"  # Public PhotoPrism URL
+      PHOTOPRISM_SITE_URL: "http://192.168.88.12:2342/"  # Public PhotoPrism URL
       PHOTOPRISM_SITE_TITLE: "PhotoPrism"
       PHOTOPRISM_SITE_CAPTION: "Browse Your Life"
       PHOTOPRISM_SITE_DESCRIPTION: ""
       PHOTOPRISM_SITE_AUTHOR: ""
+      PHOTOPRISM_WORKERS: 2       # Max number of index workers
+      # PHOTOPRISM_JPEG_QUALITY: 80   # JPEG Quality
       # You may optionally set a user / group id using environment variables if your Docker version or NAS does not
       # support this natively (see next example):
       # UID: 1000
@@ -176,6 +206,9 @@ services:
       - "/media/shankar/data/pictures/import:/photoprism/import"
       # Permanent storage for settings, index & sidecar files (DON'T REMOVE):
       - photoprism_storage:/photoprism/storage
+    depends_on:
+      - photoprism_db
+
   photoprism_db:
     image: mariadb:10.5
     container_name: photoprism_db
@@ -186,6 +219,8 @@ services:
     command: mysqld --transaction-isolation=READ-COMMITTED --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --max-connections=512 --innodb-rollback-on-timeout=OFF --innodb-lock-wait-timeout=50
     volumes: # Don't remove permanent storage for index database files!
       - photoprism_db_storage:/var/lib/mysql
+    ports:
+      - 3311:3306
     environment:
       MYSQL_ROOT_PASSWORD: please_change
       MYSQL_DATABASE: photoprism
