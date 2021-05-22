@@ -33,7 +33,7 @@ cameras:
           roles:
             - detect
             # - clips
-            # - rtmp
+            - rtmp
         # - path: rtsp://{FRIGATE_CAM_USERNAME}:{FRIGATE_CAM_PASSWORD}@{FRIGATE_FRONT_CAM_IP}:554/h264Preview_01_main
         - path: rtmp://{FRIGATE_CAM_USERNAME}:{FRIGATE_CAM_PASSWORD}@{FRIGATE_FRONT_CAM_IP}/bcs/channel0_main.bcs?token=sdasdasd&channel=0&stream=0&user={FRIGATE_CAM_USERNAME}&password={FRIGATE_CAM_PASSWORD}
           roles:
@@ -96,7 +96,7 @@ cameras:
           roles:
             - detect
             # - clips
-            # - rtmp
+            - rtmp
         # - path: rtsp://{FRIGATE_CAM_USERNAME}:{FRIGATE_CAM_PASSWORD}@{FRIGATE_BACK_CAM_IP}:554/h264Preview_01_main
         - path: rtmp://{FRIGATE_CAM_USERNAME}:{FRIGATE_CAM_PASSWORD}@{FRIGATE_BACK_CAM_IP}/bcs/channel0_main.bcs?token=sdasdasd&channel=0&stream=0&user={FRIGATE_CAM_USERNAME}&password={FRIGATE_CAM_PASSWORD}
           roles:
