@@ -70,7 +70,7 @@ cameras:
       timestamp: True
       bounding_box: True
       crop: True
-      height: 270
+      height: 480
       required_zones: []
 
     objects:
@@ -78,7 +78,16 @@ cameras:
         - person
       filters:
         person:
-          mask: 538,155,640,262,640,413,523,281,471,226,429,171,347,82,370,37
+          mask:
+            - 537,0,640,0,640,360,640,359,640,338,512,216,448,144,441,160,410,165,387,180,317,145,343,89,379,0
+          # Optional: minimum width*height of the bounding box for the detected object (default: 0)
+          min_area: 20000
+          # Optional: maximum width*height of the bounding box for the detected object (default: 24000000)
+          max_area: 100000
+          # Optional: minimum score for the object to initiate tracking (default: shown below)
+          min_score: 0.7
+          # Optional: minimum decimal percentage for tracked object's computed score to be considered a true positive (default: shown below)
+          threshold: 0.7
 
     zones:
       porch:
@@ -130,7 +139,7 @@ cameras:
       timestamp: True
       bounding_box: True
       crop: True
-      height: 270
+      height: 480
       required_zones: []
 
     objects:
@@ -185,7 +194,7 @@ clips:
   retain: # retentation limit on clips
     default: 3 # keep for 10 days
     objects: # per object retention policy
-      person: 10
+      person: 5
 
 record:
   retain_days: 3
