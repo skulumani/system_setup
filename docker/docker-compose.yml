@@ -111,6 +111,7 @@ services:
   mosquitto:
     image: eclipse-mosquitto
     hostname: mosquitto
+    restart: always
     container_name: mosquitto
     # network_mode: host
     ports:
@@ -163,6 +164,7 @@ services:
       - apparmor:unconfined
     ports:
       - 2342:2342 # [local port]:[container port]
+    restart: always
     environment:
       PHOTOPRISM_ADMIN_PASSWORD: "insecure"          # PLEASE CHANGE: Your initial admin password (min 4 characters)
       PHOTOPRISM_ORIGINALS_LIMIT: 1000               # File size limit for originals in MB (increase for high-res video)
@@ -213,7 +215,7 @@ services:
   photoprism_db:
     image: mariadb:10.5
     container_name: photoprism_db
-    restart: unless-stopped
+    restart: always
     security_opt:
       - seccomp:unconfined
       - apparmor:unconfined
@@ -299,8 +301,8 @@ services:
   frigate:
     container_name: frigate
     # privileged: true # this may not be necessary for all setups
-    restart: unless-stopped
     image: blakeblackshear/frigate:stable-amd64
+    restart: always
     devices:
       # - /dev/bus/usb:/dev/bus/usb # for coral devices
       - /dev/dri/renderD128 # for intel hwaccel, needs to be updated for your hardware
