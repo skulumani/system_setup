@@ -1,0 +1,9 @@
+bash
+bin
+config_fontconfig
+config_nvim
+fzf
+git_apl
+tmux
+vim
+zsh
