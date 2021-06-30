@@ -2,3 +2,15 @@ let g:vimwiki_list = [{'path': '~/notes/', 'syntax': 'markdown', 'ext': '.md', '
 let g:vimwiki_global_ext = 0
 let g:vimwiki_conceallevel = 0
 let g:vimwiki_url_maxsave = 15
+
+
+function! VimwikiFindIncompleteTasks()
+  lvimgrep /- \[ \]/ %:p
+  lopen
+endfunction
+
+function! VimwikiFindAllIncompleteTasks()
+  VimwikiSearch /- \[ \]/
+  lopen
+endfunction
+
