@@ -14,3 +14,15 @@ function! VimwikiFindAllIncompleteTasks()
   lopen
 endfunction
 
+function! VimwikiLinkHandler(link)
+    let link = a:link
+    if link =~# '^smb:'
+        try
+            execute '!open ' link
+            return 1
+        catch
+            echo "SMB Link broken"
+        endtry
+    endif
+    return 0
+endfunction
