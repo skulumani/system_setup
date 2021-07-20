@@ -1,0 +1,12 @@
+bash
+bin
+config_fontconfig
+config_nvim
+fzf
+git_apl
+latex
+python
+texmf_mac
+tmux
+vim
+zsh
