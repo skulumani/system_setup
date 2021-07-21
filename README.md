@@ -1,5 +1,6 @@
 ## New computer setup
 
+* Setup SSH Keys for Github
 * Run `bash linux_setup.sh` or `bash mac_setup.sh`
 
     * [Anaconda Hashes](https://docs.anaconda.com/anaconda/install/hashes/)

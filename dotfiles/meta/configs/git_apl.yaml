@@ -1,0 +1,4 @@
+- link:
+    ~/.gitconfig: dotfiles/gitconfig_apl
+    ~/.gitignore_global: dotfiles/gitignore_global
+
