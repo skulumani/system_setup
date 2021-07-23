@@ -179,9 +179,9 @@
           <entry key="mainTableColumnNames" value="groups;files;linked_id;field:entrytype;field:author/editor;field:title;field:year;field:journal/booktitle;field:bibtexkey"/>
           <entry key="mainTableColumnSortOrder" value=""/>
           <entry key="mainTableColumnSortTypes" value="ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING"/>
-          <entry key="mainTableColumnWidths" value="28.0;28.0;28.0;58.21565684985879;331.6391722266815;538.2258282891697;39.987422491403954;125.05251616419324;88.59604744728328"/>
+          <entry key="mainTableColumnWidths" value="28.0;28.0;28.0;54.63763839660319;127.94900340792823;498.9945831029784;37.763324040664905;116.51012436837695;262.5648459842496"/>
           <entry key="mainWindowPosX" value="95.0"/>
-          <entry key="mainWindowPosY" value="105.0"/>
+          <entry key="mainWindowPosY" value="97.0"/>
           <entry key="mainWindowSizeX" value="1571.0"/>
           <entry key="mainWindowSizeY" value="975.0"/>
           <entry key="markImportedEntries" value="true"/>
@@ -293,7 +293,7 @@
           <entry key="sidePaneComponentNames" value="GROUPS;WEB_SEARCH"/>
           <entry key="sidePaneComponentPreferredPositions" value="1;0"/>
           <entry key="sidePaneWidth" value="283"/>
-          <entry key="sidePaneWidthFX" value="0.19159770846594526"/>
+          <entry key="sidePaneWidthFX" value="0.2546148949713558"/>
           <entry key="sizeX" value="1375"/>
           <entry key="sizeY" value="901"/>
           <entry key="specialFieldsEnabled" value="true"/>
