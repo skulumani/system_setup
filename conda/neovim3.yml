@@ -15,5 +15,6 @@ dependencies:
     - pyflakes
     - pylint
     - pynvim
+    - neovim-remote
 prefix: /home/shankar/anaconda3/envs/neovim3
 
