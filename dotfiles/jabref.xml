@@ -103,7 +103,7 @@
           <entry key="emailSubject" value="References"/>
           <entry key="enforceLegalBibtexKey" value="true"/>
           <entry key="entryEditorHeight" value="576"/>
-          <entry key="entryEditorHeightFX" value="0.5209988649262202"/>
+          <entry key="entryEditorHeightFX" value="0.522867737948084"/>
           <entry key="exportInOriginalOrder" value="false"/>
           <entry key="exportInSpecifiedOrder" value="true"/>
           <entry key="exportInStandardOrder" value="true"/>
@@ -179,11 +179,11 @@
           <entry key="mainTableColumnNames" value="groups;files;linked_id;field:entrytype;field:author/editor;field:title;field:year;field:journal/booktitle;field:bibtexkey"/>
           <entry key="mainTableColumnSortOrder" value=""/>
           <entry key="mainTableColumnSortTypes" value="ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING"/>
-          <entry key="mainTableColumnWidths" value="28.0;28.0;28.0;70.03109437651236;398.9485891923164;647.4640297198125;48.1032613887921;150.43314866481998;106.57748268937942"/>
-          <entry key="mainWindowPosX" value="1080.0"/>
-          <entry key="mainWindowPosY" value="27.0"/>
-          <entry key="mainWindowSizeX" value="1920.0"/>
-          <entry key="mainWindowSizeY" value="1053.0"/>
+          <entry key="mainTableColumnWidths" value="28.0;28.0;28.0;54.63763839660319;127.94900340792823;498.9945831029784;37.763324040664905;116.51012436837695;262.5648459842496"/>
+          <entry key="mainWindowPosX" value="95.0"/>
+          <entry key="mainWindowPosY" value="97.0"/>
+          <entry key="mainWindowSizeX" value="1571.0"/>
+          <entry key="mainWindowSizeY" value="975.0"/>
           <entry key="markImportedEntries" value="true"/>
           <entry key="markedEntryBackground0" value="255:255:180"/>
           <entry key="markedEntryBackground1" value="255:220:180"/>
@@ -192,7 +192,7 @@
           <entry key="markedEntryBackground4" value="255:75:75"/>
           <entry key="markedEntryBackground5" value="220:255:220"/>
           <entry key="memoryStickMode" value="true"/>
-          <entry key="mergeEntriesDiffMode" value="0"/>
+          <entry key="mergeEntriesDiffMode" value="CHARACTER"/>
           <entry key="mergeEntriesPosX" value="0"/>
           <entry key="mergeEntriesPosY" value="31"/>
           <entry key="mergeEntriesSizeX" value="800"/>
@@ -290,10 +290,10 @@
           <entry key="showRelevanceColumn" value="false"/>
           <entry key="showSearchInDialog" value="false"/>
           <entry key="showSource" value="true"/>
-          <entry key="sidePaneComponentNames" value="WEB_SEARCH;GROUPS"/>
-          <entry key="sidePaneComponentPreferredPositions" value="0;1"/>
+          <entry key="sidePaneComponentNames" value="GROUPS;WEB_SEARCH"/>
+          <entry key="sidePaneComponentPreferredPositions" value="1;0"/>
           <entry key="sidePaneWidth" value="283"/>
-          <entry key="sidePaneWidthFX" value="0.20833333333333334"/>
+          <entry key="sidePaneWidthFX" value="0.2546148949713558"/>
           <entry key="sizeX" value="1375"/>
           <entry key="sizeY" value="901"/>
           <entry key="specialFieldsEnabled" value="true"/>
@@ -352,7 +352,7 @@
           <entry key="warnBeforeOverwritingKey" value="true"/>
           <entry key="webSearchVisible" value="false"/>
           <entry key="winEdtPath" value="WinEdt"/>
-          <entry key="windowMaximised" value="true"/>
+          <entry key="windowMaximised" value="false"/>
           <entry key="workingDirectory" value="/home/shankar/Drive/RCCT/futurenav"/>
           <entry key="writeFieldAddSpaces" value="true"/>
           <entry key="writeFieldCamelCase" value="true"/>

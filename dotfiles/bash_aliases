@@ -11,7 +11,7 @@ if exists gpgconf; then
     export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
     gpgconf --launch gpg-agent
 else
-    echo "GPGCONF not installed"
+    # No GPGconf
 fi
 # export SSH_AUTH_SOCK="/run/user/$UID/gnupg/S.gpg-agent.ssh"
 # eval "gpg-connect-agent updatestartuptty /bye"
