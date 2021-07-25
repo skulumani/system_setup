@@ -41,7 +41,7 @@ cameras:
             # - rtmp
     width: 640
     height: 480
-    fps: 4
+    fps: 15
     
     detect:
       enabled: True
@@ -73,13 +73,17 @@ cameras:
       height: 480
       required_zones: []
 
+    motion:
+      mask:    
+        - 640,183,640,238,528,349,447,480,411,480,369,404,413,311,538,114
+
     objects:
       track:
         - person
       filters:
         person:
           mask:
-            - 537,0,640,0,640,360,640,359,640,338,512,216,448,144,441,160,410,165,387,180,317,145,343,89,379,0
+            - 395,68,471,117,427,211,396,207,380,202,351,181,317,145,343,89
           # Optional: minimum width*height of the bounding box for the detected object (default: 0)
           min_area: 20000
           # Optional: maximum width*height of the bounding box for the detected object (default: 24000000)
@@ -113,7 +117,7 @@ cameras:
             # - rtmp
     width: 640
     height: 480
-    fps: 4
+    fps: 15
 
     detect:
       enabled: True
