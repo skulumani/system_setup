@@ -1,4 +1,4 @@
-let g:deoplete#enable_at_startup = 0
+let g:deoplete#enable_at_startup = 1
 " let g:deoplete#max_list = 10
 call deoplete#custom#option({
             \ 'auto_complete_delay': 100,
