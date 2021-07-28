@@ -32,7 +32,7 @@ augroup numbertoggle
     autocmd BufLeave,FocusLost,InsertEnter * set norelativenumber
 augroup END
 
-set wrap
+set nowrap
 
 " column ruler at 100
 set ruler
