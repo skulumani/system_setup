@@ -281,6 +281,7 @@ services:
     volumes:
       - /home/shankar/Documents/system_setup/docker_data/influxdb/data/:/var/lib/influxdb2
       - /home/shankar/Documents/system_setup/docker_data/influxdb/config/:/etc/influxdb2
+      - /home/shankar/Documents/influxdb_backup/:/var/influxdb_backup
 
   grafana:
     image: grafana/grafana:latest
