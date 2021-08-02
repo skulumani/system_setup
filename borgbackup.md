@@ -3,7 +3,7 @@
 1. Install BorgBackup from repo
 
 ~~~
-sudo apt-get install borgbackup
+sudo apt-get install borgbackup restic
 ~~~
 
 2. Create a new `borgbackup` user on the remote ssh server

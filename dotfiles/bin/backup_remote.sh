@@ -171,6 +171,7 @@ quota() {
 
 check() {
     borg check --remote-path=borg "${TARGET}"
+    # borg check --verify-data --remote-path=borg "${TARGET}"
 }
 
 list() {

@@ -32,6 +32,7 @@ export B2_ACCOUNT_KEY=<>
 ~~~
 
 In the past, `borg` was used but now moving to `restic`. 
+It is attached in Bitwarden Backblaze credentials.
 
 ### Mac specifics
 

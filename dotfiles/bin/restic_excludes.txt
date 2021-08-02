@@ -1,0 +1,6 @@
+*.pyc
+
+$HOME/**/.git
+$HOME/**/.cache
+$HOME/**/Cache
+$HOME/__pycache__
