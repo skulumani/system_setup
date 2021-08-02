@@ -12,7 +12,6 @@
 * gnome-disks - software center
 * Drive
 * Borg backup - run `bash build_scripts/build_borg.sh`
-* Kmymoney - software center and install `oxygen-icon-theme` to get icons
 * Veracrypt
 * Build Essentials and Cmake
 * Set up fstab mounting for data drive to `/media/shankar/data` with gnome-disks
@@ -20,6 +19,19 @@
 * Setup crontab for automatic borg backups to local and remote
 * Signal Desktop - `bash build_scripts/build_signal_desktop.sh`
 * rclone - run `bash build_scripts/build_rclone.sh` then follow [Drive](https://rclone.org/drive/)
+
+## Backups
+
+Create `~/borg_passphrase.sh` with the following variables
+
+~~~
+export BORG_PASSPHRASE=<>
+export RESTIC_PASSWORD=<>
+export B2_ACCOUNT_ID=<>
+export B2_ACCOUNT_KEY=<>
+~~~
+
+In the past, `borg` was used but now moving to `restic`. 
 
 ### Mac specifics
 
