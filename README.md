@@ -12,7 +12,6 @@
 * gnome-disks - software center
 * Drive
 * Borg backup - run `bash build_scripts/build_borg.sh`
-* Kmymoney - software center and install `oxygen-icon-theme` to get icons
 * Veracrypt
 * Build Essentials and Cmake
 * Set up fstab mounting for data drive to `/media/shankar/data` with gnome-disks
@@ -20,6 +19,27 @@
 * Setup crontab for automatic borg backups to local and remote
 * Signal Desktop - `bash build_scripts/build_signal_desktop.sh`
 * rclone - run `bash build_scripts/build_rclone.sh` then follow [Drive](https://rclone.org/drive/)
+
+## Backups
+
+Create `~/borg_passphrase.sh` with the following variables
+
+~~~
+export BORG_PASSPHRASE=<>
+export RESTIC_PASSWORD=<>
+export B2_ACCOUNT_ID=<>
+export B2_ACCOUNT_KEY=<>
+~~~
+
+1. `borg` is used to push data to rsync.net
+2. Make sure you copy a ssh key to rsync.net 
+
+~~~
+cat ~/.ssh/id_rsa.pub | ssh <rsync username>@<rsync server> 'dd of=.ssh/authorized_keys oflag=append conv=notrunc'
+~~~
+
+3. Use `backup_remote.sh` to interface with the borg repo
+4. Exclude files by editing `dotfiles/bin/backup_exclude.txt` or add `.nobackup` to a directory to ignore it
 
 ### Mac specifics
 
