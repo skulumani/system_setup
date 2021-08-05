@@ -31,8 +31,14 @@ export B2_ACCOUNT_ID=<>
 export B2_ACCOUNT_KEY=<>
 ~~~
 
-In the past, `borg` was used but now moving to `restic`. 
-It is attached in Bitwarden Backblaze credentials.
+1. `borg` is used to push data to rsync.net
+2. Make sure you copy a ssh key to rsync.net 
+
+~~~
+cat ~/.ssh/id_rsa.pub | ssh 123@tv-s009.rsync.net 'dd of=.ssh/authorized_keys oflag=append conv=notrunc'
+~~~
+
+3. Use `backup_remote.sh` to interface with the borg repo
 
 ### Mac specifics
 
