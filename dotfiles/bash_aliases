@@ -13,6 +13,13 @@ if exists gpgconf; then
 else
     # No GPGconf
 fi
+
+# Matlab on work Mac
+if exists "/Applications/MATLAB_R2021a.app/bin/matlab"; then
+    alias matlab="/Applications/MATLAB_R2021a.app/bin/matlab -nojvm -nodesktop"
+else
+
+fi
 # export SSH_AUTH_SOCK="/run/user/$UID/gnupg/S.gpg-agent.ssh"
 # eval "gpg-connect-agent updatestartuptty /bye"
 
