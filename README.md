@@ -35,10 +35,11 @@ export B2_ACCOUNT_KEY=<>
 2. Make sure you copy a ssh key to rsync.net 
 
 ~~~
-cat ~/.ssh/id_rsa.pub | ssh 123@tv-s009.rsync.net 'dd of=.ssh/authorized_keys oflag=append conv=notrunc'
+cat ~/.ssh/id_rsa.pub | ssh <rsync username>@<rsync server> 'dd of=.ssh/authorized_keys oflag=append conv=notrunc'
 ~~~
 
 3. Use `backup_remote.sh` to interface with the borg repo
+4. Exclude files by editing `dotfiles/bin/backup_exclude.txt` or add `.nobackup` to a directory to ignore it
 
 ### Mac specifics
 

@@ -149,7 +149,7 @@ create() {
         --progress --stats \
         "${TARGET}::{hostname}-{now:%Y-%m-%dT%H:%M:%S}" $SOURCE_PATHS
 
-    borg check "${TARGET}"
+    # borg check "${TARGET}"
 
     logger -p user.info "Finished Borg archive creation: ${TARGET}"
 
