@@ -281,7 +281,7 @@ services:
     volumes:
       - /home/shankar/Documents/system_setup/docker_data/influxdb/data/:/var/lib/influxdb2
       - /home/shankar/Documents/system_setup/docker_data/influxdb/config/:/etc/influxdb2
-      - /home/shankar/Documents/influxdb_backup/:/var/influxdb_backup
+      - /home/shankar/Documents/influxdb_backup/:/var/backups
 
   grafana:
     image: grafana/grafana:latest
@@ -371,4 +371,21 @@ volumes:
   photoprism_storage:
   photoprism_db_storage:
 
+  # move other volumes to these controlled by docker
+  # deconz
+  # deconz_data:
 
+  # # grafana
+  # grafana_data:
+
+  # # mariadb_homeassistant
+  # homeassistant_db:
+
+  # # influxdb_config
+  # influxdb_config:
+  
+  # # influxdb_data
+  # influxdb_data:
+
+  # # signal-cli-config
+  # signal_data:
