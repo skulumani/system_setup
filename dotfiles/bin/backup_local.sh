@@ -54,7 +54,7 @@ readonly HOME=/home/shankar
 readonly SOURCE_PATHS="${HOME}/Documents ${HOME}/Downloads /media/shankar/data/pictures /media/shankar/data/syncthing"
 
 # Whitespace-separated list of paths to exclude from backup.
-readonly EXCLUDE="*.pyc ${HOME}/Documents/homeassistant/*"
+readonly EXCLUDE="*.pyc ${HOME}/Documents/system_setup/homeassistant/* ${HOME}/Documents/system_setup/docker_data/*"
 
 # Number of days, weeks, &c. of backups to keep when pruning.
 readonly KEEP_DAILY=7
