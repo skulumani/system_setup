@@ -32,3 +32,7 @@ Host bitbucket.org
 Host *
     IdentitiesOnly yes
 #ForwardX11 yes
+Host rsync.net
+    User de1449
+    HostName de1449.rsync.net
+    IdentityFile ~/.ssh/id_rsa

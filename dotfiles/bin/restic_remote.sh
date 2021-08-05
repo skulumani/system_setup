@@ -124,6 +124,7 @@ backup() {
     logger -p user.info "Finished restic snapshot: ${RESTIC_REPOSITORY}"
 }
 
+# TODO Split prune and forget operations
 prune() {
     logger -p user.info "Starting restic prune: ${RESTIC_REPOSITORY}"
 
@@ -135,22 +136,6 @@ prune() {
         --keep-monthly=${KEEP_MONTHLY} \
         --keep-yearly=${KEEP_YEARLY} \
         --keep-within=${KEEP_DURATION}
-
-    # now actually run the command and remove
-    read -p "Are you sure you want to delete snapshots (y/n)? " -n 1 -r
-    echo
-
-    if [[ $REPLY =~ ^[Yy]$ ]]
-    then
-        restic forget --prune --host \
-            --keep-last=${KEEP_LAST} \
-            --keep-hourly=${KEEP_HOURLY} \
-            --keep-daily=${KEEP_DAILY} \
-            --keep-weekly=${KEEP_WEEKLY} \
-            --keep-monthly=${KEEP_MONTHLY} \
-            --keep-yearly=${KEEP_YEARLY} \
-            --keep-within=${KEEP_DURATION}
-    fi
 
     logger -p user.info "Finished restic prune: ${RESTIC_REPOSITORY}"
 }
