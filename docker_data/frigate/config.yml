@@ -75,7 +75,7 @@ cameras:
 
     motion:
       mask:    
-        - 640,183,640,238,528,349,447,480,411,480,369,404,413,311,538,114
+        - 640,153,640,300,580,398,500,480,411,480,343,373,395,303,531,73
 
     objects:
       track:
@@ -162,6 +162,16 @@ ffmpeg:
   #   - -hwaccel_output_format
   #   - yuv420p
   input_args: # only use for RTMP
+    # - -fflags
+    # - nobuffer
+    # - -flags
+    # - low_delay
+    # - -strict
+    # - experimental
+    # - rw_timeout
+    # - '5000000'
+    # - -f
+    # - live_flv
     - -avoid_negative_ts
     - make_zero
     - -fflags
@@ -176,6 +186,8 @@ ffmpeg:
     - '5000000'
     - -use_wallclock_as_timestamps
     - '1'
+    - -f
+    - live_flv
   # input_args:
   #   - -avoid_negative_ts
   #   - make_zero
