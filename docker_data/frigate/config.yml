@@ -41,7 +41,7 @@ cameras:
             # - rtmp
     width: 640
     height: 480
-    fps: 15
+    fps: 4
     
     detect:
       enabled: True
@@ -117,7 +117,7 @@ cameras:
             # - rtmp
     width: 640
     height: 480
-    fps: 15
+    fps: 4
 
     detect:
       enabled: True
@@ -172,6 +172,7 @@ ffmpeg:
     # - '5000000'
     # - -f
     # - live_flv
+
     - -avoid_negative_ts
     - make_zero
     - -fflags
