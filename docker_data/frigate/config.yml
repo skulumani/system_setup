@@ -73,31 +73,31 @@ cameras:
       height: 480
       required_zones: []
 
-    # motion:
-    #   mask:    
-    #     - 640,153,640,300,580,398,500,480,411,480,343,373,395,303,531,73
+    motion:
+      mask:    
+        - 2560,671,2560,849,2373,1013,2211,1120,2089,1207,1956,1316,1769,1429,1542,1600,1416,1469,1349,1369,1320,1193,1749,831,2113,342
 
     objects:
       track:
         - person
         - cat
         - dog
-    #   filters:
-    #     person:
-    #       mask:
-    #         - 395,68,471,117,427,211,396,207,380,202,351,181,317,145,343,89
-    #       # Optional: minimum width*height of the bounding box for the detected object (default: 0)
-    #       min_area: 20000
-    #       # Optional: maximum width*height of the bounding box for the detected object (default: 24000000)
-    #       max_area: 100000
-    #       # Optional: minimum score for the object to initiate tracking (default: shown below)
-    #       min_score: 0.7
-    #       # Optional: minimum decimal percentage for tracked object's computed score to be considered a true positive (default: shown below)
-    #       threshold: 0.7
+      filters:
+        person:
+          # mask:
+          #   - 395,68,471,117,427,211,396,207,380,202,351,181,317,145,343,89
+          # Optional: minimum width*height of the bounding box for the detected object (default: 0)
+          min_area: 20000
+          # Optional: maximum width*height of the bounding box for the detected object (default: 24000000)
+          max_area: 24000000
+          # Optional: minimum score for the object to initiate tracking (default: shown below)
+          min_score: 0.7
+          # Optional: minimum decimal percentage for tracked object's computed score to be considered a true positive (default: shown below)
+          threshold: 0.7
 
-    # zones:
-    #   porch:
-    #     coordinates: 0,480,396,480,305,196,324,0,114,0
+    zones:
+      porch:
+        coordinates: 0,1920,0,1700,0,1313,0,796,0,0,589,0,1360,0,1118,760,1291,1227,1462,1580,1633,1920
     #   front_steps:
     #     coordinates: 455,203,515,282,589,379,364,364,290,225,313,159
     #   street:
