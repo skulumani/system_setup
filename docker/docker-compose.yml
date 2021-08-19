@@ -308,8 +308,9 @@ services:
     # privileged: true # this may not be necessary for all setups
     image: blakeblackshear/frigate:stable-amd64
     restart: always
+    shm_size: '125mb'
     devices:
-      # - /dev/bus/usb:/dev/bus/usb # for coral devices
+      - /dev/bus/usb:/dev/bus/usb # for coral devices
       - /dev/dri/renderD128 # for intel hwaccel, needs to be updated for your hardware
     volumes:
       - /etc/localtime:/etc/localtime:ro
