@@ -45,6 +45,9 @@ services:
   signal-cli-rest-api:
     container_name: signalcli
     image: bbernhard/signal-cli-rest-api:latest
+    environment:
+      - USE_NATIVE=0
+      - AUTO_RECEIVE_SCHEDULE=0 22 * * *
     ports:
       - "8080:8080" # map docker port 8080 to host port 8080.
     network_mode: "host"

@@ -160,6 +160,8 @@ ffmpeg:
     # - -f
     # - live_flv
 
+    # - -use_wallclock_as_timestamps
+    # - '1'
     - -avoid_negative_ts
     - make_zero
     - -fflags
@@ -172,8 +174,6 @@ ffmpeg:
     - +genpts+discardcorrupt
     - -rw_timeout
     - '5000000'
-    - -use_wallclock_as_timestamps
-    - '1'
     - -f
     - live_flv
   output_args:
