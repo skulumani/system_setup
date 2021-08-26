@@ -45,6 +45,9 @@ services:
   signal-cli-rest-api:
     container_name: signalcli
     image: bbernhard/signal-cli-rest-api:latest
+    environment:
+      - USE_NATIVE=0
+      - AUTO_RECEIVE_SCHEDULE=0 22 * * *
     ports:
       - "8080:8080" # map docker port 8080 to host port 8080.
     network_mode: "host"
@@ -308,8 +311,9 @@ services:
     # privileged: true # this may not be necessary for all setups
     image: blakeblackshear/frigate:stable-amd64
     restart: always
+    shm_size: '125mb'
     devices:
-      # - /dev/bus/usb:/dev/bus/usb # for coral devices
+      - /dev/bus/usb:/dev/bus/usb # for coral devices
       - /dev/dri/renderD128 # for intel hwaccel, needs to be updated for your hardware
     volumes:
       - /etc/localtime:/etc/localtime:ro

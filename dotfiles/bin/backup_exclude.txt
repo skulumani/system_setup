@@ -4,3 +4,8 @@
 /**/.cache
 /**/Cache
 /**/__pycache__
+
+/home/shankar/Documents/system_setup/homeassistant/rtsp2webrtc_v4_amd64
+/home/shankar/Documents/system_setup/homeassistant/.google.token
+/home/shankar/Documents/system_setup/homeassistant_db/*
+/home/shankar/Documents/homeassistant_db/*
