@@ -45,7 +45,8 @@ readonly COMPRESSION_LEVEL=6
 # readonly HOME=~/
 
 # Whitespace-separated list of paths to back up.
-readonly SOURCE_PATHS="${HOME}/Documents ${HOME}/Downloads ${HOME}/Drive"
+export SOURCE_PATHS="${HOME}/Documents ${HOME}/Downloads"
+[ -d "${HOME}/Drive" ] && SOURCE_PATHS+=" ${HOME}/Drive"
 
 # Whitespace-separated list of paths to exclude from backup.
 readonly EXCLUDE="*.pyc"
