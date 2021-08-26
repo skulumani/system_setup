@@ -16,7 +16,8 @@ fi
 
 # Matlab on work Mac
 if exists "/Applications/MATLAB_R2021a.app/bin/matlab"; then
-    alias matlab="/Applications/MATLAB_R2021a.app/bin/matlab -nojvm -nodesktop"
+    alias matlab="/Applications/MATLAB_R2021a.app/bin/matlab -nodesktop"
+    # alias matlab="/Applications/MATLAB_R2021a.app/bin/matlab -nojvm -nodesktop"
 else
 
 fi
