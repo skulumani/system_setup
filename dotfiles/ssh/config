@@ -8,8 +8,9 @@ Host fdcl
     RemoteForward 52698 localhost:52698
 Host raspberrypi
     User pi
-    HostName 192.168.88.10
-    IdentityFile ~/.ssh/omv_rsa
+    # HostName 192.168.200.10
+    HostName raspberrypi.shanks-k.gmail.com.beta.tailscale.net
+    IdentityFile ~/.ssh/id_rsa
 Host ubuntu-server
     user shankar
     HostName 192.168.88.12

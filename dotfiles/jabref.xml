@@ -179,7 +179,7 @@
           <entry key="mainTableColumnNames" value="groups;files;linked_id;field:entrytype;field:author/editor;field:title;field:year;field:journal/booktitle;field:bibtexkey"/>
           <entry key="mainTableColumnSortOrder" value=""/>
           <entry key="mainTableColumnSortTypes" value="ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING"/>
-          <entry key="mainTableColumnWidths" value="28.0;28.0;28.0;54.0637530762576;126.60509366066466;493.75340367834633;37.366677736937795;115.28636265376362;259.80700148051403"/>
+          <entry key="mainTableColumnWidths" value="28.0;28.0;28.0;129.67913181695255;127.16581048899623;494.03746407070804;37.99463818706314;115.85560845988053;179.26734697639944"/>
           <entry key="mainWindowPosX" value="95.0"/>
           <entry key="mainWindowPosY" value="97.0"/>
           <entry key="mainWindowSizeX" value="1571.0"/>
