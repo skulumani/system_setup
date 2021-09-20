@@ -8,8 +8,8 @@ Host fdcl
     RemoteForward 52698 localhost:52698
 Host raspberrypi
     User pi
-    # HostName 192.168.200.10
-    HostName raspberrypi.shanks-k.gmail.com.beta.tailscale.net
+    HostName 100.70.237.106
+    # HostName raspberrypi.shanks-k.gmail.com.beta.tailscale.net
     IdentityFile ~/.ssh/id_rsa
 Host ubuntu-server
     user shankar
@@ -36,4 +36,8 @@ Host *
 Host rsync.net
     User de1449
     HostName de1449.rsync.net
+    IdentityFile ~/.ssh/id_rsa
+Host raspberrypi_zero
+    User pi
+    HostName 192.168.200.10
     IdentityFile ~/.ssh/id_rsa
