@@ -8,7 +8,8 @@ if has('unix')
         let g:vimtex_view_general_options = '-r @line @pdf @tex'
 
         " This adds a callback hook that updates Skim after compilation
-        let g:vimtex_compiler_callback_hooks = ['UpdateSkim']
+        " Deprecated
+        " let g:vimtex_compiler_callback_hooks = ['UpdateSkim']
         function! UpdateSkim(status)
             if !a:status | return | endif
 
@@ -51,7 +52,6 @@ let g:tex_conceal = ""
 let g:tex_fold_enabled = 1
 let g:vimtex_fold_enabled = 0
 let g:vimtex_fold_manual = 1
-let g:vimtex_toc_fold = 1
 let g:vimtex_matchparen_enabled = 0
 let g:fastfold_fold_command_suffixes = []
 
@@ -62,22 +62,3 @@ let g:vimtex_syntax_conceal_default = 0 " don't conceal any symbols in vimtex
 " Can hide specifc warning messages from the quickfix window
 " Quickfix with Neovim is broken or something
 " https://github.com/lervag/vimtex/issues/773
-let g:vimtex_quickfix_latexlog = {
-            \ 'default' : 1,
-            \ 'fix_paths' : 0,
-            \ 'general' : 1,
-            \ 'references' : 1,
-            \ 'overfull' : 1,
-            \ 'underfull' : 1,
-            \ 'font' : 1,
-            \ 'packages' : {
-            \   'default' : 1,
-            \   'natbib' : 1,
-            \   'biblatex' : 1,
-            \   'babel' : 1,
-            \   'hyperref' : 1,
-            \   'scrreprt' : 1,
-            \   'fixltx2e' : 1,
-            \   'titlesec' : 1,
-            \ },
-            \}
