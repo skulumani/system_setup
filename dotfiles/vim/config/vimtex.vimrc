@@ -57,7 +57,7 @@ let g:fastfold_fold_command_suffixes = []
 
 let g:matchup_override_vimtex = 1
 let g:matchup_matchparen_deferred = 1
-let g:vimtex_syntax_conceal_default = 0 " don't conceal any symbols in vimtex
+let g:vimtex_syntax_conceal_disable = 1 " don't conceal any symbols in vimtex
 
 " Can hide specifc warning messages from the quickfix window
 " Quickfix with Neovim is broken or something

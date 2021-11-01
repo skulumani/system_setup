@@ -21,10 +21,10 @@ if has("autocmd")
 
 
 
-augroup vimwiki
-    autocmd!
-    autocmd BufWritePost C:/Users/skuluman/Documents/_todo/* :Git add -A | :Gcommit -m "Auto commit wiki"
-augroup END
+" augroup vimwiki
+"     autocmd!
+"     autocmd BufWritePost C:/Users/skuluman/Documents/_todo/* :Git add -A | :Gcommit -m "Auto commit wiki"
+" augroup END
 
 endif
 

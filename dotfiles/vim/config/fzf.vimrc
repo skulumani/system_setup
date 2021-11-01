@@ -19,6 +19,8 @@ end
 if executable('rg')
     " let g:ackprg = 'ag --vimgrep'
     let g:ackprg = 'rg --vimgrep --no-heading'
+    let g:grepprg = 'rg --vimgrep --no-heading'
+
     " FZF now included Rg support
     " command! -bang -nargs=* Rg
     "             \ call fzf#vim#grep(
@@ -65,3 +67,30 @@ let g:fzf_action = {
             \ 'ctrl-t': 'tab split',
             \ 'ctrl-x': 'split',
             \ 'ctrl-v': 'vsplit' }
+
+
+function! RgDir(isFullScreen, args)
+    let l:restArgs = [a:args]
+
+    let l:restArgs = split(l:restArgs[0], '-pattern=', 1)
+    let l:pattern = join(l:restArgs[1:], '')
+
+    let l:restArgs = split(l:restArgs[0], '-path=', 1)
+    " Since 8.0.1630 vim has a built-in trim() function
+    let l:path = trim(l:restArgs[1])
+
+    call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case " .. shellescape(l:pattern), 1, fzf#vim#with_preview({'dir': l:path}), a:isFullScreen)
+endfunction
+
+" the path param should not have `-pattern=`
+command! -bang -nargs=+ -complete=dir RgD call RgDir(<bang>0, <q-args>)
+" nnoremap <leader>zd :RgD -path= . -pattern=
+" :RgD -path= . -pattern=main
+" ok. equivalent to `:Rg main\(`
+" :RgD -path= . -pattern=main\(
+" " ok. equivalent to `:Rg <whitespace>main\(<whitespace>`
+" :RgD -path= . -pattern=<whitespace>main\(<whitespace>
+" " ok. equivalent to `:Rg cmd -pattern=param`
+" :RgD -path= . -pattern=cmd -pattern=param
+" " ok
+" :RgD -path= ./Program Files -pattern=cmd -pattern=param

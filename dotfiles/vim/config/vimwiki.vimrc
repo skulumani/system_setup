@@ -25,17 +25,7 @@ let g:vimwiki_conceallevel = 1
 let g:vimwiki_url_maxsave = 15
 let g:vimwiki_markdown_link_ext = 1
 
-
-function! VimwikiFindIncompleteTasks()
-  lvimgrep /* \[ \]/ %:p
-  lopen
-endfunction
-
-function! VimwikiFindAllIncompleteTasks()
-  VimwikiSearch /* \[ \]/
-  lopen
-endfunction
-
+" get path to vimwiki index :echo(vimwiki#var#get_wikilocal('path', 0) 
 function! VimwikiLinkHandler(link)
     let link = a:link
     if link =~# '^smb:'
