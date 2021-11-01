@@ -68,6 +68,10 @@ set wildignore+=*.swp,*~,._*
 set showtabline=2  " Show tabline
 set guioptions-=e  " Don't use GUI tabline
 
+" For conceal markers.
+set conceallevel=1 
+" set concealcursor=niv
+
 " Hiddent characters
 " set listchars=tab:▸\ ,eol:¬" ,space:␣
 set listchars=tab:▸\ ,eol:¬"

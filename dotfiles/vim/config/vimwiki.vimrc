@@ -21,7 +21,7 @@ let g:vimwiki_list = [apl_wiki, main_wiki]
 
 
 let g:vimwiki_global_ext = 0
-let g:vimwiki_conceallevel = 0
+let g:vimwiki_conceallevel = 1
 let g:vimwiki_url_maxsave = 15
 let g:vimwiki_markdown_link_ext = 1
 

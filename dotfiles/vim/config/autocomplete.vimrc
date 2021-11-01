@@ -46,8 +46,6 @@ xmap <C-k>     <Plug>(neosnippet_expand_target)
 set completeopt+=preview
 let g:neosnippet#enable_preview = 1
 
-" For conceal markers.
-set conceallevel=0 concealcursor=niv
 
 " Echodoc settings
 set noshowmode
