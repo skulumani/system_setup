@@ -17,9 +17,6 @@ else
 end
 
 if executable('rg')
-    " let g:ackprg = 'ag --vimgrep'
-    let g:ackprg = 'rg --vimgrep --no-heading'
-    let g:grepprg = 'rg --vimgrep --no-heading'
 
     " FZF now included Rg support
     " command! -bang -nargs=* Rg
