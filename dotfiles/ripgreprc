@@ -1,0 +1,5 @@
+# ~/.ripgreprc
+--smart-case
+--hidden
+--glob
+!.git

@@ -5,6 +5,7 @@ config_nvim
 fzf
 git_apl
 latex
+ripgrep
 texmf_mac
 tmux
 vim
