@@ -130,4 +130,4 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 " vimwiki
-" nnoremap <leader>wf :VimwikiIndex :RgD -path=  -pattern=
+nnoremap <leader>wf :call VimwikiFuzzySearch()<CR> 

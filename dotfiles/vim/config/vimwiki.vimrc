@@ -38,3 +38,9 @@ function! VimwikiLinkHandler(link)
     endif
     return 0
 endfunction
+
+function! VimwikiFuzzySearch()
+    VimwikiIndex
+    let wikipath = vimwiki#vars#get_wikilocal('path')
+    call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case " .. shellescape(''), 1, fzf#vim#with_preview({'dir': wikipath}), 0)
+endfunction
