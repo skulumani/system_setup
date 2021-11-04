@@ -40,7 +40,7 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore --follow --glob "!.g
 
 export FZF_TMUX=1
 export FZF_COMPLETION_TRIGGER=''
-# if [ -n "$ZSH_VERSION" ]; then
-#     bindkey '^T' fzf-completion
-#     bindkey '^I' $fzf_default_completion
-# fi
+if [ -n "$ZSH_VERSION" ]; then
+    bindkey '^T' fzf-completion
+    bindkey '^I' $fzf_default_completion
+fi
