@@ -48,3 +48,9 @@ alias   \parenth, par
 snippet cref
 alias   ref, cref, \cref
         \cref{${1}}${0}
+
+snippet frame
+alias frame, \begin{frame
+    \begin{frame}{${1:Frame Title}}
+        ${2:Contents}
+    \end{frame}
