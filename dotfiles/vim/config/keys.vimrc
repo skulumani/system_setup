@@ -82,7 +82,7 @@ nnoremap <leader>gf :G commit -v -q %:p<CR>i
 nnoremap <leader>gco :Git checkout<Space>
 nnoremap <leader>gb :Git branch<Space>
 nnoremap <leader>gp :Git push<CR>
-nnoremap <leader>gl :Gpull<CR>
+nnoremap <leader>gl :Git pull<CR>
 nnoremap <leader>gd :Gdiff :0<CR>
 nnoremap <leader>ge :Gedit <CR>
 nnoremap <leader>gr :Gread<CR>
