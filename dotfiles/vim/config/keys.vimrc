@@ -131,3 +131,4 @@ nmap ga <Plug>(EasyAlign)
 
 " vimwiki
 nnoremap <leader>wf :call VimwikiFuzzySearch()<CR> 
+nnoremap <F5> A<Space><C-r>=strftime("%Y-%m-%d")<CR><Esc>
