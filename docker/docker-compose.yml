@@ -47,8 +47,8 @@ services:
     container_name: signalcli
     image: bbernhard/signal-cli-rest-api:latest
     environment:
-      - USE_NATIVE=0
-      - AUTO_RECEIVE_SCHEDULE=0 22 * * *
+      - MODE=json-rpc
+      # - AUTO_RECEIVE_SCHEDULE=0 22 * * *
     ports:
       - "8080:8080" # map docker port 8080 to host port 8080.
     network_mode: "host"
@@ -333,23 +333,23 @@ services:
       FRIGATE_CAM_PASSWORD: "dgdiPUdFwqkqBwRFSq"
       FRIGATE_CAM_USERNAME: "stream"
 
-  motioneye:
-    image: ccrisan/motioneye:master-amd64  # Change to ccrisan/motioneye:master-armhf for ARM chips (Pi etc.)
-    container_name: motioneye
-    ports:
-      - "8081:8081" # front low
-      - "8082:8082" # front high
-      - "8083:8083" # back low
-      - "8084:8084" # back high
-      - "8765:8765" # motioneye web
-    volumes:
-      - /home/shankar/Documents/system_setup/docker_data/motioneye:/etc/motioneye
-      - /media/shankar/usbdrive:/var/lib/motioneye/usbdrive
-      - /home/shankar/Videos:/var/lib/motioneye/videos
-      - /tmp:/var/lib/motioneye/temp
-    restart: always
-    environment:
-      - TZ=America/New_York
+  # motioneye:
+  #   image: ccrisan/motioneye:master-amd64  # Change to ccrisan/motioneye:master-armhf for ARM chips (Pi etc.)
+  #   container_name: motioneye
+  #   ports:
+  #     - "8081:8081" # front low
+  #     - "8082:8082" # front high
+  #     - "8083:8083" # back low
+  #     - "8084:8084" # back high
+  #     - "8765:8765" # motioneye web
+  #   volumes:
+  #     - /home/shankar/Documents/system_setup/docker_data/motioneye:/etc/motioneye
+  #     - /media/shankar/usbdrive:/var/lib/motioneye/usbdrive
+  #     - /home/shankar/Videos:/var/lib/motioneye/videos
+  #     - /tmp:/var/lib/motioneye/temp
+  #   restart: always
+  #   environment:
+  #     - TZ=America/New_York
 
   # watchtower:
   #   image: containrrr/watchtower
