@@ -34,7 +34,7 @@ services:
     ports:
       - 3310:3306
     volumes:
-      - /home/shankar/Documents/homeassistant_db:/var/lib/mysql
+      - homeassistant_db:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: "2PtZXpJDDjSGsv"
       MYSQL_PASSWORD: "2PtZXpJDDjSGsv"
@@ -386,8 +386,8 @@ volumes:
   # # grafana
   # grafana_data:
 
-  # # mariadb_homeassistant
-  # homeassistant_db:
+  # mariadb_homeassistant
+  homeassistant_db:
 
   # # influxdb_config
   # influxdb_config:
