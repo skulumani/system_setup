@@ -171,7 +171,7 @@ services:
     restart: always
     environment:
       PHOTOPRISM_ADMIN_PASSWORD: "insecure"          # PLEASE CHANGE: Your initial admin password (min 4 characters)
-      PHOTOPRISM_ORIGINALS_LIMIT: 1000               # File size limit for originals in MB (increase for high-res video)
+      PHOTOPRISM_ORIGINALS_LIMIT: 5000               # File size limit for originals in MB (increase for high-res video)
       PHOTOPRISM_HTTP_COMPRESSION: "gzip"            # Improves transfer speed and bandwidth utilization (none or gzip)
       PHOTOPRISM_DEBUG: "false"                      # Run in debug mode (shows additional log messages)
       PHOTOPRISM_PUBLIC: "true"                     # No authentication required (disables password protection)
@@ -195,7 +195,11 @@ services:
       PHOTOPRISM_SITE_DESCRIPTION: ""
       PHOTOPRISM_SITE_AUTHOR: ""
       PHOTOPRISM_WORKERS: 2       # Max number of index workers
-      # PHOTOPRISM_JPEG_QUALITY: 80   # JPEG Quality
+      PHOTOPRISM_JPEG_QUALITY: 80   # JPEG Quality
+      PHOTOPRISM_THUMB_SIZE: 720
+      PHOTOPRISM_THUMB_SIZE_UNCACHED: 720
+      PHOTOPRISM_JPEG_SIZE: 720
+      PHOTOPRISM_THUMB_UNCACHED: "true"
       # You may optionally set a user / group id using environment variables if your Docker version or NAS does not
       # support this natively (see next example):
       # UID: 1000
