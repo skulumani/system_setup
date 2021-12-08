@@ -34,7 +34,7 @@ services:
     ports:
       - 3310:3306
     volumes:
-      - /home/shankar/Documents/system_setup/docker_data/homeassistant_db:/var/lib/mysql
+      - homeassistant_db:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: "2PtZXpJDDjSGsv"
       MYSQL_PASSWORD: "2PtZXpJDDjSGsv"
@@ -55,7 +55,7 @@ services:
     restart: always
     # user: "1000:1000"
     volumes:
-      - "/home/shankar/Documents/system_setup/docker_data/signal-cli-config:/home/.local/share/signal-cli" # map "signal-cli-config" folder 
+      - signal_data:/home/.local/share/signal-cli # map "signal-cli-config" folder 
       - "/media/shankar/usbdrive/video:/media/camera"
   
   omada-controller:
@@ -108,7 +108,7 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - /etc/timezone:/etc/timezone:ro
       # Replace <local path> with a path where all deconz config will be stored.
-      - /home/shankar/Documents/system_setup/docker_data/deconz:/root/.local/share/dresden-elektronik/deCONZ
+      - /home/shankar/Documents/deconz:/root/.local/share/dresden-elektronik/deCONZ
     devices:
       - "/dev/ttyACM0:/dev/ttyACM0"
 
@@ -171,7 +171,7 @@ services:
     restart: always
     environment:
       PHOTOPRISM_ADMIN_PASSWORD: "insecure"          # PLEASE CHANGE: Your initial admin password (min 4 characters)
-      PHOTOPRISM_ORIGINALS_LIMIT: 1000               # File size limit for originals in MB (increase for high-res video)
+      PHOTOPRISM_ORIGINALS_LIMIT: 5000               # File size limit for originals in MB (increase for high-res video)
       PHOTOPRISM_HTTP_COMPRESSION: "gzip"            # Improves transfer speed and bandwidth utilization (none or gzip)
       PHOTOPRISM_DEBUG: "false"                      # Run in debug mode (shows additional log messages)
       PHOTOPRISM_PUBLIC: "true"                     # No authentication required (disables password protection)
@@ -195,7 +195,11 @@ services:
       PHOTOPRISM_SITE_DESCRIPTION: ""
       PHOTOPRISM_SITE_AUTHOR: ""
       PHOTOPRISM_WORKERS: 2       # Max number of index workers
-      # PHOTOPRISM_JPEG_QUALITY: 80   # JPEG Quality
+      PHOTOPRISM_JPEG_QUALITY: 80   # JPEG Quality
+      PHOTOPRISM_THUMB_SIZE: 720
+      PHOTOPRISM_THUMB_SIZE_UNCACHED: 720
+      PHOTOPRISM_JPEG_SIZE: 720
+      PHOTOPRISM_THUMB_UNCACHED: "true"
       # You may optionally set a user / group id using environment variables if your Docker version or NAS does not
       # support this natively (see next example):
       # UID: 1000
@@ -283,7 +287,7 @@ services:
     ports:
       - 8086:8086
     volumes:
-      - /home/shankar/Documents/system_setup/docker_data/influxdb/data/:/var/lib/influxdb2
+      - /home/shankar/Documents/influxdb/data/:/var/lib/influxdb2
       - /home/shankar/Documents/system_setup/docker_data/influxdb/config/:/etc/influxdb2
       - /home/shankar/Documents/influxdb_backup/:/var/backups
 
@@ -376,6 +380,9 @@ volumes:
   photoprism_storage:
   photoprism_db_storage:
 
+  # signal-cli-config
+  signal_data:
+
   # move other volumes to these controlled by docker
   # deconz
   # deconz_data:
@@ -383,8 +390,8 @@ volumes:
   # # grafana
   # grafana_data:
 
-  # # mariadb_homeassistant
-  # homeassistant_db:
+  # mariadb_homeassistant
+  homeassistant_db:
 
   # # influxdb_config
   # influxdb_config:
@@ -392,5 +399,3 @@ volumes:
   # # influxdb_data
   # influxdb_data:
 
-  # # signal-cli-config
-  # signal_data:
