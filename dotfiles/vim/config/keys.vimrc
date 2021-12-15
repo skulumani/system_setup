@@ -121,7 +121,7 @@ endif
 
 augroup cpp_make
     autocmd!
-    autocmd FileType cpp nnoremap <buffer> <leader>ll :Make -C build -j4<CR> :echo "MAKING!"<CR>
+    autocmd FileType cpp nnoremap <buffer> <leader>ll :make -C build -j4<CR><CR>
 augroup END
 
 " Options for vim-easy-align
