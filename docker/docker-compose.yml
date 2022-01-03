@@ -199,7 +199,7 @@ services:
       PHOTOPRISM_THUMB_SIZE: 720
       PHOTOPRISM_THUMB_SIZE_UNCACHED: 720
       PHOTOPRISM_JPEG_SIZE: 720
-      PHOTOPRISM_THUMB_UNCACHED: "true"
+      PHOTOPRISM_THUMB_UNCACHED: "false"
       # You may optionally set a user / group id using environment variables if your Docker version or NAS does not
       # support this natively (see next example):
       # UID: 1000
