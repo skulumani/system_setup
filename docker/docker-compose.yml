@@ -199,7 +199,7 @@ services:
       PHOTOPRISM_THUMB_SIZE: 720
       PHOTOPRISM_THUMB_SIZE_UNCACHED: 720
       PHOTOPRISM_JPEG_SIZE: 720
-      PHOTOPRISM_THUMB_UNCACHED: "true"
+      PHOTOPRISM_THUMB_UNCACHED: "false"
       # You may optionally set a user / group id using environment variables if your Docker version or NAS does not
       # support this natively (see next example):
       # UID: 1000
@@ -337,6 +337,25 @@ services:
       FRIGATE_CAM_PASSWORD: "dgdiPUdFwqkqBwRFSq"
       FRIGATE_CAM_USERNAME: "stream"
 
+  # run boinccmd - docker exec boinc boinccmd <args>
+  # or remotely - docker run --rm boinc/client boinccmd --host <host> --password <password> <args>
+  boinc:
+    image: boinc/client:latest
+    container_name: boinc
+    restart: always
+    # network_mode: host
+    ports:
+      - '31417:31416'
+    pid: host
+    volumes:
+      - boinc_data:/var/lib/boinc
+    environment:
+      - BOINC_GUI_RPC_PASSWORD=password
+      # - BOINC_CMD_LINE_OPTIONS=--allow_remote_gui_rpc
+      - TZ=America/New_York
+
+  
+
   # motioneye:
   #   image: ccrisan/motioneye:master-amd64  # Change to ccrisan/motioneye:master-armhf for ARM chips (Pi etc.)
   #   container_name: motioneye
@@ -392,6 +411,8 @@ volumes:
 
   # mariadb_homeassistant
   homeassistant_db:
+
+  boinc_data:
 
   # # influxdb_config
   # influxdb_config:
