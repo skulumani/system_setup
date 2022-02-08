@@ -48,6 +48,7 @@ readonly COMPRESSION_LEVEL=6
 export SOURCE_PATHS="${HOME}/Documents ${HOME}/Downloads"
 [ -d "${HOME}/Drive" ] && SOURCE_PATHS+=" ${HOME}/Drive"
 [ -d "/media/shankar/data/timelapse" ] && SOURCE_PATHS+=" /media/shankar/data/timelapse"
+[ -d "/media/shankar/data/syncthing/docs" ] && SOURCE_PATHS+=" /media/shankar/data/syncthing/docs"
 
 # Whitespace-separated list of paths to exclude from backup.
 readonly EXCLUDE="*.pyc"
