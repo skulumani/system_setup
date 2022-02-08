@@ -279,7 +279,10 @@ services:
   #     # to the following: `/home/user/photos:/photos:ro`.
   #     # You can mount multiple paths, if your photos are spread across multiple directories.
   #     - /media/shankar/data/pictures:/photos:ro
-  
+
+  # Backup - 
+  # docker container exec -it influxdb /bin/bash
+  #  influx backup /var/backups/$(date '+%Y%m%dT%H%M')_backup -t WV188vhX9Wj6atbaASmH55Jl8jGSLHCQMC35PgSOJGbJ986YVefU3MdngPjoNAzfNv8P35Pw-DWe6RZWxzIYJQ==
   influxdb:
     image: influxdb:latest
     container_name: influxdb
@@ -354,6 +357,17 @@ services:
       # - BOINC_CMD_LINE_OPTIONS=--allow_remote_gui_rpc
       - TZ=America/New_York
 
+  filebrowser:
+    container_name: filebrowser
+    image: filebrowser/filebrowser
+    user: "1000:1000"
+    volumes:
+      - /media/shankar/data:/srv 
+      - /home/shankar/Documents/filebrowser/filebrowser.db:/database.db 
+      - /home/shankar/Documents/filebrowser/filebrowser.json:/.filebrowser.json 
+    restart: always
+    ports:
+      - "8081:80"
   
 
   # motioneye:
