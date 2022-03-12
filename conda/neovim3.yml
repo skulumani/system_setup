@@ -16,5 +16,6 @@ dependencies:
     - pylint
     - pynvim
     - neovim-remote
+    - jedi
 prefix: /home/shankar/anaconda3/envs/neovim3
 
