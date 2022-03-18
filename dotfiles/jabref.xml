@@ -103,7 +103,7 @@
           <entry key="emailSubject" value="References"/>
           <entry key="enforceLegalBibtexKey" value="true"/>
           <entry key="entryEditorHeight" value="576"/>
-          <entry key="entryEditorHeightFX" value="0.522867737948084"/>
+          <entry key="entryEditorHeightFX" value="0.5826193390452876"/>
           <entry key="exportInOriginalOrder" value="false"/>
           <entry key="exportInSpecifiedOrder" value="true"/>
           <entry key="exportInStandardOrder" value="true"/>
@@ -133,6 +133,7 @@
           <entry key="generateKeysBeforeSaving" value="false"/>
           <entry key="grayOutNonHits" value="false"/>
           <entry key="gridColor" value="210:210:210"/>
+          <entry key="grobidEnabled" value="true"/>
           <entry key="groupAutoHide" value="true"/>
           <entry key="groupAutoShow" value="true"/>
           <entry key="groupEditGroupMembershipMode" value="false"/>
@@ -160,7 +161,7 @@
           <entry key="importFileNamePattern" value="[bibtexkey]"/>
           <entry key="importInspectionDialogHeight" value="650"/>
           <entry key="importInspectionDialogWidth" value="1109"/>
-          <entry key="importWorkingDirectory" value="/tmp"/>
+          <entry key="importWorkingDirectory" value="/home/shankar/Downloads"/>
           <entry key="includeEmptyFields" value="false"/>
           <entry key="incompleteEntryBackground" value="250:175:175"/>
           <entry key="incrementS" value="false"/>
@@ -177,11 +178,11 @@
           <entry key="lyxpipe" value="/home/shankar/.lyx/lyxpipe"/>
           <entry key="mainFontSize" value="9"/>
           <entry key="mainTableColumnNames" value="groups;files;linked_id;field:entrytype;field:author/editor;field:title;field:year;field:journal/booktitle;field:bibtexkey"/>
-          <entry key="mainTableColumnSortOrder" value=""/>
+          <entry key="mainTableColumnSortOrder" value="field:entrytype"/>
           <entry key="mainTableColumnSortTypes" value="ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING;ASCENDING"/>
-          <entry key="mainTableColumnWidths" value="28.0;28.0;28.0;153.90186252335099;150.9190785698146;586.3185912141917;45.09164659695412;137.49624689745804;212.752647266574"/>
-          <entry key="mainWindowPosX" value="95.0"/>
-          <entry key="mainWindowPosY" value="97.0"/>
+          <entry key="mainTableColumnWidths" value="28.0;28.0;28.0;154.60791868007365;151.61145059731334;589.0084472324379;45.29851371457404;138.12703894933122;213.72869339102417"/>
+          <entry key="mainWindowPosX" value="232.0"/>
+          <entry key="mainWindowPosY" value="58.0"/>
           <entry key="mainWindowSizeX" value="1571.0"/>
           <entry key="mainWindowSizeY" value="975.0"/>
           <entry key="markImportedEntries" value="true"/>
@@ -290,8 +291,8 @@
           <entry key="showRelevanceColumn" value="false"/>
           <entry key="showSearchInDialog" value="false"/>
           <entry key="showSource" value="true"/>
-          <entry key="sidePaneComponentNames" value="GROUPS;WEB_SEARCH"/>
-          <entry key="sidePaneComponentPreferredPositions" value="1;0"/>
+          <entry key="sidePaneComponentNames" value="WEB_SEARCH;GROUPS"/>
+          <entry key="sidePaneComponentPreferredPositions" value="0;1"/>
           <entry key="sidePaneWidth" value="283"/>
           <entry key="sidePaneWidthFX" value="0.11712285168682368"/>
           <entry key="sizeX" value="1375"/>

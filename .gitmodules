@@ -1,7 +1,7 @@
 [submodule "dotfiles/dotbot"]
 	path = dotfiles/dotbot
         url = https://github.com/anishathalye/dotbot
-        ignore = dirty
+	ignore = dirty
 [submodule "dotfiles/sublime_settings"]
 	path = dotfiles/sublime_settings
 	url = https://github.com/skulumani/sublime_settings.git

@@ -67,7 +67,7 @@ else
     Plug 'roxma/nvim-yarp'
     Plug 'roxma/vim-hug-neovim-rpc'
 endif
-" Plug 'zchee/deoplete-jedi'
+Plug 'zchee/deoplete-jedi'
 " Plug 'Shougo/echodoc.vim'
 
 
