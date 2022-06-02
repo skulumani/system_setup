@@ -51,7 +51,7 @@ cameras:
 
     zones:
       porch:
-        coordinates: 0,1920,0,1700,0,1313,0,796,0,0,589,0,1360,0,1118,760,1291,1227,1462,1580,1633,1920
+        coordinates: 0,1920,0,1700,0,1313,0,796,0,289,0,0,484,0,391,349,1160,518,1118,760,1291,1227,1462,1580,1633,1920
       front_yard:
         coordinates: 2129,1429,2449,1920,1616,1920,1287,1216,1129,842,1436,89,1549,667
       street:
@@ -155,10 +155,14 @@ detect:
 
 record:
   enabled: True
-  retain_days: 0
+  retain:
+    days: 0
   events:
     retain:
       default: 10
+    required_zones:
+      - porch
+      - back_yard
 
 motion:
   # Optional: The threshold passed to cv2.threshold to determine if a pixel is different enough to be counted as motion. (default: shown below)
@@ -190,8 +194,6 @@ objects:
     - dog
   filters:
     person:
-      # mask:
-      #   - 395,68,471,117,427,211,396,207,380,202,351,181,317,145,343,89
       # Optional: minimum width*height of the bounding box for the detected object (default: 0)
       min_area: 20000
       # Optional: maximum width*height of the bounding box for the detected object (default: 24000000)
@@ -200,3 +202,10 @@ objects:
       min_score: 0.7
       # Optional: minimum decimal percentage for tracked object's computed score to be considered a true positive (default: shown below)
       threshold: 0.7
+
+birdseye:
+  enabled: True
+  width: 1280
+  height: 720
+  quality: 8
+  mode: continuous
