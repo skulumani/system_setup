@@ -25,8 +25,14 @@ if has('nvim')
     let g:neoformat_python_yapf = {
             \ 'exe': '/home/shankar/anaconda3/envs/neovim3/bin/yapf',
             \ }
-    let g:neoformat_enabled_python = ['autopep8', 'yapf']
-
+    let g:neoformat_python_black = {
+            \ 'exe': '/home/shankar/anaconda3/envs/neovim3/bin/black',
+            \ }
+    let g:neoformat_enabled_python = ['autopep8', 'yapf', 'black']
+    
+    let g:neoformat_basic_format_align = 1
+    let g:neoformat_basic_format_retab = 1
+    let g:neoformat_basic_format_trim = 1
     " C++ makers
     let g:neomake_cpp_enabled_makers = ['clang']
     let g:neomake_cpp_clang_maker = {

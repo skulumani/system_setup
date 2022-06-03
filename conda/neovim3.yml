@@ -17,5 +17,7 @@ dependencies:
     - pynvim
     - neovim-remote
     - jedi
+    - yapf
+    - black
 prefix: /home/shankar/anaconda3/envs/neovim3
 
