@@ -5,6 +5,7 @@
 # No inputs then just output current date
 
 if [[ $# -eq 0 ]]; then
+    echo "Usage: doy YYYY-DOY"
     echo "Now: $(date "+%Y-%j") -- $(date "+%a %b %d %Y")"
 elif [[ $# -ne 1 ]]; then 
     echo "Incorrect number of inputs"
