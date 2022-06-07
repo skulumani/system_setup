@@ -6,7 +6,8 @@
 
 if [[ $# -eq 0 ]]; then
     echo "Usage: doy YYYY-DOY"
-    echo "Now: $(date "+%Y-%j") -- $(date "+%a %b %d %Y")"
+    echo "Now: $(date "+%Y-%jT%H:%M:%S") -- $(date "+%a %b %d %Y")"
+    echo "UTC: $(TZ=Etc/UTC date "+%Y-%jT%H:%M:%S") -- $(TZ=Etc/UTC date "+%a %b %d %Y")"
 elif [[ $# -ne 1 ]]; then 
     echo "Incorrect number of inputs"
     echo "Usage: doy YYYY-DOY"
@@ -16,7 +17,7 @@ elif [[ $# -eq 1 ]]; then
     let CURRENT_DATE=$(date +%s)
     let DIFF=($DESIRED_DATE - $CURRENT_DATE)/86400
 
-    echo "Now: $(date +%Y)-$(date +%j) -- $(date "+%a %b %d %Y")"
+    echo "Now: $(date "+%Y-%jT%H:%M:%S") -- $(date "+%a %b %d %Y")"
     echo "Desired: $1 -- $(date -j -f "%Y-%j" "$1" "+%a %b %d %Y")"
     echo "Difference: $DIFF days"
 fi
