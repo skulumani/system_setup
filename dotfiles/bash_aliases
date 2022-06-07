@@ -193,6 +193,12 @@ getmousepos () {
 screenrecord () {
     ffmpeg -video_size 400x300 -framerate 25 -f x11grab -i :0.0+520,380 output.mp4
 }
+
+
+cheat () {
+    curl cht.sh/$1
+}
+
 ## Add completions and alias for todo.txt
 source $HOME/bin/todo/todo_completion
 export TODOTXT_DEFAULT_ACTION=ls

@@ -1,7 +1,7 @@
 let g:deoplete#enable_at_startup = 1
 " let g:deoplete#max_list = 10
 call deoplete#custom#option({
-            \ 'auto_complete_delay': 100,
+            \ 'auto_complete_delay': 20,
             \ 'num_processes': 4,
             \ 'auto_complete': v:true,
             \ 'max_list': 20,
@@ -65,6 +65,6 @@ let g:clang_complete_copen = 1
 
 " deoplete jedi
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
-
+let g:deoplete#sources#jedi#python_path = expand('~/anaconda3/envs/neovim3/bin/python')
 
 
